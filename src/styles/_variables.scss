@@ -1,0 +1,46 @@
+// color
+$white: #ffffff;
+$black: #000000;
+$background: #fffcf2;
+$primary: #fb8700;
+$link: #00b0ff;
+$primary-background: #fff4e3;
+
+// font-size
+$text-xs: 12px;
+$text-sm: 14px;
+$text-base: 16px;
+$text-lg: 18px;
+$text-xl: 20px;
+$text-2xl: 24px;
+$text-3xl: 30px;
+$text-4xl: 36px;
+$text-5xl: 48px;
+$text-6xl: 60px;
+$text-7xl: 72px;
+$text-8xl: 96px;
+$text-9xl: 128px;
+
+// breakpoint
+$mobile: 640px;
+$pc: 1024px;
+
+// shadow
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px -1 rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3 rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5 rgba(0, 0, 0, 0.1);
+$shadow-2xl: 0 25px 50px -12 rgba(0, 0, 0, 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+// border-radius
+$rounded-none: 0;
+$rounded-sm: 2px;
+$rounded: 4px;
+$rounded-md: 6px;
+$rounded-lg: 8px;
+$rounded-xl: 12px;
+$rounded-2xl: 16px;
+$rounded-3xl: 24px;
+$rounded-full: 50%;
