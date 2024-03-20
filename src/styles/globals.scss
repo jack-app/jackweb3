@@ -1,1 +1,8 @@
+@use "./variables" as *;
 @import "destyle.css";
+
+body {
+  background-color: $background;
+  line-height: 150%;
+  font-family: hiragino-kaku-gothic-pron, sans-serif;
+}
