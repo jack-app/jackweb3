@@ -1,10 +1,50 @@
 @use "@/styles/variables" as *;
 
-.date {
-  font-size: $text-xs;
+.wrapper {
+  position: relative;
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: $shadow-2xl;
+  }
+
+  .image {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .descriptionWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+  
+    .date {
+      font-size: $text-xs;
+    }
+    
+    .title {
+      font-size: $text-lg;
+      font-weight: bold;
+
+      .link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+    }
+    
+    .tagWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
 }
 
-.title {
-  font-size: $text-lg;
-  font-weight: bold;
-}
