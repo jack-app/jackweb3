@@ -8,6 +8,10 @@
   justify-content: space-between;
   align-items: center;
 
+  @media screen and (max-width: $pc){
+    padding: 8px 32px;
+  }
+
   .logo {
     color: $primary;
     font-size: $text-2xl;
@@ -18,10 +22,18 @@
     display: flex;
     gap: 24px;
 
+    @media screen and (max-width: $pc){
+      gap: 16px;
+    }
+
     .nav {
       display: flex;
       gap: 16px;
       align-items: center;
+
+      @media screen and (max-width: $pc) {
+        display: none;
+      }
     }
   }
 
@@ -37,6 +49,14 @@
     &:hover {
       background-color: $white;
       color: $primary;
+    }
+  }
+
+  .menuButton {
+    display: none;
+
+    @media screen and (max-width: $pc){
+      display: block;
     }
   }
   
