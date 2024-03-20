@@ -1,0 +1,63 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  background-color: $white;
+  padding: 16px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: $pc){
+    padding: 8px 32px;
+  }
+
+  .logo {
+    color: $primary;
+    font-size: $text-2xl;
+    font-weight: bold;
+  }
+
+  .right {
+    display: flex;
+    gap: 24px;
+
+    @media screen and (max-width: $pc){
+      gap: 16px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      @media screen and (max-width: $pc) {
+        display: none;
+      }
+    }
+  }
+
+  .contact {
+    padding: 8px 16px;
+    border-radius: $rounded-full;
+    background-color: $primary;
+    color: $white;
+    box-shadow: $shadow;
+    border: 1px solid $primary;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+
+  .menuButton {
+    display: none;
+
+    @media screen and (max-width: $pc){
+      display: block;
+    }
+  }
+  
+}
