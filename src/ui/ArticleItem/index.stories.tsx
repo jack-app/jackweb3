@@ -26,6 +26,9 @@ export const Default: Story = {
     image: "https://placehold.jp/360x200.png",
     date: "2021-01-01",
     title: "Title",
-    tags: ["tag1", "tag2"],
+    tags: [
+      { name: "Tag", color: "blue", isLink: false },
+      { name: "Tag", color: "blue", isLink: true },
+    ],
   },
 };
