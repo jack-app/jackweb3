@@ -1,0 +1,18 @@
+@use '@/styles/variables' as *;
+
+.link {
+  color : $white;
+  border-radius: $rounded;
+  padding: 2px 4px;  
+  display: inline-block;
+
+  &:hover {
+      opacity: 0.8;
+  }
+}
+
+.tag {
+  color : $white;
+  border-radius: $rounded;
+  padding: 2px 4px;
+}
