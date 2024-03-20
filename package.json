@@ -6,21 +6,36 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "plop": "plop"
   },
   "dependencies": {
     "destyle.css": "^4.0.1",
     "next": "14.1.0",
+    "plop": "^4.0.1",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.72.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.23",
+    "@storybook/addon-essentials": "^8.0.2",
+    "@storybook/addon-interactions": "^8.0.2",
+    "@storybook/addon-links": "^8.0.2",
+    "@storybook/addon-onboarding": "^8.0.2",
+    "@storybook/blocks": "^8.0.2",
+    "@storybook/nextjs": "^8.0.2",
+    "@storybook/react": "^8.0.2",
+    "@storybook/test": "^8.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "storybook": "^8.0.2",
     "typescript": "^5"
   }
 }
