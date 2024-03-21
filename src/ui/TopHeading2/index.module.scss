@@ -1,0 +1,21 @@
+@use '@/styles/variables' as 
+*;.wrapper {
+    background-color:transparent;
+    padding: 25px;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid $primary;
+    border-top: 3px solid $primary;
+    font-size: $text-5xl;
+    color: $primary;
+    font-weight: 1000;
+
+    @media screen and (max-width: $mobile){
+    font-size:$text-2xl;
+    padding: 15px;
+    }
+
+  }
