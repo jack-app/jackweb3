@@ -1,0 +1,28 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  background-color: transparent;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+
+.card{
+    margin: 1.5rem;
+}
+  .card__header{
+    display: flex;
+    border-bottom: 2px solid $primary;
+  }
+  .name{
+    font-size: $text-xl;
+    padding: 0 1rem;
+    
+  }
+  .text{
+    font-size: $text-base;
+  }
+  @media screen and (max-width: $pc){
+  
+  }
+  
+}
