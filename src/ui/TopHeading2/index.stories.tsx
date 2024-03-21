@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { TopHeading2 } from './';
+import type { Meta, StoryObj } from "@storybook/react";
+import { TopHeading2 } from "./";
 
 type T = typeof TopHeading2;
 
 const meta: Meta<T> = {
-  title: 'ui/TopHeading2',
+  title: "ui/TopHeading2",
   component: TopHeading2,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-  argTypes: {},
+  tags: ["autodocs"],
+  argTypes: { title: { control: "text" }, subTitle: { control: "text" } },
 };
 
 export default meta;
 type Story = StoryObj<T>;
 
 export const Default: Story = {
-  args: {},
+  args: { title: "Title", subTitle: "subTitle" },
 };
