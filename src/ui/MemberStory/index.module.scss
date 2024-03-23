@@ -1,22 +1,41 @@
-@use '@/styles/variables' as *;
+@use '@/styles/variables' as
 
-.wrapper {
+*;.wrapper {
   background-color: transparent;
   padding: 1rem;
+  margin: 2rem;
+  height: auto;
   width: 100%;
-  display: flex;
+  display: flex;  
+  margin: auto;
+
+  .photo{
+   background-color: #333;
+   width:244px;
+   height:244px;
+  }
 
 .card{
-    margin: 1.5rem;
-}
+    margin: 0 3rem;
+    width: 70%;
+ }
   .card__header{
     display: flex;
     border-bottom: 2px solid $primary;
+    padding: 1rem;
+    position: relative;
+    
   }
   .name{
-    font-size: $text-xl;
+    font-size: $text-5xl;
+    font-weight: 10;
+  }
+
+  .type{
+    color: $primary;
     padding: 0 1rem;
-    
+    // position: absolute;
+    // bottom: 0;
   }
   .text{
     font-size: $text-base;
