@@ -7,7 +7,7 @@ const meta: Meta<T> = {
   title: "ui/TopHeading2",
   component: TopHeading2,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
   tags: ["autodocs"],
   argTypes: { title: { control: "text" }, subTitle: { control: "text" } },
