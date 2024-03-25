@@ -1,0 +1,46 @@
+@use '@/styles/variables' as *;
+
+.btn {
+    border-radius: $rounded-full;
+    background-color: $primary;
+    color: $white;
+    box-shadow: $shadow;
+    border: 1px solid $primary;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        color: $primary;
+    }
+}
+
+//大きさ設定適当
+.small {
+    @extend .btn;
+    padding: 5px 10px;
+    font-size: small;
+
+}
+
+.medium {
+    @extend .btn;
+    padding: 10px 20px;
+}
+
+.large {
+    @extend .btn;
+    padding: 15px 30px;
+    font-size: $text-lg;
+}
+
+
+.text {
+    font-weight: lighter;
+}
+
+.icon {
+    margin-left: 5px;
+}
