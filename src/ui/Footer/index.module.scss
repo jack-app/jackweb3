@@ -1,0 +1,54 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+
+
+    .info {
+        display: flex;
+        font-size: $text-base;
+
+        @media (max-width: $mobile) {
+            flex-flow: column;
+        }
+    }
+
+    .link {
+        background-color: transparent;
+        font-weight: bold;
+        margin: 10px;
+    }
+
+    .linklist {
+        padding-top: 5px;
+        color: $black;
+        list-style: none;
+        font-weight: lighter;
+        text-decoration: underline solid $black;
+    }
+
+    .contact {
+        background-color: transparent;
+        font-weight: bold;
+        margin: 10px;
+
+        @media (max-width: $mobile) {
+            margin-top: 15px;
+        }
+    }
+
+    .contactlist {
+        color: $black;
+        padding-top: 5px;
+
+        li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        font-weight: lighter;
+    }
+}
