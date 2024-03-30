@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./index.module.scss";
 
@@ -13,7 +14,7 @@ export const MemberStory: React.FC<Props> = ({ name, text, type, image }) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.card_photo}>
-          <img
+          <Image
             className={styles.photo}
             src={image}
             width={244}
