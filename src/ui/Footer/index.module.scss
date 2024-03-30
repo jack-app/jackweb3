@@ -4,51 +4,74 @@
     background-color: $white;
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
+    padding: 48px 112px;
+    font-family: Avenir;
 
+    @media (max-width: $pc) {
+        padding: 40px 80px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 40px 24px;
+    }
+
+    .logo {
+        font-size: $text-base;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
 
     .info {
         display: flex;
         font-size: $text-base;
+        gap: 64px;
 
-        @media (max-width: $mobile) {
-            flex-flow: column;
+        @media (max-width: $pc) {
+            flex-direction: column;
+            gap: 40px;
         }
     }
+
 
     .link {
         background-color: transparent;
         font-weight: bold;
-        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .linklist {
-        padding-top: 5px;
         color: $black;
-        list-style: none;
         font-weight: lighter;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .linklist li {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        list-style: none;
         text-decoration: underline solid $black;
+        text-underline-offset: 6px;
     }
 
     .contact {
-        background-color: transparent;
         font-weight: bold;
-        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-        @media (max-width: $mobile) {
-            margin-top: 15px;
+        .contactlist {
+            color: $black;
+            display: flex;
+            gap: 24px;
+            font-weight: lighter;
+            align-items: center;
         }
-    }
-
-    .contactlist {
-        color: $black;
-        padding-top: 5px;
-
-        li {
-            display: inline-block;
-            list-style: none;
-        }
-
-        font-weight: lighter;
     }
 }
