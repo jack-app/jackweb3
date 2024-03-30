@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { BiPhotoAlbum } from "react-icons/bi";
-import { type } from "os";
 
 type Props = {
   image: string;
@@ -15,7 +13,13 @@ export const MemberStory: React.FC<Props> = ({ name, text, type, image }) => {
     <>
       <div className={styles.wrapper}>
         <div className={styles.card_photo}>
-          <img className={styles.photo} src={image} alt="メンバーのアイコン" />
+          <img
+            className={styles.photo}
+            src={image}
+            width={244}
+            height={244}
+            alt="メンバーのアイコン"
+          />
           <div className={styles.square}></div>
         </div>
 
