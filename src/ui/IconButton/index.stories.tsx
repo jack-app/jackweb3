@@ -10,7 +10,7 @@ const meta: Meta<T> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: { text: { control: "text" }, icon: { control: "text" } },
+  argTypes: { text: { control: "text" }, imgUrl: { control: "text" } },
 };
 
 export default meta;
@@ -19,8 +19,8 @@ type Story = StoryObj<T>;
 export const Default: Story = {
   args: {
     text: "IconButton",
-    icon: "icon",
+    imgUrl: "icon",
     onClick: () => console.log("Clicked"),
-    size: "m"
+    size: "s"
   },
 };

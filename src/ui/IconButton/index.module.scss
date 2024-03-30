@@ -17,22 +17,18 @@
     }
 }
 
-//大きさ設定適当
 .small {
     @extend .btn;
-    padding: 5px 10px;
-    font-size: small;
+    gap: 4px;
+    padding: 8px 16px;
+    font-size: $text-base;
 
-}
-
-.medium {
-    @extend .btn;
-    padding: 10px 20px;
 }
 
 .large {
     @extend .btn;
-    padding: 15px 30px;
+    gap: 8px;
+    padding: 16px 32px;
     font-size: $text-lg;
 }
 
