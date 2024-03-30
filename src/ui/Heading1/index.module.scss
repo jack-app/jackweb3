@@ -3,18 +3,22 @@
 
 .wrapper {
     background: linear-gradient($white, $background);
-    padding: 15px;
-    height: auto;
+    padding: 32px 80px;
     align-items: center;
+
+    @media screen and (max-width: $mobile) {
+        padding: 16px 24px;
+        // tabletの時
+        // padding: 16px 32px
+    }
 
     .heading1 {
         color: $primary;
         font-size: $text-5xl;
         font-weight: bold;
         font-family: "Oxanium";
-        margin: 10px;
 
-        @media (max-width: $mobile) {
+        @media screen and (max-width: $mobile) {
             font-size: 32px;
         }
 
@@ -22,19 +26,21 @@
 
     .page {
         display: flex;
+        gap: 8px;
         align-items: center;
-        margin-top: 20px;
         font-size: $text-base;
+        margin-top: 16px;
+
+        @media screen and (max-width: $mobile) {
+            margin-top: 8px;
+        }
     }
 
     .toppage {
         color: $link;
-        margin-right: 5px;
+        font-size: $text-base;
         text-decoration: underline solid $link;
     }
 
-    @media (max-width: $pc) {
-        width: 100%;
-    }
 
 }

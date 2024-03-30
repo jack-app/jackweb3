@@ -3,20 +3,19 @@ import React from 'react';
 import styles from './index.module.scss';
 
 type Props = {
-  heading1: string;
+  text: string;
   title: string;
-  // onPageClick: () => void;
 };
 
-export const Heading1: React.FC<Props> = ({ heading1, title }) => {
+export const Heading1: React.FC<Props> = ({ text, title }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.heading1}>
-        /* {heading1} */
+        &#47;&#42; {text} 	&#42;&#47;
       </div>
       <div className={styles.page}>
-        <Link href="/" className={styles.toppage}>トップページ </Link>
-        <span> ＞ </span>
+        <Link href="/" className={styles.toppage}>トップページ</Link>
+        <span>&#62;</span>
         <span>{title}</span>
       </div>
     </div>
