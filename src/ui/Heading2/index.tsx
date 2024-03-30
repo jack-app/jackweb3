@@ -7,6 +7,6 @@ type Props = {
 
 export const Heading2: React.FC<Props> = ({ text }) => {
   return (
-    <div className={styles.heading2}>#{text}</div>
+    <div className={styles.heading2}>&#9839;{text}</div>
   );
 };
