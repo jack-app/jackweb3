@@ -2,42 +2,71 @@
 
 *;.wrapper {
   background-color: transparent;
-  padding: 1rem;
-  margin: 2rem;
+  padding: 3rem;
+  margin: 0;
   height: auto;
   width: 100%;
   display: flex;  
-  margin: auto;
 
-  .photo{
-   background-color: #333;
-   width:244px;
-   height:244px;
+  .card_photo{
+    width: 270px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    flex: none; 
   }
 
-.card{
-    margin: 0 3rem;
-    width: 70%;
- }
+  .photo{
+   object-fit: cover;
+   width:244px;
+   height:244px;
+   margin: 0;
+   padding: 0;
+   position: absolute;
+   z-index: 0;
+  }
+
+  .square{
+    margin: auto;
+    width: 244px;
+    height: 244px;
+    background : linear-gradient(to bottom, #ffffff00, #C4C4C4);
+    top: 12px;
+    right: 12px;
+    position: absolute;
+    z-index: -1;
+  }
+    
+
+
+  .card{
+    margin: 0 0 0 24px;
+    flex: auto;
+  }
+
   .card__header{
     display: flex;
     border-bottom: 2px solid $primary;
-    padding: 1rem;
+    padding: 16px 0;
     position: relative;
-    
+    width: 100%;
   }
   .name{
-    font-size: $text-5xl;
+    padding: 0;
+    font-size: $text-4xl;
     font-weight: 10;
   }
 
   .type{
+    position: relative;
+    bottom: -10px;
     color: $primary;
     padding: 0 1rem;
-    // position: absolute;
-    // bottom: 0;
+    font-size: $text-lg;
+   
   }
   .text{
+    padding: 16px 0;
     font-size: $text-base;
   }
   @media screen and (max-width: $pc){
