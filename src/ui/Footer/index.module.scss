@@ -23,6 +23,13 @@
         align-items: center;
     }
 
+    .logoImg {
+        @media (max-width: $pc) {
+            width: 100px;
+            height: 75px;
+        }
+    }
+
     .info {
         display: flex;
         font-size: $text-base;
