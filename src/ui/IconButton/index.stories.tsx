@@ -19,7 +19,7 @@ type Story = StoryObj<T>;
 export const Default: Story = {
   args: {
     text: "IconButton",
-    imgUrl: "https://www.svgrepo.com/show/109221/next.svg",
+    imgUrl: "https://placehold.jp/24x24.png",
     onClick: () => console.log("Clicked"),
     size: "s"
   },
