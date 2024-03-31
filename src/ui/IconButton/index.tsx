@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React from 'react';
 import styles from './index.module.scss';
+import Image from "next/image";
 
 type Props = {
   text: string;
@@ -20,7 +21,8 @@ export const IconButton: React.FC<Props> = ({ text, imgUrl, onClick, size }) => 
   return (
     <button className={btnClassName} onClick={onClick}>
       <span className={styles.text}>{text}</span>
-      <img src={imgUrl} alt="icon" />
+      <Image src={imgUrl} alt="icon" className={styles.icon}
+        width={24} height={24} />
     </button>
   );
 };
