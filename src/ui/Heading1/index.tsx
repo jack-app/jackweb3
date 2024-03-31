@@ -1,22 +1,22 @@
-import Link from "next/link"
-import React from 'react';
-import styles from './index.module.scss';
+import Link from "next/link";
+import React from "react";
+import styles from "./index.module.scss";
 
 type Props = {
-  text: string;
-  title: string;
+  enTitle: string;
+  jaTitle: string;
 };
 
-export const Heading1: React.FC<Props> = ({ text, title }) => {
+export const Heading1: React.FC<Props> = ({ enTitle, jaTitle }) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.heading1}>
-        &#47;&#42; {text} 	&#42;&#47;
-      </div>
+      <div className={styles.heading1}>&#47;&#42; {enTitle} &#42;&#47;</div>
       <div className={styles.page}>
-        <Link href="/" className={styles.toppage}>トップページ</Link>
+        <Link href="/" className={styles.toppage}>
+          トップページ
+        </Link>
         <span>&#62;</span>
-        <span>{title}</span>
+        <span>{jaTitle}</span>
       </div>
     </div>
   );

@@ -4,12 +4,18 @@
 .wrapper {
     background: linear-gradient($white, $background);
     padding: 32px 80px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media screen and (max-width: $pc) {
+        padding: 16px 32px;
+        gap: 8px;
+    }
 
     @media screen and (max-width: $mobile) {
         padding: 16px 24px;
-        // tabletの時
-        // padding: 16px 32px
+        gap: 8px;
     }
 
     .heading1 {
@@ -18,7 +24,7 @@
         font-weight: bold;
         font-family: "Oxanium";
 
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: $pc) {
             font-size: 32px;
         }
 
@@ -29,11 +35,6 @@
         gap: 8px;
         align-items: center;
         font-size: $text-base;
-        margin-top: 16px;
-
-        @media screen and (max-width: $mobile) {
-            margin-top: 8px;
-        }
     }
 
     .toppage {
@@ -41,6 +42,4 @@
         font-size: $text-base;
         text-decoration: underline solid $link;
     }
-
-
 }
