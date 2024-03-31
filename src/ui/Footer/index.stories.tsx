@@ -7,7 +7,7 @@ const meta: Meta<T> = {
   title: 'ui/Footer',
   component: Footer,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
   argTypes: {},
