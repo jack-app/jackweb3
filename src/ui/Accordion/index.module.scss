@@ -1,0 +1,59 @@
+@use '@/styles/variables' as *;
+
+.accordion {
+    width: 100%;
+}
+
+details[open] .icon {
+    transform: rotate(180deg);
+}
+
+.question {
+    background-color: $primary-background;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    box-shadow: $shadow;
+}
+
+.answer {
+    background-color: $white;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 24px 32px;
+    box-shadow: $shadow;
+
+
+}
+
+.q_sentence {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.a_sentence {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.capital {
+    font-size: $text-2xl;
+    font-weight: bold;
+    font-family: Oxanium;
+    color: $primary ;
+}
+
+.q_content {
+    font-size: $text-lg;
+    font-family: "Hiragino Kaku Gothic Pro";
+}
+
+.a_content {
+    font-size: $text-lg;
+}
