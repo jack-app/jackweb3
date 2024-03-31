@@ -15,7 +15,6 @@ export const Accordion: React.FC<Props> = ({ question, answer }) => {
           <span className={styles.capital}>Q&#46;</span><span className={styles.q_content}>{question}</span>
         </div>
         <Image src="/image 2.png" alt="open" className={styles.icon} width={25} height={27} />
-
       </summary>
       <div className={styles.answer}>
         <div className={styles.a_sentence}>
