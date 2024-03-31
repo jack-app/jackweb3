@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./index.module.scss";
-import { Props as TagProps, Tag } from "../Tag";
+import { TagType, Tag } from "../Tag";
 
-type Props = {
+export type Props = {
   id: string;
   image: string;
   date: string;
   title: string;
-  tags: TagProps[];
+  tags: TagType[];
 };
 
 export const ArticleItem: React.FC<Props> = ({ id, image, date, title, tags }) => {

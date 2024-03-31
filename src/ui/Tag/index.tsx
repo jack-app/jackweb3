@@ -3,10 +3,14 @@ import React from "react";
 import styles from "./index.module.scss";
 import { Color, convertToColor } from "./logics";
 
-export type Props = {
+type Props = {
   name: string;
   color: Color;
   isLink?: boolean;
+};
+
+export type TagType = Props & {
+  id: string;
 };
 
 export const Tag: React.FC<Props> = ({ name, color, isLink = false }) => {
