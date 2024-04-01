@@ -63,8 +63,9 @@
         gap: 4px;
         align-items: center;
         list-style: none;
-        text-decoration: underline solid $black;
         text-underline-offset: 6px;
+        border-bottom: 1px solid $black;
+        width: fit-content;
     }
 
     .contact {
