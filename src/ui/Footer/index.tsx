@@ -10,7 +10,7 @@ export const Footer: React.FC<Props> = (props) => {
     <div className={styles.wrapper}>
       <div className={styles.logo}>
         <Image
-          src="/Frame 90.png"
+          src="/jack_logo.png"
           alt="jackロゴ"
           className={styles.logoImg}
           width={124}
@@ -49,7 +49,7 @@ export const Footer: React.FC<Props> = (props) => {
           <ul className={styles.contactlist}>
             <li>
               <Link href="https://line.me/ti/p/@jnm6180c" target="_blank" rel="noopener noreferrer">
-                <Image src="LINE_Brand_icon 1.png" alt="line" width={40} height={40} />
+                <Image src="/LINE_icon.png" alt="line" width={40} height={40} />
               </Link>
             </li>
             <li>
@@ -58,12 +58,12 @@ export const Footer: React.FC<Props> = (props) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src="/logo-black 1.png" alt="x" width={40} height={39} />
+                <Image src="/X_icon.png" alt="x" width={40} height={39} />
               </Link>
             </li>
             <li>
               <Link href="mailto:jack.app.tmy@gmail.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/Vector.png" alt="mail" width={40} height={32} />
+                <Image src="/mail_icon.png" alt="mail" width={40} height={32} />
               </Link>
             </li>
           </ul>
