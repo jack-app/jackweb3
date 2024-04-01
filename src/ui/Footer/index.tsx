@@ -49,7 +49,7 @@ export const Footer: React.FC<Props> = (props) => {
           <ul className={styles.contactlist}>
             <li>
               <Link href="https://line.me/ti/p/@jnm6180c" target="_blank" rel="noopener noreferrer">
-                <Image src="LINE_icon.png" alt="line" width={40} height={40} />
+                <Image src="/LINE_icon.png" alt="line" width={40} height={40} />
               </Link>
             </li>
             <li>
