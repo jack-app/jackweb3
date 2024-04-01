@@ -6,13 +6,13 @@ import { TagType, Tag } from "../Tag";
 
 export type Props = {
   id: string;
-  image: string;
+  image?: string;
   date: string;
   title: string;
   tags: TagType[];
 };
 
-export const ArticleItem: React.FC<Props> = ({ id, image, date, title, tags }) => {
+export const ArticleItem: React.FC<Props> = ({ id, image = "", date, title, tags }) => {
   return (
     <article className={styles.wrapper}>
       <Image src={image} alt={title} width={360} height={200} className={styles.image} />
