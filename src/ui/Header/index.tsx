@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { IoMdMenu } from "react-icons/io";
-import styles from "./index.module.scss";
 import { useState } from "react";
+import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import styles from "./index.module.scss";
 
 type Props = {};
 
@@ -11,8 +11,8 @@ export const Header: React.FC<Props> = (props) => {
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
-    setShowNav(!showNav)
-  }
+    setShowNav(!showNav);
+  };
   const closeMenu = () => {
     setShowNav(false);
   };
@@ -23,12 +23,24 @@ export const Header: React.FC<Props> = (props) => {
       </Link>
       <div className={styles.right}>
         <nav className={styles.nav}>
-          <Link href="/products" onClick={closeMenu}>プロダクト</Link>
-          <Link href="/Members" onClick={closeMenu}>メンバー</Link>
-          <Link href="/Activities" onClick={closeMenu}>活動内容</Link>
-          <Link href="/Achievements" onClick={closeMenu}>活動実績</Link>
-          <Link href="/FAQ" onClick={closeMenu}>FAQ</Link>
-          <Link href="/blog" onClick={closeMenu}>ブログ</Link>
+          <Link href="/products" onClick={closeMenu}>
+            プロダクト
+          </Link>
+          <Link href="/members" onClick={closeMenu}>
+            メンバー
+          </Link>
+          <Link href="/activities" onClick={closeMenu}>
+            活動内容
+          </Link>
+          <Link href="/achievements" onClick={closeMenu}>
+            活動実績
+          </Link>
+          <Link href="/faq" onClick={closeMenu}>
+            FAQ
+          </Link>
+          <Link href="/blog" onClick={closeMenu}>
+            ブログ
+          </Link>
         </nav>
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
@@ -49,20 +61,31 @@ export const Header: React.FC<Props> = (props) => {
           </button>
         )}
       </div>
-      <div className={`${styles.menu} ${showNav ? styles.display : ''}`}>
+      <div className={`${styles.menu} ${showNav ? styles.display : ""}`}>
         <button className={styles.black} onClick={closeMenu}></button>
         <div className={styles.menubar}>
-          <nav className={styles.hamburgerNav} >
-            <Link href="/products" onClick={closeMenu}>プロダクト</Link>
-            <Link href="/Members" onClick={closeMenu}>メンバー</Link>
-            <Link href="/Activities" onClick={closeMenu}>活動内容</Link>
-            <Link href="/Achievements" onClick={closeMenu}>活動実績</Link>
-            <Link href="/FAQ" onClick={closeMenu}>FAQ</Link>
-            <Link href="/blog" onClick={closeMenu}>ブログ</Link>
+          <nav className={styles.hamburgerNav}>
+            <Link href="/products" onClick={closeMenu}>
+              プロダクト
+            </Link>
+            <Link href="/members" onClick={closeMenu}>
+              メンバー
+            </Link>
+            <Link href="/activities" onClick={closeMenu}>
+              活動内容
+            </Link>
+            <Link href="/achievements" onClick={closeMenu}>
+              活動実績
+            </Link>
+            <Link href="/faq" onClick={closeMenu}>
+              FAQ
+            </Link>
+            <Link href="/blog" onClick={closeMenu}>
+              ブログ
+            </Link>
           </nav>
         </div>
       </div>
-
     </header>
   );
 };
