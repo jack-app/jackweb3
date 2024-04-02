@@ -56,48 +56,69 @@
       color: $primary;
     }
   }
+}
 
-  .menuButton {
+.hamburger_menu {
+  display: flex;
+  align-items: center;
+
+  .menubtn {
     display: none;
 
     @media screen and (max-width: $pc) {
       display: block;
     }
+
+    .closeBtn {
+      display: none;
+    }
   }
-}
 
-.menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 430px;
-  left: 0;
-  padding: 0;
-}
+  #menu_btn_check {
+    display: block;
+  }
 
-.black {
-  background-color: rgba(0, 0, 0, 0.5);
-  flex-grow: 1;
-}
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    padding: 0;
+  }
 
-.menubar {
-  padding: 32px 0px;
-  background-color: $white;
-  width: 270px;
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid $black;
-  font-size: 18px;
-  font-family: "Hiragino Kaku Gothic Pro";
-}
+  #menu_btn_check:checked~.menu {
+    display: flex;
+  }
 
-.hamburgerNav {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+  #menu_btn_check:checked~.hamburgerBtn {
+    display: none
+  }
 
-.menu.display {
-  display: flex;
+  #menu_btn_check:checked~.closeBtn {
+    display: block
+  }
+
+  .black {
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-grow: 1;
+  }
+
+  .menubar {
+    padding: 32px 0px;
+    background-color: $white;
+    width: 270px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $black;
+    font-size: 18px;
+    font-family: "Hiragino Kaku Gothic Pro";
+  }
+
+  .hamburgerNav {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }

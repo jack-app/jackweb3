@@ -8,27 +8,19 @@ import { IoClose } from "react-icons/io5";
 type Props = {};
 
 export const Header: React.FC<Props> = (props) => {
-  const [showNav, setShowNav] = useState(false);
-
-  const toggleNav = () => {
-    setShowNav(!showNav)
-  }
-  const closeMenu = () => {
-    setShowNav(false);
-  };
   return (
     <header className={styles.wrapper}>
       <Link href="/" className={styles.logo}>
         jack
       </Link>
       <div className={styles.right}>
-        <nav className={styles.nav}>
-          <Link href="/products" onClick={closeMenu}>プロダクト</Link>
-          <Link href="/Members" onClick={closeMenu}>メンバー</Link>
-          <Link href="/Activities" onClick={closeMenu}>活動内容</Link>
-          <Link href="/Achievements" onClick={closeMenu}>活動実績</Link>
-          <Link href="/FAQ" onClick={closeMenu}>FAQ</Link>
-          <Link href="/blog" onClick={closeMenu}>ブログ</Link>
+        <nav className={styles.nav} >
+          <Link href="/products">プロダクト</Link>
+          <Link href="/Members" >メンバー</Link>
+          <Link href="/Activities" >活動内容</Link>
+          <Link href="/Achievements">活動実績</Link>
+          <Link href="/FAQ">FAQ</Link>
+          <Link href="/blog" >ブログ</Link>
         </nav>
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
@@ -38,28 +30,25 @@ export const Header: React.FC<Props> = (props) => {
         >
           体験応募はこちら
         </Link>
-        {!showNav && (
-          <button className={styles.menuButton} onClick={toggleNav}>
-            <IoMdMenu size={24} />
-          </button>
-        )}
-        {showNav && (
-          <button className={styles.closeButton} onClick={closeMenu}>
-            <IoClose size={24} />
-          </button>
-        )}
-      </div>
-      <div className={`${styles.menu} ${showNav ? styles.display : ''}`}>
-        <button className={styles.black} onClick={closeMenu}></button>
-        <div className={styles.menubar}>
-          <nav className={styles.hamburgerNav} >
-            <Link href="/products" onClick={closeMenu}>プロダクト</Link>
-            <Link href="/Members" onClick={closeMenu}>メンバー</Link>
-            <Link href="/Activities" onClick={closeMenu}>活動内容</Link>
-            <Link href="/Achievements" onClick={closeMenu}>活動実績</Link>
-            <Link href="/FAQ" onClick={closeMenu}>FAQ</Link>
-            <Link href="/blog" onClick={closeMenu}>ブログ</Link>
-          </nav>
+        <div className={styles.hamburger_menu}>
+          <input type="checkbox" id={styles.menu_btn_check} /*className={styles.menu_btn_check}*/ />
+          <label htmlFor={styles.menu_btn_check} className={styles.menubtn}>
+            <IoMdMenu size={24} className={styles.hambuergerBtn} />
+            <IoClose size={24} className={styles.closeBtn} />
+          </label>
+          <div className={styles.menu}>
+            <button className={styles.black} ></button>
+            <div className={styles.menubar}>
+              <nav className={styles.hamburgerNav} >
+                <Link href="/products">プロダクト</Link>
+                <Link href="/Members" >メンバー</Link>
+                <Link href="/Activities" >活動内容</Link>
+                <Link href="/Achievements">活動実績</Link>
+                <Link href="/FAQ">FAQ</Link>
+                <Link href="/blog" >ブログ</Link>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
 
