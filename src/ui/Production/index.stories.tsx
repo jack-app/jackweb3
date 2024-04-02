@@ -1,21 +1,29 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Production } from './';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Production } from "./";
 
 type T = typeof Production;
 
 const meta: Meta<T> = {
-  title: 'ui/Production',
+  title: "ui/Production",
   component: Production,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-  argTypes: {},
+  tags: ["autodocs"],
+  argTypes: {
+    image: { control: "text" },
+    title: { control: "text" },
+    text: { control: "text" },
+  },
 };
 
 export default meta;
 type Story = StoryObj<T>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    image: "https://placehold.jp/352x200.png",
+    title: "jack-web",
+    text: "サイトの説明です。サイトの説明を書くことができます。サイトの説明を見ることもできます。",
+  },
 };
