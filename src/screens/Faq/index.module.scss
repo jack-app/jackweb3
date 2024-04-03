@@ -1,1 +1,19 @@
 @use '@/styles/variables' as *;
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    // ???
+    width: 1120px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
