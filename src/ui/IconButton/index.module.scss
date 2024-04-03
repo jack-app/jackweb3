@@ -1,0 +1,42 @@
+@use '@/styles/variables' as *;
+
+.btn {
+    border-radius: $rounded-full;
+    background-color: $primary;
+    color: $white;
+    box-shadow: $shadow;
+    border: 1px solid $primary;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        color: $primary;
+    }
+}
+
+.small {
+    @extend .btn;
+    gap: 4px;
+    padding: 8px 16px;
+    font-size: $text-base;
+
+}
+
+.large {
+    @extend .btn;
+    gap: 8px;
+    padding: 16px 32px;
+    font-size: $text-lg;
+}
+
+
+.text {
+    font-weight: lighter;
+}
+
+.icon {
+    margin-left: 5px;
+}

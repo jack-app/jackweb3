@@ -1,0 +1,85 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 48px 112px;
+    font-family: Avenir;
+
+    @media (max-width: $pc) {
+        padding: 40px 80px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 40px 24px;
+    }
+
+    .logo {
+        font-size: $text-base;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logoImg {
+        @media (max-width: $pc) {
+            width: 100px;
+            height: 75px;
+        }
+    }
+
+    .info {
+        display: flex;
+        font-size: $text-base;
+        gap: 64px;
+
+        @media (max-width: $pc) {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+
+    .link {
+        background-color: transparent;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .linklist {
+        color: $black;
+        font-weight: lighter;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .linklist li {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        list-style: none;
+        text-underline-offset: 6px;
+        border-bottom: 1px solid $black;
+        width: fit-content;
+    }
+
+    .contact {
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .contactlist {
+            color: $black;
+            display: flex;
+            gap: 24px;
+            font-weight: lighter;
+            align-items: center;
+        }
+    }
+}
