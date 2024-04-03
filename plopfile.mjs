@@ -1,6 +1,6 @@
-export default function (
+export default function plopfile(
   /** @type {import('plop').NodePlopAPI} */
-  plop
+  plop,
 ) {
   plop.setGenerator("feature", {
     description: "Create a new feature component",
@@ -20,14 +20,12 @@ export default function (
       {
         type: "add",
         path: "src/features/{{pascalCase name}}/presentations/index.stories.tsx",
-        templateFile:
-          "plop-templates/feature/presentations/feature.stories.tsx.hbs",
+        templateFile: "plop-templates/feature/presentations/feature.stories.tsx.hbs",
       },
       {
         type: "add",
         path: "src/features/{{pascalCase name}}/presentations/index.module.scss",
-        templateFile:
-          "plop-templates/feature/presentations/feature.module.scss.hbs",
+        templateFile: "plop-templates/feature/presentations/feature.module.scss.hbs",
       },
       {
         type: "add",
@@ -65,6 +63,28 @@ export default function (
         type: "add",
         path: "src/ui/{{pascalCase name}}/index.module.scss",
         templateFile: "plop-templates/ui/ui.module.scss.hbs",
+      },
+    ],
+  });
+  plop.setGenerator("screen", {
+    description: "Create a new screen component",
+    prompts: [
+      {
+        type: "input",
+        name: "name",
+        message: "What is the name of the screen component?",
+      },
+    ],
+    actions: [
+      {
+        type: "add",
+        path: "src/screens/{{pascalCase name}}/index.tsx",
+        templateFile: "plop-templates/screen/screen.tsx.hbs",
+      },
+      {
+        type: "add",
+        path: "src/screens/{{pascalCase name}}/index.module.scss",
+        templateFile: "plop-templates/screen/screen.module.scss.hbs",
       },
     ],
   });
