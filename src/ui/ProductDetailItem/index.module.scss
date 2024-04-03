@@ -1,0 +1,82 @@
+@use '@/styles/variables' as *;
+
+.wrapper{
+    width: 530px;
+    height: 310px;
+    background-color:aqua;
+}
+
+.head_line{
+    border-bottom: 1px solid #fff;
+    background-color: black;
+    text-decoration: underline;
+    margin: 0;
+    height: 25px; 
+}
+
+.context{
+    display: flex;
+}
+
+.context_left{
+    position: relative;
+    width: 220px;
+}
+.image{
+    margin: 2.5rem 2.7rem;
+    background-color: #fff;
+    object-fit: cover;
+}
+
+.number{
+    color: #fff;
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    font-size: $text-4xl;
+    // font-family:;
+}
+
+.title{
+    font-size: large;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    bottom: 135px;
+    width: 120px;
+    text-align: end;
+}
+
+.sub_description{
+    font-size: $rounded-xl;
+    text-align: end;
+    // margin: 10px;
+    padding: 0;
+    width: 120px;
+
+}
+
+.line{
+    border-left: 1px solid #fff;
+    margin: 1rem 0;
+    padding: 0;
+    height: 245px;
+}
+.decoration_number{
+    margin: 10px 1rem;
+    width: 20px;
+    text-align: end;
+}
+.context_right{
+    margin:10px 1rem;
+    width: 315px;
+}
+
+
+.link{
+    color: blue;
+}
+
+.git{
+    color: brown;
+}
