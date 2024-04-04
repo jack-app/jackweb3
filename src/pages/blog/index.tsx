@@ -1,16 +1,11 @@
-import { ArticleList } from "@/features/ArticleList";
+import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import createImage from "@/utils/createImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { getDatabase } from "@/utils/notion";
 
 export default function Blog({ articles }: { articles: ArticleItemProps[] }) {
-  return (
-    <div>
-      <h1>Blog</h1>
-      <ArticleList articles={articles} />
-    </div>
-  );
+  return <BlogScreen articles={articles} />;
 }
 
 export async function getStaticProps() {

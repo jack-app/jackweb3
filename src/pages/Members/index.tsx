@@ -1,7 +1,5 @@
+import { MembersScreen } from "@/screens/Members";
+
 export default function Members() {
-  return (
-    <div>
-      <h1>Members</h1>
-    </div>
-  );
+  return <MembersScreen />;
 }
