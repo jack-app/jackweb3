@@ -1,13 +1,11 @@
-import React from "react";
-import { useGetArticles } from "@/utils/useGetArticles";
+import React, { useEffect, useState } from "react";
+import { getArticles } from "@/utils/useGetArticles";
 import { ArticleListPresentation } from "./presentations/";
 
 type Props = {
-  tag?: string;
-  writer?: string;
+  articles: any;
 };
 
-export const ArticleList: React.FC<Props> = async ({ tag, writer }) => {
-  const articles = await useGetArticles(tag, writer);
-  return <ArticleListPresentation articles={articles} tag={tag} writer={writer} />;
+export const ArticleList: React.FC<Props> = ({ articles }) => {
+  return <ArticleListPresentation articles={articles} />;
 };
