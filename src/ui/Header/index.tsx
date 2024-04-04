@@ -31,11 +31,20 @@ export const Header: React.FC<Props> = (props) => {
           体験応募はこちら
         </Link>
         <div className={styles.hamburger_menu}>
-          <input type="checkbox" id={styles.menu_btn_check} /*className={styles.menu_btn_check}*/ />
-          <label htmlFor={styles.menu_btn_check} className={styles.menubtn}>
-            <IoMdMenu size={24} className={styles.hambuergerBtn} />
-            <IoClose size={24} className={styles.closeBtn} />
+          <input type="checkbox" id={styles.check1} className={styles.menu_btn_check} />
+          <label htmlFor={styles.check1} className={styles.menubtn}><span className={styles.a}>a</span>
+            {/* <IoMdMenu size={24} className={styles.hamburger_btn} /> */}
           </label>
+          {/* <input type="checkbox" id={styles.check2} className={styles.menu_btn_check} />
+          <label htmlFor={styles.check2} className={styles.menubtn}>
+            <IoClose size={24} className={styles.close_btn} />
+          </label> */}
+          <div className={styles.ham_btn}>
+            <IoMdMenu size={24} className={styles.hamburger_btn} />
+          </div>
+          <div className={styles.clo_btn}>
+            <IoClose size={24} className={styles.close_btn} />
+          </div>
           <div className={styles.menu}>
             <button className={styles.black} ></button>
             <div className={styles.menubar}>

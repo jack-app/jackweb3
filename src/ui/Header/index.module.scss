@@ -61,6 +61,7 @@
 .hamburger_menu {
   display: flex;
   align-items: center;
+  border: 1px solid black;
 
   .menubtn {
     display: none;
@@ -69,12 +70,30 @@
       display: block;
     }
 
-    .closeBtn {
+    .ham_btn {
       display: none;
+
+      @media screen and (max-width: $pc) {
+        display: block;
+      }
+    }
+
+    // .clo_btn {
+    //   display: none;
+
+    //   @media screen and (max-width: $pc) {
+    //     display: block;
+    //   }
+    // }
+
+    .a {
+      height: 24px;
+      width: 24px;
+      border: 1px solid black;
     }
   }
 
-  #menu_btn_check {
+  #check1 {
     display: block;
   }
 
@@ -88,15 +107,25 @@
     padding: 0;
   }
 
-  #menu_btn_check:checked~.menu {
+  #check1:checked~.menu {
     display: flex;
   }
 
-  #menu_btn_check:checked~.hamburgerBtn {
+  // .ham_btn {
+  //   display: block;
+  // }
+
+  #check1:checked~.ham_btn {
     display: none
   }
 
-  #menu_btn_check:checked~.closeBtn {
+  // これだと交互に押さないと
+  // menuにはきいていてボタンにはきいていない→クラスをmenuと同じ感じにする必要がある？
+  .clo_btn {
+    display: none;
+  }
+
+  #check1:checked~.clo_btn {
     display: block
   }
 
