@@ -10,9 +10,6 @@ type Props = {
   image: string;
   title: String;
   text: String;
-  weblink: "t" | "f";
-  applink: "t" | "f";
-  googlelink: "t" | "f";
   web_onClick?: () => void;
   app_onClick?: () => void;
   google_onClick?: () => void;
@@ -22,54 +19,45 @@ export const Production: React.FC<Props> = ({
   image,
   title,
   text,
-  weblink,
-  applink,
-  googlelink,
   web_onClick,
   app_onClick,
   google_onClick,
 }) => {
   return (
     <div className={styles.wrapper}>
-      <Image
-        className={styles.item_img}
-        src={image}
-        alt="プロダクトの画像"
-        width={352}
-        height={200}
-      />
+      <Image className={styles.item_img} src={image} alt="" width={352} height={200} />
       <div className={styles.item_context}>
         <div className={styles.context}>
           <div className={styles.title}>{title}</div>
           <div className={styles.text}>{text}</div>
           <div className={styles.tag}>
-            {weblink === "t" && (
+            {web_onClick && (
               <div>
                 <IconButton
-                  text={"サイト"}
+                  text="サイト"
                   imgUrl={website}
                   onClick={web_onClick || (() => {})}
-                  size={"s"}
+                  size="s"
                 />
               </div>
             )}
-            {applink === "t" && (
+            {app_onClick && (
               <div>
                 <IconButton
-                  text={"App Store"}
+                  text="App Store"
                   imgUrl={apple}
                   onClick={app_onClick || (() => {})}
-                  size={"s"}
+                  size="s"
                 />
               </div>
             )}
-            {googlelink === "t" && (
+            {google_onClick && (
               <div>
                 <IconButton
-                  text={"Google Play"}
+                  text="Google Play"
                   imgUrl={google}
                   onClick={google_onClick || (() => {})}
-                  size={"s"}
+                  size="s"
                 />
               </div>
             )}
