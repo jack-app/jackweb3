@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { IconButton } from "./";
+import { IconLink } from ".";
 import { FaGithub } from "react-icons/fa";
 
-type T = typeof IconButton;
+type T = typeof IconLink;
 
 const meta: Meta<T> = {
-  title: "ui/IconButton",
-  component: IconButton,
+  title: "ui/IconLink",
+  component: IconLink,
   parameters: {
     layout: "centered",
   },
@@ -15,6 +15,7 @@ const meta: Meta<T> = {
     href: { control: "text" },
     text: { control: "text" },
     icon: { control: "text" },
+    openInNewTab: { control: "boolean" },
   },
 };
 
@@ -24,17 +25,19 @@ type Story = StoryObj<T>;
 export const Small: Story = {
   args: {
     href: "https://www.google.com/",
-    text: "IconButton",
+    text: "IconLink",
     icon: FaGithub,
     size: "s",
+    openInNewTab: true,
   },
 };
 
 export const Large: Story = {
   args: {
     href: "https://www.google.com/",
-    text: "IconButton",
+    text: "IconLink",
     icon: FaGithub,
     size: "l",
+    openInNewTab: false,
   },
 };

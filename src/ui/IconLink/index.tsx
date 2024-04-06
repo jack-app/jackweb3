@@ -8,9 +8,16 @@ type Props = {
   text: string;
   icon: IconType;
   size: "s" | "l";
+  openInNewTab?: boolean;
 };
 
-export const IconButton: React.FC<Props> = ({ href, icon: Icon, text, size }) => {
+export const IconLink: React.FC<Props> = ({
+  href,
+  icon: Icon,
+  text,
+  size,
+  openInNewTab = false,
+}) => {
   let btnClassName = `${styles.btn} `;
   if (size === "s") {
     btnClassName += `${styles.small}`;
@@ -18,8 +25,10 @@ export const IconButton: React.FC<Props> = ({ href, icon: Icon, text, size }) =>
     btnClassName += `${styles.large}`;
   }
 
+  const targetProps = openInNewTab ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <Link href={href} className={btnClassName}>
+    <Link href={href} className={btnClassName} {...targetProps}>
       <span className={styles.text}>{text}</span>
       <Icon className={styles.icon} width={24} height={24} />
     </Link>
