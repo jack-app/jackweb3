@@ -25,7 +25,7 @@ export const ArticleItem: React.FC<Props> = ({ id, image, date, title, tags }) =
       <div className={styles.descriptionWrapper}>
         <span className={styles.date}>{date}</span>
         <h3 className={styles.title}>
-          <Link href={`/${id}`} className={styles.link}>
+          <Link href={`/blog/${id}`} className={styles.link}>
             {title}
           </Link>
         </h3>

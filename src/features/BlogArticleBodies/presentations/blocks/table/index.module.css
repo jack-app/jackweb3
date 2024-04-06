@@ -1,0 +1,13 @@
+.table {
+    border: 1px solid currentColor;
+    border-collapse: collapse;
+  }
+  .table th {
+    border: 1px solid currentColor;
+    background-color: rgb(242, 242, 242);
+    padding: 6px 12px;
+  }
+  .table td {
+    border: 1px solid currentColor;
+    padding: 6px 12px;
+  }
