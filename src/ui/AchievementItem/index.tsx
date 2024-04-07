@@ -1,38 +1,32 @@
 import React from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { IconButton } from "../IconButton";
+import { IconLink } from "../IconLink";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
+import { FaGooglePlay } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 type Props = {
   date: String;
   text: String;
   image: string;
-  articlelink: "t" | "f";
-  weblink: "t" | "f";
-  applink: "t" | "f";
-  googlelink: "t" | "f";
-  gitlink: "t" | "f";
-  article_onClick?: () => void;
-  web_onClick?: () => void;
-  app_onClick?: () => void;
-  google_onClick?: () => void;
-  git_onClick?: () => void;
+  article_href: String;
+  web_href: String;
+  app_href: String;
+  google_href: String;
+  git_href: String;
 };
 
 export const AchievementItem: React.FC<Props> = ({
   date,
   text,
   image,
-  articlelink,
-  weblink,
-  applink,
-  googlelink,
-  gitlink,
-  article_onClick,
-  web_onClick,
-  app_onClick,
-  google_onClick,
-  git_onClick,
+  article_href,
+  web_href,
+  app_href,
+  google_href,
+  git_href,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -41,44 +35,42 @@ export const AchievementItem: React.FC<Props> = ({
         <div className={styles.text}>{text}</div>
         <div className={styles.tag}>
           <div className={styles.tag}>
-            {articlelink === "t" && (
+            {article_href && (
               <div>
-                <IconButton
-                  text={"See Article"}
-                  imgUrl={""}
-                  onClick={article_onClick || (() => {})}
-                  size={"s"}
+                <IconLink
+                  href={""}
+                  text="See Article"
+                  icon={FaExternalLinkAlt}
+                  size="s"
+                  openInNewTab
                 />
               </div>
             )}
-            {weblink === "t" && (
+            {web_href && (
               <div>
-                <IconButton
-                  text={"webサイト"}
-                  imgUrl={""}
-                  onClick={web_onClick || (() => {})}
-                  size={"s"}
+                <IconLink
+                  href={""}
+                  text="webサイト"
+                  icon={FaExternalLinkAlt}
+                  size="s"
+                  openInNewTab
                 />
               </div>
             )}
-            {applink === "t" && (
+            {app_href && (
               <div>
-                <IconButton
-                  text={"App Store"}
-                  imgUrl={""}
-                  onClick={app_onClick || (() => {})}
-                  size={"s"}
-                />
+                <IconLink href={""} text="App Store" icon={FaApple} size="s" openInNewTab />
               </div>
             )}
-            {googlelink === "t" && (
+            {google_href && (
               <div>
-                <IconButton
-                  text={"Google Play"}
-                  imgUrl={""}
-                  onClick={google_onClick || (() => {})}
-                  size={"s"}
-                />
+                <IconLink href={""} text="Google Play" icon={FaGooglePlay} size="s" openInNewTab />
+              </div>
+            )}
+
+            {git_href && (
+              <div>
+                <IconLink href={""} text="GitHub" icon={FaGithub} size="s" openInNewTab />
               </div>
             )}
           </div>
