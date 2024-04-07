@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
 import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block } from "@/types/block";
+import createImage from "@/utils/createImage";
 import { getBlocks, getDatabase } from "@/utils/notion";
 
 export default function Article({ id, blocks }: { id: string; blocks: Block[] }) {
@@ -23,12 +23,24 @@ export const getStaticProps = async () => {
   const databaseId = process.env.NOTION_DATABASE_ID;
   const blocks = (await getBlocks(databaseId)) as Block[];
 
-  //TODO: ここで画像を取得する処理を追加する
+  // 画像生成ではNode.jsの機能を使うため、getStaticProps内で行う
+  const filteredBlocks = blocks.map((block) => {
+    const { type, id } = block;
+    if (type === "image") {
+      const image = block[type];
+      if (!image) return block;
+
+      if (image.type === "file" && image.file) {
+        const src = createImage(databaseId, id, image.file.url);
+        return { ...block, [type]: { ...image, file: src } };
+      }
+    }
+  });
 
   return {
     props: {
       id: databaseId,
-      blocks,
+      blocks: filteredBlocks,
     },
   };
 };
