@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import styles from './index.module.scss';
 
 type ActivitiesCarouselProps = {
@@ -7,47 +7,16 @@ type ActivitiesCarouselProps = {
   duration?: number;
 };
 
-export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({ images, interval = 5000, duration = 500 }) => {
+export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({
+  images,
+  interval = 5000,
+  duration = 500
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // const [direction, setDirection] = useState<'next' | 'prev'>('next');
   const [isAnimating, setIsAnimating] = useState(false);
   const imagesContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      goToNext();
-    }, interval);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [currentIndex, interval]);
-
-  const goToPrevious = () => {
-    if (!isAnimating) {
-      // setDirection('prev');
-      setIsAnimating(true);
-      animateSlide('prev');
-    }
-  };
-
-  const goToNext = () => {
-    if (!isAnimating) {
-      // setDirection('next');
-      setIsAnimating(true);
-      animateSlide('next');
-    }
-  };
-
-  const goToIndex = (index: number) => {
-    if (!isAnimating) {
-      // setDirection(index > currentIndex ? 'next' : 'prev');
-      setIsAnimating(true);
-      animateSlide(index > currentIndex ? 'next' : 'prev', index);
-    }
-  };
-
-  const animateSlide = (direction: 'next' | 'prev', index?: number) => {
+  const animateSlide = useCallback((direction: 'next' | 'prev', index?: number) => {
     const imagesContainer = imagesContainerRef.current;
     if (imagesContainer) {
       const slideWidth = imagesContainer.offsetWidth;
@@ -64,31 +33,72 @@ export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({ images, 
         setIsAnimating(false);
       };
     }
+  }, [currentIndex, duration, images]);
+
+  const handleGoToPrevious = () => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      animateSlide('prev');
+    }
   };
+
+  const handleGoToNext = () => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      animateSlide('next');
+    }
+  };
+
+  const autoGoToNext = useCallback(() => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      animateSlide('next');
+    }
+  }, [isAnimating, animateSlide]);
+
+
+  const goToIndex = (index: number) => {
+    if (!isAnimating) {
+      setIsAnimating(true);
+      animateSlide(index > currentIndex ? 'next' : 'prev', index);
+    }
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      autoGoToNext();
+    }, interval);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [currentIndex, interval, autoGoToNext]);
 
   return (
     <div className={styles.carousel}>
-      <div className={styles.carouselImageContainer}>
-        <button className={styles.carouselControlPrev} onClick={goToPrevious}>
+      <div className={styles.carouselContainer}>
+        <button className={styles.carouselControlPrev} onClick={handleGoToPrevious}>
           <span className={`${styles.carouselControlIcon} ${styles.carouselControlPrevIcon}`} />
         </button>
-        <div className={styles.carouselImages} ref={imagesContainerRef}>
-          {images.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className={styles.carouselImage}
-            />
-          ))}
+        <div className={styles.carouselImageContainer}>
+          <div className={styles.carouselImages} ref={imagesContainerRef}>
+            {images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className={styles.carouselImage}
+              />
+            ))}
+          </div>
         </div>
-        <button className={styles.carouselControlNext} onClick={goToNext}>
+        <button className={styles.carouselControlNext} onClick={handleGoToNext}>
           <span className={`${styles.carouselControlIcon} ${styles.carouselControlNextIcon}`} />
         </button>
       </div>
       <div className={styles.carouselRadioButtons}>
         {images.map((_, index) => (
-          <span
+          <button
             key={index}
             className={`${styles.carouselRadioButton} ${index === currentIndex % images.length ? styles.active : ''
               }`}
