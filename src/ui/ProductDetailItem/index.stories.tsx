@@ -24,7 +24,7 @@ type Story = StoryObj<T>;
 export const Default: Story = {
   args: {
     number: "00",
-    image: "https://placehold.jp/244x244.png",
+    image: "https://placehold.jp/100x100.png",
     title: "CODEDUEL",
     description: "asdkalsg",
   },

@@ -1,9 +1,11 @@
 @use '@/styles/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 .wrapper{
     width: 530px;
     height: 310px;
-    background-color:aqua;
+    background-color:black;
+    z-index: 0;
 }
 
 .head_line{
@@ -22,29 +24,42 @@
     position: relative;
     width: 220px;
 }
+
+.square{
+    width: 120px;
+    height: 120px;
+    margin: 50px 50px;
+    position: absolute;
+    background: rgba($color: #F1F1F1, $alpha: 0.2);
+    z-index: 1;
+}
+
 .image{
     margin: 2.5rem 2.7rem;
     background-color: #fff;
     object-fit: cover;
+    z-index: 100;
 }
 
 .number{
-    color: #fff;
+    color: orange;
     position: absolute;
-    left: 40px;
-    top: 30px;
+    left: 30px;
+    top: 10px;
     font-size: $text-4xl;
-    // font-family:;
+    font-family: "Abel", sans-serif;
 }
 
 .title{
     font-size: large;
-    color: #fff;
+    color: orange;
     position: absolute;
     right: 15px;
     bottom: 135px;
     width: 120px;
     text-align: end;
+    font-family: "Abel", sans-serif;
+    font-size: $text-3xl;
 }
 
 .sub_description{
@@ -58,7 +73,7 @@
 
 .line{
     border-left: 1px solid #fff;
-    margin: 1rem 0;
+    margin: 0 0;
     padding: 0;
     height: 245px;
 }
