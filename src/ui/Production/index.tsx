@@ -1,27 +1,28 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { IconButton } from "../IconButton";
+import { IconLink } from "../IconLink";
 import Image from "next/image";
-import website from "./../../../public/website_jamp_icon.svg";
-import apple from "./../../../public/applestore_icon.svg";
-import google from "./../../../public/googleplay_icon.svg";
+import { IconBaseProps } from "react-icons";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
+import { FaGooglePlay } from "react-icons/fa";
 
 type Props = {
   image: string;
   title: String;
   text: String;
-  web_onClick?: () => void;
-  app_onClick?: () => void;
-  google_onClick?: () => void;
+  web_href?: String;
+  app_href?: String;
+  google_href?: String;
 };
 
 export const Production: React.FC<Props> = ({
   image,
   title,
   text,
-  web_onClick,
-  app_onClick,
-  google_onClick,
+  web_href,
+  app_href,
+  google_href,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -31,34 +32,19 @@ export const Production: React.FC<Props> = ({
           <div className={styles.title}>{title}</div>
           <div className={styles.text}>{text}</div>
           <div className={styles.tag}>
-            {web_onClick && (
+            {web_href && (
               <div>
-                <IconButton
-                  text="サイト"
-                  imgUrl={website}
-                  onClick={web_onClick || (() => {})}
-                  size="s"
-                />
+                <IconLink href="" text="サイト" icon={FaExternalLinkAlt} size="s" openInNewTab />
               </div>
             )}
-            {app_onClick && (
+            {app_href && (
               <div>
-                <IconButton
-                  text="App Store"
-                  imgUrl={apple}
-                  onClick={app_onClick || (() => {})}
-                  size="s"
-                />
+                <IconLink href="" text="App Store" icon={FaApple} size="s" openInNewTab />
               </div>
             )}
-            {google_onClick && (
+            {google_href && (
               <div>
-                <IconButton
-                  text="Google Play"
-                  imgUrl={google}
-                  onClick={google_onClick || (() => {})}
-                  size="s"
-                />
+                <IconLink href="" text="Google Play" icon={FaGooglePlay} size="s" openInNewTab />
               </div>
             )}
           </div>
