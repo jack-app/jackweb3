@@ -14,9 +14,9 @@ const meta: Meta<T> = {
     image: { control: "text" },
     title: { control: "text" },
     text: { control: "text" },
-    weblink: { options: ["t", "f"], control: { type: "radio" } },
-    applink: { options: ["t", "f"], control: { type: "radio" } },
-    googlelink: { options: ["t", "f"], control: { type: "radio" } },
+    web_href: { control: "text" },
+    app_href: { control: "text" },
+    google_href: { control: "text" },
   },
 };
 
@@ -28,8 +28,8 @@ export const Default: Story = {
     image: "https://placehold.jp/352x200.png",
     title: "jack-web",
     text: "サイトの説明です。サイトの説明を書くことができます。サイトの説明を見ることもできます。",
-    weblink: "t",
-    applink: "t",
-    googlelink: "t",
+    web_href: "https://www.google.com/",
+    app_href: "https://www.google.com/",
+    google_href: "https://www.google.com/",
   },
 };
