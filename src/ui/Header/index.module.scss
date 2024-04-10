@@ -26,6 +26,7 @@
   .right {
     display: flex;
     gap: 24px;
+    align-items: center;
 
     @media screen and (max-width: $pc) {
       gap: 16px;
@@ -59,42 +60,52 @@
 }
 
 .hamburger_menu {
-  display: flex;
+  display: none;
   align-items: center;
-  border: 1px solid black;
+
+
+  @media screen and (max-width: $pc) {
+    display: block;
+  }
+
+  .hamburger_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  #check1:checked~.hamburger_btn {
+    display: none;
+  }
+
+  .close_btn{
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+
+  }
+
+  #check1:checked~.close_btn {
+    display: block
+  }
 
   .menubtn {
-    display: none;
+    width: 30px;
+    position: relative;
+    z-index: 2;
 
-    @media screen and (max-width: $pc) {
-      display: block;
-    }
 
-    .ham_btn {
-      display: none;
-
-      @media screen and (max-width: $pc) {
-        display: block;
-      }
-    }
-
-    // .clo_btn {
-    //   display: none;
-
-    //   @media screen and (max-width: $pc) {
-    //     display: block;
-    //   }
-    // }
-
-    .a {
-      height: 24px;
+    .icon {
+      display: inline-block;
       width: 24px;
-      border: 1px solid black;
+      color: transparent;
     }
   }
 
   #check1 {
-    display: block;
+    display: none;
   }
 
   .menu {
@@ -103,30 +114,14 @@
     top: 100%;
     width: 100%;
     height: 100vh;
-    left: 0;
+    right: 0;
     padding: 0;
+    // height: calc(100vh - 56px);
+    overflow-y: auto;
   }
 
   #check1:checked~.menu {
     display: flex;
-  }
-
-  // .ham_btn {
-  //   display: block;
-  // }
-
-  #check1:checked~.ham_btn {
-    display: none
-  }
-
-  // これだと交互に押さないと
-  // menuにはきいていてボタンにはきいていない→クラスをmenuと同じ感じにする必要がある？
-  .clo_btn {
-    display: none;
-  }
-
-  #check1:checked~.clo_btn {
-    display: block
   }
 
   .black {
