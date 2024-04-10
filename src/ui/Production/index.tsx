@@ -1,18 +1,18 @@
-import React from "react";
-import styles from "./index.module.scss";
-import { IconLink } from "../IconLink";
 import Image from "next/image";
+import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import styles from "./index.module.scss";
+import { IconLink } from "../IconLink";
 
 type Props = {
   image: string;
   title: String;
   text: String;
-  web_href?: String;
-  app_href?: String;
-  google_href?: String;
+  web_href?: string;
+  app_href?: string;
+  google_href?: string;
 };
 
 export const Production: React.FC<Props> = ({
@@ -33,17 +33,38 @@ export const Production: React.FC<Props> = ({
           <div className={styles.tag}>
             {web_href && (
               <div>
-                <IconLink href="" text="サイト" icon={FaExternalLinkAlt} size="s" openInNewTab />
+                <IconLink
+                  href={web_href}
+                  text="サイト"
+                  icon={FaExternalLinkAlt}
+                  size="s"
+                  openInNewTab
+                  className={styles.web}
+                />
               </div>
             )}
             {app_href && (
               <div>
-                <IconLink href="" text="App Store" icon={FaApple} size="s" openInNewTab />
+                <IconLink
+                  href={app_href}
+                  text="App Store"
+                  icon={FaApple}
+                  size="s"
+                  openInNewTab
+                  className={""}
+                />
               </div>
             )}
             {google_href && (
               <div>
-                <IconLink href="" text="Google Play" icon={FaGooglePlay} size="s" openInNewTab />
+                <IconLink
+                  href={google_href}
+                  text="Google Play"
+                  icon={FaGooglePlay}
+                  size="s"
+                  openInNewTab
+                  className={""}
+                />
               </div>
             )}
           </div>
