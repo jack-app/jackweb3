@@ -7,10 +7,7 @@
   padding: 0;
   width: 352px;
   height: 456px;
-  align-items: center;
-  
-  
-  
+  align-items: center; 
 }
 
 .item_context{
@@ -37,10 +34,8 @@ padding: 16px 24px;
     width:300px;
     display:flex;
     flex-wrap: wrap;
+    gap: 8px;
 }
 
-.tag > div{
-    margin: 0 0 8px 8px;
-}
 
 

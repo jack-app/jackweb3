@@ -32,40 +32,25 @@ export const Production: React.FC<Props> = ({
           <div className={styles.text}>{text}</div>
           <div className={styles.tag}>
             {web_href && (
-              <div>
-                <IconLink
-                  href={web_href}
-                  text="サイト"
-                  icon={FaExternalLinkAlt}
-                  size="s"
-                  openInNewTab
-                  className={styles.web}
-                />
-              </div>
+              <IconLink
+                href={web_href}
+                text="サイト"
+                icon={FaExternalLinkAlt}
+                size="s"
+                openInNewTab
+              />
             )}
             {app_href && (
-              <div>
-                <IconLink
-                  href={app_href}
-                  text="App Store"
-                  icon={FaApple}
-                  size="s"
-                  openInNewTab
-                  className={""}
-                />
-              </div>
+              <IconLink href={app_href} text="App Store" icon={FaApple} size="s" openInNewTab />
             )}
             {google_href && (
-              <div>
-                <IconLink
-                  href={google_href}
-                  text="Google Play"
-                  icon={FaGooglePlay}
-                  size="s"
-                  openInNewTab
-                  className={""}
-                />
-              </div>
+              <IconLink
+                href={google_href}
+                text="Google Play"
+                icon={FaGooglePlay}
+                size="s"
+                openInNewTab
+              />
             )}
           </div>
         </div>
