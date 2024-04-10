@@ -1,21 +1,21 @@
-import React from "react";
-import styles from "./index.module.scss";
 import Image from "next/image";
-import { IconLink } from "../IconLink";
+import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import styles from "./index.module.scss";
+import { IconLink } from "../IconLink";
 
 type Props = {
   date: String;
   text: String;
   image: string;
-  article_href: String;
-  web_href: String;
-  app_href: String;
-  google_href: String;
-  git_href: String;
+  article_href: string;
+  web_href: string;
+  app_href: string;
+  google_href: string;
+  git_href: string;
 };
 
 export const AchievementItem: React.FC<Props> = ({
@@ -38,18 +38,17 @@ export const AchievementItem: React.FC<Props> = ({
             {article_href && (
               <div>
                 <IconLink
-                  href={""}
+                  href={article_href}
                   text="See Article"
                   icon={FaExternalLinkAlt}
                   size="s"
-                  openInNewTab
                 />
               </div>
             )}
             {web_href && (
               <div>
                 <IconLink
-                  href={""}
+                  href={web_href}
                   text="webサイト"
                   icon={FaExternalLinkAlt}
                   size="s"
@@ -59,18 +58,24 @@ export const AchievementItem: React.FC<Props> = ({
             )}
             {app_href && (
               <div>
-                <IconLink href={""} text="App Store" icon={FaApple} size="s" openInNewTab />
+                <IconLink href={app_href} text="App Store" icon={FaApple} size="s" openInNewTab />
               </div>
             )}
             {google_href && (
               <div>
-                <IconLink href={""} text="Google Play" icon={FaGooglePlay} size="s" openInNewTab />
+                <IconLink
+                  href={google_href}
+                  text="Google Play"
+                  icon={FaGooglePlay}
+                  size="s"
+                  openInNewTab
+                />
               </div>
             )}
 
             {git_href && (
               <div>
-                <IconLink href={""} text="GitHub" icon={FaGithub} size="s" openInNewTab />
+                <IconLink href={git_href} text="GitHub" icon={FaGithub} size="s" openInNewTab />
               </div>
             )}
           </div>
