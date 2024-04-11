@@ -6,6 +6,7 @@
     height: 310px;
     background-color:black;
     z-index: 0;
+    font-family: "Abel", sans-serif;
 }
 
 .head_line{
@@ -28,7 +29,7 @@
 .square{
     width: 120px;
     height: 120px;
-    margin: 50px 50px;
+    margin: 30px 0 0 33px ;
     position: absolute;
     background: rgba($color: #F1F1F1, $alpha: 0.2);
     z-index: 1;
@@ -45,17 +46,17 @@
     color: orange;
     position: absolute;
     left: 30px;
-    top: 10px;
+    top: 15px;
     font-size: $text-4xl;
     font-family: "Abel", sans-serif;
 }
 
 .title{
     font-size: large;
-    color: orange;
+    color: rgb(255, 123, 0);
     position: absolute;
-    right: 15px;
-    bottom: 135px;
+    right: 20px;
+    bottom: 110px;
     width: 120px;
     text-align: end;
     font-family: "Abel", sans-serif;
@@ -65,15 +66,19 @@
 .sub_description{
     font-size: $rounded-xl;
     text-align: end;
-    // margin: 10px;
+    margin: 0 10px 0px 45px;
     padding: 0;
     width: 120px;
+    height: auto;
+    color: #F1F1F1;
+    word-break: break-all;
+    overflow-wrap : break-word;
 
 }
 
 .line{
     border-left: 1px solid #fff;
-    margin: 0 0;
+    margin: 10px 0;
     padding: 0;
     height: 245px;
 }
@@ -81,12 +86,24 @@
     margin: 10px 1rem;
     width: 20px;
     text-align: end;
+    color: #F1F1F1;
+    line-height: 145%;
+    
 }
 .context_right{
     margin:10px 1rem;
     width: 315px;
+    line-height: 145%;
 }
 
+.release{
+    color: red;
+}
+.main_description{
+    color: #F1F1F1;
+    word-break: break-all;
+    overflow-wrap : break-word;
+}
 
 .link{
     color: blue;

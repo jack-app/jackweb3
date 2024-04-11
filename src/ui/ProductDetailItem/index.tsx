@@ -1,6 +1,6 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./index.module.scss";
-import Image from "next/image";
 
 type Props = {
   number: string;
@@ -33,7 +33,7 @@ export const ProductDetailItem: React.FC<Props> = ({
         <div className={styles.context_right}>
           <div className={styles.detail}>
             <div className={styles.release}> 2021-05-09 release</div>
-            <div className={styles.description_main}>{description}</div>
+            <div className={styles.main_description}>{description}</div>
 
             <div className={styles.link}>webllinkはこちら</div>
             <div className={styles.git}>void let&#0039;s see &#40;&#41; &#0061;&#0062; github </div>

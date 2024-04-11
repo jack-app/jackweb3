@@ -14,6 +14,7 @@ const meta: Meta<T> = {
     number: { control: "text" },
     image: { control: "text" },
     title: { control: "text" },
+    sub_description: { control: "text" },
     description: { control: "text" },
   },
 };
@@ -26,6 +27,7 @@ export const Default: Story = {
     number: "00",
     image: "https://placehold.jp/100x100.png",
     title: "CODEDUEL",
+    sub_description: "ajfajfasdfalsjdfljlakjrflkjalksalfndslk",
     description: "asdkalsg",
   },
 };
