@@ -9,13 +9,13 @@ type Props = {
 
 export const BlogScreen: React.FC<Props> = ({ articles }) => {
   return (
-    <div>
+    <main>
       <Heading1 enTitle="Blog" jaTitle="ブログ" />
-      <div className="grid max-w-[744px] justify-center gap-50 md:grid-cols-2 md:gap-x-60 md:gap-y-70">
+      <div className={styles.articlesWrapper}>
         {articles.map((article) => (
           <ArticleItem key={article.id} {...article} />
         ))}
       </div>
-    </div>
+    </main>
   );
 };

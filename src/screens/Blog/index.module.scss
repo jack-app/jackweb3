@@ -1,1 +1,23 @@
 @use '@/styles/variables' as *;
+
+.articlesWrapper {
+    display: grid;
+    max-width: calc(360px * 3 + 24px);
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 32px 24px;
+    margin: 64px auto;
+
+    @media (max-width: $pc) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: calc(360px * 2 + 24px);
+        margin: 40px auto;
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 360px;
+        margin: 32px auto;
+    }
+}
