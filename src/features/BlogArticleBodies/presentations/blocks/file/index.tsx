@@ -24,7 +24,7 @@ export const FilePresentation: React.FC<Props> = ({ file }) => {
     <figure>
       <div>
         📎{" "}
-        <Link href={src_file} passHref className="text-link hover:underline">
+        <Link href={src_file} passHref className="text-link hover:underline break-all">
           {lastElementInArray.split("?")[0]}
         </Link>
       </div>

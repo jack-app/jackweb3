@@ -26,7 +26,7 @@ export const Text = ({ text }: { text: RichText[] }) => {
         key={text.content}
       >
         {text.link ? (
-          <a href={text.link.url} className="text-link hover:underline">
+          <a href={text.link.url} className="text-link hover:underline break-all">
             {text.content}
           </a>
         ) : (
