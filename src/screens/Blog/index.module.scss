@@ -8,13 +8,13 @@
     gap: 32px 24px;
     margin: 64px auto;
 
-    @media (max-width: $pc) {
+    @media (max-width: calc(360px * 3 + 24px * 2 + 80px * 2)) {
         grid-template-columns: repeat(2, 1fr);
         max-width: calc(360px * 2 + 24px);
         margin: 40px auto;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: calc(360px * 2 + 24px + 32px * 2)) {
         grid-template-columns: 1fr;
         gap: 16px;
         max-width: 360px;
