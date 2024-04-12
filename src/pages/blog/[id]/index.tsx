@@ -19,27 +19,43 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps = async () => {
-  const databaseId = process.env.NOTION_DATABASE_ID;
-  const blocks = (await getBlocks(databaseId)) as Block[];
+export const getStaticProps = async ({ params }: { params: { id: string } }) => {
+  const pageId = params.id as string;
+  const blocks = (await getBlocks(pageId)) as Block[];
 
-  // 画像生成ではNode.jsの機能を使うため、getStaticProps内で行う
-  const filteredBlocks = blocks.map((block) => {
-    const { type, id } = block;
-    if (type === "image") {
-      const image = block[type];
-      if (!image) return block;
+  // 画像生成ではNode.jsの機能を使うため、サーバー上で処理されるgetStaticProps内で行う
+  const filteredBlocks = await Promise.all(
+    blocks.map(async (block) => {
+      const { type, id } = block;
 
-      if (image.type === "file" && image.file) {
-        const src = createImage(databaseId, id, image.file.url);
-        return { ...block, [type]: { ...image, file: src } };
+      let filteredBlock = block;
+
+      if (type === "image") {
+        const image = block[type];
+        if (!image) return block;
+
+        if (image.type === "file" && image.file) {
+          const url = await createImage(pageId, id, image.file.url);
+          filteredBlock = {
+            ...block,
+            image: {
+              ...image,
+              file: {
+                ...image.file,
+                url,
+              },
+            },
+          };
+        }
       }
-    }
-  });
+
+      return filteredBlock;
+    }),
+  );
 
   return {
     props: {
-      id: databaseId,
+      id: pageId,
       blocks: filteredBlocks,
     },
   };

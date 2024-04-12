@@ -1,12 +1,13 @@
-import { Image } from "@/types/block";
+import Image from "next/image";
+import { Image as ImageBlock } from "@/types/block";
 
 type Props = {
-  image?: Image;
+  image?: ImageBlock;
   id: string;
   pageId: string;
 };
 
-export const ImagePresentation: React.FC<Props> = async ({ image, id, pageId }) => {
+export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
   if (!image) return null;
   let src = "";
   image.type === "external" && image.external && (src = image.external.url);
@@ -15,7 +16,7 @@ export const ImagePresentation: React.FC<Props> = async ({ image, id, pageId }) 
   const caption = image.caption ? image.caption[0]?.plain_text : "";
   return (
     <figure className="mx-auto">
-      <img src={src} alt={caption} />
+      <Image src={src} alt={caption} width={500} height={500} />
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
