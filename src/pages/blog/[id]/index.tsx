@@ -8,7 +8,7 @@ export default function Article({ id, blocks }: { id: string; blocks: Block[] })
 }
 
 export const getStaticPaths = async () => {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
   const articles = await getDatabase(databaseId);
 
   // TODO:filterかけないと無駄に多くのページが生成される

@@ -9,7 +9,7 @@ export default function Blog({ articles }: { articles: ArticleItemProps[] }) {
 }
 
 export async function getStaticProps() {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
   const articleDb = await getDatabase(databaseId);
 
   const currentDate = new Date().toISOString().slice(0, 10);

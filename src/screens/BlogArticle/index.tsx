@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
 import { Block } from "@/types/block";
@@ -19,6 +20,17 @@ export const BlogArticleScreen: React.FC<Props> = ({ id, blocks }) => {
         </ul>
         <p>作者</p>
         <p>投稿日</p>
+        <ul>
+          <li>
+            <Link href="/">トップページ</Link>
+          </li>
+          <li>
+            <Link href="/blog">ブログ</Link>
+          </li>
+          <li>
+            <p>このページ</p>
+          </li>
+        </ul>
       </div>
       <BlogArticleBodies id={id} blocks={blocks} />
     </main>
