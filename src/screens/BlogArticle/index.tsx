@@ -10,8 +10,17 @@ type Props = {
 
 export const BlogArticleScreen: React.FC<Props> = ({ id, blocks }) => {
   return (
-    <div>
+    <main className={styles.container}>
+      <div>
+        <h1>記事のタイトル</h1>
+        <ul>
+          <li>タグ</li>
+          <li>タグ</li>
+        </ul>
+        <p>作者</p>
+        <p>投稿日</p>
+      </div>
       <BlogArticleBodies id={id} blocks={blocks} />
-    </div>
+    </main>
   );
 };

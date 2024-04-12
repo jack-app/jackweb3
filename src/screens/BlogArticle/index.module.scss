@@ -1,1 +1,16 @@
 @use '@/styles/variables' as *;
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 64px 80px;
+
+    @media (max-width: $pc) {
+        margin: 32px 40px;
+    }
+
+    @media (max-width: $mobile) {
+        margin: 24px 0;
+    }
+}
