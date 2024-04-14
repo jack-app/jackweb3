@@ -1,0 +1,54 @@
+@use '@/styles/variables' as *;
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    background-color: #FFF4E3;
+    padding: 32px;
+    border-radius: $rounded-lg;
+    // position: relative;
+    
+}
+
+.context{
+    justify-content: space-between;
+    flex-flow: column ;
+    display: flex;
+}
+.date{
+    background-color: $white;
+    border-radius: $rounded-full;
+    text-align: center;
+    padding: 8px 16px;
+    width: 128px;
+    height: 40px;
+}
+
+.text{
+    // padding: 20px;
+    font-size: $text-3xl;
+    font-weight: 600;
+}
+
+.image{
+    width: 200px;
+    height: 200px;
+    object-fit: fill;
+    text-align: right;
+    justify-content: flex-end;
+    object-fit: cover;
+    margin-left: auto;
+    padding: 0;
+}
+
+.tag{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.tag > div{
+    gap: 8px;
+}

@@ -2,24 +2,30 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./index.module.scss";
-import { Props as TagProps, Tag } from "../Tag";
+import { TagType, Tag } from "../Tag";
 
-type Props = {
+export type Props = {
   id: string;
-  image: string;
+  image: string | null;
   date: string;
   title: string;
-  tags: TagProps[];
+  tags: TagType[];
 };
 
 export const ArticleItem: React.FC<Props> = ({ id, image, date, title, tags }) => {
   return (
     <article className={styles.wrapper}>
-      <Image src={image} alt={title} width={360} height={200} className={styles.image} />
+      <Image
+        src={image ? image : ""}
+        alt={title}
+        width={360}
+        height={200}
+        className={styles.image}
+      />
       <div className={styles.descriptionWrapper}>
         <span className={styles.date}>{date}</span>
         <h3 className={styles.title}>
-          <Link href={`/${id}`} className={styles.link}>
+          <Link href={`/blog/${id}`} className={styles.link}>
             {title}
           </Link>
         </h3>

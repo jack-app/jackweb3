@@ -1,6 +1,8 @@
 @use '@/styles/variables' as *;
 
 .btn {
+    width: fit-content;
+    height: fit-content;
     border-radius: $rounded-full;
     background-color: $primary;
     color: $white;

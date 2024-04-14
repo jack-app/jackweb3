@@ -1,5 +1,8 @@
 @use "./variables" as *;
 @import "destyle.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
   background-color: $background;
