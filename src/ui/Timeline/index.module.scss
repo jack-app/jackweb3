@@ -1,0 +1,73 @@
+@use '@/styles/variables' as *;
+
+h3{
+    font-size: 18px;
+    font-weight: 900;
+
+
+    // color: #6fc173;
+}
+
+.timeline {
+    list-style: none;
+    // color:#6fc173
+  }
+  .timeline > li {
+    margin-bottom: 60px;
+  }
+
+  /* for Desktop */
+  @media ( min-width : 640px ){
+    .timeline > li {
+      overflow: hidden;
+      margin: 0;
+      position: relative;
+    }
+    
+    // .timeline_date {
+    //   width: 110px;
+    //   float: left;
+    //   margin-top: 20px;
+    // }
+    .timeline_content {
+      width: 340px;
+      float: left;
+      border-left: 25px #FFEACA solid;
+      padding-left: 80px;
+      padding-bottom: 30px;
+    
+
+    }
+    .timeline_content:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: #FFA61F;
+      position: absolute;
+      left: 2.5px;
+      top: 50%;
+      border-radius: 100%;
+      transform: translateY(-25%)
+    }
+  }
+
+  .bar {
+    background-color: #FFA61F;
+    width: 80px;
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(50%)
+
+  }
+
+  img{
+    width: 240px;
+    height: 140px;
+  }
+
+// .timeline_date{
+//     font-size: 60px;
+//     color:red
+// }
