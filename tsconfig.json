@@ -27,6 +27,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/pages/404.js"
-  ],
+, "src/screens/Members/data"  ],
   "exclude": ["node_modules"]
 }

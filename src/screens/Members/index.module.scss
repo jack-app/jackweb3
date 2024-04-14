@@ -1,1 +1,20 @@
-@use '@/styles/variables' as *;
+@use '@/styles/variables' as 
+
+*;.wrapper {
+
+    background-color: transparent;
+    padding: 3rem;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    display: flex;
+
+    .fm_photo{
+        width: 250px;
+    }
+
+    .fm{
+        color: orange;
+    }
+
+}
