@@ -1,109 +1,61 @@
-import React, { useEffect, useState, useRef, useMemo, useCallback } from 'react';
-import styles from './index.module.scss';
+import useEmblaCarousel from "embla-carousel-react";
+import Image from "next/image";
+import React, { useState, useEffect, useCallback } from "react";
+// import 'embla-carousel/embla-carousel.css';
+import styles from "./index.module.scss";
 
-type ActivitiesCarouselProps = {
+interface ActivitiesCarouselProps {
   images: string[];
-  interval?: number;
-  duration?: number;
-};
+}
 
-export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({
-  images,
-  interval = 5000,
-  duration = 500
-}) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const imagesContainerRef = useRef<HTMLDivElement>(null);
+export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({ images }) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    dragFree: true,
+  });
 
-  const animateSlide = useCallback((direction: 'next' | 'prev', index?: number) => {
-    const imagesContainer = imagesContainerRef.current;
-    if (imagesContainer) {
-      const slideWidth = imagesContainer.offsetWidth;
-      const slideAnimation = imagesContainer.animate(
-        [
-          { transform: `translateX(${direction === 'next' ? 0 : -slideWidth}px)` },
-          { transform: `translateX(${direction === 'next' ? -slideWidth : 0}px)` },
-        ],
-        { duration: duration, easing: 'ease-in-out' }
-      );
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
-      slideAnimation.onfinish = () => {
-        setCurrentIndex(index !== undefined ? index : (direction === 'next' ? (currentIndex + 1) % images.length : (currentIndex - 1 + images.length) % images.length));
-        setIsAnimating(false);
-      };
-    }
-  }, [currentIndex, duration, images]);
-
-  const handleGoToPrevious = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      animateSlide('prev');
-    }
+  const scrollTo = (index: number) => {
+    if (!emblaApi) return;
+    emblaApi.scrollTo(index);
+    setSelectedIndex(index);
   };
 
-  const handleGoToNext = () => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      animateSlide('next');
-    }
-  };
+  const scrollPrev = useCallback(() => {
+    emblaApi && emblaApi.scrollPrev();
+    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [emblaApi, images]);
 
-  const autoGoToNext = useCallback(() => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      animateSlide('next');
-    }
-  }, [isAnimating, animateSlide]);
-
-
-  const goToIndex = (index: number) => {
-    if (!isAnimating) {
-      setIsAnimating(true);
-      animateSlide(index > currentIndex ? 'next' : 'prev', index);
-    }
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      autoGoToNext();
-    }, interval);
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [currentIndex, interval, autoGoToNext]);
+  const scrollNext = useCallback(() => {
+    emblaApi && emblaApi.scrollNext();
+    setSelectedIndex((prev) => (prev + 1) % images.length);
+  }, [emblaApi, images]);
 
   return (
-    <div className={styles.carousel}>
-      <div className={styles.carouselContainer}>
-        <button className={styles.carouselControlPrev} onClick={handleGoToPrevious}>
-          <span className={`${styles.carouselControlIcon} ${styles.carouselControlPrevIcon}`} />
-        </button>
-        <div className={styles.carouselImageContainer}>
-          <div className={styles.carouselImages} ref={imagesContainerRef}>
-            {images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Slide ${index + 1}`}
-                className={styles.carouselImage}
-              />
-            ))}
-          </div>
+    <div className="embla">
+      <button className="embla__button" onClick={scrollPrev}>
+        <Image src="carousel_prev_arrow.svg" alt="prev button" width={20} height={20} />
+      </button>
+      <div className={`embla__viewport ${styles.viewport}`} ref={emblaRef}>
+        <div className={`embla__container ${styles.container}`}>
+          {images.map((image, index) => (
+            <div key={index} className={`embla__slide ${styles.slide}`}>
+              <Image src={image} alt={`num ${index}`} width={600} height={360} />
+            </div>
+          ))}
         </div>
-        <button className={styles.carouselControlNext} onClick={handleGoToNext}>
-          <span className={`${styles.carouselControlIcon} ${styles.carouselControlNextIcon}`} />
-        </button>
       </div>
-      <div className={styles.carouselRadioButtons}>
+      <button className={styles.embla__button} onClick={scrollNext}>
+        <Image src="carousel_next_arrow.svg" alt="next button" width={20} height={20} />
+      </button>
+      <div className={styles.embla__dots}>
         {images.map((_, index) => (
           <button
             key={index}
-            className={`${styles.carouselRadioButton} ${index === currentIndex % images.length ? styles.active : ''
-              }`}
-            onClick={() => goToIndex(index)}
-          />
+            className={`${styles.embla__dot} ${selectedIndex === index ? styles["embla__dot--selected"] : ""}`}
+            onClick={() => scrollTo(index)}
+          ></button>
         ))}
       </div>
     </div>

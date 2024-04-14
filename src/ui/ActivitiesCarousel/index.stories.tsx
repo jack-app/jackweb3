@@ -12,7 +12,6 @@ const meta: Meta<T> = {
   tags: ['autodocs'],
   argTypes: {
     images: { control: "array" },
-    interval: { control: "number" },
   },
 };
 
@@ -21,7 +20,6 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    images: ["https://placehold.jp/360x200.png", "https://placehold.jp/360x200.png", "https://placehold.jp/360x200.png"],
-    interval: 5000,
+    images: ["activities/image_1.png", "https://placehold.jp/360x200.png", "https://placehold.jp/360x200.png"],
   },
 };

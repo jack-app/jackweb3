@@ -1,81 +1,95 @@
 @use '@/styles/variables' as *;
 
-.carousel {
-    width: 500px;
+.embla {
+    position: relative;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-
-    .carouselContainer {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 300px;
+  
+    &__viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+  
+    &__container {
+      display: flex;
+    //   user-select: none;
+    //   -webkit-touch-callout: none;
+    //   -khtml-user-select: none;
+    //   -ms-touch-action: pan-y;
+    //   touch-action: pan-y;
+    }
+  
+    &__slide {
+      flex: 0 0 auto;
+      width: 100%;
+      position: relative;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+  
+    &__button {
+      position: relative;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: #333;
+      }
+  
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  
+    &__dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  
+    &__dot {
+      background-color: #ccc;
+      border: none;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      cursor: pointer;
+  
+      &--selected {
+        background-color: #333;
+      }
+  
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
         overflow: hidden;
-
-
-        .carouselControlPrev,
-        .carouselControlNext {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .carouselControlIcon {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: transparent no-repeat center center;
-            background-size: 100% 100%;
-        }
-
-        .carouselControlPrevIcon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
-        }
-
-        .carouselControlNextIcon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-
-        .carouselImageContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .carouselImages {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-
-            .carouselImage {
-                flex: 0 0 100%;
-                max-width: 100%;
-                max-height: 100%;
-                opacity: 1;
-            }
-        }
+        clip: rect(0,0,0,0);
+        border: 0;
+      }
     }
-
-    .carouselRadioButtons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-
-        .carouselRadioButton {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #ccc;
-            margin: 0 5px;
-            cursor: pointer;
-
-            &.active {
-                background-color: #333;
-            }
-        }
-    }
-}
+  }
