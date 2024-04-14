@@ -27,8 +27,8 @@ export const Default: Story = {
     date: "2021-01-01",
     title: "Title",
     tags: [
-      { name: "Tag", color: "blue", isLink: false },
-      { name: "Tag", color: "blue", isLink: true },
+      { id: "1", name: "Tag", color: "blue", isLink: false },
+      { id: "2", name: "Tag", color: "blue", isLink: true },
     ],
   },
 };
