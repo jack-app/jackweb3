@@ -1,6 +1,6 @@
+import { FaGithub } from "react-icons/fa";
 import type { Meta, StoryObj } from "@storybook/react";
 import { IconLink } from ".";
-import { FaGithub } from "react-icons/fa";
 
 type T = typeof IconLink;
 

@@ -1,0 +1,6 @@
+@use '@/styles/variables' as *;
+
+.heading2 {
+    font-size: $text-2xl;
+    font-weight: 900;
+}
