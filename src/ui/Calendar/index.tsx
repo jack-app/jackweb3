@@ -28,6 +28,7 @@ export const Calendar: React.FC<Props> = () => {
         />
       </div>
       <style>
+        {/* module.cssだとFullCalendarに対してスタイルを当てられないのでinlineStyleを使用 */}
         {`
           .fc-icon-chevron-right::before {
             color: #fb8700
