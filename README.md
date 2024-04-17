@@ -11,7 +11,8 @@
 
 1. このリポジトリをクローンする
 2. クローンしたディレクトリに移動し、`npm install`を実行
-3. その後、`npm run dev`を実行して、`http://localhost:3000/`にアクセスできればOK
+3. `cp .env.example .env.local`を実行し、他の開発メンバーから教えてもらった各環境変数を`.env.local`に書き加える。
+4. その後、`npm run dev`を実行して、`http://localhost:3000/`にアクセスできればOK
 
 ## 各種コマンド
 
