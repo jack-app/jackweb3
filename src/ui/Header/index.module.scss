@@ -26,7 +26,6 @@
   .right {
     display: flex;
     gap: 24px;
-    align-items: center;
 
     @media screen and (max-width: $pc) {
       gap: 16px;
@@ -57,92 +56,48 @@
       color: $primary;
     }
   }
-}
 
-.hamburger_menu {
-  display: none;
-  align-items: center;
-
-
-  @media screen and (max-width: $pc) {
-    display: block;
-  }
-
-  .hamburger_btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-  }
-  #check1:checked~.hamburger_btn {
+  .menuButton {
     display: none;
-  }
 
-  .close_btn{
-    display: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-
-  }
-
-  #check1:checked~.close_btn {
-    display: block
-  }
-
-  .menubtn {
-    width: 30px;
-    position: relative;
-    z-index: 2;
-
-
-    .icon {
-      display: inline-block;
-      width: 24px;
-      color: transparent;
+    @media screen and (max-width: $pc) {
+      display: block;
     }
   }
+}
 
-  #check1 {
-    display: none;
-  }
+.menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  padding: 0;
+}
 
-  .menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    height: 100vh;
-    right: 0;
-    padding: 0;
-    // height: calc(100vh - 56px);
-    overflow-y: auto;
-  }
+.black {
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-grow: 1;
+}
 
-  #check1:checked~.menu {
-    display: flex;
-  }
+.menubar {
+  padding: 32px 0px;
+  background-color: $white;
+  width: 270px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $black;
+  font-size: 18px;
+  font-family: "Hiragino Kaku Gothic Pro";
+}
 
-  .black {
-    background-color: rgba(0, 0, 0, 0.5);
-    flex-grow: 1;
-  }
+.hamburgerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-  .menubar {
-    padding: 32px 0px;
-    background-color: $white;
-    width: 270px;
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid $black;
-    font-size: 18px;
-    font-family: "Hiragino Kaku Gothic Pro";
-  }
-
-  .hamburgerNav {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+.menu.display {
+  display: flex;
 }
