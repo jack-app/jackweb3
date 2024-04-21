@@ -12,9 +12,11 @@ export const Header: React.FC<Props> = () => {
 
   const toggleNav = () => {
     setShowNav(!showNav);
+    document.body.style.overflow = "hidden"; // stop scroll when menu is open
   };
   const closeMenu = () => {
     setShowNav(false);
+    document.body.style.overflow = "auto";
   };
   return (
     <header className={styles.wrapper}>
