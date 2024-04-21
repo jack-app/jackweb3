@@ -6,7 +6,7 @@ import { FaGooglePlay } from "react-icons/fa";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
-type Props = {
+export type Props = {
   image: string;
   title: String;
   text: String;

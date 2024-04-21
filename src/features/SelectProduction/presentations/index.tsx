@@ -3,29 +3,32 @@ import { Production } from "@/ui/Production";
 import styles from "./index.module.scss";
 
 type Props = {
-  children: React.ReactNode;
+  products: Array<{
+    image: string;
+    title: string;
+    text: string;
+    web_href: string | undefined;
+    app_href: string | undefined;
+    google_href: string | undefined;
+  }>;
 };
 
-export const SelectProductionPresentation: React.FC<Props> = (props) => {
+export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
   const [category, setCategory] = useState<"all" | "web" | "game" | "mobile">("all");
 
-  const filterProductions = (production: JSX.Element) => {
-    const categoryProp = production.props.category;
-    if (category === "all" || categoryProp === category) {
+  const filteredProducts = products.filter((product) => {
+    if (category === "all") {
       return true;
     }
-    if (category === "web" && categoryProp === "web" && production.props.web_href) {
-      return true;
+    if (category === "web") {
+      return product.web_href !== null;
     }
-    if (
-      category === "mobile" &&
-      categoryProp === "mobile" &&
-      (production.props.app_href || production.props.google_href)
-    ) {
-      return true;
+    if (category === "mobile") {
+      return product.app_href !== null || product.google_href !== null; // "mobile"を選択した場合は、app_hrefまたはgoogle_hrefがある製品のみ表示
     }
     return false;
-  };
+  });
+  console.log("filteredProducts", filteredProducts);
 
   return (
     <div className={styles.wrapper}>
@@ -55,7 +58,20 @@ export const SelectProductionPresentation: React.FC<Props> = (props) => {
           mobile
         </button>
       </div>
-      <div className={styles.productions}></div>
+      <div className={styles.productions}>
+        {filteredProducts.map((product, index) => (
+          <div key={index} className={styles.production}>
+            <Production
+              image={product.image}
+              title={product.title}
+              text={product.text}
+              web_href={product.web_href}
+              app_href={product.app_href}
+              google_href={product.google_href}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

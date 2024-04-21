@@ -1,29 +1,40 @@
 @use '@/styles/variables' as *;
 
-.wrapper{
-    width: 100%;
-    margin: auto;
+.wrapper {
+  width: 100%;
+  margin: 10px;
 }
 
-.button_context{
+.button_context {
+  display: flex;
+  gap: 10px;
+}
+
+.button_all,
+.button_web,
+.button_game,
+.button_mobile {
+  box-shadow:$shadow;
+  padding: 8px 16px;
+  border-radius: $rounded-lg;
+  background-color: white;
+  color: black;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+
+  &.active {
+    background-color: black;
+    color: white;
+  }
+}
+
+.productions {
+    margin-top: 20px;
     display: flex;
-    gap: 10px;
-}
-
-.button_all ,.button_web ,.button_game ,.button_mobile{
-    border: 1px black solid;
-    padding: 8px 16px;
-    border-radius: $rounded-lg;
-
-    &:hover{
-        background-color: black;
-        color: white;
-    }
-}
-
-.productions{
-    margin-top: 40px;
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap; 
-}
+    flex-wrap: wrap; // flexの子要素を折り返すように設定
+    gap: 24px; // 要素間の間隔を設定
+  }
+  
