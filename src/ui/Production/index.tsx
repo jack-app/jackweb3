@@ -10,6 +10,7 @@ export type Props = {
   image: string;
   title: String;
   text: String;
+  tags: any;
   web_href?: string;
   app_href?: string;
   google_href?: string;
@@ -19,6 +20,7 @@ export const Production: React.FC<Props> = ({
   image,
   title,
   text,
+  tags,
   web_href,
   app_href,
   google_href,

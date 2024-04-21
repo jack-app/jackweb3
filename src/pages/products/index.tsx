@@ -15,10 +15,20 @@ export const getStaticProps = async () => {
 
   const products = await Promise.all(
     productDb.map(async (product: any) => {
+      console.log("product", product.Image);
+      // let image = [];
+      // if (product.properties.Image && product.properties.Image.files) {
+      //   image = product.properties.Image.files
+      //     .filter((file: any) => file && file.url)
+      //     .map((file: any) => file.file.url);
+      // }
       const res = {
         image: product.Image ? product.Image.url : "",
+        // image: image,
+        // image: product.properties.Image.files.map((file: any) => file.file.url),
         title: product.properties.Name.title[0]?.plain_text,
         text: product.properties.Description.rich_text[0]?.plain_text,
+        tags: product.properties.Tag.multi_select.map((tag: any) => tag.name),
         web_href: product.properties.WebLink.url,
         app_href: product.properties.AppStore.url,
         google_href: product.properties.GooglePlayStore.url,
@@ -38,7 +48,20 @@ export const getStaticProps = async () => {
       //   res.image = product.cover.external.url;
       // }
       // console.log(res);
-      console.log("hogehogeimage", res.image);
+      // if (product.type === "file") {
+      //   // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
+      //   res.image = product.cover.file.url;
+      // } else if (product.type === "external") {
+      //   res.image = product.cover.external.url;
+      // }
+      // if (product.images.type === "file") {
+      //   // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
+      //   res.image = await createImage(product.id, "cover", product.cover.file.url);
+      // } else if (product.cover.type === "external") {
+      //   res.image = product.cover.external.url;
+      // }
+
+      console.log("hogehogeimage", res);
       return res;
     }),
   );

@@ -2,7 +2,7 @@
 
 .wrapper {
   width: 100%;
-  margin: 10px;
+  margin: auto;
 }
 
 .button_context {
@@ -32,9 +32,9 @@
 }
 
 .productions {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
-    flex-wrap: wrap; // flexの子要素を折り返すように設定
-    gap: 24px; // 要素間の間隔を設定
+    flex-wrap: wrap; 
+    gap: 24px; 
   }
   

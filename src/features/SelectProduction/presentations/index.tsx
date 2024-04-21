@@ -7,6 +7,7 @@ type Props = {
     image: string;
     title: string;
     text: string;
+    tags: any;
     web_href: string | undefined;
     app_href: string | undefined;
     google_href: string | undefined;
@@ -21,13 +22,17 @@ export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
       return true;
     }
     if (category === "web") {
-      return product.web_href !== null;
+      return product.tags.indexOf("web") !== -1;
+    }
+    if (category === "game") {
+      return product.tags.indexOf("game") !== -1;
     }
     if (category === "mobile") {
-      return product.app_href !== null || product.google_href !== null; // "mobile"を選択した場合は、app_hrefまたはgoogle_hrefがある製品のみ表示
+      return product.tags.indexOf("mobile") !== -1;
     }
     return false;
   });
+
   console.log("filteredProducts", filteredProducts);
 
   return (
@@ -68,6 +73,7 @@ export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
               web_href={product.web_href}
               app_href={product.app_href}
               google_href={product.google_href}
+              tags={product.tags}
             />
           </div>
         ))}
