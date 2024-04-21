@@ -28,16 +28,16 @@ export const Header: React.FC<Props> = () => {
           <Link href="/products" onClick={closeMenu}>
             プロダクト
           </Link>
-          <Link href="/Members" onClick={closeMenu}>
+          <Link href="/members" onClick={closeMenu}>
             メンバー
           </Link>
-          <Link href="/Activities" onClick={closeMenu}>
+          <Link href="/activities" onClick={closeMenu}>
             活動内容
           </Link>
-          <Link href="/Achievements" onClick={closeMenu}>
+          <Link href="/achievements" onClick={closeMenu}>
             活動実績
           </Link>
-          <Link href="/FAQ" onClick={closeMenu}>
+          <Link href="/faq" onClick={closeMenu}>
             FAQ
           </Link>
           <Link href="/blog" onClick={closeMenu}>
@@ -70,16 +70,16 @@ export const Header: React.FC<Props> = () => {
             <Link href="/products" onClick={closeMenu}>
               プロダクト
             </Link>
-            <Link href="/Members" onClick={closeMenu}>
+            <Link href="/members" onClick={closeMenu}>
               メンバー
             </Link>
-            <Link href="/Activities" onClick={closeMenu}>
+            <Link href="/activities" onClick={closeMenu}>
               活動内容
             </Link>
-            <Link href="/Achievements" onClick={closeMenu}>
+            <Link href="/achievements" onClick={closeMenu}>
               活動実績
             </Link>
-            <Link href="/FAQ" onClick={closeMenu}>
+            <Link href="/faq" onClick={closeMenu}>
               FAQ
             </Link>
             <Link href="/blog" onClick={closeMenu}>
