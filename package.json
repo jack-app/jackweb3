@@ -12,13 +12,22 @@
     "plop": "plop"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/google-calendar": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@notionhq/client": "^2.2.14",
     "destyle.css": "^4.0.1",
     "next": "14.1.0",
     "plop": "^4.0.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
-    "sass": "^1.72.0"
+    "react-katex": "^3.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "sass": "^1.72.0",
+    "satori": "^0.10.13",
+    "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.23",
@@ -33,6 +42,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-katex": "^3.0.4",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
@@ -40,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-storybook": "^0.8.0",
     "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.13",
     "storybook": "^8.0.2",
     "typescript": "^5"
   }
