@@ -16,6 +16,9 @@ details[open] .icon {
     align-items: center;
     padding: 24px 32px;
     box-shadow: $shadow;
+    @media screen and (max-width: $mobile) {
+        padding: 16px 24px;
+    }
 }
 
 .answer {
@@ -25,6 +28,9 @@ details[open] .icon {
     align-items: center;
     padding: 24px 32px;
     box-shadow: $shadow;
+    @media screen and (max-width: $mobile) {
+        padding: 16px 24px;
+    }
 }
 
 .q_sentence {
