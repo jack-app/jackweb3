@@ -1,7 +1,7 @@
-import { log } from "console";
 import { ProductsScreen } from "@/screens/Products";
 import { Props as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
+import createOGPImage from "@/utils/createOGPImage";
 import { getDatabase } from "@/utils/notion";
 
 export default function Products({ products }: { products: ProductionProps[] }) {
@@ -14,25 +14,8 @@ export const getStaticProps = async () => {
 
   const products = await Promise.all(
     productDb.map(async (product: any) => {
-      console.log("product", product);
-      let imageUrl = "";
-      if (Array.isArray(product.Image) && product.Image.length > 0) {
-        const image = product.Image[0];
-
-        if (image.type === "file" && image.file) {
-          imageUrl = await createImage(product.id, "image", image.file.url);
-        }
-      } else if (product.Image && typeof product.Image === "object") {
-        const image = product.Image;
-
-        if (image.type === "file" && image.file) {
-          imageUrl = await createImage(product.id, "image", image.file.url);
-        }
-      }
-      console.log("imageUrl", imageUrl);
-
       const res = {
-        image: imageUrl,
+        image: "",
         title: product.properties.Name.title[0]?.plain_text,
         text: product.properties.Description.rich_text[0]?.plain_text,
         tags: product.properties.Tag.multi_select.map((tag: any) => tag.name),
@@ -41,7 +24,36 @@ export const getStaticProps = async () => {
         google_href: product.properties.GooglePlayStore.url,
       } as ProductionProps;
 
-      return res;
+      // 画像処理
+      if (product.properties.Image.files[0].file?.url) {
+        if (!product.cover) {
+          res.image = await createImage(
+            product.id,
+            "cover",
+            product.properties.Image.files[0].file.url,
+          );
+        } else if (product.cover.type === "file") {
+          // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
+          res.image = await createImage(product.id, "cover", product.cover.file.url);
+        } else if (product.cover.type === "external") {
+          res.image = product.cover.external.url;
+        }
+        return res;
+      } else {
+        if (!product.cover) {
+          res.image = await createOGPImage(
+            product.id,
+            product.properties.Name.title[0].plain_text,
+            product.properties.Description.rich_text[0]?.plain_text, // Add the missing writerName argument
+          );
+        } else if (product.cover.type === "file") {
+          // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
+          res.image = await createImage(product.id, "cover", product.cover.file.url);
+        } else if (product.cover.type === "external") {
+          res.image = product.cover.external.url;
+        }
+        return res;
+      }
     }),
   );
 

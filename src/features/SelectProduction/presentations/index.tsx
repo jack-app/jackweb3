@@ -33,8 +33,6 @@ export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
     return false;
   });
 
-  // console.log("filteredProducts", filteredProducts);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.button_context}>
