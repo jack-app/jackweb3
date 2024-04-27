@@ -53,20 +53,23 @@ details[open] .icon {
     font-family: Oxanium;
     color: $primary ;
     margin-right: 6px;
+    @media (max-width: $mobile) {
+        font-size:$text-lg ;
+    }
 }
 
 .q_content {
     font-size: $text-lg;
     font-family: "Hiragino Kaku Gothic Pro";
     @media (max-width: $mobile) {
-        font-size:$text-xs ;
+        font-size:$text-base ;
     }
 }
 
 .a_content {
     font-size: $text-lg;
     @media (max-width: $mobile) {
-        font-size:$text-xs ;
+        font-size:$text-base ;
     }
 }
 
