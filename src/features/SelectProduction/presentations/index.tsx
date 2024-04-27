@@ -1,69 +1,37 @@
 import React, { useState } from "react";
 import { Production } from "@/ui/Production";
+import { Props as ProductionProps } from "@/ui/Production";
 import styles from "./index.module.scss";
 
 type Props = {
-  products: Array<{
-    image: string;
-    title: string;
-    text: string;
-    tags: any;
-    web_href: string | undefined;
-    app_href: string | undefined;
-    google_href: string | undefined;
-  }>;
+  products: ProductionProps[];
 };
 
 export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
-  const [category, setCategory] = useState<"all" | "web" | "game" | "mobile">("all");
+  const categories = ["all", "web", "game", "mobile"];
+  const [category, setCategory] = useState<(typeof categories)[number]>("all");
 
   const filteredProducts = products.filter((product) => {
-    if (category === "all") {
-      return true;
-    }
-    if (category === "web") {
-      return product.tags.indexOf("web") !== -1;
-    }
-    if (category === "game") {
-      return product.tags.indexOf("game") !== -1;
-    }
-    if (category === "mobile") {
-      return product.tags.indexOf("mobile") !== -1;
-    }
-    return false;
+    if (category === "all") return true;
+    return product.tags.includes(category);
   });
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.button_context}>
-        <button
-          className={`${styles.button_all} ${category === "all" ? styles.active : ""}`}
-          onClick={() => setCategory("all")}
-        >
-          all
-        </button>
-        <button
-          className={`${styles.button_web} ${category === "web" ? styles.active : ""}`}
-          onClick={() => setCategory("web")}
-        >
-          web
-        </button>
-        <button
-          className={`${styles.button_game} ${category === "game" ? styles.active : ""}`}
-          onClick={() => setCategory("game")}
-        >
-          game
-        </button>
-        <button
-          className={`${styles.button_mobile} ${category === "mobile" ? styles.active : ""}`}
-          onClick={() => setCategory("mobile")}
-        >
-          mobile
-        </button>
+        {categories.map((item) => (
+          <button
+            key={item}
+            className={`${styles.button} ${category === item ? styles.active : ""}`}
+            onClick={() => setCategory(item)}
+          >
+            {item}
+          </button>
+        ))}
       </div>
       <div className={styles.productions}>
-        {filteredProducts.map((product, index) => (
-          <div key={index} className={styles.production}>
+        {filteredProducts.map((product) => (
+          <div key={product.id} className={styles.production}>
             <Production
               image={product.image}
               title={product.title}

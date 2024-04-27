@@ -7,13 +7,10 @@
 
 .button_context {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
-.button_all,
-.button_web,
-.button_game,
-.button_mobile {
+.button {
   box-shadow:$shadow;
   padding: 8px 16px;
   border-radius: $rounded-lg;
