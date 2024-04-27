@@ -6,26 +6,28 @@ import { FaGooglePlay } from "react-icons/fa";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
-type Props = {
-  image: string;
-  title: String;
-  text: String;
-  web_href?: string;
-  app_href?: string;
-  google_href?: string;
+export type Props = {
+  id?: string | null;
+  image: string | null;
+  title: string;
+  text: string;
+  tags: string[];
+  web_href?: string | null;
+  app_href?: string | null;
+  google_href?: string | null;
 };
-
 export const Production: React.FC<Props> = ({
   image,
   title,
   text,
+  tags,
   web_href,
   app_href,
   google_href,
 }) => {
   return (
     <div className={styles.wrapper}>
-      <Image className={styles.item_img} src={image} alt="" width={352} height={200} />
+      <Image className={styles.item_img} src={image || ""} alt="" width={352} height={200} />
       <div className={styles.item_context}>
         <div className={styles.context}>
           <div className={styles.title}>{title}</div>
