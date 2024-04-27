@@ -1,9 +1,9 @@
-import React from 'react';
-import styles from './index.module.scss';
-import { Heading1 } from "@/ui/Heading1"
-import { Heading2 } from "@/ui/Heading2"
-import { Accordion } from "@/ui/Accordion"
-import { aboutJoining, aboutActivity, aboutMember } from "./data"
+import React from "react";
+import { aboutJoining, aboutActivity, aboutMember } from "./data";
+import styles from "./index.module.scss";
+import { Accordion } from "@/ui/Accordion";
+import { Heading1 } from "@/ui/Heading1";
+import { Heading2 } from "@/ui/Heading2";
 
 type Props = {};
 
@@ -38,6 +38,5 @@ export const FaqScreen: React.FC<Props> = (props) => {
         </div>
       </div>
     </div>
-
   );
 };
