@@ -1,0 +1,159 @@
+@use '@/styles/variables' as *;
+h3{
+    font-size: 18px;
+    font-weight: 900;
+}
+img{
+  width: 300px;
+  height: 180px;
+}
+body{
+  padding:50px 0 ;
+}
+@mixin pc{
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+img{
+  max-width:100%;
+}
+.timeline {
+  position: relative; 
+  margin:0 auto;
+  padding:0 15px;
+  @include pc{
+     width:1000px;
+  }
+    &:before {
+      content: "";
+      width: 25px;
+      height: 100%;
+      background: #FFEACA ;
+      position: absolute;
+      transform: translateX(-80px);
+     @include pc {
+        left: 50%;
+        width: 50px;
+        position: absolute;
+        transform: translateX(-50%);
+      }
+    }
+    .timeline__item {
+      position: relative;
+      display: flex;
+      padding: 0 20px 0 20px;
+      @include pc {
+        padding: 0 50px 0 50px;
+        margin-bottom: -120px;
+      }
+      &:nth-of-type(2n-1) {
+        @include pc{
+        justify-content: flex-end;
+        padding: 0 50px 0px 50px;
+        margin-bottom: -120px;
+        }
+      }
+      &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: orange;
+        position: absolute;
+        border-radius: 50%;
+        left: 0;
+        top: 50%;
+        transform: translateX(-77.5px);
+        @include pc {
+          left: 50%;
+          top: 50%;
+          width: 20px;
+          height: 20px;
+          transform: translateX(-50%);
+        }
+      }
+      &:last-child {
+        padding-bottom: 15px;
+       @include pc {
+          padding-bottom: 0;
+        }
+        &:after {
+          content: "";
+          width: 100px;
+          height: 100px;
+          background: none;
+          position: absolute;
+          transform: translateX(-50%) rotate(-45deg);
+          border-left: 25px solid #FFEACA;
+          border-bottom: 25px solid #FFEACA;
+          bottom: 0;
+          left: 0;  
+          @include pc {
+            left: 50%;
+            width: 110px;
+            height: 110px;
+          }
+        }
+      }
+    }
+    .timeline__inner {
+      max-width: 450px;
+    }
+    .timeline__text {
+      width: 300px;
+      padding-top: 10px;
+      letter-spacing: 0.05em;
+      @include pc {
+        margin-top: 15px;
+      }
+    }
+  }
+  .bar {
+    background-color: #FFA61F;
+    width: 70px;
+    height: 3px;
+    position: absolute;
+    top: 52%;
+    left: -60px;
+    transform: translateY(50%);
+    @include pc {
+      width: 100px;
+      position: absolute;
+      top: 52%;
+      left: 490px;
+      transform: translateY(50%);
+    }     
+  }
+  .bar2 {
+    background-color: #FFA61F;
+    width: 70px;
+    height: 3px;
+    position: absolute;
+    top: 52%;
+    left: -60px;
+    transform: translateY(50%); 
+    @include pc {
+      width: 100px;
+      position: absolute;
+      top: 52%;
+      left: 380px;
+      transform: translateY(50%);
+    }      
+  }
+  .triangle{
+    width: 0;
+    height: 0;
+    border-right: 60px solid transparent;
+    border-top: 100px solid #FFEACA;
+    border-left: 60px solid transparent; 
+    position: relative;
+    left:-128px;
+    transform: translateY(50%);
+    @include pc {
+      position: relative;
+      left:425px;
+      transform: translateY(50%);
+    }
+  }
+
+
