@@ -16,6 +16,11 @@ details[open] .icon {
     align-items: center;
     padding: 24px 32px;
     box-shadow: $shadow;
+    height: 80px;
+    @media (max-width: $mobile) {
+        padding: 8px 16px;
+        height: 64px;
+    }
 }
 
 .answer {
@@ -25,6 +30,9 @@ details[open] .icon {
     align-items: center;
     padding: 24px 32px;
     box-shadow: $shadow;
+    @media (max-width: $mobile) {
+        padding: 8px 16px;
+    }
 }
 
 .q_sentence {
@@ -44,13 +52,32 @@ details[open] .icon {
     font-weight: bold;
     font-family: Oxanium;
     color: $primary ;
+    margin-right: 6px;
 }
 
 .q_content {
     font-size: $text-lg;
     font-family: "Hiragino Kaku Gothic Pro";
+    @media (max-width: $mobile) {
+        font-size:$text-xs ;
+    }
 }
 
 .a_content {
     font-size: $text-lg;
+    @media (max-width: $mobile) {
+        font-size:$text-xs ;
+    }
+}
+
+.icon{
+    width: 25px;
+    height: 27px;
+    justify-content: flex-end;
+    object-fit: cover;
+    margin-left: 4px;
+    @media (max-width: $mobile) {
+        width: 12px;
+        height: 13px;
+    }
 }
