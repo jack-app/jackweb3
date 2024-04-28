@@ -6,9 +6,8 @@
     background-color: #FFF4E3;
     padding: 32px;
     border-radius: $rounded-lg;
-    @media(max-width: $mobile){
-        padding: 16px;
-    }
+    // position: relative;
+    
 }
 
 .context{
@@ -23,19 +22,12 @@
     padding: 8px 16px;
     width: 128px;
     height: 40px;
-    @media (max-width: $mobile){
-        font-size: $text-sm;
-        height: 36px;
-        width: fit-content;
-}}
+}
 
 .text{
+    // padding: 20px;
     font-size: $text-3xl;
     font-weight: 600;
-    @media (max-width: $mobile){
-        font-size: $text-base;
-        margin-top: 10px;
-    }
 }
 
 .image{
@@ -47,10 +39,6 @@
     object-fit: cover;
     margin-left: auto;
     padding: 0;
-
-    @media (max-width: $mobile){
-        display: none;
-    }
 }
 
 .tag{
@@ -59,9 +47,6 @@
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
-    @media (max-width: $mobile){
-        margin-top: 10px;
-    }
 }
 
 .tag > div{
