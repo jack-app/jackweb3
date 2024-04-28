@@ -1,1 +1,23 @@
 @use '@/styles/variables' as *;
+
+.achievements{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    margin: 64px 80px;
+}
+
+.years{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
