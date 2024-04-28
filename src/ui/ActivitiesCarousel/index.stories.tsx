@@ -20,11 +20,7 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    images: [
-      "activities/image_1.png",
-      "https://placehold.jp/360x200.png",
-      "https://placehold.jp/360x200.png",
-    ],
+    images: ["activities/image_1.png", "activities/image_1.png", "activities/image_1.png"],
     interval: 5000,
   },
 };

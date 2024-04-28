@@ -26,38 +26,35 @@ export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({
     setSelectedIndex(index);
   };
 
-  const scrollPrev = useCallback(() => {
+  const handlePrevButton = useCallback(() => {
     emblaApi && emblaApi.scrollPrev();
     setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
     setResetFlag((prev) => !prev);
   }, [emblaApi, images]);
 
-  const scrollNext = useCallback(() => {
+  const handleNextButton = useCallback(() => {
     emblaApi && emblaApi.scrollNext();
     setSelectedIndex((prev) => (prev + 1) % images.length);
     setResetFlag((prev) => !prev);
   }, [emblaApi, images]);
 
-  const AutoAcrollNext = useCallback(() => {
+  const AutoScroll = useCallback(() => {
     emblaApi && emblaApi.scrollNext();
     setSelectedIndex((prev) => (prev + 1) % images.length);
   }, [emblaApi, images]);
 
   useEffect(() => {
     const instance = setInterval(() => {
-      AutoAcrollNext();
+      AutoScroll();
     }, interval);
 
     return () => clearInterval(instance);
-  }, [scrollNext, interval, AutoAcrollNext, resetFlag]);
+  }, [interval, AutoScroll, resetFlag]);
 
   return (
     <div className={`embla ${styles.carousel}`}>
       <div className={styles.slideWithButton}>
-        <button
-          className={`embla__button  ${styles.button} ${styles.prevButton}`}
-          onClick={scrollPrev}
-        >
+        <button className={`embla__button  ${styles.button}`} onClick={handlePrevButton}>
           <Image src="carousel_prev_arrow.svg" alt="prev button" width={20} height={20} />
         </button>
         <div className={`embla__viewport ${styles.viewport}`} ref={emblaRef}>
@@ -69,10 +66,7 @@ export const ActivitiesCarousel: React.FC<ActivitiesCarouselProps> = ({
             ))}
           </div>
         </div>
-        <button
-          className={`embla__button  ${styles.button} ${styles.nextButton}`}
-          onClick={scrollNext}
-        >
+        <button className={`embla__button  ${styles.button}`} onClick={handleNextButton}>
           <Image src="carousel_next_arrow.svg" alt="next button" width={20} height={20} />
         </button>
       </div>

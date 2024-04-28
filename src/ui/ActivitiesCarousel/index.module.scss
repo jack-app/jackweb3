@@ -14,14 +14,17 @@
 			overflow: hidden;
 			width: 600px;
 			height: 360px;
+      margin: 0 8px 16px 8px;
+
+
+      @media (max-width: $mobile) {
+        width: 320px;
+			  height: 192px;
+        margin: 0 8px 9px 8px;
+      }
 	
 			.container {
 					display: flex;
-					// user-select: none;
-					// -webkit-touch-callout: none;
-					// -khtml-user-select: none;
-					// -ms-touch-action: pan-y;
-					// touch-action: pan-y;
 			}
     }
 	}
@@ -31,21 +34,13 @@
     flex: 0 0 auto;
     width: 100%;
     position: relative;
-    // img {
-    //   display: block;
-    //   width: 100%;
-    //   height: auto;
-    // }
   }
 
   .button {
     position: relative;
     z-index: 1;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: none;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -55,31 +50,27 @@
   .dots {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
   }
 
   .dot {
-    background-color: #ccc;
+    background-color: $primary;
+    opacity: 0.5;
     border: none;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     margin: 0 5px;
     cursor: pointer;
 
-    &Active {
-      background-color: #333;
+    @media (max-width: $mobile) {
+      width: 14px;
+      height: 14px;
+      margin: 0 4px;
     }
 
-    // .sr-only {
-    //   position: absolute;
-    //   width: 1px;
-    //   height: 1px;
-    //   padding: 0;
-    //   margin: -1px;
-    //   overflow: hidden;
-    //   clip: rect(0,0,0,0);
-    //   border: 0;
-    // }
+    &Active {
+      background-color: $primary;
+      opacity: 1;
+    }
   }
 }
