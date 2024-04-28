@@ -2,12 +2,13 @@
 
 .carousel {
   position: relative;
-  max-width: 100%;
+  width: fit-content;
   margin: 0 auto;
+
   
   .slideWithButton {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
     .viewport {
