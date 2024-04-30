@@ -7,8 +7,8 @@ import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
 export type Props = {
-  id?: string | null;
-  image: string | null;
+  id?: string;
+  image: string;
   title: string;
   text: string;
   tags: string[];
