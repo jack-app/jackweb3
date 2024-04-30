@@ -8,8 +8,9 @@ type UseSelectProduction = (allProducts: ProductionProps[]) => {
   filteredProducts: ProductionProps[];
 };
 
+export const categories = ["all", "web", "mobile", "game"];
+
 export const useSelectProduction: UseSelectProduction = (allProducts) => {
-  const categories = ["all", "web", "game", "mobile"];
   const [category, setCategory] = useState<(typeof categories)[number]>("all");
 
   const filteredProducts = allProducts.filter((product) => {

@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from "@storybook/react";
-import React from "react";
+import { categories } from "../hooks";
 import { SelectProductionPresentation } from "./";
 
 // プロダクトのサンプルデータ
@@ -41,6 +41,18 @@ const meta: Meta<typeof SelectProductionPresentation> = {
   },
   tags: ["autodocs"],
   argTypes: {
+    categories: {
+      description: "An array of category strings",
+      defaultValue: categories,
+    },
+    category: {
+      description: "The selected category",
+      defaultValue: "all",
+    },
+    setCategory: {
+      description: "A function to set the category",
+      action: "setCategory",
+    },
     products: {
       description: "An array of product objects",
       defaultValue: sampleProducts,
@@ -54,6 +66,18 @@ type Story = StoryObj<typeof SelectProductionPresentation>;
 
 export const Default: Story = {
   args: {
-    products: sampleProducts, // プロダクトのサンプルデータをpropsとして渡す
+    categories: categories,
+    category: "all",
+    setCategory: () => {},
+    products: sampleProducts,
+  },
+};
+
+export const WebCategory: Story = {
+  args: {
+    categories: categories,
+    category: "web",
+    setCategory: () => {},
+    products: sampleProducts,
   },
 };
