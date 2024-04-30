@@ -13,6 +13,7 @@ export const getStaticProps = async () => {
   const products = await Promise.all(
     productDb.map(async (product: any) => {
       const res = {
+        id: product.id,
         image: "",
         title: product.properties.Name.title[0]?.plain_text || null,
         text: product.properties.Description.rich_text[0]?.plain_text || null,
@@ -39,17 +40,7 @@ export const getStaticProps = async () => {
         }
       } else {
         // デフォルト画像の処理
-        if (!product.cover) {
-          res.image = await createImage(
-            product.id,
-            "cover",
-            "https://www.beiz.jp/images_S/orange/orange_00073.jpg",
-          );
-        } else if (product.cover.type === "file") {
-          res.image = await createImage(product.id, "cover", product.cover.file.url);
-        } else if (product.cover.type === "external") {
-          res.image = product.cover.external.url;
-        }
+        res.image = "/orang.jpg";
       }
 
       return res;
