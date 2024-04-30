@@ -4,18 +4,18 @@ import { Props as ProductionProps } from "@/ui/Production";
 import styles from "./index.module.scss";
 
 type Props = {
+  categories: string[];
+  category: string;
+  setCategory: (category: string) => void;
   products: ProductionProps[];
 };
 
-export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
-  const categories = ["all", "web", "game", "mobile"];
-  const [category, setCategory] = useState<(typeof categories)[number]>("all");
-
-  const filteredProducts = products.filter((product) => {
-    if (category === "all") return true;
-    return product.tags.includes(category);
-  });
-
+export const SelectProductionPresentation: React.FC<Props> = ({
+  categories,
+  category,
+  setCategory,
+  products,
+}) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.button_context}>
@@ -30,7 +30,7 @@ export const SelectProductionPresentation: React.FC<Props> = ({ products }) => {
         ))}
       </div>
       <div className={styles.productions}>
-        {filteredProducts.map((product) => (
+        {products.map((product) => (
           <div key={product.id} className={styles.production}>
             <Production
               image={product.image}
