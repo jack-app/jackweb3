@@ -6,6 +6,10 @@
     gap: 40px;
     align-items: center;
     margin: 64px 80px;
+    @media screen and (max-width: $mobile){
+        gap: 24px;
+        margin: 32px 24px;
+    }
 }
 
 .about {
@@ -13,4 +17,8 @@
     flex-direction: column;
     gap: 24px;
     width: 100%;
+
+    @media screen and (max-width: $mobile){
+        gap: 8px;
+    }
 }
