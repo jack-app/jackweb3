@@ -1,15 +1,14 @@
 @use '@/styles/variables' as *;
 
 .wrapper {
-
     background-color: transparent;
-    padding: 3rem;
-    margin: 0;
+    margin: 0 auto;
     height: auto;
     width: 100%;
     display: flex;
     flex-flow: column;
-
+    padding: 64px 80px;
+    max-width: calc(1280px + 160px);
 
     .allnum{
         font-size: $text-4xl;
@@ -50,8 +49,9 @@
 
     .memberstory{
         padding-top: 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 0 auto;
     }
-
-   
-
 }
