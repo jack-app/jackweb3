@@ -11,7 +11,7 @@ body{
   padding:50px 0 ;
 }
 @mixin pc{
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 900px) {
     @content;
   }
 }
@@ -42,7 +42,7 @@ img{
     .timeline__item {
       position: relative;
       display: flex;
-      padding: 0 20px 0 20px;
+      padding: 20px;
       @include pc {
         padding: 0 50px 0 50px;
         margin-bottom: -120px;
@@ -143,17 +143,25 @@ img{
   .triangle{
     width: 0;
     height: 0;
-    border-right: 60px solid transparent;
+    border-right: 40px solid transparent;
     border-top: 100px solid #FFEACA;
-    border-left: 60px solid transparent; 
+    border-left: 40px solid transparent; 
     position: relative;
-    left:-128px;
+    left:-108px;
     transform: translateY(50%);
     @include pc {
       position: relative;
       left:425px;
       transform: translateY(50%);
+      border-right: 60px solid transparent;
+      border-top: 100px solid #FFEACA;
+      border-left: 60px solid transparent;
     }
+  }
+  .item_img{
+    width: 352px;
+    height: 200px;
+    object-fit: cover;
   }
 
 
