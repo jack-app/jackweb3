@@ -1,0 +1,19 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+
+  .body {
+    display: grid;
+    justify-content: center;
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 60px 70px;
+    }
+  }
+}
