@@ -7,7 +7,7 @@ type Props = {
   showPreview: () => void;
 };
 
-export const PreviewUsage: React.FC<Props> = ({ notionPageId, showPreview }) => {
+export const BlogPreviewUsage: React.FC<Props> = ({ notionPageId, showPreview }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>１．プレビューしたい記事のNotionリンクをコピー</h2>

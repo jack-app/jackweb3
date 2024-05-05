@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PreviewUsage } from "./";
+import { BlogPreviewUsage } from "./";
 
-type T = typeof PreviewUsage;
+type T = typeof BlogPreviewUsage;
 
 const meta: Meta<T> = {
-  title: "ui/PreviewUsage",
-  component: PreviewUsage,
+  title: "ui/BlogPreviewUsage",
+  component: BlogPreviewUsage,
   parameters: {
     layout: "centered",
   },
