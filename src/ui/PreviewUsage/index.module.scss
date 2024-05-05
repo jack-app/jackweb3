@@ -1,0 +1,50 @@
+@use '@/styles/variables' as *;
+
+.container {
+
+  .title {
+    font-size: $text-2xl;
+    margin-bottom: 16px;
+
+    @media (max-width: $mobile) {
+      font-size: $text-sm;
+      margin-bottom: 9px;
+    }
+  }
+
+  .text {
+    font-size: $text-base;
+    margin-bottom: 16px;
+    
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .mt24 {
+    margin-top: 24px;
+  }
+
+  .inputArea {
+
+    .input {
+      border-radius: $rounded;
+      border: solid #CBCBCB;
+      background-color: $white;
+      padding: 8px;
+      width: 700px;
+
+      @media (max-width: $mobile) {
+        max-width: 70vw;
+      }
+    }
+
+    .inputButton {
+      border-radius: $rounded;
+      border: solid #CBCBCB;
+      padding: 8px;
+      background-color: $white;
+    }
+  }
+
+}
