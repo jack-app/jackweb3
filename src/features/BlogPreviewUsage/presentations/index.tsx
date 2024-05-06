@@ -3,15 +3,15 @@ import React from "react";
 import styles from "./index.module.scss";
 
 type Props = {
-  inputNotionPageId: string;
-  setInputNotionPageId: (value: string) => void;
-  showPreviewAndSyncQueryParam: (id: string) => void;
+  inputNotionURL: string;
+  setInputNotionURL: (value: string) => void;
+  showPreviewFromNotionURL: () => void;
 };
 
 export const BlogPreviewUsagePresentation: React.FC<Props> = ({
-  inputNotionPageId,
-  setInputNotionPageId,
-  showPreviewAndSyncQueryParam,
+  inputNotionURL,
+  setInputNotionURL,
+  showPreviewFromNotionURL,
 }) => {
   return (
     <div className={styles.container}>
@@ -29,15 +29,12 @@ export const BlogPreviewUsagePresentation: React.FC<Props> = ({
         <input
           type="text"
           className={styles.input}
-          value={inputNotionPageId}
+          value={inputNotionURL}
           onChange={(e) => {
-            setInputNotionPageId(e.target.value);
+            setInputNotionURL(e.target.value);
           }}
         />
-        <button
-          className={styles.inputButton}
-          onClick={() => showPreviewAndSyncQueryParam(inputNotionPageId)}
-        >
+        <button className={styles.inputButton} onClick={() => showPreviewFromNotionURL()}>
           確定
         </button>
       </div>

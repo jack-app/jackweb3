@@ -12,12 +12,16 @@ export const BlogPreviewUsage: React.FC<Props> = ({
   showPreview,
   showPreviewAndSyncQueryParam,
 }) => {
-  const { pageId, setPageId } = useBlogPreviewUsage(notionPageId, showPreview);
+  const { inputNotionURL, setInputNotionURL, showPreviewFromNotionURL } = useBlogPreviewUsage(
+    notionPageId,
+    showPreview,
+    showPreviewAndSyncQueryParam,
+  );
   return (
     <BlogPreviewUsagePresentation
-      inputNotionPageId={pageId}
-      setInputNotionPageId={setPageId}
-      showPreviewAndSyncQueryParam={showPreviewAndSyncQueryParam}
+      inputNotionURL={inputNotionURL}
+      setInputNotionURL={setInputNotionURL}
+      showPreviewFromNotionURL={showPreviewFromNotionURL}
     />
   );
 };

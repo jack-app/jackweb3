@@ -11,16 +11,16 @@ const meta: Meta<T> = {
   },
   tags: ["autodocs"],
   argTypes: {
-    inputNotionPageId: {
+    inputNotionURL: {
       control: {
         type: "text",
       },
     },
-    setInputNotionPageId: {
-      action: "setPageId",
+    setInputNotionURL: {
+      action: "setInputNotionPageId",
     },
-    showPreviewAndSyncQueryParam: {
-      action: "showPreview",
+    showPreviewFromNotionURL: {
+      action: "showPreviewAndSyncQueryParam",
     },
   },
 };
@@ -30,9 +30,9 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    inputNotionPageId:
+    inputNotionURL:
       "https://www.notion.so/Full-Calendar-Google-Calendar-d6f4e00a47f5452e9e356440725c7242?pvs=4",
-    setInputNotionPageId: () => {},
-    showPreviewAndSyncQueryParam: () => {},
+    setInputNotionURL: () => {},
+    showPreviewFromNotionURL: () => {},
   },
 };

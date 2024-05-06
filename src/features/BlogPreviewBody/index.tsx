@@ -1,6 +1,7 @@
 import React from "react";
 import { useBlogPreviewBody } from "./hooks";
 import { BlogPreviewBodyPresentation } from "./presentations";
+import BlogPreviewBodySkelton from "./presentations/Skelton";
 
 type Props = {
   notionPageId?: string;
@@ -11,7 +12,7 @@ export const BlogPreviewBody: React.FC<Props> = ({ notionPageId }) => {
   return (
     <div>
       {loading ? (
-        <div>loading...</div>
+        <BlogPreviewBodySkelton />
       ) : !notionId ? (
         <></>
       ) : (
