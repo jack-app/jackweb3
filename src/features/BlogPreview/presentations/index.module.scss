@@ -1,0 +1,8 @@
+@use '@/styles/variables' as *;
+
+
+.BlogPreviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}

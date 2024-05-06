@@ -3,11 +3,16 @@ import React from "react";
 import styles from "./index.module.scss";
 
 type Props = {
-  notionPageId: string;
-  showPreview: () => void;
+  inputNotionPageId: string;
+  setInputNotionPageId: (value: string) => void;
+  showPreviewAndSyncQueryParam: (id: string) => void;
 };
 
-export const BlogPreviewUsage: React.FC<Props> = ({ notionPageId, showPreview }) => {
+export const BlogPreviewUsagePresentation: React.FC<Props> = ({
+  inputNotionPageId,
+  setInputNotionPageId,
+  showPreviewAndSyncQueryParam,
+}) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>１．プレビューしたい記事のNotionリンクをコピー</h2>
@@ -21,8 +26,18 @@ export const BlogPreviewUsage: React.FC<Props> = ({ notionPageId, showPreview })
         以下のフォームにコピーしたリンクをペーストし、確定を押してください。
       </p>
       <div className={styles.inputArea}>
-        <input type="text" className={styles.input} value={notionPageId} />
-        <button className={styles.inputButton} onClick={showPreview}>
+        <input
+          type="text"
+          className={styles.input}
+          value={inputNotionPageId}
+          onChange={(e) => {
+            setInputNotionPageId(e.target.value);
+          }}
+        />
+        <button
+          className={styles.inputButton}
+          onClick={() => showPreviewAndSyncQueryParam(inputNotionPageId)}
+        >
           確定
         </button>
       </div>

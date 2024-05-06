@@ -1,22 +1,25 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BlogPreviewUsage } from "./";
+import { BlogPreviewUsagePresentation } from "./";
 
-type T = typeof BlogPreviewUsage;
+type T = typeof BlogPreviewUsagePresentation;
 
 const meta: Meta<T> = {
-  title: "ui/BlogPreviewUsage",
-  component: BlogPreviewUsage,
+  title: "features/BlogPreviewUsage",
+  component: BlogPreviewUsagePresentation,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   argTypes: {
-    notionPageId: {
+    inputNotionPageId: {
       control: {
         type: "text",
       },
     },
-    showPreview: {
+    setInputNotionPageId: {
+      action: "setPageId",
+    },
+    showPreviewAndSyncQueryParam: {
       action: "showPreview",
     },
   },
@@ -27,8 +30,9 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    notionPageId:
+    inputNotionPageId:
       "https://www.notion.so/Full-Calendar-Google-Calendar-d6f4e00a47f5452e9e356440725c7242?pvs=4",
-    showPreview: () => {},
+    setInputNotionPageId: () => {},
+    showPreviewAndSyncQueryParam: () => {},
   },
 };
