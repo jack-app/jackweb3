@@ -1,12 +1,13 @@
-import React from 'react';
-import styles from './index.module.scss';
+import React from "react";
+import { Heading1 } from "@/ui/Heading1";
+import styles from "./index.module.scss";
 
 type Props = {};
 
 export const ActivitiesScreen: React.FC<Props> = (props) => {
   return (
     <div>
-      <h1>Activitiesページです。</h1>
+      <Heading1 enTitle="Activities" jaTitle="活動内容" />
     </div>
   );
 };
