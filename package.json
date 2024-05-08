@@ -12,8 +12,13 @@
     "plop": "plop"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/google-calendar": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
     "@notionhq/client": "^2.2.14",
     "destyle.css": "^4.0.1",
+    "embla-carousel-react": "^8.0.2",
     "next": "14.1.0",
     "plop": "^4.0.1",
     "react": "^18",

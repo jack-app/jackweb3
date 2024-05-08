@@ -1,15 +1,15 @@
-import React from 'react';
-import styles from './index.module.scss';
-import { Heading1 } from "@/ui/Heading1"
-import { Heading2 } from "@/ui/Heading2"
-import { Accordion } from "@/ui/Accordion"
-import { aboutJoining, aboutActivity, aboutMember } from "./data"
+import React from "react";
+import { Accordion } from "@/ui/Accordion";
+import { Heading1 } from "@/ui/Heading1";
+import { Heading2 } from "@/ui/Heading2";
+import { aboutJoining, aboutActivity, aboutMember } from "./data";
+import styles from "./index.module.scss";
 
 type Props = {};
 
 export const FaqScreen: React.FC<Props> = (props) => {
   return (
-    <div>
+    <main>
       <Heading1 enTitle="FAQ" jaTitle="よくあるご質問" />
       <div className={styles.faq}>
         <div className={styles.about}>
@@ -37,7 +37,6 @@ export const FaqScreen: React.FC<Props> = (props) => {
           </div>
         </div>
       </div>
-    </div>
-
+    </main>
   );
 };

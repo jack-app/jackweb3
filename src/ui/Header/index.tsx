@@ -7,18 +7,20 @@ import styles from "./index.module.scss";
 
 type Props = {};
 
-export const Header: React.FC<Props> = (props) => {
+export const Header: React.FC<Props> = () => {
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
     setShowNav(!showNav);
+    document.body.style.overflow = "hidden"; // stop scroll when menu is open
   };
   const closeMenu = () => {
     setShowNav(false);
+    document.body.style.overflow = "auto";
   };
   return (
     <header className={styles.wrapper}>
-      <Link href="/" className={styles.logo}>
+      <Link href="/" className={styles.logo} onClick={closeMenu}>
         jack
       </Link>
       <div className={styles.right}>
