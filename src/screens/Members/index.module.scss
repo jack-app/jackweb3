@@ -9,14 +9,24 @@
     flex-flow: column;
     padding: 64px 80px;
     max-width: calc(1280px + 160px);
+    @media screen and (max-width: $mobile){
+        gap: 24px;
+        padding: 32px 24px;
+    }
 
     .allnum{
         font-size: $text-4xl;
         text-align: center;
         padding-bottom: 40px;
+        @media screen and (max-width: $mobile){
+            font-size: $text-2xl;
+        }
     }
     .allnum span{
         font-size: $text-5xl;
+        @media screen and (max-width: $mobile){
+            font-size: $text-3xl;
+        }
     }
 
 
@@ -25,6 +35,11 @@
         display: flex;
         justify-content: center;
         gap: 40px;
+        @media screen and (max-width: $mobile){
+            flex-flow: column;
+            margin: 5px auto;
+            height: 1200px;
+        }
     }
  
     .graphcontent{
@@ -32,6 +47,10 @@
         flex-flow: column;
         align-items:center;
         width: 300px;
+        @media screen and (max-width: $mobile){
+            text-align: center;
+            width: 250px;
+        }
        
     }
 
@@ -40,6 +59,9 @@
         font-size:$text-3xl;
         font-weight: bold;
         padding-bottom: 24px;
+        @media screen and (max-width: $mobile){
+        font-size: $text-2xl;
+        }
     }
 
     .detail{
