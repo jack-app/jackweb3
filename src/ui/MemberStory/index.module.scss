@@ -2,7 +2,6 @@
 
 *;.wrapper {
   background-color: transparent;
-  padding: 3rem;
   margin: 0;
   height: auto;
   width: 100%;
@@ -46,6 +45,7 @@
 
   .card__header{
     display: flex;
+    align-items: end;
     border-bottom: 2px solid $primary;
     padding: 16px 0;
     position: relative;
@@ -58,8 +58,6 @@
   }
 
   .type{
-    position: relative;
-    bottom: -10px;
     color: $primary;
     padding: 0 1rem;
     font-size: $text-lg;
@@ -69,6 +67,7 @@
     padding: 16px 0;
     font-size: $text-base;
     line-height : 200%;
+    width: 100%;
   }
   @media screen and (max-width: $pc){
   

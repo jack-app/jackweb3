@@ -1,1 +1,57 @@
 @use '@/styles/variables' as *;
+
+.wrapper {
+    background-color: transparent;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 64px 80px;
+    max-width: calc(1280px + 160px);
+
+    .allnum{
+        font-size: $text-4xl;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .allnum span{
+        font-size: $text-5xl;
+    }
+
+
+    .graph{
+        height: 448px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
+ 
+    .graphcontent{
+        display:flex;
+        flex-flow: column;
+        align-items:center;
+        width: 300px;
+       
+    }
+
+    .title{
+        color: $primary;
+        font-size:$text-3xl;
+        font-weight: bold;
+        padding-bottom: 24px;
+    }
+
+    .detail{
+        font-size: $text-base;
+        padding-top: 16px;
+    }
+
+    .memberstory{
+        padding-top: 64px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 0 auto;
+    }
+}
