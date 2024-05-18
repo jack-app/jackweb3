@@ -1,15 +1,22 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./index.module.scss";
 
 type Props = {};
 
-export const Timeline: React.FC<Props> = (props) => {
+export const Timeline: React.FC<Props> = (Props) => {
   return (
     <>
       <div className={styles.timeline}>
         <div className={styles.timeline__item}>
           <div className={styles.timeline__inner}>
-            <img src="https://placehold.jp/360x200.png" alt=""></img>
+            <Image
+              className={styles.item_img}
+              src={"https://placehold.jp/360x200.png"}
+              alt=""
+              width={360}
+              height={200}
+            />
             <div className={styles.timeline__text}>
               <h3>4月 新歓</h3>
               <p>
@@ -21,7 +28,13 @@ export const Timeline: React.FC<Props> = (props) => {
         </div>
         <div className={styles.timeline__item}>
           <div className={styles.timeline__inner}>
-            <img src="https://placehold.jp/360x200.png" alt=""></img>
+            <Image
+              className={styles.item_img}
+              src={"https://placehold.jp/360x200.png"}
+              alt=""
+              width={360}
+              height={200}
+            />
             <div className={styles.timeline__text}>
               <h3>5月 jack hack</h3>
               <p>2~3日でチームでアプリを開発してみよう。君のアプリは一番人気を勝ち取れるか！？</p>
@@ -31,7 +44,13 @@ export const Timeline: React.FC<Props> = (props) => {
         </div>
         <div className={styles.timeline__item}>
           <div className={styles.timeline__inner}>
-            <img src="https://placehold.jp/360x200.png" alt=""></img>
+            <Image
+              className={styles.item_img}
+              src={"https://placehold.jp/360x200.png"}
+              alt=""
+              width={360}
+              height={200}
+            />
             <div className={styles.timeline__text}>
               <h3>6月 名大祭</h3>
               <p>チームで制作したアプリやゲームを展示します。実際にお客さんに遊んでもらおう！</p>
@@ -41,7 +60,13 @@ export const Timeline: React.FC<Props> = (props) => {
         </div>
         <div className={styles.timeline__item}>
           <div className={styles.timeline__inner}>
-            <img src="https://placehold.jp/360x200.png" alt=""></img>
+            <Image
+              className={styles.item_img}
+              src={"https://placehold.jp/360x200.png"}
+              alt=""
+              width={360}
+              height={200}
+            />
             <div className={styles.timeline__text}>
               <h3>8月 アイデアソン</h3>
               <p>
@@ -53,7 +78,13 @@ export const Timeline: React.FC<Props> = (props) => {
         </div>
         <div className={styles.timeline__item}>
           <div className={styles.timeline__inner}>
-            <img src="https://placehold.jp/360x200.png" alt=""></img>
+            <Image
+              className={styles.item_img}
+              src={"https://placehold.jp/360x200.png"}
+              alt=""
+              width={360}
+              height={200}
+            />
             <div className={styles.timeline__text}>
               <h3>12月 jack fes</h3>
               <p>さぁ、一年の集大成を発表しよう！努力の証をここに残そう。</p>
