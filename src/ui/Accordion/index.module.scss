@@ -16,10 +16,9 @@ details[open] .icon {
     align-items: center;
     padding: 24px 32px;
     box-shadow: $shadow;
-    height: 80px;
+    height: fit-content;
     @media (max-width: $mobile) {
-        padding: 8px 16px;
-        height: 64px;
+        padding: 16px;
     }
 }
 
@@ -39,12 +38,14 @@ details[open] .icon {
     display: flex;
     align-items: center;
     gap: 16px;
+    width: 100%;
 }
 
 .a_sentence {
     display: flex;
     align-items: center;
     gap: 16px;
+    width: 100%;
 }
 
 .capital {
