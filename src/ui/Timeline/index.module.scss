@@ -55,6 +55,13 @@ img{
         margin-bottom: -120px;
         }
       }
+      &:nth-of-type(2n) {
+        @include pc{
+        .bar {
+          left: 380px;
+        }
+        }
+      }
       &:before {
         content: "";
         width: 20px;
@@ -125,22 +132,6 @@ img{
       left: 490px;
       transform: translateY(50%);
     }     
-  }
-  .bar2 {
-    background-color: #FFA61F;
-    width: 40px;
-    height: 3px;
-    position: absolute;
-    top: 52%;
-    left: -60px;
-    transform: translateY(50%); 
-    @include pc {
-      width: 100px;
-      position: absolute;
-      top: 52%;
-      left: 380px;
-      transform: translateY(50%);
-    }      
   }
   .triangle{
     width: 0;
