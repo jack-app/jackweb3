@@ -4,12 +4,13 @@ import styles from "./index.module.scss";
 
 type Props = {
   texts?: RichText[];
+  id: string;
 };
 
-export const Heading2Presentation: React.FC<Props> = ({ texts }) => {
+export const Heading2Presentation: React.FC<Props> = ({ texts, id }) => {
   if (!texts) return null;
   return (
-    <h2 className={styles.heading2}>
+    <h2 className={styles.heading2} id={id}>
       <Text text={texts} />
     </h2>
   );

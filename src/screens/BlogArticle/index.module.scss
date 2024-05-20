@@ -28,3 +28,8 @@
         text-decoration: underline solid $link;
     }
 }
+
+.article {
+    display: flex;
+    align-items: flex-start;
+}

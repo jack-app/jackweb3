@@ -1,0 +1,9 @@
+@use '@/styles/variables' as *;
+
+.heading {
+  font-size: $text-base;
+  color: $black;
+  padding-left: 24px;
+  line-height: 2;
+  display: block;
+}
