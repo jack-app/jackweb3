@@ -1,42 +1,33 @@
 import React from "react";
-import { y2023 } from "./data";
 import styles from "./index.module.scss";
-import { AchievementItem } from "@/ui/AchievementItem";
+import { AchievementItem, Props as AchievementItemProps } from "@/ui/AchievementItem";
 import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
-type Props = {};
+import { groupBy } from "@/utils/groupBy";
 
-export const AchievementsScreen: React.FC<Props> = (props) => {
+type Props = {
+  achievements: AchievementItemProps[];
+};
+export const AchievementsScreen: React.FC<Props> = ({ achievements }) => {
+  const groupedAchievement = groupBy(achievements, (achievement) => {
+    return new Date(achievement.date).getFullYear().toString();
+  });
+
+  const sortedYear = Object.keys(groupedAchievement).sort((a, b) => (a > b ? -1 : 1));
   return (
     <main>
       <Heading1 enTitle="Achievements" jaTitle="活動実績" />
-      <div className={styles.achievements}>
-        <div className={styles.years}>
-          <Heading2 text="2023" />
-          <div className={styles.content}>
-            {y2023.map((prop, num) => (
-              <AchievementItem
-                key={num}
-                image={prop.image}
-                date={prop.date}
-                text={prop.text}
-                article_href={prop.article_href}
-                web_href={prop.web_href}
-                app_href={prop.article_href}
-                google_href={prop.article_href}
-                git_href={prop.article_href}
-              />
-            ))}
+      <div className={styles.wrapper}>
+        {sortedYear.map((year) => (
+          <div key={year} className={styles.content}>
+            <Heading2 text={year} />
+            <div className={styles.content}>
+              {groupedAchievement[year].map((achievement) => (
+                <AchievementItem key={achievement.id} {...achievement} />
+              ))}
+            </div>
           </div>
-        </div>
-        <div className={styles.years}>
-          <Heading2 text="2022" />
-          <div className={styles.content}></div>
-        </div>
-        <div className={styles.years}>
-          <Heading2 text="2020" />
-          <div className={styles.content}></div>
-        </div>
+        ))}
       </div>
     </main>
   );

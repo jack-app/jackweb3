@@ -1,23 +1,37 @@
 @use '@/styles/variables' as *;
 
-.achievements{
+.wrapper{
     display: flex;
     flex-direction: column;
     gap: 40px;
     align-items: center;
     margin: 64px 80px;
-}
-
-.years{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
+    @media(max-width:$pc){
+        margin: 64px 32px;
+        gap: 24px;
+    }
+    @media (max-width: $mobile){
+        margin: 32px 16px;
+        gap: 16px;
+    }
 }
 
 .content{
     display: flex;
     flex-direction: column;
-    gap: 16px;
-
+    gap: 24px;
+    width: 100%;
+    @media (max-width: $pc){
+        gap: 16px;
+    }
+    @media (max-width: $mobile){
+        gap: 8px;
+    }
 }
+
+// .wpper{
+//     display: flex;
+//     flex-direction: column;
+//     gap: 16px;
+
+// }

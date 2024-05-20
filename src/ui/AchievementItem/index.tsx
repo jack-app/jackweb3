@@ -7,18 +7,20 @@ import { FaGithub } from "react-icons/fa";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
-type Props = {
-  date: String;
-  text: String;
+export type Props = {
+  id: string;
+  date: string;
+  text: string;
   image: string;
-  article_href: string;
-  web_href: string;
-  app_href: string;
-  google_href: string;
-  git_href: string;
+  article_href?: string;
+  web_href?: string;
+  app_href?: string;
+  google_href?: string;
+  git_href?: string;
 };
 
 export const AchievementItem: React.FC<Props> = ({
+  id,
   date,
   text,
   image,
