@@ -1,51 +1,92 @@
 @use '@/styles/variables' as *;
 
-.ActivitiesCarousel{
-    position: relative;
-    right: -300px;
-    top: 30px;
-    padding-top: 30px;
+
+@mixin pc{
+    @media only screen and (min-width: 900px) {
+      @content;
+    }
 }
 
-.text{
-    font-size: 20px;
-    width: 40%;
-    position: relative;
-    top: -350px;
-    left: 100px;
-}
-
-.text_title{
-    font-size: 35px;
-    font-weight: 800;
-    position: relative;
-    top: -400px;
-    padding-left: 100px;
-    padding-top: 30px;
-}
-
-.event{
-    position: relative;
-    top: -200px;
-}
-.Heading2{
-    padding: 10px 0px 10px 100px;
-}
-
-.calender{
-    width: 925px;
-    position: relative;
-    right: -500px;   
-}
-
-.schedule_text{
-    width: 500px;
-    position: relative;
-    top: -500px;
-    padding-left: 100px;
-    font-size: 20px;
-}
-
-// .taiken{
-//     color: #FFA61F;
+// .ActivitiesCarousel{
+//     position: relative;
+//     right: 0px;
+//     top: 70px;
+//     padding-top: 30px;
+//     @include pc{
+//         position: relative;
+//         right: -300px;
+//         top: 30px;
+//     }
 // }
+
+// .text{
+//     font-size: 20px;
+//     width: 400px;
+//     position: relative;
+//     top: 0px;
+//     left: 70px;
+//     @include pc{
+//         width: 40%;
+//         position: relative;
+//         top: -350px;
+//         left: 100px;
+//     }
+// }
+
+// .text_title{
+//     font-size: 35px;
+//     font-weight: 800;
+//     position: relative;
+//     top: -250px;
+//     padding-left: 50px;
+//     padding-top: 30px;
+//     @include pc{
+//         top: -400px;
+//         padding-left: 100px;
+//     }
+// }
+
+// .event{
+//     position: relative;
+//     top: 70px;
+//     @include pc{
+//         top: -200px;
+//     }
+// }
+// .Heading2{
+//     padding: 10px 0px 10px 50px;
+//     @include pc{
+//         padding: 10px 0px 10px 100px;
+//     }
+// }
+
+// .calender{
+//     width: 380px;
+//     position: relative;
+//     top: 150px;
+//     right: -100px; 
+//     @include  pc{
+//         width: 925px;
+//         position: relative;
+//         right: -500px; 
+//     }
+// }
+
+// .schedule_text{
+//     width: 500px;
+//     position: relative;
+//     top: -380px;
+//     padding-left: 100px;
+//     font-size: 20px;
+//     @include pc{
+//         top: -500px;
+//     }
+// }
+
+// .hoge{
+//     display: flex;
+// }
+
+.timeline{
+    width: 100%;
+}
