@@ -1,1 +1,51 @@
 @use '@/styles/variables' as *;
+
+.ActivitiesCarousel{
+    position: relative;
+    right: -300px;
+    top: 30px;
+    padding-top: 30px;
+}
+
+.text{
+    font-size: 20px;
+    width: 40%;
+    position: relative;
+    top: -350px;
+    left: 100px;
+}
+
+.text_title{
+    font-size: 35px;
+    font-weight: 800;
+    position: relative;
+    top: -400px;
+    padding-left: 100px;
+    padding-top: 30px;
+}
+
+.event{
+    position: relative;
+    top: -200px;
+}
+.Heading2{
+    padding: 10px 0px 10px 100px;
+}
+
+.calender{
+    width: 925px;
+    position: relative;
+    right: -500px;   
+}
+
+.schedule_text{
+    width: 500px;
+    position: relative;
+    top: -500px;
+    padding-left: 100px;
+    font-size: 20px;
+}
+
+// .taiken{
+//     color: #FFA61F;
+// }
