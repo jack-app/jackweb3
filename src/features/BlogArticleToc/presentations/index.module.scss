@@ -12,6 +12,9 @@
     width: 260px;
     overflow-x: scroll;
     -ms-overflow-style: none;
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .contents_box::-webkit-scrollbar {

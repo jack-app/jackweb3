@@ -10,8 +10,8 @@ type Props = {
 export const Heading1Presentation: React.FC<Props> = ({ texts, id }) => {
   if (!texts) return null;
   return (
-    <h1 className={styles.heading1} id={id}>
+    <h2 className={styles.heading1} id={id}>
       <Text text={texts} />
-    </h1>
+    </h2>
   );
 };

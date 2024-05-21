@@ -13,7 +13,7 @@ export const TocHeading2Presentation: React.FC<Props> = ({ id, texts }) => {
   return (
     <div>
       <a className={styles.heading} href={`#${id}`}>
-        &nbsp; {texts[0].text?.content}
+        {texts[0].text?.content}
       </a>
     </div>
   );
