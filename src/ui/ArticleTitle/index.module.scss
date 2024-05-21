@@ -1,0 +1,21 @@
+@use '@/styles/variables' as *;
+
+.title {
+    font-size: $text-3xl;
+    font-weight: 700;
+    color: $black;
+    margin-top: 12px;
+}
+
+.tagContainer {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.date {
+    font-size: $text-xs;
+    margin-bottom: 16px;
+}
