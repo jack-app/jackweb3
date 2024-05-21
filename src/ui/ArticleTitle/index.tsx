@@ -1,8 +1,15 @@
 import React from "react";
-import { PageInfo as Props } from "@/pages/blog/[id]";
 import styles from "./index.module.scss";
-import { Tag } from "../Tag";
+import { Tag, TagType } from "../Tag";
 import { Writer } from "../Writer";
+
+export type Props = {
+  title: string;
+  writerName: string;
+  writerImage: string;
+  tags: TagType[];
+  date: string;
+};
 
 export const ArticleTitle: React.FC<Props> = ({ title, writerName, writerImage, tags, date }) => {
   return (

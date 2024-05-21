@@ -1,16 +1,9 @@
 import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block } from "@/types/block";
+import { Props as PageInfo } from "@/ui/ArticleTitle";
 import { TagType } from "@/ui/Tag";
 import createImage from "@/utils/createImage";
 import { getBlocks, getDatabase, getPage } from "@/utils/notion";
-
-export type PageInfo = {
-  title: string;
-  writerName: string;
-  writerImage: string;
-  tags: TagType[];
-  date: string;
-};
 
 export default function Article({
   id,

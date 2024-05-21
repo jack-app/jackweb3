@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
-import { PageInfo } from "@/pages/blog/[id]";
 import { Block } from "@/types/block";
+import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
 
 type Props = {
