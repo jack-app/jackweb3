@@ -19,7 +19,7 @@ export const AchievementsScreen: React.FC<Props> = ({ achievements }) => {
       <Heading1 enTitle="Achievements" jaTitle="活動実績" />
       <div className={styles.wrapper}>
         {sortedYear.map((year) => (
-          <div key={year} className={styles.content}>
+          <div key={year} className={styles.year}>
             <Heading2 text={year} />
             <div className={styles.content}>
               {groupedAchievement[year].map((achievement) => (

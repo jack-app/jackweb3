@@ -5,21 +5,23 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
-    margin: 64px 80px;
+    padding: 64px 80px;
+    margin: 0 auto;
+    max-width: calc(1280px + 160px);
     @media(max-width:$pc){
-        margin: 64px 32px;
+        padding: 64px 32px;
         gap: 24px;
     }
     @media (max-width: $mobile){
-        margin: 32px 16px;
+        padding: 32px 16px;
         gap: 16px;
     }
 }
 
-.content{
+.year{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
     width: 100%;
     @media (max-width: $pc){
         gap: 16px;
@@ -29,9 +31,11 @@
     }
 }
 
-// .wpper{
-//     display: flex;
-//     flex-direction: column;
-//     gap: 16px;
-
-// }
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @media (max-width: $pc){
+        gap: 8px;
+    }
+}
