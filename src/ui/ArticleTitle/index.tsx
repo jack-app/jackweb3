@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import { Tag, TagType } from "../Tag";
 import { Writer } from "../Writer";
 
-type Props = {
+export type Props = {
   title: string;
   writerName: string;
   writerImage: string;
@@ -15,7 +15,7 @@ export const ArticleTitle: React.FC<Props> = ({ title, writerName, writerImage, 
   return (
     <div>
       <Writer writerName={writerName} writerImage={writerImage} />
-      <div className={styles.title}>{title}</div>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.tagContainer}>
         {tags.map((tag) => (
           <Tag key={tag.id} name={tag.name} color={tag.color} isLink={tag.isLink} />

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import { PageInfo } from "@/pages/blog/[id]";
 import { Block } from "@/types/block";
+import { Props as PageInfo } from "@/ui/ArticleTitle";
 import { ArticleTitle } from "@/ui/ArticleTitle";
 import { renderBlock } from "./hooks/renderBlock";
 import { BlogArticleBodyWrapper } from "./presentations/";
