@@ -5,9 +5,7 @@ import { Heading2 } from "@/ui/Heading2";
 
 type Props = {
   sortedYear: string[];
-  groupedAchievement: AchievementItemProps[];
-  // year: string;
-  // achievment: string;
+  groupedAchievement: Record<string, AchievementItemProps[]>;
 };
 
 export const AchievementListPresentation: React.FC<Props> = ({

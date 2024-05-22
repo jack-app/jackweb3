@@ -1,6 +1,4 @@
-// import { groupedAchievement } from "@/screens/Achievements";
-import { AchievementItem, Props as AchievementItemProps } from "@/ui/AchievementItem";
-// import { groupBy } from "@/utils/groupBy";
+import { Props as AchievementItemProps } from "@/ui/AchievementItem";
 
 type WithDate = {
   date: string;

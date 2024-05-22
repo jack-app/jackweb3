@@ -1,1 +1,41 @@
 @use '@/styles/variables' as *;
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    padding: 64px 80px;
+    margin: 0 auto;
+    max-width: calc(1280px + 160px);
+    @media(max-width:$pc){
+        padding: 64px 32px;
+        gap: 24px;
+    }
+    @media (max-width: $mobile){
+        padding: 32px 16px;
+        gap: 16px;
+    }
+}
+
+.year{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    @media (max-width: $pc){
+        gap: 16px;
+    }
+    @media (max-width: $mobile){
+        gap: 8px;
+    }
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @media (max-width: $pc){
+        gap: 8px;
+    }
+}

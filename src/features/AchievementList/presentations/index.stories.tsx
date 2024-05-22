@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { AchievementListPresentation } from './';
+import type { Meta, StoryObj } from "@storybook/react";
+import { AchievementListPresentation } from "./";
 
 type T = typeof AchievementListPresentation;
 
 const meta: Meta<T> = {
-  title: 'features/AchievementList',
+  title: "features/AchievementList",
   component: AchievementListPresentation,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
 };
 

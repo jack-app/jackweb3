@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { AchievementItem, Props as AchievementItemProps } from "@/ui/AchievementItem";
+import { AchievementList } from "@/features/AchievementList";
+import { Props as AchievementItemProps } from "@/ui/AchievementItem";
 import { Heading1 } from "@/ui/Heading1";
-import { Heading2 } from "@/ui/Heading2";
 import { groupBy } from "@/utils/groupBy";
 
 type Props = {
@@ -17,18 +17,7 @@ export const AchievementsScreen: React.FC<Props> = ({ achievements }) => {
   return (
     <main>
       <Heading1 enTitle="Achievements" jaTitle="活動実績" />
-      <div className={styles.wrapper}>
-        {sortedYear.map((year) => (
-          <div key={year} className={styles.year}>
-            <Heading2 text={year} />
-            <div className={styles.content}>
-              {groupedAchievement[year].map((achievement) => (
-                <AchievementItem key={achievement.id} {...achievement} />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
+      <AchievementList achievements={achievements} />
     </main>
   );
 };
