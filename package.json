@@ -17,6 +17,7 @@
     "@fullcalendar/google-calendar": "^6.1.11",
     "@fullcalendar/react": "^6.1.11",
     "@notionhq/client": "^2.2.14",
+    "classnames": "^2.5.1",
     "destyle.css": "^4.0.1",
     "embla-carousel-react": "^8.0.2",
     "next": "14.1.0",
@@ -28,7 +29,8 @@
     "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.72.0",
     "satori": "^0.10.13",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "tocbot": "^4.28.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.23",
