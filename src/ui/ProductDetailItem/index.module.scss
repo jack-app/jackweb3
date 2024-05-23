@@ -1,12 +1,13 @@
 @use '@/styles/variables' as *;
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
 
 .wrapper{
     width: 530px;
     height: 310px;
-    background-color:black;
+    background-color:var(--product-background-color);
     z-index: 0;
-    font-family: "Abel", sans-serif;
+    font-family: "Abel","Zen Kaku Gothic New", sans-serif;
 }
 
 .head_line{
@@ -35,10 +36,11 @@
     z-index: 1;
 }
 
-.image{
+.product_image{
     margin: 2.5rem 2.7rem;
-    background-color: #fff;
-    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
     z-index: 100;
 }
 
@@ -53,7 +55,7 @@
 
 .title{
     font-size: large;
-    color: rgb(255, 123, 0);
+    color:#ffffff;
     position: absolute;
     right: 20px;
     bottom: 110px;
@@ -70,7 +72,7 @@
     padding: 0;
     width: 120px;
     height: auto;
-    color: #F1F1F1;
+    color: #000000;
     word-break: break-all;
     overflow-wrap : break-word;
 
@@ -100,15 +102,15 @@
     color: red;
 }
 .main_description{
-    color: #F1F1F1;
+    color: #000000;
     word-break: break-all;
     overflow-wrap : break-word;
 }
 
 .link{
-    color: blue;
+    color:#F1F1F1;
 }
 
 .git{
-    color: brown;
+    color:#F1F1F1;
 }
