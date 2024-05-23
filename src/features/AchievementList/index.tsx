@@ -1,7 +1,7 @@
 import React from "react";
-import { AchievementListPresentation } from "./presentations/";
 import { useAchievement } from "@/features/AchievementList/hooks";
 import { Props as AchievementItemProps } from "@/ui/AchievementItem";
+import { AchievementListPresentation } from "./presentations/";
 
 type Props = {
   achievements: AchievementItemProps[];

@@ -1,9 +1,5 @@
-import { text } from "stream/consumers";
-import id from "@fullcalendar/core/locales/id.js";
-import image from "next/image";
 import type { Meta, StoryObj } from "@storybook/react";
 import { AchievementListPresentation } from "./";
-import { Props as AchievementItemProps } from "@/ui/AchievementItem";
 
 type T = typeof AchievementListPresentation;
 

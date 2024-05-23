@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./index.module.scss";
 import { AchievementItem, Props as AchievementItemProps } from "@/ui/AchievementItem";
 import { Heading2 } from "@/ui/Heading2";
+import styles from "./index.module.scss";
 
 type Props = {
   sortedYear: string[];
