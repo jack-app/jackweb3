@@ -1,10 +1,20 @@
 import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block } from "@/types/block";
+import { Props as PageInfo } from "@/ui/ArticleTitle";
+import { TagType } from "@/ui/Tag";
 import createImage from "@/utils/createImage";
-import { getBlocks, getDatabase } from "@/utils/notion";
+import { getBlocks, getDatabase, getPage } from "@/utils/notion";
 
-export default function Article({ id, blocks }: { id: string; blocks: Block[] }) {
-  return <BlogArticleScreen id={id} blocks={blocks} />;
+export default function Article({
+  id,
+  blocks,
+  pageInfo,
+}: {
+  id: string;
+  blocks: Block[];
+  pageInfo: PageInfo;
+}) {
+  return <BlogArticleScreen id={id} blocks={blocks} pageInfo={pageInfo} />;
 }
 
 export const getStaticPaths = async () => {
@@ -22,7 +32,16 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params }: { params: { id: string } }) => {
   const pageId = params.id as string;
   const blocks = (await getBlocks(pageId)) as Block[];
-
+  const page = (await getPage(pageId)) as any;
+  const pageInfo = {
+    title: page.properties.Name.title[0].plain_text,
+    writerName: page.properties.Writer.created_by.name,
+    writerImage: page.properties.Writer.created_by.avatar_url,
+    tags: page.properties.tag.multi_select,
+    date: page.properties.Publish_Date.date
+      ? page.properties.Publish_Date.date.start
+      : page.created_time.slice(0, 10),
+  } as PageInfo;
   // 画像生成ではNode.jsの機能を使うため、サーバー上で処理されるgetStaticProps内で行う
   const filteredBlocks = await Promise.all(
     blocks.map(async (block) => {
@@ -57,6 +76,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
     props: {
       id: pageId,
       blocks: filteredBlocks,
+      pageInfo: pageInfo,
     },
   };
 };

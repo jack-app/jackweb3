@@ -5,7 +5,13 @@
     flex-direction: column;
     gap: 40px;
     align-items: center;
-    margin: 64px 80px;
+    padding: 64px 80px;
+    margin: 0 auto;
+    max-width: calc(1280px + 160px);
+    @media screen and (max-width: $mobile){
+        gap: 24px;
+        padding: 32px 24px;
+    }
 }
 
 .about {
@@ -13,4 +19,8 @@
     flex-direction: column;
     gap: 24px;
     width: 100%;
+
+    @media screen and (max-width: $mobile){
+        gap: 8px;
+    }
 }
