@@ -11,9 +11,9 @@ export const MembersScreen: React.FC = () => {
     <main>
       <Heading1 enTitle="Members" jaTitle="メンバー" />
       <div className={styles.wrapper}>
-        <h1 className={styles.allnum}>
+        <p className={styles.allnum}>
           全体人数：約<span>70</span>人
-        </h1>
+        </p>
         <div className={styles.graph}>
           {Members.map((member, index) => (
             <div className={styles.graphcontent} key={index}>
