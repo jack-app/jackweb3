@@ -1,23 +1,23 @@
 @use '@/styles/variables' as *;
-h3{
+.title{
     font-size: 18px;
     font-weight: 900;
 }
-img{
+.item_img{
   width: 300px;
   height: 180px;
 }
-body{
-  padding:50px 0 ;
-}
+// body{
+//   padding:50px 0 ;
+// }
 @mixin pc{
   @media only screen and (min-width: 900px) {
     @content;
   }
 }
-img{
-  max-width:100%;
-}
+// img{
+//   max-width:100%;
+// }
 .timeline {
   position: relative; 
   margin:0 auto;
