@@ -22,7 +22,7 @@ export const ProductsCarouselPresentation: React.FC<Props> = ({
     <div className={`embla ${styles.carousel}`}>
       <div className={styles.slideWithButton}>
         <button className={`embla__button  ${styles.button}`} onClick={handlePrevButton}>
-          <Image src="carousel_prev_arrow.svg" alt="prev button" width={20} height={20} />
+          <Image src="carousel_products_prev.svg" alt="prev button" width={64} height={64} />
         </button>
         <div className={`embla__viewport ${styles.viewport}`} ref={emblaRef}>
           <div className={`embla__container ${styles.container}`}>
@@ -34,7 +34,7 @@ export const ProductsCarouselPresentation: React.FC<Props> = ({
           </div>
         </div>
         <button className={`embla__button  ${styles.button}`} onClick={handleNextButton}>
-          <Image src="carousel_next_arrow.svg" alt="next button" width={20} height={20} />
+          <Image src="carousel_products_next.svg" alt="next button" width={64} height={64} />
         </button>
       </div>
       <div className={`embla__dots ${styles.dots}`}>
