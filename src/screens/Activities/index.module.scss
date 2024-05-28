@@ -7,86 +7,117 @@
     }
 }
 
-// .ActivitiesCarousel{
-//     position: relative;
-//     right: 0px;
-//     top: 70px;
-//     padding-top: 30px;
-//     @include pc{
-//         position: relative;
-//         right: -300px;
-//         top: 30px;
-//     }
-// }
+.ActivitiesCarousel{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include pc{
+        justify-content: right;
+        width: auto;
+    }
+}
 
-// .text{
-//     font-size: 20px;
-//     width: 400px;
-//     position: relative;
-//     top: 0px;
-//     left: 70px;
-//     @include pc{
-//         width: 40%;
-//         position: relative;
-//         top: -350px;
-//         left: 100px;
-//     }
-// }
+.top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include pc{
+        width: 50%;
+    }
+}
 
-// .text_title{
-//     font-size: 35px;
-//     font-weight: 800;
-//     position: relative;
-//     top: -250px;
-//     padding-left: 50px;
-//     padding-top: 30px;
-//     @include pc{
-//         top: -400px;
-//         padding-left: 100px;
-//     }
-// }
+.text{
+    font-size: 20px;
+    justify-content: center;
+    margin: 20px;
+    @include pc{
+        justify-content: center;
+        margin: 60px;
+    }
+}
 
-// .event{
-//     position: relative;
-//     top: 70px;
-//     @include pc{
-//         top: -200px;
-//     }
-// }
-// .Heading2{
-//     padding: 10px 0px 10px 50px;
-//     @include pc{
-//         padding: 10px 0px 10px 100px;
-//     }
-// }
+.text_title{
+    font-size: 35px;
+    font-weight: 800;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    @include pc{
+        display: flex;
+        justify-content: left;
+        margin-left: 60px;
+    }
+}
 
-// .calender{
-//     width: 380px;
-//     position: relative;
-//     top: 150px;
-//     right: -100px; 
-//     @include  pc{
-//         width: 925px;
-//         position: relative;
-//         right: -500px; 
-//     }
-// }
 
-// .schedule_text{
-//     width: 500px;
-//     position: relative;
-//     top: -380px;
-//     padding-left: 100px;
-//     font-size: 20px;
-//     @include pc{
-//         top: -500px;
-//     }
-// }
+.Heading2{
+    margin: 20px;
+    @include pc{
+        margin: 50px;
+    }
+}
 
-// .hoge{
-//     display: flex;
-// }
+.outline{
+    display: flex;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    @include pc{
+        display: flex;
+        flex-direction: row;
+    }
+}
 
 .timeline{
-    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.schedule_content{
+    display: flex;
+    flex-direction: column;
+    @include pc{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.schedule_text{
+    font-size: 20px;
+    margin: 20px;
+    @include pc{
+        margin: 0 50px 0 50px;
+    }
+    
+}
+
+.pcButton{
+    display: none;
+    @include pc{
+        display: flex;
+        margin: 50px;
+        justify-content: center;
+    }
+}
+
+.mobileButton{
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+    @include pc{
+        display: none;
+    }
+}
+
+.taiken{
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFA61F;
+}
+
+.anata{
+    font-size: 25px;
+    font-weight: 700;
 }

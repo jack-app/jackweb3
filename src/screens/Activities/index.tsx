@@ -7,23 +7,17 @@ import { Heading2 } from "@/ui/Heading2";
 import { IconLink } from "@/ui/IconLink";
 import { Timeline } from "@/ui/Timeline";
 import styles from "./index.module.scss";
-{
-  /* <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes"
-></meta>; */
-}
 
 type Props = {};
 
 export const ActivitiesScreen: React.FC<Props> = (props) => {
   return (
     <main>
-      <div className="activities">
+      <div className={styles.activities}>
         <Heading1 enTitle="Activities" jaTitle="活動内容" />
-        <div className={styles.hoge}>
+        <h3 className={styles.text_title}>対面×オンライン</h3>
+        <div className={styles.outline}>
           <div className={styles.top}>
-            <h3 className={styles.text_title}>対面×オンライン</h3>
             <p className={styles.text}>
               週に一度、水曜日か金曜日に対面活動をしています。もちろん、参加は自由です！
               <br />
@@ -42,7 +36,6 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
           <div className={styles.Heading2}>
             <Heading2 text="About event" />
           </div>
-          {/* <Heading2 text="About event" /> */}
           <div className={styles.timeline}>
             <Timeline />
           </div>
@@ -51,23 +44,34 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
           <div className={styles.Heading2}>
             <Heading2 text="Schedule" />
           </div>
-          <div className={styles.calender}>
-            <Calendar />
-          </div>
-          <div className={styles.schedule_text}>
-            <p>
-              jackに興味をもってくれた、そこの
-              <br />
-              あなた！
-              <br />
-              ぜひ一度、体験してみませんか？
-              <br />
-              カレンダーに「対面活動」とある日のうち、都合がよい日程で遊びに来てください！
-              <br />
-            </p>
-            <div className={styles.button}>
-              <IconLink href="" text="サイト" icon={MdNavigateNext} size="s" openInNewTab />
+          <div className={styles.schedule_content}>
+            <div className={styles.schedule_text}>
+              <p>
+                jackに興味をもってくれた、そこの
+                <br />
+                <span className={styles.anata}>あなた</span>！
+                <br />
+                ぜひ一度、<span className={styles.taiken}>体験</span>してみませんか？
+                <br />
+                カレンダーに「対面活動」とある日のうち、都合がよい日程で遊びに来てください！
+                <br />
+              </p>
+              <div className={styles.pcButton}>
+                <IconLink
+                  href=""
+                  text="体験応募はこちら"
+                  icon={MdNavigateNext}
+                  size="l"
+                  openInNewTab
+                />
+              </div>
             </div>
+            <div className={styles.calender}>
+              <Calendar />
+            </div>
+          </div>
+          <div className={styles.mobileButton}>
+            <IconLink href="" text="体験応募はこちら" icon={MdNavigateNext} size="s" openInNewTab />
           </div>
         </div>
       </div>
