@@ -6,6 +6,11 @@
   height: auto;
   width: 100%;
   display: flex;  
+  @media screen and (max-width: $pc){
+    flex-flow: column;
+    align-items: center;
+  
+  }
 
   .card_photo{
     width: 270px;
@@ -23,6 +28,9 @@
    padding: 0;
    position: absolute;
    z-index: 0;
+   @media screen and (max-width: $pc){
+    position: relative;
+  }
   }
 
   .square{
@@ -50,17 +58,30 @@
     padding: 16px 0;
     position: relative;
     width: 100%;
+    @media screen and (max-width: $pc){
+      flex-flow: column;
+      align-items: start;
+      padding-top: 24px;
+      padding-bottom: 5px;
+    
+    }
   }
   .name{
     padding: 0;
     font-size: $text-4xl;
-    font-weight: 10;
+    @media screen and (max-width: $mobile){
+      font-size: $text-xl;
+    }
   }
 
   .type{
     color: $primary;
-    padding: 0 1rem;
     font-size: $text-lg;
+    @media screen and (max-width: $mobile){
+      font-size: $text-base;
+      padding: 0;
+    
+    }
    
   }
   .text{
@@ -69,8 +90,6 @@
     line-height : 200%;
     width: 100%;
   }
-  @media screen and (max-width: $pc){
-  
-  }
+ 
   
 }
