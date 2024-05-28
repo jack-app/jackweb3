@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import tocbot from "tocbot";
+import React, { useEffect, useState } from "react";
 import { Block } from "@/types/block";
 import styles from "./index.module.scss";
 import { renderToc } from "../hooks/renderToc";
@@ -9,23 +8,36 @@ type Props = {
 };
 
 export const BlogArticleTocPresentation: React.FC<Props> = ({ blocks }) => {
+  const [activeId, setActiveId] = useState<string>("");
   useEffect(() => {
-    tocbot.init({
-      tocSelector: ".toc", //　目次を追加する class 名
-      contentSelector: ".content", // 目次を取得するコンテンツの class 名
-      headingSelector: "h2, h3, span", // 目次として取得する見出しタグ
-    });
-    console.log("tocbot", tocbot);
-    // 不要となったtocbotインスタンスを削除
-    return () => tocbot.destroy();
+    let currentId = "";
+    const handleScroll = () => {
+      const headings = document.querySelectorAll("h2, h3");
+      headings.forEach((heading) => {
+        const rect = heading.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 0) {
+          if (heading.id === "") return;
+          currentId = heading.id;
+        }
+      });
+      setActiveId(currentId);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>目次</h2>
       {blocks.map((block) => {
-        return renderToc(block);
+        return (
+          <div key={block.id} className={styles.tocItem}>
+            {renderToc(block, activeId)}
+          </div>
+        );
       })}
-      <div className="toc"></div>
     </div>
   );
 };

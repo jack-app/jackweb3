@@ -7,4 +7,11 @@
   line-height: 1.5;
   display: block;
   padding-bottom: 8px;
+  cursor: pointer;
+  color: #65717b;
+}
+
+.active {
+  font-weight: bold;
+  color: $black;
 }
