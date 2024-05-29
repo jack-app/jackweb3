@@ -1,4 +1,3 @@
-import { text } from "stream/consumers";
 import Image from "next/image";
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -12,22 +11,23 @@ export type Props = {
   id?: string;
   image: string;
   title: string;
-  detail_title: RichText[];
   text: string;
-  description: RichText[];
-  detail?: RichText[];
-  release_date?: RichText[];
   tags: string[];
-  git_href?: string | null;
   web_href?: string | null;
   app_href?: string | null;
   google_href?: string | null;
+};
+
+export type ProductionDetailProps = Props & {
+  description: RichText[];
+  release_date?: RichText[];
+  detail?: RichText[];
+  git_href?: string | null;
 };
 export const Production: React.FC<Props> = ({
   image,
   title,
   text,
-  tags,
   web_href,
   app_href,
   google_href,

@@ -1,22 +1,24 @@
 import Image from "next/image";
+import { ProductDetailItem } from "@/ui/ProductDetailItem";
+import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import styles from "./index.module.scss";
 
 type Props = {
   handlePrevButton: () => void;
   handleNextButton: () => void;
   handleRadioButton: (index: number) => void;
-  images: string[];
   selectedIndex: number;
   emblaRef: any;
+  products: ProductionProps[];
 };
 
 export const ProductsCarouselPresentation: React.FC<Props> = ({
   handlePrevButton,
   handleNextButton,
   handleRadioButton,
-  images,
   selectedIndex,
   emblaRef,
+  products,
 }) => {
   return (
     <div className={`embla ${styles.carousel}`}>
@@ -26,9 +28,9 @@ export const ProductsCarouselPresentation: React.FC<Props> = ({
         </button>
         <div className={`embla__viewport ${styles.viewport}`} ref={emblaRef}>
           <div className={`embla__container ${styles.container}`}>
-            {images.map((image, index) => (
-              <div key={index} className={`embla__slide ${styles.slide}`}>
-                <Image src={image} alt={`num ${index}`} width={600} height={360} />
+            {products.map((product) => (
+              <div key={product.id} className={`embla__slide ${styles.slide}`}>
+                <ProductDetailItem product={product} />
               </div>
             ))}
           </div>
@@ -38,9 +40,9 @@ export const ProductsCarouselPresentation: React.FC<Props> = ({
         </button>
       </div>
       <div className={`embla__dots ${styles.dots}`}>
-        {images.map((_, index) => (
+        {products.map((product, index) => (
           <button
-            key={index}
+            key={product.id}
             className={`embla__dot ${styles.dot} ${selectedIndex === index ? styles.dotActive : ""}`}
             onClick={() => handleRadioButton(index)}
           ></button>
