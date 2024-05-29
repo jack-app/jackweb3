@@ -2,7 +2,8 @@
 
 .carousel {
   position: relative;
-  width: fit-content;
+  width: 100%;
+  overflow-x: hidden;
   margin: 0 auto;
 
   
