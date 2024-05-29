@@ -29,7 +29,6 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                   ></div>
                   <div className={styles.context}>
                     <div className={styles.context_left}>
-                      {/* <div className={styles.number}>{number}</div> */}
                       <div className={styles.square}></div>
                       <Image
                         className={styles.product_image}

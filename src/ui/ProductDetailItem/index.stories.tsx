@@ -83,6 +83,6 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    product: sampleProducts[0], // Access the first element of the sampleProducts object
+    product: sampleProducts[0],
   },
 };
