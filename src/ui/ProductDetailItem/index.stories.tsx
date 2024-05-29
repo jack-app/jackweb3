@@ -5,26 +5,11 @@ import { ProductDetailItem } from "./";
 
 type T = typeof ProductDetailItem;
 
-type Product = {
-  id?: string;
-  image: string;
-  title: string;
-  text?: string;
-  tags?: string[];
-  web_href?: string | null;
-  app_href?: string | null;
-  google_href?: string | null;
-  description: RichText[];
-  release_date?: RichText[];
-  detail?: RichText[];
-  git_href?: string | null;
-};
-
 const sampleProducts: ProductionDetailProps[] = [
   {
     id: "1",
-    image: "/activities/image_1.png",
-    title: "CODEDUEL",
+    image: "/test_picture.png",
+    title: "TITLE",
     description: [
       {
         text: undefined,
