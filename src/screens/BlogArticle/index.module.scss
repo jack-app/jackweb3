@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     margin: 64px 80px;
-
+    width: 100%;
     @media (max-width: $pc) {
         margin: 32px 40px;
     }
@@ -13,20 +13,23 @@
     @media (max-width: $mobile) {
         margin: 24px 0;
     }
-    .page {
-        display: flex;
-        gap: 8px;
-        align-self: flex-start;
-        align-items: center;
-        font-size: $text-base;
-        margin-bottom: 32px;
-    }
+}
 
-    .gotopage {
-        color: $link;
-        font-size: $text-base;
-        text-decoration: underline solid $link;
-    }
+.page {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: $text-base;
+    margin-left: 0;
+    max-width: calc(848px + 260px + 16px);
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.gotopage {
+    color: $link;
+    font-size: $text-base;
+    text-decoration: underline solid $link;
 }
 
 .article {

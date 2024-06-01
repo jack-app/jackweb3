@@ -6,13 +6,15 @@ type Props = {
   id: string;
   texts?: RichText[];
   isActive?: boolean;
+  type: string;
 };
 
-export const TocHeading3Presentation: React.FC<Props> = ({ id, texts, isActive }) => {
+export const TocHeadingPresentation: React.FC<Props> = ({ id, texts, isActive, type }) => {
   if (!texts) return null;
+  const content = type === "heading_3" ? `\u2003${texts[0].text?.content}` : texts[0].text?.content;
   return (
     <a className={`${styles.heading} ${isActive ? styles.active : ""}`} href={`#${id}`}>
-      &emsp;{texts[0].text?.content}
+      {content}
     </a>
   );
 };
