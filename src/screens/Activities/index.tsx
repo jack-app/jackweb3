@@ -66,7 +66,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
                 />
               </div>
             </div>
-            <div className={styles.calender}>
+            <div className={styles.calendar}>
               <Calendar />
             </div>
           </div>

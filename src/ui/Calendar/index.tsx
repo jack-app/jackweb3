@@ -15,6 +15,12 @@ export const Calendar: React.FC<Props> = () => {
           plugins={[dayGridPlugin, googleCalendarPlugin]}
           googleCalendarApiKey={googleCalendarApiKey}
           events={{ googleCalendarId: googleCalendarId }}
+          eventTimeFormat={{
+            // 時間の表示形式を設定
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false, // 24時間表記を指定
+          }}
           headerToolbar={{
             left: "prev",
             center: "title",
@@ -24,6 +30,23 @@ export const Calendar: React.FC<Props> = () => {
             dayGridMonth: {
               titleFormat: { month: "long" },
             },
+          }}
+          eventContent={(eventInfo) => {
+            const { start, end } = eventInfo.event;
+            const startTime = start
+              ? start.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false })
+              : "";
+            const endTime = end
+              ? end.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false })
+              : "";
+            return (
+              <>
+                <div className="fc-time">
+                  {startTime} - {endTime}
+                </div>
+                <div className="fc-title">{eventInfo.event.title}</div>
+              </>
+            );
           }}
         />
       </div>
@@ -50,7 +73,7 @@ export const Calendar: React.FC<Props> = () => {
           }
           .fc-direction-ltr {
             background-color: #fff4e3;
-            width: 60vw;
+            width: 100%;
           }
           .fc-day-sat {
             color: blue;
@@ -64,15 +87,20 @@ export const Calendar: React.FC<Props> = () => {
           .fc-day-sun .fc-col-header-cell-cushion{
             color: red;
           }
+          .fc-event {
+            display: grid;
+            justify-content: center;
+          }
           .fc-daygrid-event-dot {
             display: none;
           }
-          .fc-direction-ltr .fc-daygrid-event .fc-event-time {
-            display: none;
-          }
-          .fc-event-title {
+          .fc-daygrid-dot-event .fc-event-title {
             text-align: center;
             font-size: 18px;
+            font-weight: 500;
+          }
+          .fc-title {
+            font-size: 20px;
           }
       `}
       </style>
