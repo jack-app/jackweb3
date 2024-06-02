@@ -1,1 +1,218 @@
 @use '@/styles/variables' as *;
+@font-face {
+    font-family: 'CP Revenge';
+    src: url('/CP_Revenge.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'k-font';
+    src: url('/keifont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  
+
+
+.catchcopy_wrapper{
+    background:linear-gradient(to bottom,$white 75%,$background);
+}
+    .catchcopy_container{
+    //    display: flex;
+    //    flex-direction: column;
+    //    align-items: center;
+        // background:linear-gradient(to bottom,$white 75%,$background);
+        max-inline-size: max-content; //左揃えで中央配置
+        margin-inline: auto; //左揃えで中央配置
+        // text-align: center;
+        padding-top: 170px;
+        padding-left: 150px;
+    }
+    .line{
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        margin-bottom: 70px;
+        // text-align: left;
+    }
+    .catchcopy1{
+        font-size: $text-9xl;
+        font-family: "CP Revenge";
+        color: #FFCE8E;
+        // margin-left: 150px; //二行目と開始位置あわせる
+        position: relative;
+    }
+    
+    .catchcopy2{
+        font-size: $text-9xl;
+        font-family: "CP Revenge";
+        color: #FFB84E;
+        position: relative;
+    
+    }
+    
+    .catchcopy3{
+        font-size: $text-9xl;
+        font-family: "CP Revenge";
+        color: #FF9900;
+        position: relative;
+    }
+    
+    .text_gray{
+        font-size: $text-9xl;
+        font-family: "CP Revenge";
+        color: #C8C6C6;
+    }
+    .comment_icon{
+        position: absolute;
+        right: 0;
+        top: -150px;
+        
+    }
+    .dennkyuu_icon{
+        position: absolute;
+        transform: translate(-100%,-100%);
+    }
+    .PC_icon{
+        position: absolute;
+        transform: translate(100%,-90%);
+        right: 0;
+        
+    }
+    
+    
+    .catchcopy_jack{
+        font-size: $text-8xl;
+        font-family: "k-font";
+        color: #FF9900;
+        position: absolute;
+        right: 0;
+        transform: translate(500%,-50%);
+
+        
+    }
+    .line3{
+        display: flex;
+        padding-bottom: 32px;
+    }
+   
+    .Mark{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        // padding-top: 32px;
+        padding-bottom: 50px;
+    }
+
+    .Top_container{
+        width: 90%;
+        margin: auto;
+        padding-top: 32px;
+    }
+
+    .jackdedekirukoto_container{
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    .text_dot{
+        font-family: "DotGothic16";
+        font-size: $text-6xl;
+        padding-top:64px;
+    }
+
+    .text_detail{
+        font-size: $text-2xl;
+        font-weight: 1000;
+    }
+
+    .jackdedekirukoto_photo{
+        margin-left: 64px;
+
+    }
+    .jackdedekirukoto{
+        display: flex;
+        align-items: center;
+        gap: 64px;
+    }
+    .text_3xl{
+        font-size: $text-3xl;
+        font-weight: 1000;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .text_blue{
+        color: $link;
+        border-bottom: 3px solid $link;
+    }
+    .jack_photo{
+        margin-left: 40px;
+    }
+    .activities_container{
+        display: flex;
+        padding: 64px 64px 40px;
+    }
+    .link{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 64px;
+    }
+    .members_container{
+        padding: 64px;
+    }
+    .members_list{
+        display: flex;
+        justify-content: center;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    .members_name{
+        font-size: $text-3xl;
+        text-align: center;
+    }
+    .member{
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    .text_detail_center{
+        font-size: $text-2xl;
+        font-weight: 1000;
+        text-align: center;
+    }
+    .products_container{
+        padding: 64px;
+    }
+    .blog_container{
+        padding: 64px;
+    }
+    .text_3xl_center{
+        text-align: center;
+        font-size: $text-3xl;
+        font-weight: 1000;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .calender_container{
+        padding: 64px;
+    }
+    .calender_text{
+        font-size: $text-2xl;
+        
+    }
+    .calender_text_detail{
+        font-size: $text-2xl;
+        padding-top: 32px;
+        padding-bottom: 40px;
+        
+    }
+    .calender_text_3xl{
+        font-size: $text-3xl;
+        font-weight: 1000;
+    }
+    .text_orange{
+        font-size: $text-3xl;
+        font-weight: 1000;
+        color: $primary;
+    }
+
