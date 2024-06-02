@@ -15,4 +15,18 @@
     margin: 24px 0;
     gap: 24px;
   }
+  .page {
+    display: flex;
+    gap: 8px;
+    align-self: flex-start;
+    align-items: center;
+    font-size: $text-base;
+    margin-bottom: 32px;
+  }
+
+  .gotopage {
+    color: $link;
+    font-size: $text-base;
+    text-decoration: underline solid $link;
+  }
 }
