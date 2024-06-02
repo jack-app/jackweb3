@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 64px 80px;
+    margin: 64px 0px;
     width: 100%;
     @media (max-width: $pc) {
         margin: 32px 40px;
@@ -21,9 +21,9 @@
     align-items: center;
     font-size: $text-base;
     margin-left: 0;
+    width: 100%;
     max-width: calc(848px + 260px + 16px);
     margin-bottom: 32px;
-    width: 100%;
 }
 
 .gotopage {

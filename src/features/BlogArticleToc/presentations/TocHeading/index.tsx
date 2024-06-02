@@ -11,10 +11,14 @@ type Props = {
 
 export const TocHeadingPresentation: React.FC<Props> = ({ id, texts, isActive, type }) => {
   if (!texts) return null;
-  const content = type === "heading_3" ? `\u2003${texts[0].text?.content}` : texts[0].text?.content;
+
+  const baseClass = styles.heading;
+  const activeClass = isActive ? styles.active : "";
+  const typeClass = type === "heading_3" ? styles.heading3 : "";
+
   return (
-    <a className={`${styles.heading} ${isActive ? styles.active : ""}`} href={`#${id}`}>
-      {content}
+    <a className={`${baseClass} ${activeClass} ${typeClass}`} href={`#${id}`}>
+      <span className={styles.text}>{texts[0].text?.content}</span>
     </a>
   );
 };

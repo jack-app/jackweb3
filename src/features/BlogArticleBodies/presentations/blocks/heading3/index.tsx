@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { RichText } from "@/types/block";
 import styles from "./index.module.scss";
@@ -11,7 +10,7 @@ type Props = {
 export const Heading3Presentation: React.FC<Props> = ({ texts, id }) => {
   if (!texts) return null;
   return (
-    <h3 className={classNames(styles.heading3, "content")} id={id}>
+    <h3 className={`${styles.heading3} "content"`} id={id}>
       <Text text={texts} />
     </h3>
   );

@@ -13,13 +13,11 @@ export const BlogArticleTocPresentation: React.FC<Props> = ({ blocks }) => {
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>目次</h2>
-      {blocks.map((block) => {
-        return (
-          <div key={block.id} className={styles.tocItem}>
-            {renderToc(block, activeId)}
-          </div>
-        );
-      })}
+      {blocks.map((block) => (
+        <div key={block.id} className={styles.tocItem}>
+          {renderToc(block, activeId)}
+        </div>
+      ))}
     </div>
   );
 };
