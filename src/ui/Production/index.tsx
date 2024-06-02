@@ -1,8 +1,10 @@
+import { text } from "stream/consumers";
 import Image from "next/image";
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import { RichText } from "@/types/block";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
@@ -10,8 +12,13 @@ export type Props = {
   id?: string;
   image: string;
   title: string;
+  detail_title: RichText[];
   text: string;
+  description: RichText[];
+  detail?: RichText[];
+  release_date?: RichText[];
   tags: string[];
+  git_href?: string | null;
   web_href?: string | null;
   app_href?: string | null;
   google_href?: string | null;

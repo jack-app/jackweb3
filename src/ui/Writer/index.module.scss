@@ -1,0 +1,21 @@
+@use '@/styles/variables' as *;
+
+.link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+}
+
+.image {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  color: $black;
+  font-size: $text-sm;
+}
+
