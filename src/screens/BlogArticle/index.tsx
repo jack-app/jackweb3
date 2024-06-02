@@ -1,10 +1,9 @@
-import id from "@fullcalendar/core/locales/id.js";
 import Link from "next/link";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
-import { SuggestArticleList } from "@/features/SuggestArticleList";
 import { Block } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { SuggestArticleList } from "@/ui/SuggestArticleList";
 import styles from "./index.module.scss";
 
 type Props = {

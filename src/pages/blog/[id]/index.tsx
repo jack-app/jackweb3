@@ -1,10 +1,9 @@
-import id from "@fullcalendar/core/locales/id.js";
-import { getSuggestArticles } from "@/features/SuggestArticleList/hooks";
 import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import createImage from "@/utils/createImage";
 import { getBlocks, getDatabase } from "@/utils/notion";
+import { getSuggestArticles } from "./hooks";
 
 export default function Article({
   id,
@@ -65,9 +64,6 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   );
 
   const suggestArticles = (await getSuggestArticles()) as ArticleItemProps[];
-  // console.log(pageId);
-  // console.log(filteredBlocks);
-  // console.log(suggestArticles);
 
   return {
     props: {
@@ -77,20 +73,3 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
     },
   };
 };
-
-// export const getSuggestArticles = async () => {
-//   const publicArticles = await getArticles();
-
-//   const shuffleArray = (array: any[]) => {
-//     for (let i = array.length - 1; i >= 0; i--) {
-//       const tmp = Math.floor(Math.random() * (i + 1));
-//       [array[i], array[tmp]] = [array[tmp], array[i]];
-//     }
-//     return array;
-//   };
-
-//   const suggestLength = 4;
-//   const results = shuffleArray(publicArticles).slice(0, suggestLength);
-
-//   return results as ArticleItemProps[];
-// };

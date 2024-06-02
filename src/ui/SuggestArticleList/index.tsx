@@ -1,12 +1,12 @@
-import React from 'react'
-import { Props as ArticleItemProps, ArticleItem } from '@/ui/ArticleItem'
-import styles from './index.module.scss'
+import React from "react";
+import { Props as ArticleItemProps, ArticleItem } from "@/ui/ArticleItem";
+import styles from "./index.module.scss";
 
 type Props = {
-  articles: ArticleItemProps[]
-}
+  articles: ArticleItemProps[];
+};
 
-export const SuggestArticleListPresentation: React.FC<Props> = ({ articles }) => {
+export const SuggestArticleList: React.FC<Props> = ({ articles }) => {
   return (
     <div className={styles.container}>
       <h2>おすすめ記事</h2>
@@ -16,5 +16,5 @@ export const SuggestArticleListPresentation: React.FC<Props> = ({ articles }) =>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
