@@ -1,10 +1,11 @@
 import { Block } from "@/types/block";
 import { TocHeadingPresentation } from "../presentations/TocHeading";
 
-type HeadingType = "heading_1" | "heading_2" | "heading_3";
+const headings = ["heading_1", "heading_2", "heading_3"] as const;
+type HeadingType = (typeof headings)[number];
 
 const isHeadingType = (type: string): type is HeadingType => {
-  return type === "heading_1" || type === "heading_2" || type === "heading_3";
+  return headings.includes(type as HeadingType);
 };
 
 export const renderToc = (block: Block, activeId: string) => {
