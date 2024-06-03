@@ -1,42 +1,34 @@
-import id from "@fullcalendar/core/locales/id.js";
 import Link from "next/link";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
-import { SuggestArticleList } from "@/features/SuggestArticleList";
 import { Block } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Props as PageInfo } from "@/ui/ArticleTitle";
+import { SuggestArticleList } from "@/ui/SuggestArticleList";
 import styles from "./index.module.scss";
 
 type Props = {
   id: string;
   blocks: Block[];
+  pageInfo: PageInfo;
   suggestArticles: ArticleItemProps[];
 };
 
-export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, suggestArticles }) => {
+export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo, suggestArticles }) => {
   return (
     <main className={styles.container}>
-      <div>
-        <h1>記事のタイトル</h1>
-        <ul>
-          <li>タグ</li>
-          <li>タグ</li>
-        </ul>
-        <p>作者</p>
-        <p>投稿日</p>
-        <ul>
-          <li>
-            <Link href="/">トップページ</Link>
-          </li>
-          <li>
-            <Link href="/blog">ブログ</Link>
-          </li>
-          <li>
-            <p>このページ</p>
-          </li>
-        </ul>
+      <div className={styles.page}>
+        <Link href="/" className={styles.gotopage}>
+          トップページ
+        </Link>
+        <span>&#62;</span>
+        <Link href="/blog" className={styles.gotopage}>
+          ブログ
+        </Link>
+        <span>&#62;</span>
+        <span>ポスト</span>
       </div>
-      <BlogArticleBodies id={id} blocks={blocks} />
+      <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
       <SuggestArticleList articles={suggestArticles} />
     </main>
   );

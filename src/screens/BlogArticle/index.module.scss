@@ -1,17 +1,32 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 64px 80px;
-  gap: 30px;
 
   @media (max-width: $pc) {
     margin: 32px 40px;
+    gap: 40px;
   }
 
   @media (max-width: $mobile) {
     margin: 24px 0;
+    gap: 24px;
+  }
+  .page {
+    display: flex;
+    gap: 8px;
+    align-self: flex-start;
+    align-items: center;
+    font-size: $text-base;
+    margin-bottom: 32px;
+  }
+
+  .gotopage {
+    color: $link;
+    font-size: $text-base;
+    text-decoration: underline solid $link;
   }
 }
