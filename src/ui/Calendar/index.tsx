@@ -50,7 +50,7 @@ export const Calendar: React.FC<Props> = () => {
           }
           .fc-direction-ltr {
             background-color: #fff4e3;
-            width: 60vw;
+            width: 100%;
           }
           .fc-day-sat {
             color: blue;

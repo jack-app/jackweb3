@@ -1,14 +1,21 @@
 import Image from "next/image";
 import React from "react";
 import { SlArrowRight } from "react-icons/sl";
+import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Calendar } from "@/ui/Calendar";
 import { IconLink } from "@/ui/IconLink";
+import { Production, Props as ProductionProps } from "@/ui/Production";
 import { TopHeading2 } from "@/ui/TopHeading2";
 import styles from "./index.module.scss";
 import { memberStories } from "../Members/data";
 
-type Props = {};
+type Props = {
+  articles: ArticleItemProps[];
+  product: ProductionProps;
+};
 
-export const TopScreen: React.FC<Props> = (props) => {
+export const TopScreen: React.FC<Props> = ({ articles, product }) => {
+  console.log(product);
   return (
     <div className={styles.wrapper}>
       <div className={styles.catchcopy_wrapper}>
@@ -132,16 +139,21 @@ export const TopScreen: React.FC<Props> = (props) => {
               <br />
               さぁ、キミならどんなものを創る？
             </p>
-            {/* <div className={styles.link}>
-            <IconLink
-              href="/products"
-              text="プロダクト一覧"
-              icon={SlArrowRight}
-              size="l"
-            /> */}
+            <div className={styles.link}>
+              <IconLink href="/products" text="プロダクト一覧" icon={SlArrowRight} size="l" />
+            </div>
           </div>
 
           {/* Notionからランダムに取得したプロダクト */}
+
+          <div className={styles.production}>
+            <Production
+              image={product.image}
+              title={product.title}
+              text={product.text}
+              tags={product.tags}
+            />
+          </div>
         </div>
       </div>
 
@@ -156,6 +168,11 @@ export const TopScreen: React.FC<Props> = (props) => {
           <p className={styles.text_3xl_center}>最新記事</p>
 
           {/* Notionからランダムに取得したblog */}
+          <div className={styles.articles}>
+            {articles.map((article) => (
+              <ArticleItem key={article.id} {...article} />
+            ))}
+          </div>
 
           <div className={styles.link}>
             <IconLink href="/blog" text="記事一覧" icon={SlArrowRight} size="l" />
@@ -164,16 +181,16 @@ export const TopScreen: React.FC<Props> = (props) => {
       </div>
 
       <div className={styles.Top_container}>
-        <TopHeading2 title="見学応募" subTitle="calender" />
-        <div className={styles.calender_container}>
+        <TopHeading2 title="見学応募" subTitle="calendar" />
+        <div className={styles.calendar_container}>
           <div>
-            <p className={styles.calender_text}>
+            <p className={styles.calendar_text}>
               jackに興味をもってくれた、そこの
               <br />
-              <span className={styles.calender_text_3xl}>あなた</span>！<br />
+              <span className={styles.calendar_text_3xl}>あなた</span>！<br />
               ぜひ一度、<span className={styles.text_orange}>見学</span>してみませんか？
             </p>
-            <p className={styles.calender_text_detail}>
+            <p className={styles.calendar_text_detail}>
               カレンダーに「対面活動」とある日のうち、都合がよい日程で遊びに来てください！
             </p>
             <div className={styles.link}>
@@ -187,6 +204,9 @@ export const TopScreen: React.FC<Props> = (props) => {
           </div>
 
           {/* カレンダー */}
+          <div className={styles.calendar}>
+            <Calendar />
+          </div>
         </div>
       </div>
     </div>

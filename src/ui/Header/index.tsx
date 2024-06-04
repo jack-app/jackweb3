@@ -50,7 +50,7 @@ export const Header: React.FC<Props> = () => {
           rel="noopener noreferrer"
           className={styles.contact}
         >
-          体験応募はこちら
+          見学応募はこちら
         </Link>
         {!showNav && (
           <button className={styles.menuButton} onClick={toggleNav}>

@@ -156,6 +156,7 @@
     .link{
         display: flex;
         justify-content: center;
+        padding-top: 32px;
         padding-bottom: 64px;
     }
     .members_container{
@@ -182,6 +183,10 @@
     }
     .products_container{
         padding: 64px;
+        display: flex;
+    }
+    .production{
+        margin-left: 64px;
     }
     .blog_container{
         padding: 64px;
@@ -193,20 +198,27 @@
         padding-top: 32px;
         padding-bottom: 32px;
     }
-    .calender_container{
-        padding: 64px;
+    .articles{
+        display: flex;
+        width: 730px;
+        margin: auto;
+        gap: 24px;
     }
-    .calender_text{
+    .calendar_container{
+        padding: 64px;
+        display: flex;
+    }
+    .calendar_text{
         font-size: $text-2xl;
         
     }
-    .calender_text_detail{
+    .calendar_text_detail{
         font-size: $text-2xl;
         padding-top: 32px;
         padding-bottom: 40px;
         
     }
-    .calender_text_3xl{
+    .calendar_text_3xl{
         font-size: $text-3xl;
         font-weight: 1000;
     }
@@ -215,4 +227,8 @@
         font-weight: 1000;
         color: $primary;
     }
-
+    
+    .calendar{
+        width: 560px;
+        height: 498px;
+    }
