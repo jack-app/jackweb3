@@ -40,6 +40,8 @@ export const SelectProductionPresentation: React.FC<Props> = ({
               app_href={product.app_href}
               google_href={product.google_href}
               tags={product.tags}
+              description={product.description}
+              detail_title={product.detail_title}
             />
           </div>
         ))}
