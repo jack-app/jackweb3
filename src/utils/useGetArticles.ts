@@ -10,7 +10,7 @@ tag名、writer名を指定すると、その条件に合致する記事を取�
 type UseGetArticles = (tagParam?: string, writerParam?: string) => Promise<ArticleItemProps[]>;
 
 export const getArticles: UseGetArticles = async (tagParam?: string, writerParam?: string) => {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
   const articleDb = await getDatabase(databaseId);
 
   const currentDate = new Date().toISOString().slice(0, 10);
