@@ -69,18 +69,16 @@
   .name{
     padding: 0;
     font-size: $text-4xl;
-    font-weight: 10;
     @media screen and (max-width: $mobile){
-      font-size: $text-lg;
+      font-size: $text-xl;
     }
   }
 
   .type{
     color: $primary;
-    padding: 0 1rem;
     font-size: $text-lg;
     @media screen and (max-width: $mobile){
-      font-size: $text-sm;
+      font-size: $text-base;
       padding: 0;
     
     }

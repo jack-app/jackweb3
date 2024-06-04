@@ -20,6 +20,7 @@
         padding-bottom: 40px;
         @media screen and (max-width: $mobile){
             font-size: $text-2xl;
+            padding-bottom: 0;
         }
     }
     .allnum span{
@@ -60,7 +61,7 @@
         font-weight: bold;
         padding-bottom: 24px;
         @media screen and (max-width: $mobile){
-        font-size: $text-2xl;
+        font-size: $text-xl;
         }
     }
 
