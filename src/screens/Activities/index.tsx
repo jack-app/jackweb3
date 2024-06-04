@@ -13,9 +13,9 @@ type Props = {};
 export const ActivitiesScreen: React.FC<Props> = (props) => {
   return (
     <main>
+      <Heading1 enTitle="Activities" jaTitle="活動内容" />
       <div className={styles.activities}>
-        <Heading1 enTitle="Activities" jaTitle="活動内容" />
-        <h3 className={styles.text_title}>対面×オンライン</h3>
+        <h2 className={styles.text_title}>対面×オンライン</h2>
         <div className={styles.outline}>
           <div className={styles.top}>
             <p className={styles.text}>
