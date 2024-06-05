@@ -18,40 +18,37 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
         {({ data }) => {
           if (Array.isArray(data)) {
             return (
-              <div>
+              <div className={`${styles.wrapper}`} style={{ backgroundColor: color_change(data) }}>
                 <div
-                  className={`${styles.wrapper}`}
+                  className={styles.head_line}
                   style={{ backgroundColor: color_change(data) }}
-                >
-                  <div
-                    className={styles.head_line}
-                    style={{ backgroundColor: color_change(data) }}
-                  ></div>
-                  <div className={styles.context}>
-                    <div className={styles.context_left}>
-                      {/* <div className={styles.number}>{number}</div> */}
-                      <div className={styles.square}></div>
-                      <Image
-                        className={styles.product_image}
-                        src={product.image}
-                        alt=""
-                        width={100}
-                        height={100}
-                      />
+                ></div>
+                <div className={styles.context}>
+                  <div className={styles.context_left}>
+                    {/* <div className={styles.number}>{number}</div> */}
+                    <div className={styles.square}></div>
+                    <Image
+                      className={styles.product_image}
+                      src={product.image}
+                      alt=""
+                      width={100}
+                      height={100}
+                    />
 
-                      <div className={styles.title}>{product.title}</div>
+                    <div className={styles.title}>{product.title}</div>
 
-                      <div className={styles.sub_description}>
-                        {Array.isArray(product.description) && (
-                          <div className={styles.main_description}>
-                            <Text text={product.description} />
-                          </div>
-                        )}
-                      </div>
+                    <div className={styles.sub_description}>
+                      {Array.isArray(product.description) && (
+                        <div className={styles.sub_description}>
+                          <Text text={product.description} />
+                        </div>
+                      )}
                     </div>
-                    <div className={styles.line}></div>
+                  </div>
+                  <div className={styles.line}></div>
+                  <div className={styles.context_right}>
                     <div className={styles.decoration_number}>1 2 3 4 5 6 7 8 9 10 11</div>
-                    <div className={styles.context_right}>
+                    <div className={styles.context_text_right}>
                       <div className={styles.detail}>
                         {" "}
                         {Array.isArray(product.release_date) && (

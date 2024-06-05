@@ -34,4 +34,16 @@
     flex-wrap: wrap; 
     gap: 24px; 
   }
+
+
+  @media (max-width: $mobile) {
+    .button_context{
+      justify-content: center;
+    }
+
+    .productions {
+      justify-content: center;
+    }
+    
+  }
   

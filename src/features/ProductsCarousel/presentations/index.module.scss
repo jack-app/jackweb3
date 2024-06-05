@@ -14,27 +14,31 @@
 
     .viewport {
 			width: 600px;
-			height: 360px;
-      margin: 0 8px 16px 8px;
+			height: auto;
 
 
       @media (max-width: $mobile) {
-        width: 320px;
-			  height: 192px;
-        margin: 0 8px 9px 8px;
+        width: 100%;
+			  height: auto;
       }
 	
 			.container {
 					display: flex;
+          width: 610px;
 			}
     }
 	}
   
   .slide {
     flex: 0 0 auto;
+    justify-content: center;
     width: 100%;
     position: relative;
-    padding: 0 20px 0 20px;
+    padding:40px;
+    @media (max-width: $mobile) {
+      padding: 30px;
+    }
+
   }
 
   .button {
@@ -46,6 +50,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: $mobile) {
+      display: none;
+    }
   }
 
   .dots {

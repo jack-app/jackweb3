@@ -1,3 +1,6 @@
+import { title } from "process";
+import { text } from "stream/consumers";
+import image from "next/image";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductDetailItem } from "./";
 
@@ -11,11 +14,7 @@ const meta: Meta<T> = {
   },
   tags: ["autodocs"],
   argTypes: {
-    number: { control: "text" },
-    image: { control: "text" },
-    title: { control: "text" },
-    sub_description: { control: "text" },
-    description: { control: "text" },
+    product: { control: "object" },
   },
 };
 
@@ -24,10 +23,44 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    number: "00",
-    image: "https://placehold.jp/100x100.png",
-    title: "CODEDUEL",
-    sub_description: "ajfajfasdfalsjdfljlakjrflkjalksalfndslk",
-    description: "asdkalsg",
+    product: {
+      id: "48d1dcf0-6f7d-422e-9848-dbe2959a5bbb",
+      image: "",
+      title: "CODEDUEL",
+      text: " ",
+      description: [
+        {
+          type: "text",
+          text: [Object],
+          annotations: [Object],
+          plain_text: "プログラミング言語",
+          href: null,
+        },
+      ],
+      detail: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              text: "kajnfi anflakn alwneflal laknflnaakdsfa alksnflkanlwenfklanasdfknalnewf akjnsldnfkaelfn",
+            },
+          ],
+        },
+      ],
+      release_date: [
+        {
+          type: "text",
+          text: [Object],
+          annotations: [Object],
+          plain_text: "20XX.XX.XX release",
+          href: null,
+        },
+      ],
+      tags: ["web", "game"],
+      git_href: "https://github.com/jack-app/jackweb3/issues/45",
+      web_href: "https://www.youtube.com/",
+      app_href: null,
+      google_href: null,
+    },
   },
 };
