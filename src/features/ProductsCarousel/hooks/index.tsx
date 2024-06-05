@@ -1,8 +1,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import { images, interval } from "@/features/ProductsCarousel/hooks/data";
+import { ProductionDetailProps } from "@/ui/Production";
+import { interval } from "./data";
 
-export const useCarousel = () => {
+export const useCarousel = (products: ProductionDetailProps[]) => {
+  console.log(products.length);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: true,
@@ -18,20 +20,20 @@ export const useCarousel = () => {
 
   const handlePrevButton = useCallback(() => {
     emblaApi && emblaApi.scrollPrev();
-    setSelectedIndex((prev) => (prev - 1 + images.length) % images.length);
+    setSelectedIndex((prev) => (prev - 1 + products.length) % products.length);
     setResetFlag((prev) => !prev);
-  }, [emblaApi]);
+  }, [emblaApi, products.length]);
 
   const handleNextButton = useCallback(() => {
     emblaApi && emblaApi.scrollNext();
-    setSelectedIndex((prev) => (prev + 1) % images.length);
+    setSelectedIndex((prev) => (prev + 1) % products.length);
     setResetFlag((prev) => !prev);
-  }, [emblaApi]);
+  }, [emblaApi, products.length]);
 
   const AutoScroll = useCallback(() => {
     emblaApi && emblaApi.scrollNext();
-    setSelectedIndex((prev) => (prev + 1) % images.length);
-  }, [emblaApi]);
+    setSelectedIndex((prev) => (prev + 1) % products.length);
+  }, [emblaApi, products.length]);
 
   useEffect(() => {
     const instance = setInterval(() => {
@@ -41,5 +43,12 @@ export const useCarousel = () => {
     return () => clearInterval(instance);
   }, [AutoScroll, resetFlag]);
 
-  return { emblaRef, handlePrevButton, handleNextButton, handleRadioButton, images, selectedIndex };
+  return {
+    emblaRef,
+    handlePrevButton,
+    handleNextButton,
+    handleRadioButton,
+    images: products,
+    selectedIndex,
+  };
 };

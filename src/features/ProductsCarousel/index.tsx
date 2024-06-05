@@ -8,7 +8,7 @@ interface ProductsCarouselProps {
 
 export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ products }) => {
   const { emblaRef, handlePrevButton, handleNextButton, handleRadioButton, selectedIndex } =
-    useCarousel();
+    useCarousel(products);
 
   return (
     <ProductsCarouselPresentation
