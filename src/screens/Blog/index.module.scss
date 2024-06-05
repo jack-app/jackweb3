@@ -1,5 +1,32 @@
 @use '@/styles/variables' as *;
 
+.blogWrapper{
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+
+    @media(max-width: $pc){
+        gap: 24px;
+    }
+}
+
+.tagWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size:$text-lg;
+    margin: 64px auto;
+    @media(max-width: calc(360px * 3 + 24px * 2 + 80px * 2)){
+        margin: 40px auto;
+    }
+}
+.tags{
+    display: flex;
+    flex-wrap:wrap;
+    max-width: 200px;
+    gap: 4px;
+}
+
 .articlesWrapper {
     display: grid;
     max-width: calc(360px * 3 + 24px);
