@@ -1,59 +1,58 @@
 @use '@/styles/variables' as *;
 
-.carousel {
-  position: relative;
+.embla {
+  z-index: 0;
   width: 100%;
-  overflow-x: hidden;
-  margin: 0 auto;
+  margin: auto;
+  --slide-height: 360px;
+  --slide-spacing: 1rem;
+  position: relative;
+  --slide-size: 70%;
+}
+.slideWithButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.embla__viewport {
+  width: 60%;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+}
+.embla__slide {
+  width: 600px;
+  flex: 0 0 auto;
+  padding-left: var(--slide-spacing);
+}
+.embla__slide__content {
+  width: 600px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  
-  .slideWithButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .viewport {
-			width: 600px;
-			height: 360px;
-      margin: 0 8px 16px 8px;
-
-
-      @media (max-width: $mobile) {
-        width: 320px;
-			  height: 192px;
-        margin: 0 8px 9px 8px;
-      }
-	
-			.container {
-					display: flex;
-			}
-    }
-	}
-  
-  .slide {
-    flex: 0 0 auto;
-    width: 100%;
-    position: relative;
-    padding: 0 20px 0 20px;
-  }
-
-  .button {
+.embla__button {
     position: relative;
     z-index: 1;
-    width: 64px;
-    height: 64px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    margin: 0;
+}
 
-  .dots {
-    display: flex;
-    justify-content: center;
-  }
+.embla__dots {
+  display: flex;
+  justify-content: center;
+}
 
-  .dot {
+.embla__dot {
     background-color: $primary;
     opacity: 0.5;
     border: none;
@@ -62,6 +61,7 @@
     height: 16px;
     margin: 0 5px;
     cursor: pointer;
+    display: flex;
 
     @media (max-width: $mobile) {
       width: 14px;
@@ -73,5 +73,5 @@
       background-color: $primary;
       opacity: 1;
     }
-  }
+  
 }

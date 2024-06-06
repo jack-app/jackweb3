@@ -21,29 +21,31 @@ export const ProductsCarouselPresentation: React.FC<Props> = ({
   products,
 }) => {
   return (
-    <div className={`embla ${styles.carousel}`}>
+    <div className={styles.embla}>
       <div className={styles.slideWithButton}>
-        <button className={`embla__button  ${styles.button}`} onClick={handlePrevButton}>
+        <button className={` ${styles.embla__button}`} onClick={handlePrevButton}>
           <Image src="carousel_products_prev.svg" alt="prev button" width={64} height={64} />
         </button>
-        <div className={`embla__viewport ${styles.viewport}`} ref={emblaRef}>
-          <div className={`embla__container ${styles.container}`}>
+        <div className={`${styles.embla__viewport}`} ref={emblaRef}>
+          <div className={` ${styles.embla__container}`}>
             {products.map((product) => (
-              <div key={product.id} className={`embla__slide ${styles.slide}`}>
-                <ProductDetailItem product={product} />
+              <div key={product.id} className={`${styles.embla__slide}`}>
+                <div className={styles.embla__slide__content}>
+                  <ProductDetailItem product={product} />
+                </div>
               </div>
             ))}
           </div>
         </div>
-        <button className={`embla__button  ${styles.button}`} onClick={handleNextButton}>
+        <button className={styles.embla__button} onClick={handleNextButton}>
           <Image src="carousel_products_next.svg" alt="next button" width={64} height={64} />
         </button>
       </div>
-      <div className={`embla__dots ${styles.dots}`}>
+      <div className={styles.embla__dots}>
         {products.map((product, index) => (
           <button
             key={product.id}
-            className={`embla__dot ${styles.dot} ${selectedIndex === index ? styles.dotActive : ""}`}
+            className={`${styles.embla__dot} ${selectedIndex === index ? styles.embla__dotActive : ""}`}
             onClick={() => handleRadioButton(index)}
           ></button>
         ))}
