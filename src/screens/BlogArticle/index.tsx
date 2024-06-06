@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
+import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
@@ -25,7 +26,10 @@ export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo }) => 
         <span>&#62;</span>
         <span>ポスト</span>
       </div>
-      <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
+      <div className={styles.article}>
+        <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
+        <BlogArticleToc blocks={blocks} />
+      </div>
     </main>
   );
 };

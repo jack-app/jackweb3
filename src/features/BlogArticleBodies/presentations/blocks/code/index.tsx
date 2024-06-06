@@ -1,6 +1,5 @@
-// ライブラリがes modulesに対応していないため、node_modulesから直接importしている
-import SyntaxHighlighter from "../../../../../../node_modules/react-syntax-highlighter/dist/esm/prism";
-import { nord } from "../../../../../../node_modules/react-syntax-highlighter/dist/esm/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 type Props = {
   code?: string;
