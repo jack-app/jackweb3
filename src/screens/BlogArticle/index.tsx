@@ -29,7 +29,9 @@ export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo, sugge
         <span>ポスト</span>
       </div>
       <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
-      <SuggestArticleList articles={suggestArticles} />
+      <div className={styles.suggestedArticleListContainer}>
+        <SuggestArticleList articles={suggestArticles} />
+      </div>
     </main>
   );
 };
