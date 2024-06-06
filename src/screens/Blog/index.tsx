@@ -21,12 +21,18 @@ export const BlogScreen: React.FC<Props> = ({ articles, tags }) => {
           ))}
         </div>
         <div className={styles.side}>
-          <div className={styles.tagWrapper}>
-            tags
+          <div className={styles.wrapper_side}>
+            <span className={styles.sideTitle}>Tags</span>
             <div className={styles.tags}>
               {tags?.map((tag) => <Tag key={tag.id} name={tag.name} color={tag.color} />)}
             </div>
           </div>
+          {/* <div className={styles.wrapper_side}>
+            <span className={styles.sideTitle}>Writers</span>
+            <div className={styles.tags}>
+              {tags?.map((tag) => <Tag key={tag.id} name={tag.name} color={tag.color} />)}
+            </div>
+          </div> */}
         </div>
       </div>
     </main>

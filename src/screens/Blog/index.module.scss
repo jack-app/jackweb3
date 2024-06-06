@@ -4,20 +4,29 @@
     display: flex;
     gap: 48px;
     justify-content: center;
-
+    margin: auto;
+    max-width: calc(1280px + 160px);
     @media(max-width: $pc){
         gap: 24px;
     }
 }
-
-.tagWrapper{
+.side{
+    margin: 64px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @media(max-width: calc(360px * 3 + 24px * 2 + 80px * 2)){
+        margin: 40px auto;
+    }
+}
+.wrapper_side{
     display: flex;
     flex-direction: column;
     gap: 16px;
-    font-size:$text-lg;
-    margin: 64px auto;
-    @media(max-width: calc(360px * 3 + 24px * 2 + 80px * 2)){
-        margin: 40px auto;
+
+    .sideTitle{
+        font-size:$text-lg;
+        font-weight: bold;
     }
 }
 .tags{
