@@ -16,6 +16,7 @@ export const CalloutPresentation: React.FC<Props> = ({ texts, icon, color }) => 
           {icon.type === "emoji" ? (
             (icon as Emoji).emoji
           ) : (
+            // eslint-disable-next-line @next/next/no-img-element
             <img src={(icon as FileObject).url} alt="" />
           )}
         </div>

@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./index.module.scss";
-import { IconType } from "react-icons";
 import Link from "next/link";
+import React from "react";
+import { IconType } from "react-icons";
+import styles from "./index.module.scss";
 
 type Props = {
   href: string;
