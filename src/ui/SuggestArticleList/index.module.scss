@@ -14,9 +14,9 @@
   .body {
     display: grid;
     width: fit-content;
+    gap: 16px;
     
     @media (max-width: $mobile) {
-      gap: 16px;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       min-width: 360px;
       margin: 0 auto;
