@@ -1,4 +1,15 @@
 import Image from "next/image";
+import React from "react";
+import styles from "./index.module.scss";
+// import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 export default function Custom404() {
-  return <Image src="/404.png" alt="" width={1280 + 160} height={300} />;
+  return (
+    <Image
+      className={styles.img404}
+      src="/404.png"
+      alt="お探しのページが見つかりません"
+      width={1280 + 160}
+      height={300}
+    />
+  );
 }
