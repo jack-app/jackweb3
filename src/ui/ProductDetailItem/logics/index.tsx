@@ -37,6 +37,5 @@ export function color_change(data: any) {
   let [r, g, b] = data;
   const [h, s, l] = rgbToHsl(r, g, b);
   const color = decreaseLightness(h, s, l, -0.1); // decrease lightness by 20%
-  console.log(color);
   return color;
 }

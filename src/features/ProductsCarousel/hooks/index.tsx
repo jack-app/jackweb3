@@ -47,7 +47,6 @@ export const useCarousel = (products: ProductionDetailProps[]) => {
     handlePrevButton,
     handleNextButton,
     handleRadioButton,
-    images: products,
     selectedIndex,
   };
 };

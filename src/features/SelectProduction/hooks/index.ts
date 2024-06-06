@@ -15,7 +15,7 @@ export const useSelectProduction: UseSelectProduction = (allProducts) => {
 
   const filteredProducts = allProducts.filter((product) => {
     if (category === "all") return true;
-    return product.tags.includes(category);
+    return (product.tags ?? []).includes(category);
   });
 
   return {
