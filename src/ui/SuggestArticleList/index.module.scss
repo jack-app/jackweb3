@@ -14,11 +14,11 @@
   .body {
     display: grid;
     width: fit-content;
-
+    
     @media (max-width: $mobile) {
+      gap: 16px;
       grid-template-columns: repeat(1, minmax(0, 1fr));
       min-width: 360px;
-      gap: 16px;
       margin: 0 auto;
     }
 
