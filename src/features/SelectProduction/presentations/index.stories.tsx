@@ -13,34 +13,6 @@ const sampleProducts: ProductionProps[] = [
     web_href: "https://example.com/product1",
     app_href: undefined,
     google_href: undefined,
-    detail_title: [
-      {
-        annotations: {
-          bold: true,
-          italic: true,
-          strikethrough: false,
-          underline: false,
-          code: false,
-          color: "default",
-        },
-        text: { content: "Product 1", link: undefined },
-        plain_text: "Product 1",
-      },
-    ],
-    description: [
-      {
-        annotations: {
-          bold: false,
-          italic: false,
-          strikethrough: false,
-          underline: false,
-          code: false,
-          color: "default",
-        },
-        text: { content: "This is the first product", link: undefined },
-        plain_text: "This is the first product",
-      },
-    ],
   },
   {
     image: "https://via.placeholder.com/150",
@@ -50,34 +22,6 @@ const sampleProducts: ProductionProps[] = [
     web_href: undefined,
     app_href: "https://example.com/product2",
     google_href: "https://play.google.com/store/apps/details?id=com.example.product2",
-    detail_title: [
-      {
-        annotations: {
-          bold: true,
-          italic: true,
-          strikethrough: false,
-          underline: false,
-          code: false,
-          color: "default",
-        },
-        text: { content: "Product 2", link: undefined },
-        plain_text: "Product 2",
-      },
-    ],
-    description: [
-      {
-        annotations: {
-          bold: false,
-          italic: false,
-          strikethrough: false,
-          underline: false,
-          code: false,
-          color: "default",
-        },
-        text: { content: "This is the second product", link: undefined },
-        plain_text: "This is the second product",
-      },
-    ],
   },
   {
     image: "https://via.placeholder.com/150",
@@ -87,34 +31,6 @@ const sampleProducts: ProductionProps[] = [
     web_href: undefined,
     app_href: "https://example.com/product2",
     google_href: "https://play.google.com/store/apps/details?id=com.example.product2",
-    detail_title: [
-      {
-        annotations: {
-          bold: true,
-          italic: true,
-          strikethrough: false,
-          underline: false,
-          code: false,
-          color: "default",
-        },
-        text: { content: "Product 2", link: undefined },
-        plain_text: "Product 2",
-      },
-    ],
-    description: [
-      {
-        annotations: {
-          bold: false,
-          italic: false,
-          strikethrough: false,
-          underline: false,
-          code: false,
-          color: "default",
-        },
-        text: { content: "This is the second product", link: undefined },
-        plain_text: "This is the second product",
-      },
-    ],
   },
 ];
 

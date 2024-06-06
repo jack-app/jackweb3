@@ -4,7 +4,6 @@ import { ProductionDetailProps } from "@/ui/Production";
 import { interval } from "./data";
 
 export const useCarousel = (products: ProductionDetailProps[]) => {
-  console.log(products.length);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: true,
