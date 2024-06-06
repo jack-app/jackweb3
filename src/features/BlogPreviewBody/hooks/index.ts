@@ -15,9 +15,13 @@ export const useBlogPreviewBody = (notionId?: string) => {
       },
       body: JSON.stringify({ id: notionId }),
     })
-      .then((res) => res.json())
-      .then((data) => {
+      .then(async (res) => {
+        const data = await res.json();
         setBlocks(data.blocks);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
         setLoading(false);
       });
     return () => {
