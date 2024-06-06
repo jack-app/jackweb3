@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: fit-content;
 
   h2 {
     font-size: $text-2xl;
@@ -12,12 +13,18 @@
 
   .body {
     display: grid;
-    justify-content: center;
-    gap: 16px;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: fit-content;
 
-    @media (min-width: 824px) {
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      min-width: 360px;
+      gap: 16px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $pc) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: calc(360px * 2 + 24px);
       gap: 32px 24px;
     }
   }

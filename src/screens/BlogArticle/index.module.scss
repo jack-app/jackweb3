@@ -27,10 +27,11 @@
 }
 
 .suggestedArticleListContainer {
-  margin-top: 40px;
+  margin: 40px auto 0 auto;
+  width: fit-content;
 
   @media (max-width: $mobile) {
-    margin-top: 24px;
+    margin: 24px auto 0 auto;
   }
 }
 
