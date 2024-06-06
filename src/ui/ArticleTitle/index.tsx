@@ -5,8 +5,8 @@ import { Writer } from "../Writer";
 
 export type Props = {
   title: string;
-  writerName: string;
-  writerImage: string;
+  writerName: string | null;
+  writerImage: string | null;
   tags: TagType[];
   date: string;
 };
@@ -14,7 +14,7 @@ export type Props = {
 export const ArticleTitle: React.FC<Props> = ({ title, writerName, writerImage, tags, date }) => {
   return (
     <div>
-      <Writer writerName={writerName} writerImage={writerImage} />
+      {writerImage && writerName && <Writer writerName={writerName} writerImage={writerImage} />}
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.tagContainer}>
         {tags.map((tag) => (

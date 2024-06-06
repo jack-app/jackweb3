@@ -16,7 +16,12 @@ export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
   const caption = image.caption ? image.caption[0]?.plain_text : "";
   return (
     <figure className="mx-auto">
-      <Image src={src} alt={caption} width={500} height={500} />
+      {image.type === "external" ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={caption} width={500} height={500} />
+      ) : (
+        <Image src={src} alt={caption} width={500} height={500} />
+      )}
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );

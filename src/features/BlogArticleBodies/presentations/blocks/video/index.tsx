@@ -26,6 +26,7 @@ export const VideoPresentation: React.FC<Props> = ({ video, id }) => {
     return (
       <video key={id} controls>
         <source src={video?.file?.url} type="video/mp4" />
+        <track default kind="captions" srcLang="en" src="" />
         Your browser does not support the video tag.
       </video>
     );

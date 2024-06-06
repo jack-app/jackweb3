@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./index.module.scss";
 import { AchievementList } from "@/features/AchievementList";
 import { Props as AchievementItemProps } from "@/ui/AchievementItem";
 import { Heading1 } from "@/ui/Heading1";
+import styles from "./index.module.scss";
 
 type Props = {
   achievements: AchievementItemProps[];

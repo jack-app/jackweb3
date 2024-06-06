@@ -1,0 +1,28 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+    position: sticky;
+    top: 20px;
+    background-color: $white;
+    border-radius: $rounded-xl;
+    margin-left: 16px;
+    padding-bottom: 24px;
+    padding-right: 16px;
+    max-height: 80vh;
+    width: 260px;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.contents_box::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
+    font-size: $text-lg;
+    font-weight: bold;
+    padding: 24px 0 16px 24px;
+}
