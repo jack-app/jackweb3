@@ -2,13 +2,12 @@
 
 
 @mixin pc{
-    @media only screen and (min-width: 900px) {
+    @media only screen and (min-width: $pc) {
       @content;
     }
 }
 
 .activities{
-    max-width: $mobile;
     padding: 32px 24px;
     align-items: center;
     margin: auto;
@@ -140,7 +139,19 @@
 }
 
 .calendar {
-    width: 60vw;
+    @media (min-width: $pc){
+        width: 100%;
+    }
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.calendarList {
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+    }
 }
 
 .activities{
