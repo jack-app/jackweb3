@@ -1,0 +1,77 @@
+@use '@/styles/variables' as *;
+
+.embla {
+  z-index: 0;
+  width: 100%;
+  margin: auto;
+  --slide-height: 360px;
+  --slide-spacing: 1rem;
+  position: relative;
+  --slide-size: 70%;
+}
+.slideWithButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.embla__viewport {
+  width: 60%;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+}
+.embla__slide {
+  width: 600px;
+  flex: 0 0 auto;
+  padding-left: var(--slide-spacing);
+}
+.embla__slide__content {
+  width: 600px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__button {
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.embla__dots {
+  display: flex;
+  justify-content: center;
+}
+
+.embla__dot {
+    background-color: $primary;
+    opacity: 0.5;
+    border: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin: 0 5px;
+    cursor: pointer;
+    display: flex;
+
+    @media (max-width: $mobile) {
+      width: 14px;
+      height: 14px;
+      margin: 0 4px;
+    }
+
+    &Active {
+      background-color: $primary;
+      opacity: 1;
+    }
+  
+}
