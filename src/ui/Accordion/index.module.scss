@@ -8,6 +8,13 @@ details[open] .icon {
     transform: rotate(180deg);
 }
 
+.details summary{
+    list-style: none;
+}
+.summary::-webkit-details-marker{
+    display: none;
+}
+
 .question {
     background-color: $primary-background;
     width: 100%;
