@@ -25,13 +25,6 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
           return false;
 
         const isPublished = article.properties.Publish.checkbox === true;
-        const hasTag = article.properties.tag.multi_select.some((tag: any) => {
-          return tag.name === tagParam;
-        });
-        const hasWriter = article.properties.Writer.created_by.name === writerParam;
-
-        if (tagParam) return isPublished && hasTag;
-        if (writerParam) return isPublished && hasWriter;
         return isPublished;
       })
       .map(async (article: any) => {
@@ -45,18 +38,18 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
             : article.created_time.slice(0, 10),
         } as ArticleItemProps;
 
-        // // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
-        // if (!article.cover) {
-        //   res.image = await createOGPImage(
-        //     article.id,
-        //     article.properties.Name.title[0].plain_text,
-        //     article.properties.Writer.created_by.name,
-        //   );
-        // } else if (article.cover.type === "file") {
-        //   res.image = await createImage(article.id, "cover", article.cover.file.url);
-        // } else if (article.cover.type === "external") {
-        //   res.image = article.cover.external.url;
-        // }
+        if (!article.cover) {
+          res.image = await createOGPImage(
+            article.id,
+            article.properties.Name.title[0].plain_text,
+            article.properties.Writer.created_by.name,
+          );
+        } else if (article.cover.type === "file") {
+          // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
+          res.image = await createImage(article.id, "cover", article.cover.file.url);
+        } else if (article.cover.type === "external") {
+          res.image = article.cover.external.url;
+        }
 
         return res;
       }),
