@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
+import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
@@ -28,9 +29,15 @@ export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo, sugge
         <span>&#62;</span>
         <span>ポスト</span>
       </div>
-      <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
-      <div className={styles.suggestedArticleListContainer}>
-        <SuggestArticleList articles={suggestArticles} />
+
+      <div className={styles.article}>
+        <div>
+          <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
+          <div className={styles.suggestedArticleListContainer}>
+            <SuggestArticleList articles={suggestArticles} />
+          </div>
+        </div>
+        <BlogArticleToc blocks={blocks} />
       </div>
     </main>
   );

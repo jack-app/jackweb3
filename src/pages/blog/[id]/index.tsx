@@ -45,8 +45,8 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const page = (await getPage(pageId)) as any;
   const pageInfo = {
     title: page.properties.Name.title[0].plain_text,
-    writerName: page.properties.Writer.created_by.name,
-    writerImage: page.properties.Writer.created_by.avatar_url,
+    writerName: page.properties.Writer.created_by.name || null,
+    writerImage: page.properties.Writer.created_by.avatar_url || null,
     tags: page.properties.tag.multi_select,
     date: page.properties.Publish_Date.date
       ? page.properties.Publish_Date.date.start
