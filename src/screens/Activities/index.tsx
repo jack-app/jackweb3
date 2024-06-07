@@ -2,10 +2,10 @@ import React from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { ActivitiesCarousel } from "@/features/ActivitiesCarousel";
 import { Calendar } from "@/ui/Calendar";
-import { CalendarList } from "@/ui/CalendarList";
 import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
 import { IconLink } from "@/ui/IconLink";
+import { MobileCalendar } from "@/ui/MobileCalendar";
 import { Timeline } from "@/ui/Timeline";
 import styles from "./index.module.scss";
 
@@ -71,7 +71,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               <Calendar />
             </div>
             <div className={styles.calendarList}>
-              <CalendarList />
+              <MobileCalendar />
             </div>
           </div>
           <div className={styles.mobileButton}>

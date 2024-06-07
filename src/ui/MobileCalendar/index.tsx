@@ -9,7 +9,7 @@ import styles from "./index.module.scss";
 
 type Props = {};
 
-const CalendarListWrapper = styled.div`
+const MobileCalendarWrapper = styled.div`
   .fc-icon-chevron-right::before {
     color: #ffc785;
   }
@@ -28,13 +28,23 @@ const CalendarListWrapper = styled.div`
     background-color: transparent;
     border-color: transparent;
   }
+  .fc-theme-standard .fc-list-day-cushion {
+    background-color: #fffcf2;
+  }
+  .fc-theme-standard td,
+  .fc-theme-standard th {
+    border: none;
+  }
+  .fc .fc-toolbar.fc-header-toolbar {
+    margin: 0.5rem 0;
+  }
 `;
 
-export const CalendarList: React.FC<Props> = (props) => {
+export const MobileCalendar: React.FC<Props> = (props) => {
   const googleCalendarApiKey = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY;
   const googleCalendarId = process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_ID;
   return (
-    <CalendarListWrapper>
+    <MobileCalendarWrapper>
       <div className={styles.container}>
         <FullCalendar
           initialView="listMonth"
@@ -68,6 +78,6 @@ export const CalendarList: React.FC<Props> = (props) => {
           listDaySideFormat={false}
         />
       </div>
-    </CalendarListWrapper>
+    </MobileCalendarWrapper>
   );
 };

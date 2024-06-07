@@ -103,18 +103,6 @@ export const Calendar: React.FC<Props> = () => {
           }}
         />
       </div>
-      <style>
-        {`
-          :root {
-            --fc-button-bg-color: transparent;
-            --fc-button-border-color: transparent;
-            --fc-button-hover-bg-color: transparent;
-            --fc-button-hover-border-color: transparent;
-            --fc-button-active-bg-color: transparent;
-            --fc-button-active-border-color: transparent;
-          }
-        `}
-      </style>
     </CalendarWrapper>
   );
 };
