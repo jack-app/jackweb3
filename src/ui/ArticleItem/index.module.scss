@@ -1,11 +1,11 @@
-@use "@/styles/variables" as *;
+@use '@/styles/variables' as *;
 
 .wrapper {
   position: relative;
   background-color: $white;
   border-radius: 8px;
   box-shadow: $shadow;
-  width: 100%;
+  width: fit-content;
   transition: all 0.2s ease;
 
   &:hover {
@@ -23,17 +23,18 @@
     flex-direction: column;
     gap: 8px;
     padding: 24px;
-  
+    max-width: 360px;
+
     .date {
       font-size: $text-xs;
     }
-    
+
     .title {
       font-size: $text-lg;
       font-weight: bold;
 
       .link::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         bottom: 0;
@@ -41,7 +42,7 @@
         right: 0;
       }
     }
-    
+
     .tagWrapper {
       display: flex;
       flex-wrap: wrap;
@@ -49,4 +50,3 @@
     }
   }
 }
-

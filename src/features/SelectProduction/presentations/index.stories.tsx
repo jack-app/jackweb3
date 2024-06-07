@@ -1,9 +1,10 @@
 import { StoryObj, Meta } from "@storybook/react";
+import { Props as ProductionProps } from "@/ui/Production";
 import { categories } from "../hooks";
 import { SelectProductionPresentation } from "./";
 
 // プロダクトのサンプルデータ
-const sampleProducts = [
+const sampleProducts: ProductionProps[] = [
   {
     image: "https://via.placeholder.com/150",
     title: "Product 1",

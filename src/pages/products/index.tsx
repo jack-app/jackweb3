@@ -1,6 +1,6 @@
 import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { ProductsScreen } from "@/screens/Products";
-import { Props as ProductionProps } from "@/ui/Production";
+import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
 import { getDatabase } from "@/utils/notion";
 

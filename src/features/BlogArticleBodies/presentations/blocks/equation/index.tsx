@@ -7,5 +7,9 @@ type Props = {
 
 export const EquationPresentation: React.FC<Props> = ({ math }) => {
   if (!math) return null;
-  return <BlockMath math={math} />;
+  return (
+    <div style={{ overflowX: "auto" }}>
+      <BlockMath math={math} />
+    </div>
+  );
 };
