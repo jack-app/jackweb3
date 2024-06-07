@@ -5,6 +5,7 @@ import { Calendar } from "@/ui/Calendar";
 import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
 import { IconLink } from "@/ui/IconLink";
+import { MobileCalendar } from "@/ui/MobileCalendar";
 import { Timeline } from "@/ui/Timeline";
 import styles from "./index.module.scss";
 
@@ -51,7 +52,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
                 <br />
                 <span className={styles.anata}>あなた</span>！
                 <br />
-                ぜひ一度、<span className={styles.taiken}>体験</span>してみませんか？
+                ぜひ一度、<span className={styles.taiken}>見学</span>してみませんか？
                 <br />
                 カレンダーに「対面活動」とある日のうち、都合がよい日程で遊びに来てください！
                 <br />
@@ -59,19 +60,22 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               <div className={styles.pcButton}>
                 <IconLink
                   href=""
-                  text="体験応募はこちら"
+                  text="見学応募はこちら"
                   icon={MdNavigateNext}
                   size="l"
                   openInNewTab
                 />
               </div>
             </div>
-            <div className={styles.calender}>
+            <div className={styles.calendar}>
               <Calendar />
+            </div>
+            <div className={styles.calendarList}>
+              <MobileCalendar />
             </div>
           </div>
           <div className={styles.mobileButton}>
-            <IconLink href="" text="体験応募はこちら" icon={MdNavigateNext} size="s" openInNewTab />
+            <IconLink href="" text="見学応募はこちら" icon={MdNavigateNext} size="s" openInNewTab />
           </div>
         </div>
       </div>
