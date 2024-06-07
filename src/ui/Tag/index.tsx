@@ -13,12 +13,12 @@ export type TagType = Props & {
   id: string;
 };
 
-export const Tag: React.FC<Props> = ({ name, color, isLink = false }) => {
+export const Tag: React.FC<Props> = ({ name, color, isLink = true }) => {
   const colorCode = convertToColor[color];
 
   return isLink ? (
     <Link
-      href={`/tag/${name}`}
+      href={`/blog/tag/${name}`}
       className={styles.link}
       style={{
         backgroundColor: colorCode,

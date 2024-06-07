@@ -3,7 +3,7 @@ import createImage from "@/utils/createImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { getDatabase } from "@/utils/notion";
 
-/* 
+/*
 公開中の全ての記事を取得する関数
 tag名、writer名を指定すると、その条件に合致する記事を取得する
 **/
@@ -25,6 +25,13 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
           return false;
 
         const isPublished = article.properties.Publish.checkbox === true;
+        const hasTag = article.properties.tag.multi_select.some((tag: any) => {
+          return tag.name === tagParam;
+        });
+        const hasWriter = article.properties.Writer.created_by.name === writerParam;
+
+        if (tagParam) return isPublished && hasTag;
+        if (writerParam) return isPublished && hasWriter;
         return isPublished;
       })
       .map(async (article: any) => {
