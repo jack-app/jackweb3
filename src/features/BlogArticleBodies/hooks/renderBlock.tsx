@@ -30,11 +30,11 @@ export const renderBlock = (block: Block, pageId: string) => {
     case "paragraph":
       return <ParagraphPresentation texts={block[type]?.rich_text} />;
     case "heading_1":
-      return <Heading1Presentation texts={block[type]?.rich_text} />;
+      return <Heading1Presentation texts={block[type]?.rich_text} id={id} />;
     case "heading_2":
-      return <Heading2Presentation texts={block[type]?.rich_text} />;
+      return <Heading2Presentation texts={block[type]?.rich_text} id={id} />;
     case "heading_3":
-      return <Heading3Presentation texts={block[type]?.rich_text} />;
+      return <Heading3Presentation texts={block[type]?.rich_text} id={id} />;
     case "bulleted_list":
       return <BulletedListPresentation blocks={block[type]?.children} pageId={pageId} />;
     case "numbered_list":

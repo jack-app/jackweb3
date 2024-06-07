@@ -1,18 +1,21 @@
 import { TopScreen } from "@/screens/Top";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
-import { Props as ProductionProps } from "@/ui/Production";
+import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { getDatabase } from "@/utils/notion";
+import products from "./products";
 
 export default function Home({
   articles,
+  article,
   product,
 }: {
   articles: ArticleItemProps[];
+  article: ArticleItemProps;
   product: ProductionProps;
 }) {
-  return <TopScreen articles={articles} product={product} />;
+  return <TopScreen articles={articles} article={article} product={product} />;
 }
 
 export const getStaticProps = async () => {
@@ -20,17 +23,25 @@ export const getStaticProps = async () => {
   const productDb = await getDatabase(productsDatabaseId);
   const products = await Promise.all(
     productDb.map(async (product: any) => {
+      const arrayDetail = product.properties.Detail.rich_text;
+      const arrayDescription = product.properties.Description.rich_text;
+      const arrayRelease = product.properties.ReleaseDate
+        ? product.properties.ReleaseDate.rich_text
+        : null;
       const res = {
         id: product.id,
         image: "",
         title: product.properties.Name.title[0]?.plain_text || null,
         text: product.properties.Description.rich_text[0]?.plain_text || null,
+        description: arrayDescription || null,
+        detail: arrayDetail || null,
+        release_date: arrayRelease || null,
         tags: product.properties.Tag.multi_select.map((tag: any) => tag.name),
+        git_href: product.properties.GitHub.url || null,
         web_href: product.properties.WebLink.url || null,
         app_href: product.properties.AppStore.url || null,
         google_href: product.properties.GooglePlayStore.url || null,
       } as ProductionProps;
-
       // 画像処理
       if (product.properties.Image.files && product.properties.Image.files.length > 0) {
         if (product.properties.Image.files[0].file?.url) {
@@ -54,6 +65,7 @@ export const getStaticProps = async () => {
       return res;
     }),
   );
+
   //productsからランダムで一つ表示させる
   const shuffleArray = (array: any[]) => {
     for (let i = array.length - 1; i >= 0; i--) {
@@ -113,10 +125,14 @@ export const getStaticProps = async () => {
   // blogを二つ取得する
   const filteredArticles = articles.slice(0, 2);
 
+  //blogを一つ表示する
+  const filteredArticle = articles[0];
+
   return {
     props: {
       product: filteredProduct,
       articles: filteredArticles,
+      article: filteredArticle,
     },
     revalidate: 10,
   };

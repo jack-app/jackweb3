@@ -15,220 +15,372 @@
   
 
 
-.catchcopy_wrapper{
-    background:linear-gradient(to bottom,$white 75%,$background);
-}
-    .catchcopy_container{
-    //    display: flex;
-    //    flex-direction: column;
-    //    align-items: center;
-        // background:linear-gradient(to bottom,$white 75%,$background);
-        max-inline-size: max-content; //左揃えで中央配置
-        margin-inline: auto; //左揃えで中央配置
-        // text-align: center;
-        padding-top: 170px;
-        padding-left: 150px;
-    }
-    .line{
-        display: flex;
-        // justify-content: center;
-        align-items: center;
-        margin-bottom: 70px;
-        // text-align: left;
-    }
-    .catchcopy1{
-        font-size: $text-9xl;
-        font-family: "CP Revenge";
-        color: #FFCE8E;
-        // margin-left: 150px; //二行目と開始位置あわせる
-        position: relative;
-    }
-    
-    .catchcopy2{
-        font-size: $text-9xl;
-        font-family: "CP Revenge";
-        color: #FFB84E;
-        position: relative;
-    
-    }
-    
-    .catchcopy3{
-        font-size: $text-9xl;
-        font-family: "CP Revenge";
-        color: #FF9900;
-        position: relative;
-    }
-    
-    .text_gray{
-        font-size: $text-9xl;
-        font-family: "CP Revenge";
-        color: #C8C6C6;
-    }
-    .comment_icon{
-        position: absolute;
-        right: 0;
-        top: -150px;
-        
-    }
-    .dennkyuu_icon{
-        position: absolute;
-        transform: translate(-100%,-100%);
-    }
-    .PC_icon{
-        position: absolute;
-        transform: translate(100%,-90%);
-        right: 0;
-        
-    }
-    
-    
-    .catchcopy_jack{
-        font-size: $text-8xl;
-        font-family: "k-font";
-        color: #FF9900;
-        position: absolute;
-        right: 0;
-        transform: translate(500%,-50%);
-
-        
-    }
-    .line3{
-        display: flex;
-        padding-bottom: 32px;
-    }
-   
-    .Mark{
+    .wrapper{
         width: 100%;
-        display: flex;
-        justify-content: center;
-        // padding-top: 32px;
-        padding-bottom: 50px;
-    }
-
-    .Top_container{
-        width: 90%;
-        margin: auto;
-        padding-top: 32px;
-    }
-
-    .jackdedekirukoto_container{
-        padding-left: 64px;
-        padding-right: 64px;
-    }
-
-    .text_dot{
-        font-family: "DotGothic16";
-        font-size: $text-6xl;
-        padding-top:64px;
-    }
-
-    .text_detail{
-        font-size: $text-2xl;
-        font-weight: 1000;
-    }
-
-    .jackdedekirukoto_photo{
-        margin-left: 64px;
-
-    }
-    .jackdedekirukoto{
-        display: flex;
-        align-items: center;
-        gap: 64px;
-    }
-    .text_3xl{
-        font-size: $text-3xl;
-        font-weight: 1000;
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-    .text_blue{
-        color: $link;
-        border-bottom: 3px solid $link;
-    }
-    .jack_photo{
-        margin-left: 40px;
-    }
-    .activities_container{
-        display: flex;
-        padding: 64px 64px 40px;
-    }
-    .link{
-        display: flex;
-        justify-content: center;
-        padding-top: 32px;
-        padding-bottom: 64px;
-    }
-    .members_container{
-        padding: 64px;
-    }
-    .members_list{
-        display: flex;
-        justify-content: center;
-        padding-top: 45px;
-        padding-bottom: 45px;
-    }
-    .members_name{
-        font-size: $text-3xl;
-        text-align: center;
-    }
-    .member{
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-    .text_detail_center{
-        font-size: $text-2xl;
-        font-weight: 1000;
-        text-align: center;
-    }
-    .products_container{
-        padding: 64px;
-        display: flex;
-    }
-    .production{
-        margin-left: 64px;
-    }
-    .blog_container{
-        padding: 64px;
-    }
-    .text_3xl_center{
-        text-align: center;
-        font-size: $text-3xl;
-        font-weight: 1000;
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-    .articles{
-        display: flex;
-        width: 730px;
-        margin: auto;
-        gap: 24px;
-    }
-    .calendar_container{
-        padding: 64px;
-        display: flex;
-    }
-    .calendar_text{
-        font-size: $text-2xl;
         
-    }
-    .calendar_text_detail{
-        font-size: $text-2xl;
-        padding-top: 32px;
-        padding-bottom: 40px;
+
+        .catchcopyWrapper{
+            background:linear-gradient(to bottom,$white 75%,$background);
+            width: 100%;
         
+        }
+            .catchcopyContainer{
+           
+                max-inline-size: max-content; //左揃えで中央配置
+                margin-inline: auto; //左揃えで中央配置
+                padding-top: 170px;
+                padding-left: 150px;
+                @media screen and (max-width: $mobile){
+                    padding-top: 70px;
+                    padding-left: 50px;
+                }
+            }
+            .line{
+                font-size: $text-9xl;
+                font-family: "CP Revenge";
+        
+                display: flex;
+                align-items: center;
+                margin-bottom: 70px;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-4xl;
+                    margin-bottom: 30px;
+                }
+            }
+            .catchcopy1{
+               
+                color: #FFCE8E;
+                position: relative;
+                @media screen and (max-width: $mobile){
+                    // font-size: $text-6xl;
+                }
+            }
+            
+            .catchcopy2{
+                
+                color: #FFB84E;
+                position: relative;
+            
+            }
+            
+            .catchcopy3{
+               
+                color: #FF9900;
+                position: relative;
+            }
+            
+            .text_gray{
+               
+                color: #C8C6C6;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-3xl;
+                }
+            }
+            .comment_icon{
+                position: absolute;
+                right: 0;
+                top: -150px;
+                @media screen and (max-width: $mobile){
+                    width: 50px;
+                    height: 50px;
+                    top: -50px;
+                }
+                
+            }
+            .dennkyuu_icon{
+                position: absolute;
+                transform: translate(-100%,-100%);
+                @media screen and (max-width: $mobile){
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .PC_icon{
+                position: absolute;
+                transform: translate(100%,-90%);
+                right: 0;
+                @media screen and (max-width: $mobile){
+                    width: 50px;
+                    height: 50px;
+                    transform: translate(120%,-90%);
+                }
+                
+            }
+            
+            
+            .catchcopy_jack{
+                font-size: $text-8xl;
+                font-family: "k-font";
+                color: #FF9900;
+                position: absolute;
+                right: 0;
+                transform: translate(500%,-50%);
+                @media screen and (max-width: $mobile){
+                    font-size: $text-3xl;
+                    transform: translate(400%,-50%);
+                }
+        
+                
+            }
+            .line3{
+                display: flex;
+                padding-bottom: 32px;
+            }
+           
+            .Mark{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-bottom: 50px;
+            }
+            @media screen and (max-width: $mobile){
+                .Mark img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        
+            .Top_container{
+                width: 90%;
+                margin: auto;
+                padding-top: 32px;
+                @media screen and (max-width: $mobile){
+                    padding-top: 24px;
+                }
+            }
+        
+            .jackdedekirukoto_container{
+                padding-left: 64px;
+                padding-right: 64px;
+                @media screen and (max-width: $mobile){
+                    padding: 0px;
+                }
+            }
+        
+            .text_dot{
+                font-family: "DotGothic16";
+                font-size: $text-6xl;
+                padding-top:64px;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-xl;
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                    font-weight: 1000;
+                }
+            }
+        
+            .text_detail{
+                font-size: $text-2xl;
+                font-weight: 1000;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-lg;
+                    font-weight: 500;
+                }
+            }
+        
+            .jackdedekirukoto_photo{
+                margin-left: 64px;
+                @media screen and (max-width: $mobile){
+                    width: 200px;
+                    height: 200px;
+                    margin: auto;
+                }
+        
+            }
+            .jackdedekirukoto{
+                display: flex;
+                align-items: center;
+                gap: 64px;
+                @media screen and (max-width: $mobile){
+                    display: contents;
+                    
+                }
+            }
+            .text_3xl{
+                font-size: $text-3xl;
+                font-weight: 1000;
+                padding-top: 32px;
+                padding-bottom: 32px;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-xl;
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                }
+            }
+            .text_blue{
+                color: $link;
+                border-bottom: 3px solid $link;
+            }
+            .jack_photo{
+                margin-left: 40px;
+                @media screen and (max-width: $mobile){
+                    margin: auto;
+                    padding-top: 24px;
+                }
+            }
+            .activities_container{
+                display: flex;
+                padding: 64px 64px 40px;
+                @media screen and (max-width: $mobile){
+                    display: contents;
+                }
+            }
+            .link{
+                display: flex;
+                justify-content: center;
+                padding-top: 32px;
+                padding-bottom: 64px;
+                @media screen and (max-width: $mobile){
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+                }
+            }
+            .members_container{
+                padding: 64px;
+                @media screen and (max-width: $mobile){
+                    padding: 0px;
+                    padding-top: 24px;
+                }
+            }
+            .members_list{
+                display: flex;
+                justify-content: center;
+                padding-top: 45px;
+                padding-bottom: 45px;
+                @media screen and (max-width: $mobile){
+                    padding-top: 24px;
+                    padding-bottom: 0px;
+                }
+            }
+            .members_name{
+                font-size: $text-3xl;
+                text-align: center;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-sm;
+                }
+            }
+            .member{
+                padding-left: 18px;
+                padding-right: 18px;
+                @media screen and (max-width: $mobile){
+                    padding-left: 14px;
+                    padding-right: 14px;
+                }
+            }
+            .text_detail_center{
+                font-size: $text-2xl;
+                font-weight: 1000;
+                text-align: center;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-xl;
+                    font-weight: 500;
+                }
+            }
+            .products_container{
+                padding: 64px;
+                display: flex;
+                @media screen and (max-width: $mobile){
+                    padding: 0;
+                    padding-top: 24px;
+                    display: block;
+                }
+            }
+            .production{
+                margin-left: 64px;
+                @media screen and (max-width: $mobile){
+                    margin-left: 0px;
+                    width: 100%;
+                    // overflow: hidden;
+
+                }
+            }
+            .blog_container{
+                padding: 64px;
+                @media screen and (max-width: $mobile){
+                    padding: 0;
+                    padding-top: 24px;
+                }
+            }
+            .text_3xl_center{
+                text-align: center;
+                font-size: $text-3xl;
+                font-weight: 1000;
+                padding-top: 32px;
+                padding-bottom: 32px;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-xl;
+                }
+            }
+            .articles{
+                display: flex;
+                width: 730px;
+                margin: auto;
+                gap: 24px;
+                @media screen and (max-width: $mobile){
+                    display: none;
+                }
+            }
+            .article{
+                display: none;
+                @media screen and (max-width: $mobile){
+                    display: block;
+                }
+            }
+            .calendar_container{
+                padding: 64px;
+                display: flex;
+                @media screen and (max-width: $mobile){
+                    display: contents;
+                }
+            }
+            .calendar_text{
+                font-size: $text-2xl;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-lg;
+                    text-align: center;
+                    padding-top: 24px;
+                }
+                
+            }
+            .calendar_text_detail{
+                font-size: $text-2xl;
+                padding-top: 32px;
+                padding-bottom: 40px;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-lg;
+                    text-align: center;
+                }
+                
+            }
+            .calendar_text_3xl{
+                font-size: $text-3xl;
+                font-weight: 1000;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-lg;
+                }
+            }
+            .text_orange{
+                font-size: $text-3xl;
+                font-weight: 1000;
+                color: $primary;
+                @media screen and (max-width: $mobile){
+                    font-size: $text-lg;
+                }
+            }
+            
+            .calendar{
+                width: 560px;
+                height: 498px;
+                @media screen and (max-width: $mobile){
+                    width: 360px;
+                    height: 498px;
+                }
+            }
+        
+
     }
-    .calendar_text_3xl{
-        font-size: $text-3xl;
-        font-weight: 1000;
-    }
-    .text_orange{
-        font-size: $text-3xl;
-        font-weight: 1000;
-        color: $primary;
-    }
+
     
-    .calendar{
-        width: 560px;
-        height: 498px;
-    }
+
+
+

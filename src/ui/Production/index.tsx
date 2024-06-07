@@ -3,6 +3,7 @@ import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import { RichText } from "@/types/block";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
@@ -10,17 +11,23 @@ export type Props = {
   id?: string;
   image: string;
   title: string;
-  text: string;
-  tags: string[];
+  text?: string;
+  tags?: string[];
   web_href?: string | null;
   app_href?: string | null;
   google_href?: string | null;
+};
+
+export type ProductionDetailProps = Props & {
+  description: RichText[];
+  release_date?: RichText[];
+  detail?: RichText[];
+  git_href?: string | null;
 };
 export const Production: React.FC<Props> = ({
   image,
   title,
   text,
-  tags,
   web_href,
   app_href,
   google_href,

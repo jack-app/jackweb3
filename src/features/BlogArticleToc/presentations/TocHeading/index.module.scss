@@ -1,0 +1,34 @@
+@use '@/styles/variables' as *;
+
+.heading {
+  font-size: $text-base;
+  color: $black;
+  margin-left: 24px;
+  line-height: 1.5;
+  display: block;
+  padding-bottom: 8px;
+  color: #65717b;
+  width: fit-content;
+}
+
+.heading a {
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bold;
+  color: $black;
+}
+
+.heading3 {
+  margin-left: 48px;
+}
+
+.text {
+  cursor: pointer;
+}
+
+
+.text:hover {
+  text-decoration: underline;
+}
