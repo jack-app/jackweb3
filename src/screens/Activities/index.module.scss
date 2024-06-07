@@ -2,12 +2,13 @@
 
 
 @mixin pc{
-    @media only screen and (min-width: $pc) {
+    @media only screen and (min-width: 1280px) {
       @content;
     }
 }
 
 .activities{
+    max-width: $mobile;
     padding: 32px 24px;
     align-items: center;
     margin: auto;
