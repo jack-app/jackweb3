@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./index.module.scss";
-// import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 export default function Custom404() {
   return (
     <Image
