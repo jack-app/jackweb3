@@ -3,6 +3,7 @@
 .container {
   .title {
     font-size: $text-2xl;
+    font-weight: bold;
     margin-bottom: 16px;
 
     @media (max-width: $mobile) {

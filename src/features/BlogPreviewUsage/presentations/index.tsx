@@ -26,17 +26,25 @@ export const BlogPreviewUsagePresentation: React.FC<Props> = ({
         以下のフォームにコピーしたリンクをペーストし、確定を押してください。
       </p>
       <div className={styles.inputArea}>
-        <input
-          type="text"
-          className={styles.input}
-          value={inputNotionURL}
-          onChange={(e) => {
-            setInputNotionURL(e.target.value);
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            showPreviewFromNotionURL();
           }}
-        />
-        <button className={styles.inputButton} onClick={() => showPreviewFromNotionURL()}>
-          確定
-        </button>
+        >
+          <input
+            type="text"
+            className={styles.input}
+            value={inputNotionURL}
+            onChange={(e) => {
+              e.preventDefault();
+              setInputNotionURL(e.target.value);
+            }}
+          />
+          <button type="button" className={styles.inputButton} onClick={showPreviewFromNotionURL}>
+            確定
+          </button>
+        </form>
       </div>
     </div>
   );
