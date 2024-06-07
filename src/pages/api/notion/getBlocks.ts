@@ -9,8 +9,9 @@ interface ExtendNextApiRequest extends NextApiRequest {
 }
 
 interface ResponseType {
-  pageId: string;
-  blocks: Block[];
+  pageId?: string;
+  blocks?: Block[];
+  error?: string;
 }
 
 export default async function getBlocks(
@@ -21,6 +22,6 @@ export default async function getBlocks(
     const blocks = await notionGetBlocks(req.body.id);
     res.status(200).json({ pageId: req.body.id, blocks: blocks });
   } catch (error) {
-    res.status(500);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 }

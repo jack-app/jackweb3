@@ -1,7 +1,6 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .container {
-
   .title {
     font-size: $text-2xl;
     margin-bottom: 16px;
@@ -15,7 +14,7 @@
   .text {
     font-size: $text-base;
     margin-bottom: 16px;
-    
+
     @media (max-width: $mobile) {
       display: none;
     }
@@ -26,10 +25,9 @@
   }
 
   .inputArea {
-
     .input {
       border-radius: $rounded;
-      border: solid #CBCBCB;
+      border: 1px solid #cbcbcb;
       background-color: $white;
       padding: 8px;
       width: 700px;
@@ -41,10 +39,9 @@
 
     .inputButton {
       border-radius: $rounded;
-      border: solid #CBCBCB;
+      border: 1px solid #cbcbcb;
       padding: 8px;
       background-color: $white;
     }
   }
-
 }
