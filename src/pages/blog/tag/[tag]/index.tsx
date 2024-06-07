@@ -26,18 +26,38 @@ export async function getStaticPaths() {
   });
 
   const paths = Array.from(tags).map((tag) => ({
-    params: { tag },
+    params: { tag: tag },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: { params: { tag: string } }) {
+  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
+  const articleDb = await getDatabase(databaseId);
   const articles = await getArticles(params.tag);
+
+  //タグ一覧の取得
+  const tagsList = new Set<string>();
+  const tags: TagType[] = [];
+
+  articleDb.forEach((article: any) => {
+    article.properties.tag.multi_select.forEach((tag: any) => {
+      if (!tagsList.has(tag.name)) {
+        tagsList.add(tag.name);
+        tags.push({
+          id: tag.id,
+          name: tag.name,
+          color: tag.color,
+        });
+      }
+    });
+  });
 
   return {
     props: {
       articles,
+      tags,
     },
   };
 }

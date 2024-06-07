@@ -6,7 +6,8 @@
     justify-content: center;
     margin: auto;
     max-width: calc(1280px + 160px);
-    @media(max-width: $pc){
+    @media(max-width: $mobile){
+        flex-direction: column-reverse;
         gap: 24px;
     }
 }
@@ -17,6 +18,9 @@
     gap: 24px;
     @media(max-width: calc(360px * 3 + 24px * 2 + 80px * 2)){
         margin: 40px auto;
+    }
+    @media(max-width: $mobile){
+        // margin: auto;
     }
 }
 .wrapper_side{
@@ -34,6 +38,9 @@
     flex-wrap:wrap;
     max-width: 200px;
     gap: 4px;
+    @media(max-width: $mobile){
+        max-width:360px;
+    }
 }
 
 .articlesWrapper {
