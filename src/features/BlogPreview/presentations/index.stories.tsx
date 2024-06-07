@@ -10,12 +10,28 @@ const meta: Meta<T> = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    notionPageId: {
+      control: {
+        type: "text",
+      },
+    },
+    showPreview: {
+      action: "showPreview",
+    },
+    showPreviewAndSyncQueryParam: {
+      action: "showPreviewAndSyncQueryParam",
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<T>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    notionPageId: "notionPageId",
+    showPreview: () => {},
+    showPreviewAndSyncQueryParam: () => {},
+  },
 };
