@@ -26,7 +26,6 @@ export const useBlogPreviewBody = (notionId?: string) => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("notion api error", err);
         console.error(err);
         setLoading(false);
       });
@@ -54,7 +53,6 @@ export const useBlogPreviewBody = (notionId?: string) => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("notion api error", err);
         console.error(err);
         setLoading(false);
       });
