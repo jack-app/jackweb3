@@ -1,6 +1,6 @@
 import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { ProductsScreen } from "@/screens/Products";
-import { Props as ProductionProps } from "@/ui/Production";
+import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
 import { getDatabase } from "@/utils/notion";
 
@@ -32,7 +32,6 @@ export const getStaticProps = async () => {
         app_href: product.properties.AppStore.url || null,
         google_href: product.properties.GooglePlayStore.url || null,
       } as ProductionProps;
-      console.log(res);
 
       // 画像処理
       if (product.properties.Image.files && product.properties.Image.files.length > 0) {
