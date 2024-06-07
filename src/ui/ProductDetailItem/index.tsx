@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
-import { color_change } from "@/features/ProductsCarousel/hooks";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import styles from "./index.module.scss";
+import { color_change } from "./logics";
 
 type Props = {
   product: ProductionProps;

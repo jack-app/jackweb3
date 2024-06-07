@@ -11,8 +11,8 @@ export type Props = {
   id?: string;
   image: string;
   title: string;
-  text: string;
-  tags: string[];
+  text?: string;
+  tags?: string[];
   web_href?: string | null;
   app_href?: string | null;
   google_href?: string | null;
