@@ -1,9 +1,8 @@
-import { RichText } from "@/types/block";
-import { ProductionDetailProps } from "../Production";
-import type { Meta, StoryObj } from "@storybook/react";
-import { ProductDetailItem } from "./";
+import { StoryObj, Meta } from "@storybook/react";
+import { ProductionDetailProps } from "@/ui/Production";
+import { ProductsCarouselPresentation } from "./";
 
-type T = typeof ProductDetailItem;
+type T = typeof ProductsCarouselPresentation;
 
 const sampleProducts: ProductionDetailProps[] = [
   {
@@ -64,25 +63,28 @@ const sampleProducts: ProductionDetailProps[] = [
 ];
 
 const meta: Meta<T> = {
-  title: "ui/ProductDetailItem",
-  component: ProductDetailItem,
+  title: "features/ProductsCarousel",
+  component: ProductsCarouselPresentation,
   parameters: {
-    layout: "fullscreen",
+    controls: { expanded: true },
   },
   tags: ["autodocs"],
   argTypes: {
-    product: {
-      control: sampleProducts,
-    },
+    handlePrevButton: { action: "handlePrevButton" },
+    handleNextButton: { action: "handleNextButton" },
+    handleRadioButton: { action: "handleRadioButton" },
+    products: { control: sampleProducts },
+    selectedIndex: { control: { type: "number" } },
+    emblaRef: { control: { type: "object" } },
   },
 };
 
 export default meta;
-
 type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
-    product: sampleProducts[0],
+    products: sampleProducts,
+    selectedIndex: 0,
   },
 };
