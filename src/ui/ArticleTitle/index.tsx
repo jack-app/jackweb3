@@ -18,7 +18,7 @@ export const ArticleTitle: React.FC<Props> = ({ title, writerName, writerImage, 
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.tagContainer}>
         {tags.map((tag) => (
-          <Tag key={tag.id} name={tag.name} color={tag.color} isLink={tag.isLink} />
+          <Tag key={tag.id} name={tag.name} color={tag.color} isLink />
         ))}
       </div>
       <div className={styles.date}>{date}</div>
