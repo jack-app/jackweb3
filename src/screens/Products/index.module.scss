@@ -1,22 +1,16 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
-.all_products{
-    margin:5rem;
-}
-
-.line{
-    border:solid $primary 1px;
-    margin : 4rem
-}
-
-
-@media (max-width: $mobile) {
-
-    .line{
-        margin : 2rem
-    }
-    .all_products {
-        margin: 1rem;
-    }
-    
+.all_products {
+  margin: 5rem;
+  @media (max-width: $mobile) {
+    margin: 1rem;
   }
+}
+
+.line {
+  border: solid $primary 1px;
+  margin: 4rem;
+  @media (max-width: $mobile) {
+    margin: 2rem;
+  }
+}
