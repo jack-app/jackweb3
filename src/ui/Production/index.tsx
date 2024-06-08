@@ -1,8 +1,10 @@
+import Color from "color-thief-react";
 import Image from "next/image";
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import { BlackText } from "@/features/BlogArticleBodies/hooks/renderText";
 import { RichText } from "@/types/block";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
@@ -11,7 +13,7 @@ export type Props = {
   id?: string;
   image: string;
   title: string;
-  text?: string;
+  text?: RichText[];
   tags?: string[];
   web_href?: string | null;
   app_href?: string | null;
@@ -38,7 +40,11 @@ export const Production: React.FC<Props> = ({
       <div className={styles.item_context}>
         <div className={styles.context}>
           <div className={styles.title}>{title}</div>
-          <div className={styles.text}>{text}</div>
+          {Array.isArray(text) && (
+            <div className={styles.text}>
+              <BlackText text={text} />
+            </div>
+          )}
           <div className={styles.tag}>
             {web_href && (
               <IconLink

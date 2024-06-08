@@ -1,41 +1,37 @@
-@use '@/styles/variables' as *;
-
-
+@use "@/styles/variables" as *;
 
 .wrapper {
   background-color: $white;
   padding: 0;
   width: 352px;
   height: 456px;
-  align-items: center; 
+  align-items: center;
 }
 
-.item_context{
-padding: 16px 24px;
+.item_context {
+  padding: 16px 24px;
 }
 
-.item_img{
-    width: 352px;
-    height: 200px;
-    object-fit: cover;
+.item_img {
+  width: 352px;
+  height: 200px;
+  object-fit: cover;
 }
 
-.title{
-    text-align: center;
-    font-weight: 600;
+.title {
+  text-align: center;
+  font-weight: 600;
 }
 
-.text{
-    padding: 16px 0;
-    font-size: $text-base;
+.text {
+  padding: 16px 0;
+  font-size: $text-base;
+  color: black;
 }
 
-.tag{
-    width:300px;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.tag {
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-
-
-
