@@ -1,94 +1,92 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .accordion {
-    width: 100%;
+  width: 100%;
 }
 
 details[open] .icon {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.details summary{
-    list-style: none;
-}
-.summary::-webkit-details-marker{
-    display: none;
+.question::-webkit-details-marker {
+  display: none;
 }
 
 .question {
-    background-color: $primary-background;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 32px;
-    box-shadow: $shadow;
-    height: fit-content;
-    @media (max-width: $mobile) {
-        padding: 16px;
-    }
+  background-color: $primary-background;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  box-shadow: $shadow;
+  height: fit-content;
+  list-style: none;
+  @media (max-width: $mobile) {
+    padding: 16px;
+  }
 }
 
 .answer {
-    background-color: $white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 24px 32px;
-    box-shadow: $shadow;
-    @media (max-width: $mobile) {
-        padding: 8px 16px;
-    }
+  background-color: $white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 24px 32px;
+  box-shadow: $shadow;
+  @media (max-width: $mobile) {
+    padding: 8px 16px;
+  }
 }
 
 .q_sentence {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
 }
 
 .a_sentence {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
 }
 
 .capital {
-    font-size: $text-2xl;
-    font-weight: bold;
-    font-family: Oxanium;
-    color: $primary ;
-    margin-right: 6px;
-    @media (max-width: $mobile) {
-        font-size:$text-lg ;
-    }
+  font-size: $text-2xl;
+  font-weight: bold;
+  font-family: Oxanium;
+  color: $primary;
+  margin-right: 6px;
+  @media (max-width: $mobile) {
+    font-size: $text-lg;
+  }
 }
 
 .q_content {
-    font-size: $text-lg;
-    font-family: "Hiragino Kaku Gothic Pro";
-    @media (max-width: $mobile) {
-        font-size:$text-base ;
-    }
+  font-size: $text-lg;
+  font-family: "Hiragino Kaku Gothic Pro";
+  @media (max-width: $mobile) {
+    font-size: $text-base;
+  }
 }
 
 .a_content {
-    font-size: $text-lg;
-    @media (max-width: $mobile) {
-        font-size:$text-base ;
-    }
+  font-size: $text-lg;
+  @media (max-width: $mobile) {
+    font-size: $text-base;
+  }
 }
 
-.icon{
-    width: 25px;
-    height: 27px;
-    justify-content: flex-end;
-    object-fit: cover;
-    margin-left: 4px;
-    @media (max-width: $mobile) {
-        width: 12px;
-        height: 13px;
-    }
+.icon {
+  width: 25px;
+  height: 27px;
+  justify-content: flex-end;
+  object-fit: cover;
+  margin-left: 4px;
+  @media (max-width: $mobile) {
+    width: 12px;
+    height: 13px;
+  }
 }
