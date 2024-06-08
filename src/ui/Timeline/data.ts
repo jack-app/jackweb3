@@ -19,7 +19,7 @@ export const schedule: ScheduleItem[] = [
   {
     title: "6月 名大祭",
     description: "チームで制作したアプリやゲームを展示します。実際にお客さんに遊んでもらおう！",
-    image: "https://placehold.jp/300x180.png",
+    image: "/名大祭.jpg",
   },
   {
     title: "8月 アイデアソン",
