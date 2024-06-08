@@ -31,13 +31,11 @@ export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo, sugge
       </div>
 
       <div className={styles.article}>
-        <div>
-          <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
-          <div className={styles.suggestedArticleListContainer}>
-            <SuggestArticleList articles={suggestArticles} />
-          </div>
-        </div>
+        <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
         <BlogArticleToc blocks={blocks} />
+      </div>
+      <div className={styles.suggestedArticleListContainer}>
+        <SuggestArticleList articles={suggestArticles} />
       </div>
     </main>
   );
