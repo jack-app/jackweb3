@@ -1,17 +1,32 @@
-import id from "@fullcalendar/core/locales/id.js";
 import React from "react";
 import { useBlogPreview } from "./hooks";
 import { BlogPreviewPresentation } from "./presentations";
 
-type Props = {};
+type Props = {
+  id?: string;
+};
 
-export const BlogPreview: React.FC<Props> = () => {
-  const { notionPageId, showPreview, showPreviewAndSyncQueryParam } = useBlogPreview();
+export const BlogPreview: React.FC<Props> = ({ id }) => {
+  const {
+    loading,
+    notionId,
+    blocks,
+    pageInfo,
+    inputNotionURL,
+    notionPageId,
+    showPreviewFromNotionURL,
+    setInputNotionURL,
+  } = useBlogPreview({ notionId: id });
   return (
     <BlogPreviewPresentation
+      loading={loading}
+      notionId={notionId}
+      blocks={blocks}
+      pageInfo={pageInfo}
       notionPageId={notionPageId}
-      showPreview={showPreview}
-      showPreviewAndSyncQueryParam={showPreviewAndSyncQueryParam}
+      inputNotionURL={inputNotionURL}
+      showPreviewFromNotionURL={showPreviewFromNotionURL}
+      setInputNotionURL={setInputNotionURL}
     />
   );
 };

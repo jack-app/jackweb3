@@ -11,16 +11,45 @@ const meta: Meta<T> = {
   },
   tags: ["autodocs"],
   argTypes: {
+    loading: {
+      control: {
+        type: "boolean",
+      },
+    },
+    notionId: {
+      control: {
+        type: "text",
+      },
+    },
+    blocks: {
+      control: {
+        type: "object",
+      },
+    },
+    pageInfo: {
+      control: {
+        type: "object",
+      },
+    },
     notionPageId: {
       control: {
         type: "text",
       },
     },
-    showPreview: {
-      action: "showPreview",
+    inputNotionURL: {
+      control: {
+        type: "text",
+      },
     },
-    showPreviewAndSyncQueryParam: {
-      action: "showPreviewAndSyncQueryParam",
+    setInputNotionURL: {
+      control: {
+        type: "function",
+      },
+    },
+    showPreviewFromNotionURL: {
+      control: {
+        type: "function",
+      },
     },
   },
 };
@@ -30,8 +59,22 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
+    loading: false,
+    notionId: "notionId",
+    blocks: [],
+    pageInfo: {
+      title: "記事タイトル",
+      writerName: "Writer Name",
+      writerImage: "Writer Image",
+      tags: [
+        { id: "tag id", name: "tagname", color: "blue" },
+        { id: "tag id2", name: "tagname2", color: "orange" },
+      ],
+      date: "2021-09-01",
+    },
     notionPageId: "notionPageId",
-    showPreview: () => {},
-    showPreviewAndSyncQueryParam: () => {},
+    inputNotionURL: "inputNotionURL",
+    setInputNotionURL: () => {},
+    showPreviewFromNotionURL: () => {},
   },
 };

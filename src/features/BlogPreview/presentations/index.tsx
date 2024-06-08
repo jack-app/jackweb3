@@ -1,28 +1,79 @@
+import Image from "next/image";
 import React from "react";
-import { BlogPreviewBody } from "@/features/BlogPreviewBody";
-import { BlogPreviewUsage } from "@/features/BlogPreviewUsage";
+import { BlogArticleBodies } from "@/features/BlogArticleBodies";
+// import { BlogPreviewBody } from "@/features/BlogPreviewBody";
+// import { BlogPreviewBodyPresentation } from "@/features/BlogPreviewBody/presentations";
+// import { BlogPreviewUsage } from "@/features/BlogPreviewUsage";
 import { Block } from "@/types/block";
+import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
+import BlogPreviewBodySkelton from "../presentations/Skelton";
 
-type Props = {
+export type Props = {
+  loading: boolean;
+  notionId?: string;
+  blocks?: Block[];
+  pageInfo?: PageInfo;
   notionPageId: string;
-  showPreview: (id: string) => void;
-  showPreviewAndSyncQueryParam: (id: string) => void;
+  inputNotionURL: string;
+  setInputNotionURL: (url: string) => void;
+  showPreviewFromNotionURL: () => void;
 };
 
 export const BlogPreviewPresentation: React.FC<Props> = ({
+  loading,
+  notionId,
+  blocks,
+  pageInfo,
   notionPageId,
-  showPreview,
-  showPreviewAndSyncQueryParam,
+  inputNotionURL,
+  setInputNotionURL,
+  showPreviewFromNotionURL,
 }) => {
   return (
     <div className={styles.BlogPreviewContainer}>
-      <BlogPreviewUsage
-        notionPageId={notionPageId}
-        showPreview={showPreview}
-        showPreviewAndSyncQueryParam={showPreviewAndSyncQueryParam}
-      />
-      <BlogPreviewBody notionPageId={notionPageId} />
+      <div className={styles.UsageContainer}>
+        <h2 className={styles.title}>１．プレビューしたい記事のNotionリンクをコピー</h2>
+        <p className={styles.text}>
+          jack`s Notion / ブログ
+          にアクセスしてください。記事一覧からプレビューしたい記事を選択し、リンクをコピーしてください。
+        </p>
+        <Image src="/preview_usage.jpg" alt="" width={700} height={400} />
+        <h2 className={`${styles.title} ${styles.mt24}`}>２．コピーしたリンクをペースト</h2>
+        <p className={styles.text}>
+          以下のフォームにコピーしたリンクをペーストし、確定を押してください。
+        </p>
+        <div className={styles.inputArea}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              showPreviewFromNotionURL();
+            }}
+          >
+            <input
+              type="text"
+              className={styles.input}
+              value={inputNotionURL}
+              onChange={(e) => {
+                e.preventDefault();
+                setInputNotionURL(e.target.value);
+              }}
+            />
+            <button type="button" className={styles.inputButton} onClick={showPreviewFromNotionURL}>
+              確定
+            </button>
+          </form>
+        </div>
+      </div>
+      {loading ? (
+        <BlogPreviewBodySkelton />
+      ) : !notionId || !blocks || !pageInfo ? (
+        <></>
+      ) : (
+        <div>
+          <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
+        </div>
+      )}
     </div>
   );
 };

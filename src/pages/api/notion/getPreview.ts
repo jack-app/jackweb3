@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import { getPage as notionGetPage } from "@/utils/notion";
+import { getBlocks as notionGetBlocks } from "@/utils/notion";
 
 interface ExtendNextApiRequest extends NextApiRequest {
   body: {
@@ -10,6 +12,7 @@ interface ExtendNextApiRequest extends NextApiRequest {
 
 interface ResponseType {
   pageId?: string;
+  blocks?: Block[];
   pageInfo?: PageInfo;
   error?: string;
 }
@@ -29,9 +32,11 @@ export default async function getPage(
         ? page.properties.Publish_Date.date.start
         : page.created_time.slice(0, 10),
     } as PageInfo;
-    res.status(200).json({ pageId: req.body.pageId, pageInfo: pageInfo });
+
+    const blocks = await notionGetBlocks(req.body.pageId);
+
+    res.status(200).json({ pageId: req.body.pageId, blocks: blocks, pageInfo: pageInfo });
   } catch (error) {
-    console.error("notion api error", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 }
