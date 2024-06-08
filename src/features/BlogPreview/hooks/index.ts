@@ -41,6 +41,7 @@ export const useBlogPreview = ({ notionId }: Props) => {
       .catch((err) => {
         console.error(err);
         setLoading(false);
+        alert(`記事の取得に失敗しました。https://www.notion.so/${notionId}`);
       });
     return () => {
       setPageInfo(null);

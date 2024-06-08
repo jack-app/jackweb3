@@ -1,9 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
-// import { BlogPreviewBody } from "@/features/BlogPreviewBody";
-// import { BlogPreviewBodyPresentation } from "@/features/BlogPreviewBody/presentations";
-// import { BlogPreviewUsage } from "@/features/BlogPreviewUsage";
 import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
@@ -53,6 +50,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
             <input
               type="text"
               className={styles.input}
+              placeholder="https://www.notion.so/"
               value={inputNotionURL}
               onChange={(e) => {
                 e.preventDefault();
