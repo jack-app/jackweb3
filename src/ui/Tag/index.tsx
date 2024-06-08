@@ -13,7 +13,7 @@ export type TagType = Props & {
   id: string;
 };
 
-export const Tag: React.FC<Props> = ({ name, color, isLink = true }) => {
+export const Tag: React.FC<Props> = ({ name, color, isLink = false }) => {
   const colorCode = convertToColor[color];
 
   return isLink ? (
