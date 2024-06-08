@@ -93,7 +93,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       return array;
     };
 
-    const suggestLength = 4;
+    const suggestLength = 3;
     const results = shuffleArray(publicArticles).slice(0, suggestLength);
 
     return results as ArticleItemProps[];
