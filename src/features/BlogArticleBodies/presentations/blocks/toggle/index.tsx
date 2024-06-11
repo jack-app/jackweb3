@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { renderBlock } from "@/features/BlogArticleBodies/hooks/renderBlock";
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { Toggle, Block } from "@/types/block";
+import { Text } from "@/utils/renderText/renderText";
 
 type Props = {
   childBlocks?: Block[];
@@ -14,7 +14,7 @@ export const TogglePresentation: React.FC<Props> = ({ childBlocks, toggle, pageI
   return (
     <details>
       <summary>
-        <Text text={toggle.rich_text} />
+        <Text richText={toggle.rich_text} />
       </summary>
       {childBlocks?.map((child: Block) => (
         <Fragment key={child.id}>{renderBlock(child, pageId)}</Fragment>

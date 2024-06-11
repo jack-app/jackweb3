@@ -1,5 +1,5 @@
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { ToDo } from "@/types/block";
+import { Text } from "@/utils/renderText/renderText";
 
 type Props = {
   todo?: ToDo;
@@ -12,7 +12,7 @@ export const ToDoPresentation: React.FC<Props> = ({ todo, id }) => {
     <div>
       <label htmlFor={id}>
         <input type="checkbox" id={id} defaultChecked={todo.checked} />{" "}
-        <Text text={todo.rich_text} />
+        <Text richText={todo.rich_text} />
       </label>
     </div>
   );

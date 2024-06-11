@@ -1,4 +1,3 @@
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { ProductsScreen } from "@/screens/Products";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";

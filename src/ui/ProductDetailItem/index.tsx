@@ -2,8 +2,8 @@ import Color from "color-thief-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
+import { Text } from "@/utils/renderText/renderText";
 import styles from "./index.module.scss";
 import { color_change } from "./logics";
 
@@ -40,7 +40,7 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                     <div className={styles.sub_description}>
                       {Array.isArray(product.description) && (
                         <div className={styles.sub_description}>
-                          <Text text={product.description} />
+                          <Text richText={product.description} />
                         </div>
                       )}
                     </div>
@@ -53,12 +53,12 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                         {" "}
                         {Array.isArray(product.release_date) && (
                           <div className={styles.release}>
-                            <Text text={product.release_date} />
+                            <Text richText={product.release_date} />
                           </div>
                         )}
                         {Array.isArray(product.detail) && (
                           <div className={styles.main_description}>
-                            <Text text={product.detail} />
+                            <Text richText={product.detail} />
                           </div>
                         )}
                         {product.web_href && (
