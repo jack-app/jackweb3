@@ -1,11 +1,10 @@
-import Color from "color-thief-react";
 import Image from "next/image";
 import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
-import { BlackText } from "@/features/BlogArticleBodies/hooks/renderText";
 import { RichText } from "@/types/block";
+import { BlackText } from "@/utils/blackText";
 import styles from "./index.module.scss";
 import { IconLink } from "../IconLink";
 
@@ -42,7 +41,7 @@ export const Production: React.FC<Props> = ({
           <div className={styles.title}>{title}</div>
           {Array.isArray(text) && (
             <div className={styles.text}>
-              <BlackText text={text} />
+              <BlackText richText={text} />
             </div>
           )}
           <div className={styles.tag}>

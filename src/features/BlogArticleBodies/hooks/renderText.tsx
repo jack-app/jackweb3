@@ -1,6 +1,6 @@
 import { InlineMath } from "react-katex";
 import { RichText } from "@/types/block";
-import styles from "./text.module.css";
+import styles from "./../../../features/BlogArticleBodies/hooks/text.module.css";
 import "katex/dist/katex.min.css";
 
 export const Text = ({ text }: { text: RichText[] }) => {
