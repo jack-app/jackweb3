@@ -3,10 +3,10 @@ import { RichText } from "@/types/block";
 import styles from "./text.module.css";
 import "katex/dist/katex.min.css";
 
-export const Text = ({ text }: { text: RichText[] }) => {
+export const BlackText = ({ text }: { text: RichText[] }) => {
   return text.map((value: RichText) => {
     const {
-      annotations: { bold, code, color, italic, strikethrough, underline },
+      annotations: { bold, code, italic, strikethrough, underline },
       equation,
       text,
     } = value;
@@ -22,7 +22,6 @@ export const Text = ({ text }: { text: RichText[] }) => {
           strikethrough ? styles.strikethrough : "",
           underline ? styles.underline : "",
         ].join(" ")}
-        style={color !== "default" ? { color } : {}}
         key={text.content}
       >
         {text.link ? (
