@@ -44,6 +44,7 @@ export const AchievementItem: React.FC<Props> = ({
                   text="See Article"
                   icon={FaExternalLinkAlt}
                   size="s"
+                  openInNewTab
                 />
               </div>
             )}
