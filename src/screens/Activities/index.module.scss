@@ -1,1 +1,160 @@
 @use '@/styles/variables' as *;
+
+
+@mixin pc{
+    @media only screen and (min-width: 1280px) {
+      @content;
+    }
+}
+
+.activities{
+    max-width: $mobile;
+    padding: 32px 24px;
+    align-items: center;
+    margin: auto;
+    @include pc{
+        max-width: calc(1280px + 160px);
+        padding: 64px 80px;
+    }
+}
+
+.ActivitiesCarousel{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include pc{
+        width: auto;
+    }
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include pc{
+        width: 50%;
+    }
+}
+
+.text{
+    font-size: 20px;
+    justify-content: center;
+    margin: 20px;
+    @include pc{
+        justify-content: center;
+        margin: 60px;
+    }
+}
+
+.text_title{
+    font-size: 35px;
+    font-weight: 800;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    @include pc{
+        display: flex;
+        justify-content: left;
+        margin-left: 60px;
+    }
+}
+
+
+.Heading2{
+    margin: 20px;
+    @include pc{
+        margin: 50px;
+    }
+}
+
+.outline{
+    display: flex;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    @include pc{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.timeline{
+    display: flex;
+    justify-content: center;
+}
+
+.schedule_content{
+    display: flex;
+    flex-direction: column;
+    @include pc{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.schedule_text{
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+    @include pc{
+        margin: 0 50px 0 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: start;
+    }
+    
+}
+
+.pcButton{
+    display: none;
+    @include pc{
+        display: flex;
+        margin: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.mobileButton{
+    display: flex;
+    margin: 50px;
+    justify-content: center;
+    @include pc{
+        display: none;
+    }
+}
+
+.taiken{
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFA61F;
+}
+
+.anata{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.calendar {
+    @media (min-width: $pc){
+        width: 100%;
+    }
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.calendarList {
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
+
+.activities{
+    width: 100%;
+}
