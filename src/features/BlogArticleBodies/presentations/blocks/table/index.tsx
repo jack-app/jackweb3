@@ -1,5 +1,5 @@
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { Table, Block } from "@/types/block";
+import { Text } from "@/utils/renderText/renderText";
 import styles from "./index.module.css";
 
 type Props = {
@@ -19,7 +19,7 @@ export const TablePresentation: React.FC<Props> = ({ table, childBrocks }) => {
               {child.table_row?.cells?.map((cell: any, i: number) => {
                 return (
                   <RowElement key={`${cell.plain_text}-${i}`}>
-                    <Text text={cell} />
+                    <Text richText={cell} />
                   </RowElement>
                 );
               })}

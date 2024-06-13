@@ -1,5 +1,5 @@
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { RichText } from "@/types/block";
+import { Text } from "@/utils/renderText/renderText";
 import styles from "./index.module.scss";
 
 type Props = {
@@ -10,8 +10,8 @@ type Props = {
 export const Heading2Presentation: React.FC<Props> = ({ texts, id }) => {
   if (!texts) return null;
   return (
-    <h2 className={`${styles.heading2} "content"`} id={id}>
-      <Text text={texts} />
+    <h2 className={`${styles.heading} "content"`} id={id}>
+      <Text richText={texts} />
     </h2>
   );
 };

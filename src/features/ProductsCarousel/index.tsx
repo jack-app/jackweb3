@@ -1,5 +1,5 @@
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
-import { useCarousel } from "./hooks/";
+import { filteredProducts, useCarousel } from "./hooks/";
 import { ProductsCarouselPresentation } from "./presentations";
 
 interface ProductsCarouselProps {
@@ -7,8 +7,9 @@ interface ProductsCarouselProps {
 }
 
 export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ products }) => {
+  const carouselProducts: ProductionProps[] = filteredProducts(products);
   const { emblaRef, handlePrevButton, handleNextButton, handleRadioButton, selectedIndex } =
-    useCarousel(products);
+    useCarousel(carouselProducts);
 
   return (
     <ProductsCarouselPresentation
@@ -17,7 +18,7 @@ export const ProductsCarousel: React.FC<ProductsCarouselProps> = ({ products }) 
       handleNextButton={handleNextButton}
       handleRadioButton={handleRadioButton}
       selectedIndex={selectedIndex}
-      products={products}
+      products={carouselProducts}
     />
   );
 };
