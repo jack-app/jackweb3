@@ -4,8 +4,26 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@mixin mobile{
+  @media only screen and (max-width: $pc) {
+    @content;
+  }
+}
+
 body {
   background-color: $background;
   line-height: normal;
-  font-family: hiragino-kaku-gothic-pron, sans-serif;
+  font-family: Avenir,hiragino kaku gothic pro,sans-serif;
+  
+}
+
+.Header{
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+main{
+  padding-top: 74px;
+  @include mobile{
+    padding-top: 58px;}
 }
