@@ -1,5 +1,5 @@
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { Emoji, FileObject, RichText } from "@/types/block";
+import { Text } from "@/utils/renderText/renderText";
 
 type Props = {
   texts?: RichText[];
@@ -16,12 +16,13 @@ export const CalloutPresentation: React.FC<Props> = ({ texts, icon, color }) => 
           {icon.type === "emoji" ? (
             (icon as Emoji).emoji
           ) : (
+            // eslint-disable-next-line @next/next/no-img-element
             <img src={(icon as FileObject).url} alt="" />
           )}
         </div>
       )}
       <div className="inline whitespace-break-spaces">
-        <Text text={texts} />
+        <Text richText={texts} />
       </div>
     </div>
   );

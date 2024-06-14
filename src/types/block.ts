@@ -118,6 +118,7 @@ export type Image = {
 };
 
 export type Video = {
+  file?: FileObject;
   caption: RichText[];
   type: string;
   external?: External;

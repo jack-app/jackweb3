@@ -1,4 +1,4 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .wrapper {
   width: 100%;
@@ -8,17 +8,21 @@
 .button_context {
   display: flex;
   gap: 8px;
+
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
 }
 
 .button {
-  box-shadow:$shadow;
+  box-shadow: $shadow;
   padding: 8px 16px;
   border-radius: $rounded-lg;
   background-color: white;
   color: black;
 
   &:hover {
-    background-color: black;
+    background-color: rgb(87, 87, 87);
     color: white;
   }
 
@@ -29,9 +33,25 @@
 }
 
 .productions {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 24px; 
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  @media (max-width: 1550px) {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
+  @media (max-width: 1250px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.production {
+  margin: 0 auto;
+
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
+}

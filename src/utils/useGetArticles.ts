@@ -3,14 +3,14 @@ import createImage from "@/utils/createImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { getDatabase } from "@/utils/notion";
 
-/* 
+/*
 公開中の全ての記事を取得する関数
 tag名、writer名を指定すると、その条件に合致する記事を取得する
 **/
 type UseGetArticles = (tagParam?: string, writerParam?: string) => Promise<ArticleItemProps[]>;
 
 export const getArticles: UseGetArticles = async (tagParam?: string, writerParam?: string) => {
-  const databaseId = process.env.NOTION_DATABASE_ID;
+  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
   const articleDb = await getDatabase(databaseId);
 
   const currentDate = new Date().toISOString().slice(0, 10);
@@ -45,18 +45,18 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
             : article.created_time.slice(0, 10),
         } as ArticleItemProps;
 
-        // // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
-        // if (!article.cover) {
-        //   res.image = await createOGPImage(
-        //     article.id,
-        //     article.properties.Name.title[0].plain_text,
-        //     article.properties.Writer.created_by.name,
-        //   );
-        // } else if (article.cover.type === "file") {
-        //   res.image = await createImage(article.id, "cover", article.cover.file.url);
-        // } else if (article.cover.type === "external") {
-        //   res.image = article.cover.external.url;
-        // }
+        if (!article.cover) {
+          res.image = await createOGPImage(
+            article.id,
+            article.properties.Name.title[0].plain_text,
+            article.properties.Writer.created_by.name,
+          );
+        } else if (article.cover.type === "file") {
+          // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
+          res.image = await createImage(article.id, "cover", article.cover.file.url);
+        } else if (article.cover.type === "external") {
+          res.image = article.cover.external.url;
+        }
 
         return res;
       }),

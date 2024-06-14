@@ -138,3 +138,23 @@
     font-size: 25px;
     font-weight: 700;
 }
+
+.calendar {
+    @media (min-width: $pc){
+        width: 100%;
+    }
+    @media (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.calendarList {
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+    }
+}
+
+.activities{
+    width: 100%;
+}

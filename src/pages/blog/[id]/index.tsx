@@ -1,20 +1,30 @@
 import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block } from "@/types/block";
+import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
-import { TagType } from "@/ui/Tag";
 import createImage from "@/utils/createImage";
 import { getBlocks, getDatabase, getPage } from "@/utils/notion";
+import { getArticles } from "@/utils/useGetArticles";
 
 export default function Article({
   id,
   blocks,
   pageInfo,
+  suggestArticles,
 }: {
   id: string;
   blocks: Block[];
   pageInfo: PageInfo;
+  suggestArticles: ArticleItemProps[];
 }) {
-  return <BlogArticleScreen id={id} blocks={blocks} pageInfo={pageInfo} />;
+  return (
+    <BlogArticleScreen
+      id={id}
+      blocks={blocks}
+      pageInfo={pageInfo}
+      suggestArticles={suggestArticles}
+    />
+  );
 }
 
 export const getStaticPaths = async () => {
@@ -35,8 +45,8 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const page = (await getPage(pageId)) as any;
   const pageInfo = {
     title: page.properties.Name.title[0].plain_text,
-    writerName: page.properties.Writer.created_by.name,
-    writerImage: page.properties.Writer.created_by.avatar_url,
+    writerName: page.properties.Writer.created_by.name || null,
+    writerImage: page.properties.Writer.created_by.avatar_url || null,
     tags: page.properties.tag.multi_select,
     date: page.properties.Publish_Date.date
       ? page.properties.Publish_Date.date.start
@@ -72,10 +82,30 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
     }),
   );
 
+  const getSuggestArticles = async () => {
+    const publicArticles = await getArticles();
+
+    const shuffleArray = (array: any[]) => {
+      for (let i = array.length - 1; i >= 0; i--) {
+        const tmp = Math.floor(Math.random() * (i + 1));
+        [array[i], array[tmp]] = [array[tmp], array[i]];
+      }
+      return array;
+    };
+
+    const suggestLength = 3;
+    const results = shuffleArray(publicArticles).slice(0, suggestLength);
+
+    return results as ArticleItemProps[];
+  };
+
+  const suggestArticles = await getSuggestArticles();
+
   return {
     props: {
       id: pageId,
       blocks: filteredBlocks,
+      suggestArticles: suggestArticles,
       pageInfo: pageInfo,
     },
   };
