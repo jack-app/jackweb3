@@ -17,7 +17,9 @@ export const useBlogPreview = ({ notionId }: Props) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [blocks, setBlocks] = useState<Block[] | null>(null);
   const [pageInfo, setPageInfo] = useState<PageInfo | null>(null);
-  const [inputNotionURL, setInputNotionURL] = useState<string>(`https://www.notion.so/${notionId}`);
+  const [inputNotionURL, setInputNotionURL] = useState<string>(
+    notionId ? `https://www.notion.so/${notionId}` : "",
+  );
 
   useEffect(() => {
     if (!notionId) return;
