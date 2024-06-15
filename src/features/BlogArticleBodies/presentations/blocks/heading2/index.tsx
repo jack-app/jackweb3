@@ -10,7 +10,7 @@ type Props = {
 export const Heading2Presentation: React.FC<Props> = ({ texts, id }) => {
   if (!texts) return null;
   return (
-    <h2 className={`${styles.heading} "content"`} id={id}>
+    <h2 className={`${styles.heading2} "content"`} id={id}>
       <Text richText={texts} />
     </h2>
   );
