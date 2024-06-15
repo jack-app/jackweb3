@@ -1,0 +1,20 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  margin: 64px 80px;
+
+  @media (max-width: $mobile) {
+    margin: 32px 24px;
+  }
+
+  .pageTitle {
+    font-size: $text-5xl;
+    font-weight: bold;
+    margin-bottom: 32px;
+
+    @media (max-width: $mobile) {
+      font-size: $text-3xl;
+      margin-bottom: 16px;
+    }
+  }
+}
