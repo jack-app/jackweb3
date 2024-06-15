@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
+import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
@@ -68,8 +69,9 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
       ) : !notionId || !blocks || !pageInfo ? (
         <></>
       ) : (
-        <div>
+        <div className={styles.article}>
           <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
+          <BlogArticleToc blocks={blocks} />
         </div>
       )}
     </div>
