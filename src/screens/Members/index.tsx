@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import { PieChartComponent } from "@/features/PieChart";
 import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
 import { MemberStory } from "@/ui/MemberStory/index";
@@ -18,12 +18,13 @@ export const MembersScreen: React.FC = () => {
           {Members.map((member, index) => (
             <div className={styles.graphcontent} key={index}>
               <h2 className={styles.title}>{member.title}</h2>
-              <Image
-                className={styles.malefemale_graph}
-                src={member.graph}
-                alt=""
-                width={300}
-                height={300}
+              <PieChartComponent
+                data={member.graph}
+                cx={0}
+                cy={0}
+                innerRadius={0}
+                outerRadius={0}
+                midAngle={0}
               />
               <p className={styles.detail}>{member.detail}</p>
             </div>

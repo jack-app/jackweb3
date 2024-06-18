@@ -1,3 +1,5 @@
+import { facultyData, sexData, universityData } from "@/features/PieChart/hooks/data";
+
 export const memberStories = [
   {
     name: "すけ",
@@ -28,17 +30,17 @@ export const memberStories = [
 export const Members = [
   {
     title: "男女比",
-    graph: "/malefemale_graph.png",
+    graph: sexData,
     detail: "",
   },
   {
     title: "大学",
-    graph: "/university_graph.png",
+    graph: universityData,
     detail: "他大学：椙山女学園大、名城大、名古屋市立大、南山大、慶應義塾大、etc...",
   },
   {
     title: "学部",
-    graph: "/department_graph.png",
+    graph: facultyData,
     detail: "その他：理学部、理工学部、法学部、文学部、教育学部、etc...",
   },
 ];
