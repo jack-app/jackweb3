@@ -1,4 +1,3 @@
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { ProductsScreen } from "@/screens/Products";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
@@ -14,6 +13,7 @@ export const getStaticProps = async () => {
   const products = await Promise.all(
     productDb.map(async (product: any) => {
       const arrayDetail = product.properties.Detail.rich_text;
+      const arrayText = product.properties.Description.rich_text;
       const arrayDescription = product.properties.Description.rich_text;
       const arrayRelease = product.properties.ReleaseDate
         ? product.properties.ReleaseDate.rich_text
@@ -22,7 +22,7 @@ export const getStaticProps = async () => {
         id: product.id,
         image: "",
         title: product.properties.Name.title[0]?.plain_text || null,
-        text: product.properties.Description.rich_text[0]?.plain_text || null,
+        text: arrayText || null,
         description: arrayDescription || null,
         detail: arrayDetail || null,
         release_date: arrayRelease || null,

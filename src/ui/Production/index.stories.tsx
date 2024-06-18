@@ -27,7 +27,21 @@ export const Default: Story = {
   args: {
     image: "https://placehold.jp/352x200.png",
     title: "jack-web",
-    text: "サイトの説明です。サイトの説明を書くことができます。サイトの説明を見ることもできます。",
+    text: [
+      {
+        text: undefined,
+        annotations: {
+          bold: false,
+          italic: false,
+          strikethrough: false,
+          underline: false,
+          code: false,
+          color: "",
+        },
+        plain_text: "This is a sample description for the product.",
+        href: undefined,
+      },
+    ],
     web_href: "https://www.google.com/",
     app_href: "https://www.google.com/",
     google_href: "https://www.google.com/",

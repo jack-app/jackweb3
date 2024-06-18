@@ -1,4 +1,3 @@
-import { RichText } from "@/types/block";
 import { ProductionDetailProps } from "../Production";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ProductDetailItem } from "./";

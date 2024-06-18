@@ -8,7 +8,21 @@ const sampleProducts: ProductionProps[] = [
   {
     image: "https://via.placeholder.com/150",
     title: "Product 1",
-    text: "This is the first product",
+    text: [
+      {
+        text: undefined,
+        annotations: {
+          bold: false,
+          italic: false,
+          strikethrough: false,
+          underline: false,
+          code: false,
+          color: "",
+        },
+        plain_text: "This is a sample description for the product.",
+        href: undefined,
+      },
+    ],
     tags: ["web", "mobile"],
     web_href: "https://example.com/product1",
     app_href: undefined,
@@ -17,7 +31,21 @@ const sampleProducts: ProductionProps[] = [
   {
     image: "https://via.placeholder.com/150",
     title: "Product 2",
-    text: "This is the second product",
+    text: [
+      {
+        text: undefined,
+        annotations: {
+          bold: false,
+          italic: false,
+          strikethrough: false,
+          underline: false,
+          code: false,
+          color: "",
+        },
+        plain_text: "This is a sample description for the product.",
+        href: undefined,
+      },
+    ],
     tags: ["game"],
     web_href: undefined,
     app_href: "https://example.com/product2",
@@ -26,7 +54,21 @@ const sampleProducts: ProductionProps[] = [
   {
     image: "https://via.placeholder.com/150",
     title: "Product 3",
-    text: "This is the second product",
+    text: [
+      {
+        text: undefined,
+        annotations: {
+          bold: false,
+          italic: false,
+          strikethrough: false,
+          underline: false,
+          code: false,
+          color: "",
+        },
+        plain_text: "This is a sample description for the product.",
+        href: undefined,
+      },
+    ],
     tags: ["game"],
     web_href: undefined,
     app_href: "https://example.com/product2",
