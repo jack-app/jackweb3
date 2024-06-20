@@ -4,7 +4,7 @@ import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
-export default function TagPage({ tag, articles }: { tag: String; articles: ArticleItemProps[] }) {
+export default function TagPage({ tag, articles }: { tag: string; articles: ArticleItemProps[] }) {
   return (
     <>
       <Meta title={`${tag}に関する記事一覧`} />
