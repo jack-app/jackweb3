@@ -1,9 +1,15 @@
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Meta } from "@/utils/meta";
 import { getArticles } from "@/utils/useGetArticles";
 
 export default function Blog({ articles }: { articles: ArticleItemProps[] }) {
-  return <BlogScreen articles={articles} />;
+  return (
+    <>
+      <Meta title="ブログ" />
+      <BlogScreen articles={articles} />
+    </>
+  );
 }
 
 export async function getStaticProps() {

@@ -1,10 +1,16 @@
 import { ProductsScreen } from "@/screens/Products";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
+import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 
 export default function Products({ products }: { products: ProductionProps[] }) {
-  return <ProductsScreen products={products} />;
+  return (
+    <>
+      <Meta title="プロダクト" />
+      <ProductsScreen products={products} />
+    </>
+  );
 }
 
 export const getStaticProps = async () => {

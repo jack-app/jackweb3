@@ -1,10 +1,16 @@
 import { AchievementsScreen } from "@/screens/Achievements";
 import { Props as AchievementItemProps } from "@/ui/AchievementItem";
 import createImage from "@/utils/createImage";
+import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 
 export default function Achievements({ achievements }: { achievements: AchievementItemProps[] }) {
-  return <AchievementsScreen achievements={achievements} />;
+  return (
+    <>
+      <Meta title="活動実績" />
+      <AchievementsScreen achievements={achievements} />
+    </>
+  );
 }
 export const getStaticProps = async () => {
   const databaseId = process.env.NOTION_ACHIEVEMENTS_DATABASE_ID;
