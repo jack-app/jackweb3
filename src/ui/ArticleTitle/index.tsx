@@ -14,7 +14,9 @@ export type Props = {
 export const ArticleTitle: React.FC<Props> = ({ title, writerName, writerImage, tags, date }) => {
   return (
     <div>
-      {writerImage && writerName && <Writer writerName={writerName} writerImage={writerImage} />}
+      {writerImage && writerName && (
+        <Writer writerName={writerName} writerImage={writerImage} isLink />
+      )}
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.tagContainer}>
         {tags.map((tag) => (

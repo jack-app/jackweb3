@@ -13,8 +13,6 @@ export default function TagPage({ articles }: { articles: ArticleItemProps[] }) 
   useEffect(() => {
     if (typeof tag === "string") {
       setHeadingText(`${tag}に関する記事`);
-      // } else {
-      //   setHeadingText("記事一覧");
     }
   }, [tag]);
   return <BlogScreen articles={articles} headingText={headingText} />;
