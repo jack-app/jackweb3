@@ -1,10 +1,23 @@
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
 export default function TagPage({ articles }: { articles: ArticleItemProps[] }) {
-  return <BlogScreen articles={articles} />;
+  const router = useRouter();
+  const { tag } = router.query;
+  const [headingText, setHeadingText] = useState<string>("記事一覧");
+
+  useEffect(() => {
+    if (typeof tag === "string") {
+      setHeadingText(`${tag}に関する記事`);
+      // } else {
+      //   setHeadingText("記事一覧");
+    }
+  }, [tag]);
+  return <BlogScreen articles={articles} headingText={headingText} />;
 }
 
 export async function getStaticPaths() {
