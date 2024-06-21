@@ -24,7 +24,6 @@
   max-width: calc(360px * 3 + 24px);
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  align-items: center;
   gap: 32px 24px;
 
   @media (max-width: calc(360px * 3 + 24px * 2 + 80px * 2)) {
