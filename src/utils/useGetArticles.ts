@@ -46,11 +46,7 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
         } as ArticleItemProps;
 
         if (!article.cover) {
-          res.image = await createOGPImage(
-            article.id,
-            article.properties.Name.title[0].plain_text,
-            article.properties.Writer.created_by.name,
-          );
+          res.image = `/${article.id}/ogp.png`;
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
           res.image = await createImage(article.id, "cover", article.cover.file.url);
