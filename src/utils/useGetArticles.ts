@@ -28,8 +28,11 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
         const hasTag = article.properties.tag.multi_select.some((tag: any) => {
           return tag.name === tagParam;
         });
-        const hasWriter = article.properties.Writer.created_by.name === writerParam;
-
+        const hasWriter = writerParam
+          ? article.properties.Writer &&
+            article.properties.Writer.created_by &&
+            article.properties.Writer.created_by.name === writerParam
+          : true;
         if (tagParam) return isPublished && hasTag;
         if (writerParam) return isPublished && hasWriter;
         return isPublished;
