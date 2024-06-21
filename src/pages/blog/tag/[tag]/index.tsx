@@ -1,10 +1,16 @@
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
-export default function TagPage({ articles }: { articles: ArticleItemProps[] }) {
-  return <BlogScreen articles={articles} />;
+export default function TagPage({ tag, articles }: { tag: string; articles: ArticleItemProps[] }) {
+  return (
+    <>
+      <Meta title={`${tag}に関する記事一覧`} />
+      <BlogScreen articles={articles} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {
@@ -26,10 +32,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { tag: string } }) {
-  const articles = await getArticles(params.tag);
+  const tag = params.tag;
+  const articles = await getArticles(tag);
 
   return {
     props: {
+      tag,
       articles,
     },
   };

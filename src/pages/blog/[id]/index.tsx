@@ -3,6 +3,7 @@ import { Block } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import createImage from "@/utils/createImage";
+import { Meta } from "@/utils/meta";
 import { getBlocks, getDatabase, getPage } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
@@ -11,19 +12,29 @@ export default function Article({
   blocks,
   pageInfo,
   suggestArticles,
+  description,
 }: {
   id: string;
   blocks: Block[];
   pageInfo: PageInfo;
   suggestArticles: ArticleItemProps[];
+  description: string;
 }) {
   return (
-    <BlogArticleScreen
-      id={id}
-      blocks={blocks}
-      pageInfo={pageInfo}
-      suggestArticles={suggestArticles}
-    />
+    <>
+      <Meta
+        title={pageInfo.title}
+        ogImage={`/${id}/ogp.png`}
+        pageType="article"
+        description={description}
+      />
+      <BlogArticleScreen
+        id={id}
+        blocks={blocks}
+        pageInfo={pageInfo}
+        suggestArticles={suggestArticles}
+      />
+    </>
   );
 }
 
@@ -82,6 +93,13 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
     }),
   );
 
+  //description作成
+  const paragraphs = filteredBlocks.filter((block) => block.type === "paragraph");
+  const fullText = paragraphs
+    .map((block) => block.paragraph?.rich_text.map((text) => text.plain_text).join(""))
+    .join("");
+  const description = fullText.length <= 100 ? fullText : fullText.slice(0, 100) + "...";
+
   const getSuggestArticles = async () => {
     const publicArticles = await getArticles();
 
@@ -107,6 +125,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       blocks: filteredBlocks,
       suggestArticles: suggestArticles,
       pageInfo: pageInfo,
+      description: description,
     },
   };
 };
