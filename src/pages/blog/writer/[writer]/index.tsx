@@ -12,7 +12,7 @@ export default function WriterPage({ articles }: { articles: ArticleItemProps[] 
 
   useEffect(() => {
     if (typeof writer === "string") {
-      setHeadingText(`${decodeURIComponent(writer)}による記事`);
+      setHeadingText(`${writer}による記事`);
     }
   }, [writer]);
   return <BlogScreen articles={articles} headingText={headingText} />;
@@ -34,14 +34,14 @@ export async function getStaticPaths() {
   });
 
   const paths = Array.from(writers).map((writer) => ({
-    params: { writer: encodeURIComponent(writer) },
+    params: { writer: writer },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: { params: { writer: string } }) {
-  const articles = await getArticles(undefined, decodeURIComponent(params.writer));
+  const articles = await getArticles(undefined, params.writer);
 
   return {
     props: {
