@@ -1,5 +1,4 @@
 import React from "react";
-import style from "react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark";
 import styles from "./index.module.scss";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Heading1 } from "@/ui/Heading1";
