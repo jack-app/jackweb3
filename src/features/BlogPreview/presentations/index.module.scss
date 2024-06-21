@@ -1,0 +1,63 @@
+@use "@/styles/variables" as *;
+
+.BlogPreviewContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+
+  .UsageContainer {
+    .title {
+      font-size: $text-2xl;
+      font-weight: bold;
+      margin-bottom: 16px;
+
+      @media (max-width: $mobile) {
+        font-size: $text-sm;
+        margin-bottom: 9px;
+      }
+    }
+
+    .text {
+      font-size: $text-base;
+      margin-bottom: 16px;
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    .mt24 {
+      margin-top: 24px;
+    }
+
+    .inputArea {
+      .input {
+        border-radius: $rounded;
+        border: 1px solid #cbcbcb;
+        background-color: $white;
+        padding: 8px;
+        width: 700px;
+
+        @media (max-width: $mobile) {
+          max-width: 70vw;
+        }
+      }
+
+      .inputButton {
+        border-radius: $rounded;
+        border: 1px solid #cbcbcb;
+        padding: 8px;
+        background-color: $white;
+
+        &:hover {
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+
+  .article {
+    display: flex;
+    align-items: flex-start;
+  }
+}
