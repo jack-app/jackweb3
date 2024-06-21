@@ -1,4 +1,5 @@
 import React from "react";
+import { renderCustomizedLabel } from "./hooks";
 import { PieChartDataType } from "./hooks/data";
 import { PieChartPresentation } from "./presentations/";
 
@@ -15,6 +16,7 @@ export const PieChartComponent: React.FC<Props> = ({ data: pieChartData }) => {
   return (
     <PieChartPresentation
       data={pieChartData}
+      customLabel={renderCustomizedLabel}
       cx={0}
       cy={0}
       midAngle={0}

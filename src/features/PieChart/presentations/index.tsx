@@ -1,14 +1,11 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import styles from "./index.module.scss";
+import { COLORS } from "../hooks";
 import { PieChartDataType } from "../hooks/data";
-
-const COLORS = ["#FB8700", "#FFA61F", "#FFE766"];
-
-const RADIAN = Math.PI / 180;
 
 type Props = {
   data: PieChartDataType[];
+  customLabel: (props: Props) => JSX.Element;
   cx: number;
   cy: number;
   midAngle: number;
@@ -18,7 +15,7 @@ type Props = {
   name?: string;
 };
 
-export const PieChartPresentation: React.FC<Props> = ({ data }) => {
+export const PieChartPresentation: React.FC<Props> = ({ data, customLabel }) => {
   return (
     <ResponsiveContainer width={300} height={300}>
       <PieChart>
@@ -28,7 +25,7 @@ export const PieChartPresentation: React.FC<Props> = ({ data }) => {
           startAngle={90}
           endAngle={-270}
           labelLine={false}
-          label={renderCustomizedLabel}
+          label={customLabel}
           fill="#8884d8"
           isAnimationActive={false}
         >
@@ -41,31 +38,6 @@ export const PieChartPresentation: React.FC<Props> = ({ data }) => {
         </Pie>
       </PieChart>
     </ResponsiveContainer>
-  );
-};
-
-const renderCustomizedLabel = ({
-  cx,
-  cy,
-  midAngle,
-  innerRadius,
-  outerRadius,
-  percent,
-  name,
-}: Props) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-  return (
-    <>
-      <text x={x - 7} y={y + 10} className={styles.piechart_text}>
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
-      <text x={x - 10} y={y - 10} className={styles.piechart_text}>
-        {name}
-      </text>
-    </>
   );
 };
 
