@@ -1,5 +1,6 @@
 namespace NodeJS {
   interface ProcessEnv {
+    readonly NEXT_PUBLIC_BASE_URL: string;
     readonly NOTION_TOKEN: string;
     readonly NOTION_BLOG_DATABASE_ID: string;
     readonly NOTION_ACHIEVEMENTS_DATABASE_ID: string;

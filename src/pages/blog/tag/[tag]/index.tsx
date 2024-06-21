@@ -2,10 +2,11 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
-export default function TagPage({ articles }: { articles: ArticleItemProps[] }) {
+export default function TagPage({ tag, articles }: { tag: string; articles: ArticleItemProps[] }) {
   const router = useRouter();
   const { tag } = router.query;
   const [headingText, setHeadingText] = useState<string>("記事一覧");
@@ -15,7 +16,12 @@ export default function TagPage({ articles }: { articles: ArticleItemProps[] }) 
       setHeadingText(`${tag}に関する記事`);
     }
   }, [tag]);
-  return <BlogScreen articles={articles} headingText={headingText} />;
+  return (
+    <>
+      <Meta title={`${tag}に関する記事一覧`} />
+      <BlogScreen articles={articles} headingText={headingText} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {
@@ -37,10 +43,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { tag: string } }) {
-  const articles = await getArticles(params.tag);
+  const tag = params.tag;
+  const articles = await getArticles(tag);
 
   return {
     props: {
+      tag,
       articles,
     },
   };
