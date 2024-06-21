@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { renderCustomizedLabel } from "../hooks";
 import { PieChartPresentation } from "./";
 
 type T = typeof PieChartPresentation;
@@ -30,5 +31,6 @@ export const Default: Story = {
       { name: "Group C", value: 300 },
       { name: "Group D", value: 200 },
     ],
+    customLabel: renderCustomizedLabel,
   },
 };
