@@ -5,14 +5,7 @@ import { COLORS } from "../hooks";
 
 type Props = {
   data: PieChartDataType[];
-  customLabel: (props: Props) => JSX.Element;
-  cx: number;
-  cy: number;
-  midAngle: number;
-  innerRadius: number;
-  outerRadius: number;
-  percent: number;
-  name?: string;
+  customLabel: any;
 };
 
 export const PieChartPresentation: React.FC<Props> = ({ data, customLabel }) => {

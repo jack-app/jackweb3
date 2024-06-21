@@ -6,14 +6,13 @@ export const COLORS = ["#FB8700", "#FFA61F", "#FFE766"];
 const RADIAN = Math.PI / 180;
 
 type Props = {
-  data: PieChartDataType[];
   cx: number;
   cy: number;
   midAngle: number;
   innerRadius: number;
   outerRadius: number;
   percent: number;
-  name?: string;
+  name: string;
 };
 
 export const renderCustomizedLabel = ({

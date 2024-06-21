@@ -18,14 +18,7 @@ export const MembersScreen: React.FC = () => {
           {Members.map((member, index) => (
             <div className={styles.graphcontent} key={index}>
               <h2 className={styles.title}>{member.title}</h2>
-              <PieChartComponent
-                data={member.graph}
-                cx={0}
-                cy={0}
-                innerRadius={0}
-                outerRadius={0}
-                midAngle={0}
-              />
+              <PieChartComponent data={member.graph} />
               <p className={styles.detail}>{member.detail}</p>
             </div>
           ))}
