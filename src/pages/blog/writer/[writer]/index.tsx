@@ -33,18 +33,16 @@ export async function getStaticPaths() {
     }
   });
 
-  console.log("writers:", Array.from(writers));
-
   const paths = Array.from(writers).map((writer) => ({
     params: { writer: encodeURIComponent(writer) },
   }));
   console.log("writerspath:", paths);
 
-  return { paths, fallback: "false" };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: { params: { writer: string } }) {
-  const articles = await getArticles(undefined, decodeURIComponent(params.writer));
+  const articles = await getArticles(decodeURIComponent(params.writer));
 
   return {
     props: {

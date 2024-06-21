@@ -11,7 +11,7 @@ type Props = {
 
 export const Writer: React.FC<Props> = ({ writerName, writerImage, isLink = false }) => {
   return isLink ? (
-    <Link href={`blog/writer/${encodeURIComponent(writerName)}`}>
+    <Link href={`/blog/writer/${encodeURIComponent(writerName)}`}>
       <div className={styles.link}>
         <Image className={styles.image} src={writerImage} alt={writerName} width={24} height={24} />
         <span className={styles.name}>{writerName}</span>
