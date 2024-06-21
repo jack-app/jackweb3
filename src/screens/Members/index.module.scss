@@ -1,80 +1,79 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .wrapper {
-    background-color: transparent;
-    margin: 0 auto;
-    height: auto;
-    width: 100%;
+  background-color: transparent;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  padding: 64px 80px;
+  max-width: calc(1280px + 160px);
+  @media screen and (max-width: $mobile) {
+    gap: 24px;
+    padding: 32px 24px;
+  }
+
+  .allnum {
+    font-size: $text-4xl;
+    text-align: center;
+    padding-bottom: 40px;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-2xl;
+      padding-bottom: 0;
+    }
+  }
+  .allnum span {
+    font-size: $text-5xl;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-3xl;
+    }
+  }
+
+  .graph {
+    height: 448px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    @media screen and (max-width: $mobile) {
+      flex-flow: column;
+      margin: 5px auto;
+      margin-top: 3rem;
+      height: 1200px;
+    }
+  }
+
+  .graphcontent {
     display: flex;
     flex-flow: column;
-    padding: 64px 80px;
-    max-width: calc(1280px + 160px);
-    @media screen and (max-width: $mobile){
-        gap: 24px;
-        padding: 32px 24px;
+    align-items: center;
+    width: 300px;
+    @media screen and (max-width: $mobile) {
+      text-align: center;
+      width: 250px;
     }
+  }
 
-    .allnum{
-        font-size: $text-4xl;
-        text-align: center;
-        padding-bottom: 40px;
-        @media screen and (max-width: $mobile){
-            font-size: $text-2xl;
-            padding-bottom: 0;
-        }
+  .title {
+    color: $primary;
+    font-size: $text-3xl;
+    font-weight: bold;
+    padding-bottom: 24px;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-xl;
     }
-    .allnum span{
-        font-size: $text-5xl;
-        @media screen and (max-width: $mobile){
-            font-size: $text-3xl;
-        }
-    }
+  }
 
+  .detail {
+    font-size: $text-base;
+    padding-top: 16px;
+  }
 
-    .graph{
-        height: 448px;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        @media screen and (max-width: $mobile){
-            flex-flow: column;
-            margin: 5px auto;
-            height: 1200px;
-        }
-    }
- 
-    .graphcontent{
-        display:flex;
-        flex-flow: column;
-        align-items:center;
-        width: 300px;
-        @media screen and (max-width: $mobile){
-            text-align: center;
-            width: 250px;
-        }
-       
-    }
-
-    .title{
-        color: $primary;
-        font-size:$text-3xl;
-        font-weight: bold;
-        padding-bottom: 24px;
-        @media screen and (max-width: $mobile){
-        font-size: $text-xl;
-        }
-    }
-
-    .detail{
-        font-size: $text-base;
-        padding-top: 16px;
-    }
-
-    .memberstory{
-        padding-top: 64px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin: 0 auto;
-    }
+  .memberstory {
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 0 auto;
+  }
 }
