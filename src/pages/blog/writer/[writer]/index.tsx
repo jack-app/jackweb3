@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
@@ -15,7 +16,12 @@ export default function WriterPage({ articles }: { articles: ArticleItemProps[] 
       setHeadingText(`${writer}による記事`);
     }
   }, [writer]);
-  return <BlogScreen articles={articles} headingText={headingText} />;
+  return (
+    <>
+      <Meta title={`${writer}による記事`} />
+      <BlogScreen articles={articles} headingText={headingText} />
+    </>
+  );
 }
 
 export async function getStaticPaths() {

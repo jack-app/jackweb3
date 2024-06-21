@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
@@ -7,8 +6,6 @@ import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
 export default function TagPage({ tag, articles }: { tag: string; articles: ArticleItemProps[] }) {
-  const router = useRouter();
-  const { tag } = router.query;
   const [headingText, setHeadingText] = useState<string>("記事一覧");
 
   useEffect(() => {
