@@ -1,5 +1,5 @@
+import { PieChartDataType } from "./../../../screens/Members/data";
 import styles from "./../presentations/index.module.scss";
-import { PieChartDataType } from "./data";
 
 export const COLORS = ["#FB8700", "#FFA61F", "#FFE766"];
 

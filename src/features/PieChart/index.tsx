@@ -1,6 +1,6 @@
 import React from "react";
+import { PieChartDataType } from "./../../screens/Members/data";
 import { renderCustomizedLabel } from "./hooks";
-import { PieChartDataType } from "./hooks/data";
 import { PieChartPresentation } from "./presentations/";
 
 type Props = {

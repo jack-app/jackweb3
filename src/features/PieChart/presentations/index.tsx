@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { PieChartDataType } from "../../../screens/Members/data";
 import { COLORS } from "../hooks";
-import { PieChartDataType } from "../hooks/data";
 
 type Props = {
   data: PieChartDataType[];
