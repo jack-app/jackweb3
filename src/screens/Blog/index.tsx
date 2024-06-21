@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./index.module.scss";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
+import styles from "./index.module.scss";
 
 type Props = {
   articles: ArticleItemProps[];
