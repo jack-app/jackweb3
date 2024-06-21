@@ -1,4 +1,4 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .wrapper {
   background-color: $white;
@@ -97,6 +97,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-bottom: 1px solid red;
+}
+
+.hamburgerNavName {
+  &:hover {
+    border-bottom: 1px solid $black;
+  }
 }
 
 .menu.display {
