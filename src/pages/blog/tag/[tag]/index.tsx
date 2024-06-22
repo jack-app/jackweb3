@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Meta } from "@/utils/meta";
@@ -6,13 +5,7 @@ import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
 export default function TagPage({ tag, articles }: { tag: string; articles: ArticleItemProps[] }) {
-  const [headingText, setHeadingText] = useState<string>("記事一覧");
-
-  useEffect(() => {
-    if (typeof tag === "string") {
-      setHeadingText(`${tag}に関する記事`);
-    }
-  }, [tag]);
+  const headingText = `${tag}に関する記事`;
   return (
     <>
       <Meta title={`${tag}に関する記事一覧`} />

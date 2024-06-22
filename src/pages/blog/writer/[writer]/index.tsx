@@ -1,21 +1,18 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
-export default function WriterPage({ articles }: { articles: ArticleItemProps[] }) {
-  const router = useRouter();
-  const { writer } = router.query;
-  const [headingText, setHeadingText] = useState<string>("記事一覧");
+export default function WriterPage({
+  writer,
+  articles,
+}: {
+  writer: string;
+  articles: ArticleItemProps[];
+}) {
+  const headingText = `${writer}による記事`;
 
-  useEffect(() => {
-    if (typeof writer === "string") {
-      setHeadingText(`${writer}による記事`);
-    }
-  }, [writer]);
   return (
     <>
       <Meta title={`${writer}による記事`} />
@@ -38,7 +35,6 @@ export async function getStaticPaths() {
       writers.add(article.properties.Writer.created_by.name);
     }
   });
-
   const paths = Array.from(writers).map((writer) => ({
     params: { writer: writer },
   }));
@@ -47,10 +43,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { writer: string } }) {
+  const writer = params.writer;
   const articles = await getArticles(undefined, params.writer);
 
   return {
     props: {
+      writer,
       articles,
     },
   };
