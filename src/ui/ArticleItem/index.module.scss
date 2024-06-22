@@ -1,4 +1,4 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .wrapper {
   position: relative;
@@ -16,6 +16,7 @@
     border-radius: 8px 8px 0 0;
     width: 360px;
     height: 200px;
+    object-fit: cover;
   }
 
   .descriptionWrapper {
@@ -34,7 +35,7 @@
       font-weight: bold;
 
       .link::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         bottom: 0;
