@@ -16,6 +16,7 @@ export const BlogPreview: React.FC<Props> = ({ id }) => {
     notionPageId,
     showPreviewFromNotionURL,
     setInputNotionURL,
+    reloadPreview,
   } = useBlogPreview({ notionId: id });
   return (
     <BlogPreviewPresentation
@@ -27,6 +28,7 @@ export const BlogPreview: React.FC<Props> = ({ id }) => {
       inputNotionURL={inputNotionURL}
       showPreviewFromNotionURL={showPreviewFromNotionURL}
       setInputNotionURL={setInputNotionURL}
+      reloadPreview={reloadPreview}
     />
   );
 };

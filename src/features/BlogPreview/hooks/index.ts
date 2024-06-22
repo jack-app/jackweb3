@@ -15,6 +15,7 @@ export const useBlogPreview = ({ notionId }: Props) => {
   const [notionPageId, setNotionPageId] = useState<string>(notionId || "");
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [reload, setReload] = useState<boolean>(false);
   const [blocks, setBlocks] = useState<Block[] | null>(null);
   const [pageInfo, setPageInfo] = useState<PageInfo | null>(null);
   const [inputNotionURL, setInputNotionURL] = useState<string>(
@@ -48,12 +49,19 @@ export const useBlogPreview = ({ notionId }: Props) => {
     return () => {
       setPageInfo(null);
     };
-  }, [notionId]);
+  }, [notionId, reload]);
 
   const showPreviewAndSyncQueryParam = (id: string): void => {
     // notionPageIdを更新
     // クエリパラメータを更新
-    setNotionPageId(id);
+    setNotionPageId((prevId) => {
+      if (prevId === id) {
+        reloadPreview();
+        return prevId;
+      } else {
+        return id;
+      }
+    });
     const params = new URLSearchParams(searchParam);
     if (params.has("id")) {
       params.set("id", id);
@@ -68,6 +76,7 @@ export const useBlogPreview = ({ notionId }: Props) => {
     if (inputNotionURL.indexOf("https://www.notion.so/") === -1) {
       console.error("Invalid URL");
       alert(`Invalid URL: ${inputNotionURL}`);
+      return;
     }
     // inputNotionURLに含まれるhttps://www.notion.so/を削除
     let urlWithoutNotion = inputNotionURL.replace("https://www.notion.so/", "");
@@ -80,6 +89,10 @@ export const useBlogPreview = ({ notionId }: Props) => {
     showPreviewAndSyncQueryParam(id);
   };
 
+  const reloadPreview = () => {
+    setReload((prev) => !prev);
+  };
+
   return {
     loading: loading,
     notionId: notionId,
@@ -89,5 +102,6 @@ export const useBlogPreview = ({ notionId }: Props) => {
     notionPageId: notionPageId,
     showPreviewFromNotionURL: showPreviewFromNotionURL,
     setInputNotionURL: setInputNotionURL,
+    reloadPreview: reloadPreview,
   } as BlogPreviewPresentationProps;
 };

@@ -16,6 +16,7 @@ export type Props = {
   inputNotionURL: string;
   setInputNotionURL: (url: string) => void;
   showPreviewFromNotionURL: () => void;
+  reloadPreview: () => void;
 };
 
 export const BlogPreviewPresentation: React.FC<Props> = ({
@@ -27,6 +28,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
   inputNotionURL,
   setInputNotionURL,
   showPreviewFromNotionURL,
+  reloadPreview,
 }) => {
   return (
     <div className={styles.BlogPreviewContainer}>
@@ -64,16 +66,28 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
           </form>
         </div>
       </div>
-      {loading ? (
-        <BlogPreviewBodySkelton />
-      ) : !notionId || !blocks || !pageInfo ? (
-        <></>
-      ) : (
-        <div className={styles.article}>
-          <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
-          <BlogArticleToc blocks={blocks} />
-        </div>
-      )}
+      <div className={styles.PreviewContainer}>
+        {loading ? (
+          <BlogPreviewBodySkelton />
+        ) : !notionId || !blocks || !pageInfo ? (
+          <></>
+        ) : (
+          <div className={styles.article}>
+            <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
+            <BlogArticleToc blocks={blocks} />
+          </div>
+        )}
+        <button className={styles.reloadButton} onClick={reloadPreview}>
+          <Image
+            className={`${loading ? styles.reloadIconLoading : ""}`}
+            src="/reload.svg"
+            alt="reload"
+            width={20}
+            height={20}
+          />
+          <div className={styles.reloadButtonText}>更新</div>
+        </button>
+      </div>
     </div>
   );
 };
