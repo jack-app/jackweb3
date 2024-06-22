@@ -33,5 +33,3 @@ export const PieChartPresentation: React.FC<Props> = ({ data, customLabel }) => 
     </ResponsiveContainer>
   );
 };
-
-export { PieChart };
