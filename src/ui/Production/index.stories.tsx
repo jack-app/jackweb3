@@ -17,6 +17,7 @@ const meta: Meta<T> = {
     web_href: { control: "text" },
     app_href: { control: "text" },
     google_href: { control: "text" },
+    git_href: { control: "text" },
   },
 };
 
@@ -45,5 +46,6 @@ export const Default: Story = {
     web_href: "https://www.google.com/",
     app_href: "https://www.google.com/",
     google_href: "https://www.google.com/",
+    git_href: "https://www.google.com/",
   },
 };
