@@ -37,8 +37,8 @@
     gap: 40px;
     @media screen and (max-width: $mobile) {
       flex-flow: column;
-      margin: 5px auto;
-      margin-top: 3rem;
+      margin: 0 auto;
+      margin-top: 2rem;
       height: 1200px;
     }
   }
@@ -61,6 +61,7 @@
     padding-bottom: 24px;
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
+      padding-bottom: 0px;
     }
   }
 
