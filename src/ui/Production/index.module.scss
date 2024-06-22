@@ -6,6 +6,8 @@
   width: 352px;
   height: 456px;
   align-items: center;
+  border-radius: $rounded-lg;
+  box-shadow: $shadow-sm;
 }
 
 .item_context {
@@ -16,6 +18,8 @@
   width: 352px;
   height: 200px;
   object-fit: cover;
+  border-top-left-radius: $rounded-lg;
+  border-top-right-radius: $rounded-lg;
 }
 
 .title {

@@ -3,6 +3,7 @@ import React from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { RichText } from "@/types/block";
 import { BlackText } from "@/utils/blackText/blackText";
 import styles from "./index.module.scss";
@@ -17,14 +18,15 @@ export type Props = {
   web_href?: string | null;
   app_href?: string | null;
   google_href?: string | null;
+  git_href?: string | null;
 };
 
 export type ProductionDetailProps = Props & {
   description: RichText[];
   release_date?: RichText[];
   detail?: RichText[];
-  git_href?: string | null;
 };
+
 export const Production: React.FC<Props> = ({
   image,
   title,
@@ -32,6 +34,7 @@ export const Production: React.FC<Props> = ({
   web_href,
   app_href,
   google_href,
+  git_href,
 }) => {
   return (
     <div className={styles.wrapper}>
@@ -65,6 +68,9 @@ export const Production: React.FC<Props> = ({
                 size="s"
                 openInNewTab
               />
+            )}
+            {git_href && (
+              <IconLink href={git_href} text="Git Hub" icon={FaGithub} size="s" openInNewTab />
             )}
           </div>
         </div>
