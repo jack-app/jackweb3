@@ -8,6 +8,13 @@ body {
   background-color: $background;
   line-height: normal;
   font-family: hiragino-kaku-gothic-pron, sans-serif;
+  min-height: 100vh;
+}
+
+.inner-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {
