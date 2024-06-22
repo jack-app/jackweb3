@@ -1,5 +1,11 @@
 import { TopScreen } from "@/screens/Top";
+import { Meta } from "@/utils/meta";
 
 export default function Home() {
-  return <TopScreen />;
+  return (
+    <>
+      <Meta isHomePage={true} />
+      <TopScreen />
+    </>
+  );
 }

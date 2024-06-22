@@ -71,7 +71,7 @@
   width: 120px;
   text-align: end;
   font-family: "Abel", sans-serif;
-  font-size: $text-3xl;
+  font-size: $text-2xl;
   @media (max-width: $mobile) {
     right: 50px;
     bottom: 0px;
@@ -87,7 +87,7 @@
   padding: 0;
   width: 120px;
   height: auto;
-  color: #000000;
+  color: #f1f1f1;
   word-break: break-all;
   overflow-wrap: break-word;
   @media (max-width: $mobile) {
@@ -145,7 +145,7 @@
 
 .main_description {
   width: 200px;
-  color: #000000;
+  color: #f1f1f1;
   word-break: break-all;
   overflow-wrap: break-word;
 }
