@@ -8,10 +8,10 @@
   background-color: var(--product-background-color);
   z-index: 0;
   font-family: "Abel", "Zen Kaku Gothic New", sans-serif;
-
+  margin: 0;
   @media (max-width: $mobile) {
     width: 340px;
-    height: 490px;
+    height: 500px;
   }
 }
 
@@ -73,10 +73,13 @@
   font-family: "Abel", sans-serif;
   font-size: $text-2xl;
   @media (max-width: $mobile) {
-    right: 50px;
+    right: 10px;
     bottom: 0px;
     top: 40px;
-    text-align: start;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    font-size: $text-2xl;
   }
 }
 
@@ -93,7 +96,7 @@
   @media (max-width: $mobile) {
     text-align: left;
     position: absolute;
-    right: 20px;
+    right: 15px;
     bottom: 0;
     top: 50px;
   }
@@ -137,10 +140,15 @@
 
 .context_text_right {
   margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: $mobile) {
+    margin-bottom: 16.5px;
+  }
 }
 
 .release {
-  color: red;
+  color: #f1f1f1;
 }
 
 .main_description {
@@ -150,14 +158,16 @@
   overflow-wrap: break-word;
 }
 
+.link_context {
+  margin-top: auto;
+}
 .link {
   color: #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
+  text-decoration: underline;
   width: fit-content;
 }
 
 .git {
   color: #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
-  width: fit-content;
+  display: flex;
 }

@@ -12,6 +12,8 @@ type Props = {
 };
 
 export const ProductDetailItem: React.FC<Props> = ({ product }) => {
+  const targetProps = { target: "_blank", rel: "noopener noreferrer" };
+
   return (
     <>
       <Color key={product.id} src={product.image} format="rgbArray">
@@ -25,7 +27,6 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                 ></div>
                 <div className={styles.context}>
                   <div className={styles.context_left}>
-                    {/* <div className={styles.number}>{number}</div> */}
                     <div className={styles.square}></div>
                     <Image
                       className={styles.product_image}
@@ -50,7 +51,6 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                     <div className={styles.decoration_number}>1 2 3 4 5 6 7 8 9 10 11</div>
                     <div className={styles.context_text_right}>
                       <div className={styles.detail}>
-                        {" "}
                         {Array.isArray(product.release_date) && (
                           <div className={styles.release}>
                             <Text richText={product.release_date} />
@@ -61,25 +61,29 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                             <Text richText={product.detail} />
                           </div>
                         )}
+                      </div>
+                      <div className={styles.link_context}>
                         {product.web_href && (
-                          <Link href={product.web_href}>
-                            <div className={styles.link}>webllinkはこちら</div>
+                          <Link href={product.web_href} {...targetProps}>
+                            <div className={styles.link}>web site</div>
                           </Link>
                         )}
                         {product.app_href && (
-                          <Link href={product.app_href}>
-                            <div className={styles.link}>appllinkはこちら</div>
+                          <Link href={product.app_href} {...targetProps}>
+                            <div className={styles.link}>app store</div>
                           </Link>
                         )}
                         {product.google_href && (
-                          <Link href={product.google_href}>
-                            <div className={styles.link}>googlelinkはこちら</div>
+                          <Link href={product.google_href} {...targetProps}>
+                            <div className={styles.link}>play store</div>
                           </Link>
                         )}
                         {product.git_href && (
-                          <Link href={product.git_href}>
+                          <Link href={product.git_href} {...targetProps}>
                             <div className={styles.git}>
-                              void let&#0039;s see &#40;&#41; &#0061;&#0062; github
+                              <div>void let&#0039;s see &#40;&#41; &#0061;&#0062;</div>
+                              <pre>&#009;&#009;</pre>
+                              <div className={styles.link}>github</div>
                             </div>
                           </Link>
                         )}
