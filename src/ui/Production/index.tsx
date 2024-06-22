@@ -70,7 +70,7 @@ export const Production: React.FC<Props> = ({
               />
             )}
             {git_href && (
-              <IconLink href={git_href} text="Git Hub" icon={FaGithub} size="s" openInNewTab />
+              <IconLink href={git_href} text="GitHub" icon={FaGithub} size="s" openInNewTab />
             )}
           </div>
         </div>
