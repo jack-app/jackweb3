@@ -1,160 +1,164 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
-
-@mixin pc{
-    @media only screen and (min-width: 1280px) {
-      @content;
-    }
+@mixin pc {
+  @media only screen and (min-width: 1280px) {
+    @content;
+  }
 }
 
-.activities{
-    max-width: $mobile;
-    padding: 32px 24px;
-    align-items: center;
-    margin: auto;
-    @include pc{
-        max-width: calc(1280px + 160px);
-        padding: 64px 80px;
-    }
+.activities {
+  max-width: $mobile;
+  padding: 32px 24px;
+  align-items: center;
+  margin: auto;
+  @include pc {
+    max-width: calc(1280px + 160px);
+    padding: 64px 80px;
+  }
 }
 
-.ActivitiesCarousel{
+.ActivitiesCarousel {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  @include pc {
+    width: auto;
+  }
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include pc {
+    width: 50%;
+  }
+}
+
+.text {
+  font-size: 20px;
+  justify-content: center;
+  margin: 20px;
+  @include pc {
+    justify-content: center;
+    margin: 60px;
+  }
+}
+
+.text_title {
+  font-size: 35px;
+  font-weight: 800;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  @include pc {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    @include pc{
-        width: auto;
-    }
+    justify-content: left;
+    margin-left: 60px;
+  }
 }
 
-.top{
-    width: 100%;
+.Heading2 {
+  margin: 20px;
+  @include pc {
+    margin: 50px;
+  }
+}
+
+.outline {
+  display: flex;
+  flex-direction: column;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  @include pc {
     display: flex;
-    justify-content: center;
-    @include pc{
-        width: 50%;
-    }
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
-.text{
-    font-size: 20px;
-    justify-content: center;
-    margin: 20px;
-    @include pc{
-        justify-content: center;
-        margin: 60px;
-    }
+.timeline {
+  display: flex;
+  justify-content: center;
 }
 
-.text_title{
-    font-size: 35px;
-    font-weight: 800;
-    margin: 20px;
+.schedule {
+  margin-top: 10rem;
+  @media (max-width: $mobile) {
+    margin-top: 3rem;
+  }
+}
+
+.schedule_content {
+  display: flex;
+  flex-direction: column;
+  @include pc {
     display: flex;
-    justify-content: center;
-    @include pc{
-        display: flex;
-        justify-content: left;
-        margin-left: 60px;
-    }
+    flex-direction: row;
+  }
 }
 
-
-.Heading2{
-    margin: 20px;
-    @include pc{
-        margin: 50px;
-    }
-}
-
-.outline{
+.schedule_text {
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+  @include pc {
+    margin: 0 50px 0 50px;
     display: flex;
     flex-direction: column;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    -webkit-flex-direction: column-reverse;
-    flex-direction: column-reverse;
-    @include pc{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}
-
-.timeline{
-    display: flex;
     justify-content: center;
+    text-align: start;
+  }
 }
 
-.schedule_content{
-    display: flex;
-    flex-direction: column;
-    @include pc{
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-.schedule_text{
-    font-size: 20px;
-    margin: 20px;
-    text-align: center;
-    @include pc{
-        margin: 0 50px 0 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: start;
-    }
-    
-}
-
-.pcButton{
-    display: none;
-    @include pc{
-        display: flex;
-        margin: 50px;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-.mobileButton{
+.pcButton {
+  display: none;
+  @include pc {
     display: flex;
     margin: 50px;
     justify-content: center;
-    @include pc{
-        display: none;
-    }
+    align-items: center;
+  }
 }
 
-.taiken{
-    font-size: 25px;
-    font-weight: 700;
-    color: #FFA61F;
+.mobileButton {
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+  @include pc {
+    display: none;
+  }
 }
 
-.anata{
-    font-size: 25px;
-    font-weight: 700;
+.taiken {
+  font-size: 25px;
+  font-weight: 700;
+  color: #ffa61f;
+}
+
+.anata {
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .calendar {
-    @media (min-width: $pc){
-        width: 100%;
-    }
-    @media (max-width: $mobile) {
-        display: none;
-    }
+  @media (min-width: $pc) {
+    width: 100%;
+  }
+  @media (max-width: $mobile) {
+    display: none;
+  }
 }
 
 .calendarList {
-    display: none;
-    @media (max-width: $mobile) {
-        display: block;
-    }
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+  }
 }
 
-.activities{
-    width: 100%;
+.activities {
+  width: 100%;
 }
