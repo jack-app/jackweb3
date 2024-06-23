@@ -6,6 +6,7 @@ import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
 import BlogPreviewBodySkelton from "../presentations/Skelton";
+import { TfiReload } from "react-icons/tfi";
 
 export type Props = {
   loading: boolean;
@@ -15,7 +16,6 @@ export type Props = {
   notionPageId: string;
   inputNotionURL: string;
   setInputNotionURL: (url: string) => void;
-  showPreviewFromNotionURL: () => void;
   reloadPreview: () => void;
 };
 
@@ -27,7 +27,6 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
   notionPageId,
   inputNotionURL,
   setInputNotionURL,
-  showPreviewFromNotionURL,
   reloadPreview,
 }) => {
   return (
@@ -47,7 +46,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              showPreviewFromNotionURL();
+              reloadPreview();
             }}
           >
             <input
@@ -55,12 +54,16 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
               className={styles.input}
               placeholder="https://www.notion.so/"
               value={inputNotionURL}
-              onChange={(e) => {
-                e.preventDefault();
-                setInputNotionURL(e.target.value);
-              }}
+              onChange={(e) => setInputNotionURL(e.target.value)}
             />
-            <button type="button" className={styles.inputButton} onClick={showPreviewFromNotionURL}>
+            <button
+              type="button"
+              className={styles.inputButton}
+              onClick={(e) => {
+                e.preventDefault();
+                reloadPreview();
+              }}
+            >
               確定
             </button>
           </form>
@@ -78,13 +81,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
           </div>
         )}
         <button className={styles.reloadButton} onClick={reloadPreview}>
-          <Image
-            className={`${loading ? styles.reloadIconLoading : ""}`}
-            src="/reload.svg"
-            alt="reload"
-            width={20}
-            height={20}
-          />
+          <TfiReload className={`${loading ? styles.reloadIconLoading : ""}`} />
           <div className={styles.reloadButtonText}>更新</div>
         </button>
       </div>

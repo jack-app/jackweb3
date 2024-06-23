@@ -15,13 +15,14 @@ export const useBlogPreview = ({ notionId }: Props) => {
   const [notionPageId, setNotionPageId] = useState<string>(notionId || "");
 
   const [loading, setLoading] = useState<boolean>(false);
-  const [reload, setReload] = useState<boolean>(false);
   const [blocks, setBlocks] = useState<Block[] | null>(null);
   const [pageInfo, setPageInfo] = useState<PageInfo | null>(null);
   const [inputNotionURL, setInputNotionURL] = useState<string>(
     notionId ? `https://www.notion.so/${notionId}` : "",
   );
 
+  // check if notionId exist in query param
+  // if notionId exists, fetch /api/notion/getPreview and show preview
   useEffect(() => {
     if (!notionId) return;
     setLoading(true);
@@ -48,37 +49,20 @@ export const useBlogPreview = ({ notionId }: Props) => {
       });
     return () => {
       setPageInfo(null);
+      setBlocks(null);
+      setLoading(false);
     };
-  }, [notionId, reload]);
+  }, []);
 
-  const showPreviewAndSyncQueryParam = (id: string): void => {
-    // notionPageIdを更新
-    // クエリパラメータを更新
-    setNotionPageId((prevId) => {
-      if (prevId === id) {
-        reloadPreview();
-        return prevId;
-      } else {
-        return id;
-      }
-    });
-    const params = new URLSearchParams(searchParam);
-    if (params.has("id")) {
-      params.set("id", id);
-    } else {
-      params.append("id", id);
-    }
-    replace(`${pathName}?${params.toString()}`, { scroll: false });
-  };
-
-  const showPreviewFromNotionURL = () => {
+  // Hanlder of Reloading Preview
+  const reloadPreview = async () => {
+    // get notionId from query param
     if (!inputNotionURL) return;
     if (inputNotionURL.indexOf("https://www.notion.so/") === -1) {
       console.error("Invalid URL");
       alert(`Invalid URL: ${inputNotionURL}`);
       return;
     }
-    // inputNotionURLに含まれるhttps://www.notion.so/を削除
     let urlWithoutNotion = inputNotionURL.replace("https://www.notion.so/", "");
     if (urlWithoutNotion.includes("?")) {
       urlWithoutNotion = urlWithoutNotion.split("?")[0];
@@ -86,11 +70,48 @@ export const useBlogPreview = ({ notionId }: Props) => {
     // "-"で分割して最後の文字列を取得
     const segments = urlWithoutNotion.split("-");
     const id = segments[segments.length - 1];
-    showPreviewAndSyncQueryParam(id);
-  };
 
-  const reloadPreview = () => {
-    setReload((prev) => !prev);
+    // urlのクエリパラメータを更新
+    const params = new URLSearchParams(searchParam);
+    if (params.has("id")) {
+      params.set("id", id);
+    } else {
+      params.append("id", id);
+    }
+    replace(`${pathName}?${params.toString()}`, { scroll: false });
+
+    // fetch /api/notion/getPreview
+    setLoading(true);
+    fetch("/api/notion/getPreview", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ pageId: id }),
+    })
+      .then(async (res) => {
+        if (res.status !== 200) {
+          throw new Error("notion api error");
+        }
+        const data = await res.json();
+        // return data;
+        setPageInfo(data.pageInfo as PageInfo);
+        setBlocks(data.blocks as Block[]);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setPageInfo(null);
+        setBlocks(null);
+        setLoading(false);
+        alert(`記事の取得に失敗しました。https://www.notion.so/${id}`);
+        return;
+      });
+    return () => {
+      setPageInfo(null);
+      setBlocks(null);
+      setLoading(false);
+    };
   };
 
   return {
@@ -100,7 +121,6 @@ export const useBlogPreview = ({ notionId }: Props) => {
     pageInfo: pageInfo,
     inputNotionURL: inputNotionURL,
     notionPageId: notionPageId,
-    showPreviewFromNotionURL: showPreviewFromNotionURL,
     setInputNotionURL: setInputNotionURL,
     reloadPreview: reloadPreview,
   } as BlogPreviewPresentationProps;
