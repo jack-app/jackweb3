@@ -15,7 +15,7 @@ export default function WriterPage({
 
   return (
     <>
-      <Meta title={`${writer}による記事`} />
+      <Meta title={headingText} />
       <BlogScreen articles={articles} headingText={headingText} />
     </>
   );
