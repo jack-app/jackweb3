@@ -5,8 +5,8 @@ import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { RichText } from "@/types/block";
-import { BlackText } from "@/utils/blackText/blackText";
 import styles from "./index.module.scss";
+import { RenderText } from "./logics";
 import { IconLink } from "../IconLink";
 
 export type Props = {
@@ -42,11 +42,7 @@ export const Production: React.FC<Props> = ({
       <div className={styles.item_context}>
         <div className={styles.context}>
           <div className={styles.title}>{title}</div>
-          {Array.isArray(text) && (
-            <div className={styles.text}>
-              <BlackText richText={text} />
-            </div>
-          )}
+          {Array.isArray(text) && <div className={styles.text}>{RenderText(text)}</div>}
           <div className={styles.tag}>
             {web_href && (
               <IconLink
