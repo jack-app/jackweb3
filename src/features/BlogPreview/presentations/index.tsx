@@ -16,7 +16,7 @@ export type Props = {
   notionPageId: string;
   inputNotionURL: string;
   setInputNotionURL: (url: string) => void;
-  reloadPreview: () => void;
+  showPreview: () => void;
 };
 
 export const BlogPreviewPresentation: React.FC<Props> = ({
@@ -27,7 +27,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
   notionPageId,
   inputNotionURL,
   setInputNotionURL,
-  reloadPreview,
+  showPreview,
 }) => {
   return (
     <div className={styles.BlogPreviewContainer}>
@@ -46,7 +46,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              reloadPreview();
+              showPreview();
             }}
           >
             <input
@@ -61,7 +61,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
               className={styles.inputButton}
               onClick={(e) => {
                 e.preventDefault();
-                reloadPreview();
+                showPreview();
               }}
             >
               確定
@@ -80,10 +80,12 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
             <BlogArticleToc blocks={blocks} />
           </div>
         )}
-        <button className={styles.reloadButton} onClick={reloadPreview}>
-          <TfiReload className={`${loading ? styles.reloadIconLoading : ""}`} />
-          <div className={styles.reloadButtonText}>更新</div>
-        </button>
+        {blocks && pageInfo && (
+          <button className={styles.reloadButton} onClick={showPreview}>
+            <TfiReload className={`${loading ? styles.reloadIconLoading : ""}`} />
+            <div className={styles.reloadButtonText}>更新</div>
+          </button>
+        )}
       </div>
     </div>
   );

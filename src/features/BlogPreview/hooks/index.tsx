@@ -55,7 +55,7 @@ export const useBlogPreview = ({ notionId }: Props) => {
   }, []);
 
   // Hanlder of Reloading Preview
-  const reloadPreview = async () => {
+  const showPreview = async () => {
     // get notionId from query param
     if (!inputNotionURL) return;
     if (inputNotionURL.indexOf("https://www.notion.so/") === -1) {
@@ -122,6 +122,6 @@ export const useBlogPreview = ({ notionId }: Props) => {
     inputNotionURL: inputNotionURL,
     notionPageId: notionPageId,
     setInputNotionURL: setInputNotionURL,
-    reloadPreview: reloadPreview,
+    showPreview: showPreview,
   } as BlogPreviewPresentationProps;
 };
