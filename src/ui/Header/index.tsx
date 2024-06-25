@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { FORM_URL } from "@/constants";
 import styles from "./index.module.scss";
 
 type Props = {};
@@ -44,13 +45,8 @@ export const Header: React.FC<Props> = () => {
             ブログ
           </Link>
         </nav>
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.contact}
-        >
-          体験応募はこちら
+        <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
+          見学申し込みはこちら
         </Link>
         {!showNav && (
           <button className={styles.menuButton} onClick={toggleNav}>
