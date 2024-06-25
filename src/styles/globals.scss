@@ -4,19 +4,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@mixin mobile {
-  @media only screen and (max-width: $pc) {
-    @content;
-  }
-}
-
-main {
-  padding-top: 74px;
-  @include mobile {
-    padding-top: 58px;
-  }
-}
-
 body {
   background-color: $background;
   line-height: normal;
@@ -31,6 +18,12 @@ body {
   position: fixed;
   width: 100%;
   z-index: 9999;
+}
+
+.dummy-header {
+  background-color: $white;
+  width: 100%;
+  height: 58px;
 }
 
 .inner-body {

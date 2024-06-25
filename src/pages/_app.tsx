@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="Header">
         <Header />
       </div>
+      <div className="dummy-header"></div>
       <Component {...pageProps} />
       <Footer />
     </div>
