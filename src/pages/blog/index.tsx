@@ -7,7 +7,7 @@ export default function Blog({ articles }: { articles: ArticleItemProps[] }) {
   return (
     <>
       <Meta title="ブログ" />
-      <BlogScreen articles={articles} />
+      <BlogScreen articles={articles} headingText="記事一覧" />
     </>
   );
 }
