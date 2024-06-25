@@ -1,17 +1,33 @@
 @use "@/styles/variables" as *;
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 64px auto;
+  gap: 40px;
+  width: fit-content;
+  justify-content: center;
+
+  @media (max-width: calc(360px * 3 + 24px * 2 + 80px * 2)) {
+    max-width: calc(360px * 2 + 24px);
+    margin: 40px auto;
+  }
+  @media (max-width: $mobile) {
+    gap: 8px;
+  }
+}
+.heading2 {
+  align-self: flex-start;
+}
 .articlesWrapper {
   display: grid;
   max-width: calc(360px * 3 + 24px);
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   gap: 32px 24px;
-  margin: 64px auto;
 
   @media (max-width: calc(360px * 3 + 24px * 2 + 80px * 2)) {
     grid-template-columns: repeat(2, 1fr);
-    max-width: calc(360px * 2 + 24px);
-    margin: 40px auto;
   }
 
   @media (max-width: calc(360px * 2 + 24px + 32px * 2)) {

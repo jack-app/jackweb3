@@ -19,7 +19,7 @@ export const ArticleItem: React.FC<Props> = ({ id, image, date, title, tags }) =
         src={image ? image : ""}
         alt={title}
         width={360}
-        height={200}
+        height={189}
         className={styles.image}
       />
       <div className={styles.descriptionWrapper}>

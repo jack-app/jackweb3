@@ -3,6 +3,7 @@ import { Block } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import createImage from "@/utils/createImage";
+import createOGPImage from "@/utils/createOGPImage";
 import { Meta } from "@/utils/meta";
 import { getBlocks, getDatabase, getPage } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
@@ -118,6 +119,10 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   };
 
   const suggestArticles = await getSuggestArticles();
+
+  const title = page.properties.Name.title[0].plain_text;
+  const writerName = page.properties.Writer.created_by.name || null;
+  await createOGPImage(pageId, title, writerName);
 
   return {
     props: {

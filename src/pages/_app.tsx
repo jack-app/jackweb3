@@ -6,7 +6,7 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div className="inner-body">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -15,6 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
       </div>
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   );
 }

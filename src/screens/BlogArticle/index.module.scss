@@ -24,6 +24,9 @@
   width: 100%;
   max-width: calc(848px + 260px + 16px);
   margin-bottom: 32px;
+  @media (max-width: 1150px) {
+    margin-left: 2rem;
+  }
 }
 
 .suggestedArticleListContainer {
