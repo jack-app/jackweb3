@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React from "react";
+import { TfiReload } from "react-icons/tfi";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
 import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import styles from "./index.module.scss";
 import BlogPreviewBodySkelton from "../presentations/Skelton";
-import { TfiReload } from "react-icons/tfi";
 
 export type Props = {
   loading: boolean;
