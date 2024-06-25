@@ -10,7 +10,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Header />
+      <div className="Header">
+        <Header />
+      </div>
+      <div className="dummy-header"></div>
       <Component {...pageProps} />
       <Footer />
     </div>

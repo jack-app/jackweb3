@@ -36,17 +36,19 @@
 }
 
 .text {
-  font-size: 20px;
+  font-size: $text-base;
   justify-content: center;
   margin: 20px;
+  line-height: 2;
   @include pc {
     justify-content: center;
     margin: 60px;
+    font-size: $text-xl;
   }
 }
 
 .text_title {
-  font-size: 35px;
+  font-size: $text-2xl;
   font-weight: 800;
   margin: 20px;
   display: flex;
@@ -55,6 +57,7 @@
     display: flex;
     justify-content: left;
     margin-left: 60px;
+    font-size: $text-4xl;
   }
 }
 
@@ -101,15 +104,17 @@
 }
 
 .schedule_text {
-  font-size: 20px;
+  font-size: $text-base;
   margin: 20px;
   text-align: center;
+  line-height: 2;
   @include pc {
     margin: 0 50px 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: start;
+    font-size: $text-xl;
   }
 }
 
@@ -133,13 +138,13 @@
 }
 
 .taiken {
-  font-size: 25px;
+  font-size: $text-2xl;
   font-weight: 700;
   color: #ffa61f;
 }
 
 .anata {
-  font-size: 25px;
+  font-size: $text-2xl;
   font-weight: 700;
 }
 
