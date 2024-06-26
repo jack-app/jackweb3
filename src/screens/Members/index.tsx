@@ -4,6 +4,7 @@ import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
 import { MemberStory } from "@/ui/MemberStory/index";
 import { Members, memberStories } from "./data";
+import { totalMembers } from "./data";
 import styles from "./index.module.scss";
 
 export const MembersScreen: React.FC = () => {
@@ -12,7 +13,7 @@ export const MembersScreen: React.FC = () => {
       <Heading1 enTitle="Members" jaTitle="メンバー" />
       <div className={styles.wrapper}>
         <p className={styles.allnum}>
-          全体人数：約<span>70</span>人
+          全体人数：約<span>{totalMembers}</span>人
         </p>
         <div className={styles.graph}>
           {Members.map((member, index) => (
