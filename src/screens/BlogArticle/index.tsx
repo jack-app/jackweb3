@@ -3,16 +3,19 @@ import React from "react";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
 import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
+import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
+import { SuggestArticleList } from "@/ui/SuggestArticleList";
 import styles from "./index.module.scss";
 
 type Props = {
   id: string;
   blocks: Block[];
   pageInfo: PageInfo;
+  suggestArticles: ArticleItemProps[];
 };
 
-export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo }) => {
+export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo, suggestArticles }) => {
   return (
     <main className={styles.container}>
       <div className={styles.page}>
@@ -26,6 +29,7 @@ export const BlogArticleScreen: React.FC<Props> = ({ id, blocks, pageInfo }) => 
         <span>&#62;</span>
         <span>ポスト</span>
       </div>
+
       <div className={styles.article}>
         <BlogArticleBodies id={id} blocks={blocks} pageInfo={pageInfo} />
         <BlogArticleToc blocks={blocks} />
