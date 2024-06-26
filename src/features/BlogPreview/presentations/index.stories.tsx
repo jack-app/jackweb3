@@ -46,7 +46,7 @@ const meta: Meta<T> = {
         type: "function",
       },
     },
-    reloadPreview: {
+    showPreview: {
       control: {
         type: "function",
       },
@@ -75,6 +75,6 @@ export const Default: Story = {
     notionPageId: "notionPageId",
     inputNotionURL: "inputNotionURL",
     setInputNotionURL: () => {},
-    reloadPreview: () => {},
+    showPreview: () => {},
   },
 };
