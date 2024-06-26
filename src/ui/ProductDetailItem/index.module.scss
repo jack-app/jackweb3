@@ -68,18 +68,16 @@
   position: absolute;
   right: 20px;
   bottom: 110px;
-  width: 120px;
+  width: 180px;
   text-align: end;
   font-family: "Abel", sans-serif;
-  font-size: $text-2xl;
+  font-size: $text-xl;
   @media (max-width: $mobile) {
     right: 10px;
     bottom: 0px;
     top: 40px;
-    width: 180px;
     height: 50px;
     text-align: center;
-    font-size: $text-2xl;
   }
 }
 
