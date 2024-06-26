@@ -19,9 +19,10 @@
 
 .embla__viewport {
   width: 60%;
+  padding: 0;
   @media (max-width: $mobile) {
     width: 360px;
-    height: 500px;
+    height: 530px;
     overflow: hidden;
   }
 }

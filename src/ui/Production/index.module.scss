@@ -4,8 +4,10 @@
   background-color: $white;
   padding: 0;
   width: 352px;
-  height: 456px;
+  height: 100%;
   align-items: center;
+  border-radius: $rounded-lg;
+  box-shadow: $shadow-sm;
 }
 
 .item_context {
@@ -16,6 +18,8 @@
   width: 352px;
   height: 200px;
   object-fit: cover;
+  border-top-left-radius: $rounded-lg;
+  border-top-right-radius: $rounded-lg;
 }
 
 .title {
@@ -26,6 +30,10 @@
 .text {
   padding: 16px 0;
   font-size: $text-base;
+}
+
+.moreButton {
+  border-bottom: 1px solid $black;
 }
 
 .tag {
