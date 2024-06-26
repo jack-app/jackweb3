@@ -5,6 +5,7 @@ import { SlArrowRight } from "react-icons/sl";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Calendar } from "@/ui/Calendar";
 import { IconLink } from "@/ui/IconLink";
+import { MobileCalendar } from "@/ui/MobileCalendar";
 import { ProductDetailItem } from "@/ui/ProductDetailItem";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import { TopHeading2 } from "@/ui/TopHeading2";
@@ -44,20 +45,19 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
             </span>
             <span className={styles.textGray}>なって、</span>
           </div>
-          <div className={styles.line3}>
-            <div className={styles.line}>
-              <span className={styles.catchcopy3}>
-                やる
-                <Image
-                  src={"/eyecatch_PC_icon.png"}
-                  alt=""
-                  width={150}
-                  height={100}
-                  className={styles.PCicon}
-                />
-                <p className={styles.jack}>jack</p>
-              </span>
-            </div>
+
+          <div className={styles.line}>
+            <span className={styles.catchcopy3}>
+              やる
+              <Image
+                src={"/eyecatch_PC_icon.png"}
+                alt=""
+                width={150}
+                height={100}
+                className={styles.PCicon}
+              />
+              <p className={styles.jack}>jack</p>
+            </span>
           </div>
         </div>
         <div className={styles.mark}>
@@ -144,9 +144,9 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
           </div>
           {/* Notionからランダムに取得したプロダクト */}
 
-          <div className={styles.production}>
+          {/* <div className={styles.production}>
             <ProductDetailItem product={product} />
-          </div>
+          </div> */}
           <div className={styles.mobileLink}>
             <IconLink href="/products" text="プロダクト一覧" icon={SlArrowRight} size="l" />
           </div>
@@ -201,6 +201,9 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
           {/* カレンダー */}
           <div className={styles.calendar}>
             <Calendar />
+          </div>
+          <div className={styles.calendarList}>
+            <MobileCalendar />
           </div>
           <div className={styles.mobileLink}>
             <IconLink

@@ -13,7 +13,7 @@ export const Timeline: React.FC<Props> = (Props) => {
           <div className={styles.timeline__inner}>
             <Image className={styles.item_img} src={item.image} alt="" width={300} height={180} />
             <div className={styles.timeline__text}>
-              <h3>{item.title}</h3>
+              <h3 className={styles.title}>{item.title}</h3>
               <p>{item.description}</p>
               <div className={styles.bar}></div>
             </div>

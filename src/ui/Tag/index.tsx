@@ -18,7 +18,7 @@ export const Tag: React.FC<Props> = ({ name, color, isLink = false }) => {
 
   return isLink ? (
     <Link
-      href={`/tag/${name}`}
+      href={`/blog/tag/${name}`}
       className={styles.link}
       style={{
         backgroundColor: colorCode,

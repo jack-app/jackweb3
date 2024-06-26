@@ -24,6 +24,10 @@
     margin-inline: auto; //左揃えで中央配置
     padding-top: 170px;
     padding-left: 150px;
+    @media screen and (max-width: $pc) and (min-width: $mobile) {
+      padding-top: 100px;
+      padding-left: 80px;
+    }
     @media screen and (max-width: $mobile) {
       padding-top: 70px;
       padding-left: 50px;
@@ -36,6 +40,14 @@
     display: flex;
     align-items: center;
     margin-bottom: 70px;
+    @media screen and (max-width: $pc) {
+      font-size: $text-6xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: 1029px) and (max-width: 1435px) {
+      font-size: $text-5xl;
+      margin-bottom: 40px;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-4xl;
       margin-bottom: 30px;
@@ -44,9 +56,6 @@
   .catchcopy1 {
     color: #ffce8e;
     position: relative;
-    @media screen and (max-width: $mobile) {
-      // font-size: $text-6xl;
-    }
   }
 
   .catchcopy2 {
@@ -61,6 +70,9 @@
 
   .textGray {
     color: #c8c6c6;
+    @media screen and (max-width: $pc) and (min-width: $mobile) {
+      font-size: $text-6xl;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-3xl;
     }
@@ -69,6 +81,11 @@
     position: absolute;
     right: 0;
     top: -150px;
+    @media screen and (max-width: $pc) and (min-width: $mobile) {
+      width: 80px;
+      height: 80px;
+      top: -80px;
+    }
     @media screen and (max-width: $mobile) {
       width: 50px;
       height: 50px;
@@ -78,6 +95,10 @@
   .dennkyuuIcon {
     position: absolute;
     transform: translate(-100%, -100%);
+    @media screen and (max-width: $pc) and (min-width: $mobile) {
+      width: 80px;
+      height: 80px;
+    }
     @media screen and (max-width: $mobile) {
       width: 50px;
       height: 50px;
@@ -87,6 +108,10 @@
     position: absolute;
     transform: translate(100%, -90%);
     right: 0;
+    @media screen and (max-width: $pc) and (min-width: $mobile) {
+      width: 80px;
+      height: 80px;
+    }
     @media screen and (max-width: $mobile) {
       width: 50px;
       height: 50px;
@@ -101,14 +126,14 @@
     position: absolute;
     right: 0;
     transform: translate(500%, -50%);
+    @media screen and (max-width: $pc) and (min-width: $mobile) {
+      font-size: $text-6xl;
+      transform: translate(350%, -50%);
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-3xl;
       transform: translate(400%, -50%);
     }
-  }
-  .line3 {
-    display: flex;
-    padding-bottom: 32px;
   }
 
   .mark {
@@ -116,6 +141,12 @@
     display: flex;
     justify-content: center;
     padding-bottom: 50px;
+  }
+  @media screen and (max-width: $pc) {
+    .mark img {
+      width: 50px;
+      height: 50px;
+    }
   }
   @media screen and (max-width: $mobile) {
     .mark img {
@@ -291,7 +322,7 @@
     @media screen and (max-width: $mobile) {
       //   width: calc(100% - 500px);
       //   width: 50vw;
-      width: 100px;
+      // width: 100px;
       //   flex-basis: 200px; /* 初期の幅は300px */
       //   flex-grow: 1; /* 残りのスペースを均等に分ける */
       margin-left: 0px;
@@ -372,11 +403,18 @@
   }
 
   .calendar {
-    width: 560px;
-    height: 498px;
-    @media screen and (max-width: $mobile) {
-      width: 360px;
-      height: 400px;
+    @media (min-width: $pc) {
+      width: 100%;
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .calendarList {
+    display: none;
+    @media (max-width: $mobile) {
+      display: block;
     }
   }
 }
