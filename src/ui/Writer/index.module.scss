@@ -1,10 +1,16 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
 .link {
   display: flex;
   width: fit-content;
   align-items: center;
   gap: 10px;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }
 
 .image {
@@ -19,3 +25,9 @@
   font-size: $text-sm;
 }
 
+.writer {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+}

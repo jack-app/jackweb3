@@ -1,5 +1,6 @@
 import React from "react";
 import { MdNavigateNext } from "react-icons/md";
+import { FORM_URL } from "@/constants";
 import { ActivitiesCarousel } from "@/features/ActivitiesCarousel";
 import { Calendar } from "@/ui/Calendar";
 import { Heading1 } from "@/ui/Heading1";
@@ -23,8 +24,6 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               週に一度、水曜日か金曜日に対面活動をしています。もちろん、参加は自由です！
               <br />
               また、オンラインでの活動もあるので“予定があってなかなか対面活動にいけない...”という方も安心。
-              <br />
-              同じ開発チームの仲間たちと集まって作業したり、先輩にプログラミングを基礎から教えてもらったり・・・
               <br />
               jackの仲間たちと一緒に、「やりたいこと」を「やれるように」なってみませんか？
             </p>
@@ -59,8 +58,8 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               </p>
               <div className={styles.pcButton}>
                 <IconLink
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-                  text="見学応募はこちら"
+                  href={FORM_URL}
+                  text="見学申し込みはこちら"
                   icon={MdNavigateNext}
                   size="l"
                   openInNewTab
@@ -76,8 +75,8 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
           </div>
           <div className={styles.mobileButton}>
             <IconLink
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-              text="見学応募はこちら"
+              href={FORM_URL}
+              text="見学申し込みはこちら"
               icon={MdNavigateNext}
               size="s"
               openInNewTab

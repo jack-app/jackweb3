@@ -1,6 +1,6 @@
 import { renderNestedList } from "@/features/BlogArticleBodies/hooks/renderNestedList";
-import { Text } from "@/features/BlogArticleBodies/hooks/renderText";
 import { Block, RichText } from "@/types/block";
+import { Text } from "@/utils/renderText/renderText";
 
 type Props = {
   block: Block;
@@ -12,7 +12,7 @@ export const ListItemPresentation: React.FC<Props> = ({ block, richTexts, pageId
   if (!richTexts) return null;
   return (
     <li key={block.id}>
-      <Text text={richTexts} />
+      <Text richText={richTexts} />
       {block.has_children && renderNestedList(block, pageId)}
     </li>
   );

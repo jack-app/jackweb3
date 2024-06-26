@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { FORM_URL } from "@/constants";
 import styles from "./index.module.scss";
 
 type Props = {};
@@ -25,32 +26,27 @@ export const Header: React.FC<Props> = () => {
       </Link>
       <div className={styles.right}>
         <nav className={styles.nav}>
-          <Link href="/products" onClick={closeMenu}>
+          <Link href="/products" onClick={closeMenu} className={styles.hamburgerNavName}>
             プロダクト
           </Link>
-          <Link href="/members" onClick={closeMenu}>
+          <Link href="/members" onClick={closeMenu} className={styles.hamburgerNavName}>
             メンバー
           </Link>
-          <Link href="/activities" onClick={closeMenu}>
+          <Link href="/activities" onClick={closeMenu} className={styles.hamburgerNavName}>
             活動内容
           </Link>
-          <Link href="/achievements" onClick={closeMenu}>
+          <Link href="/achievements" onClick={closeMenu} className={styles.hamburgerNavName}>
             活動実績
           </Link>
-          <Link href="/faq" onClick={closeMenu}>
+          <Link href="/faq" onClick={closeMenu} className={styles.hamburgerNavName}>
             FAQ
           </Link>
-          <Link href="/blog" onClick={closeMenu}>
+          <Link href="/blog" onClick={closeMenu} className={styles.hamburgerNavName}>
             ブログ
           </Link>
         </nav>
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.contact}
-        >
-          見学応募はこちら
+        <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
+          見学申し込みはこちら
         </Link>
         {!showNav && (
           <button className={styles.menuButton} onClick={toggleNav}>
@@ -67,22 +63,22 @@ export const Header: React.FC<Props> = () => {
         <button className={styles.black} onClick={closeMenu}></button>
         <div className={styles.menubar}>
           <nav className={styles.hamburgerNav}>
-            <Link href="/products" onClick={closeMenu}>
+            <Link href="/products" onClick={closeMenu} className={styles.hamburgerNavName}>
               プロダクト
             </Link>
-            <Link href="/members" onClick={closeMenu}>
+            <Link href="/members" onClick={closeMenu} className={styles.hamburgerNavName}>
               メンバー
             </Link>
-            <Link href="/activities" onClick={closeMenu}>
+            <Link href="/activities" onClick={closeMenu} className={styles.hamburgerNavName}>
               活動内容
             </Link>
-            <Link href="/achievements" onClick={closeMenu}>
+            <Link href="/achievements" onClick={closeMenu} className={styles.hamburgerNavName}>
               活動実績
             </Link>
-            <Link href="/faq" onClick={closeMenu}>
+            <Link href="/faq" onClick={closeMenu} className={styles.hamburgerNavName}>
               FAQ
             </Link>
-            <Link href="/blog" onClick={closeMenu}>
+            <Link href="/blog" onClick={closeMenu} className={styles.hamburgerNavName}>
               ブログ
             </Link>
           </nav>

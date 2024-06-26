@@ -24,14 +24,17 @@
     "next": "14.1.0",
     "plop": "^4.0.1",
     "react": "^18",
+    "react-content-loader": "^7.0.0",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "react-katex": "^3.0.1",
     "react-syntax-highlighter": "^15.5.0",
+    "recharts": "^2.12.7",
     "sass": "^1.72.0",
     "satori": "^0.10.13",
     "styled-components": "^6.1.11",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "tocbot": "^4.28.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.2.23",

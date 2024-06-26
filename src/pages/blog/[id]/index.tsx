@@ -1,9 +1,10 @@
 import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block } from "@/types/block";
-import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
+import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
-import { TagType } from "@/ui/Tag";
 import createImage from "@/utils/createImage";
+import createOGPImage from "@/utils/createOGPImage";
+import { Meta } from "@/utils/meta";
 import { getBlocks, getDatabase, getPage } from "@/utils/notion";
 import { getArticles } from "@/utils/useGetArticles";
 
@@ -11,12 +12,31 @@ export default function Article({
   id,
   blocks,
   pageInfo,
+  suggestArticles,
+  description,
 }: {
   id: string;
   blocks: Block[];
   pageInfo: PageInfo;
+  suggestArticles: ArticleItemProps[];
+  description: string;
 }) {
-  return <BlogArticleScreen id={id} blocks={blocks} pageInfo={pageInfo} />;
+  return (
+    <>
+      <Meta
+        title={pageInfo.title}
+        ogImage={`/${id}/ogp.png`}
+        pageType="article"
+        description={description}
+      />
+      <BlogArticleScreen
+        id={id}
+        blocks={blocks}
+        pageInfo={pageInfo}
+        suggestArticles={suggestArticles}
+      />
+    </>
+  );
 }
 
 export const getStaticPaths = async () => {
@@ -74,6 +94,13 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
     }),
   );
 
+  //description作成
+  const paragraphs = filteredBlocks.filter((block) => block.type === "paragraph");
+  const fullText = paragraphs
+    .map((block) => block.paragraph?.rich_text.map((text) => text.plain_text).join(""))
+    .join("");
+  const description = fullText.length <= 100 ? fullText : fullText.slice(0, 100) + "...";
+
   const getSuggestArticles = async () => {
     const publicArticles = await getArticles();
 
@@ -93,11 +120,16 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
 
   const suggestArticles = await getSuggestArticles();
 
+  const title = page.properties.Name.title[0].plain_text;
+  const writerName = page.properties.Writer.created_by.name || null;
+  await createOGPImage(pageId, title, writerName);
+
   return {
     props: {
       id: pageId,
       blocks: filteredBlocks,
       pageInfo: pageInfo,
+      description: description,
     },
   };
 };

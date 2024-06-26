@@ -50,3 +50,10 @@ export const useCarousel = (products: ProductionDetailProps[]) => {
     selectedIndex,
   };
 };
+
+// notionでdetailが書いてある物のみを抽出
+export const filteredProducts = (allProducts: ProductionDetailProps[]) => {
+  return allProducts.filter((product) => {
+    return (product.detail ?? "").length !== 0;
+  });
+};

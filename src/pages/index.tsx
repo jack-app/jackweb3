@@ -3,8 +3,8 @@ import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import createImage from "@/utils/createImage";
 import createOGPImage from "@/utils/createOGPImage";
+import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
-import products from "./products";
 
 export default function Home({
   articles,
@@ -15,7 +15,12 @@ export default function Home({
   article: ArticleItemProps;
   product: ProductionProps;
 }) {
-  return <TopScreen articles={articles} article={article} product={product} />;
+  return (
+    <>
+      <Meta isHomePage={true} />
+      <TopScreen articles={articles} article={article} product={product} />
+    </>
+  );
 }
 
 export const getStaticProps = async () => {
