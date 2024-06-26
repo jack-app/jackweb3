@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { BlogPreviewPresentation } from ".";
 
 type T = typeof BlogPreviewPresentation;
@@ -46,7 +46,7 @@ const meta: Meta<T> = {
         type: "function",
       },
     },
-    showPreviewFromNotionURL: {
+    showPreview: {
       control: {
         type: "function",
       },
@@ -75,6 +75,6 @@ export const Default: Story = {
     notionPageId: "notionPageId",
     inputNotionURL: "inputNotionURL",
     setInputNotionURL: () => {},
-    showPreviewFromNotionURL: () => {},
+    showPreview: () => {},
   },
 };

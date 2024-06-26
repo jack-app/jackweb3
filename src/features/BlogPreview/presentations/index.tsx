@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { TfiReload } from "react-icons/tfi";
 import { BlogArticleBodies } from "@/features/BlogArticleBodies";
 import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
@@ -15,7 +16,7 @@ export type Props = {
   notionPageId: string;
   inputNotionURL: string;
   setInputNotionURL: (url: string) => void;
-  showPreviewFromNotionURL: () => void;
+  showPreview: () => void;
 };
 
 export const BlogPreviewPresentation: React.FC<Props> = ({
@@ -26,7 +27,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
   notionPageId,
   inputNotionURL,
   setInputNotionURL,
-  showPreviewFromNotionURL,
+  showPreview,
 }) => {
   return (
     <div className={styles.BlogPreviewContainer}>
@@ -45,7 +46,7 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              showPreviewFromNotionURL();
+              showPreview();
             }}
           >
             <input
@@ -53,27 +54,39 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
               className={styles.input}
               placeholder="https://www.notion.so/"
               value={inputNotionURL}
-              onChange={(e) => {
-                e.preventDefault();
-                setInputNotionURL(e.target.value);
-              }}
+              onChange={(e) => setInputNotionURL(e.target.value)}
             />
-            <button type="button" className={styles.inputButton} onClick={showPreviewFromNotionURL}>
+            <button
+              type="button"
+              className={styles.inputButton}
+              onClick={(e) => {
+                e.preventDefault();
+                showPreview();
+              }}
+            >
               確定
             </button>
           </form>
         </div>
       </div>
-      {loading ? (
-        <BlogPreviewBodySkelton />
-      ) : !notionId || !blocks || !pageInfo ? (
-        <></>
-      ) : (
-        <div className={styles.article}>
-          <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
-          <BlogArticleToc blocks={blocks} />
-        </div>
-      )}
+      <div className={styles.PreviewContainer}>
+        {loading ? (
+          <BlogPreviewBodySkelton />
+        ) : !notionId || !blocks || !pageInfo ? (
+          <></>
+        ) : (
+          <div className={styles.article}>
+            <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
+            <BlogArticleToc blocks={blocks} />
+          </div>
+        )}
+        {blocks && pageInfo && (
+          <button className={styles.reloadButton} onClick={showPreview}>
+            <TfiReload className={`${loading ? styles.reloadIconLoading : ""}`} />
+            <div className={styles.reloadButtonText}>更新</div>
+          </button>
+        )}
+      </div>
     </div>
   );
 };
