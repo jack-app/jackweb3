@@ -77,7 +77,6 @@ const meta: Meta<T> = {
 };
 
 export default meta;
-
 type Story = StoryObj<T>;
 
 export const Default: Story = {
