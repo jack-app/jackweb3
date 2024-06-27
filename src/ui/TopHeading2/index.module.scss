@@ -1,67 +1,71 @@
-@use '@/styles/variables' as 
-*;.wrapper {
-    background-color:transparent;
-    padding: 25px;
-    margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    border-bottom: 3px solid $primary;
-    border-top: 3px solid $primary; 
-    position: relative;
+@use "@/styles/variables" as *;
+.wrapper {
+  background-color: transparent;
+  padding: 24px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid $primary;
+  border-top: 3px solid $primary;
+  position: relative;
 
+  .subtitile__start {
+    padding: 0;
+    margin: 0;
+    font-size: $text-base;
+    color: $black;
+    font-weight: 100;
+    position: absolute;
+    left: 1rem;
+    bottom: 0.5rem;
+  }
 
-    .subtitile__start{
-      padding: 0;
-      margin: 0;
-      font-size: $text-base;
-      color: $black;
-      font-weight: 100;
-      position: absolute;  // 追記
-      left: 1rem; 
-      bottom: 0.5rem;
-    }
-
-    .title{
-      font-size: $text-5xl;
+  .title {
+    font-size: $text-5xl;
     color: $primary;
-      font-weight: 1000;
-      display:inline;
-      align-items: center;
-      justify-content: center;
+    font-weight: 1000;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .subtitile__end {
+    padding: 0;
+    margin: 0;
+    font-size: $text-base;
+    color: $black;
+    font-weight: 100;
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: $pc) {
+    padding: 20px;
+    .title {
+      font-size: $text-3xl;
     }
+  }
 
-    .subtitile__end{
-      padding: 0;
-      margin: 0;
-      font-size: $text-base;
-      color: $black;
-      font-weight: 100;
-      position: absolute;  // 追記
-      right: 1rem;
-      bottom: 0.5rem;
-    }
+  @media screen and (max-width: $mobile) {
+    font-size: $text-2xl;
+    padding: 16px;
 
-    @media screen and (max-width: $mobile){
-    font-size:$text-2xl;
-    padding: 15px;
-
-    .subtitile__start{
+    .subtitile__start {
       font-size: $text-xs;
       bottom: 0;
     }
 
-    .title{
-      font-size:$text-2xl;
+    .title {
+      font-size: $text-2xl;
       padding: 0.25rem;
     }
 
-    .subtitile__end{
+    .subtitile__end {
       font-size: $text-xs;
       bottom: 0;
     }
-
-    }
-
   }
+}
