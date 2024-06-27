@@ -200,12 +200,12 @@
     max-width: calc(1280px + 160px);
     padding: 32px 80px;
     margin: auto;
-    @media screen and (max-width: $mobile) {
-      padding: 16px 24px;
-      max-width: none;
-    }
     @media screen and (max-width: $pc) {
       padding: 20px 32px;
+      max-width: none;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: 16px 24px;
       max-width: none;
     }
   }
@@ -215,11 +215,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media screen and (max-width: $mobile) {
-      padding: 16px 0;
-    }
     @media screen and (max-width: $pc) {
       padding: 32px 0;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: 24px 0;
     }
   }
 
@@ -227,20 +227,11 @@
     font-family: "DotGothic16";
     font-size: $text-6xl;
     width: 100%;
-    @media screen and (max-width: 1160px) {
-      font-size: $text-5xl;
-    }
-    @media screen and (max-width: 960px) {
-      font-size: $text-4xl;
-    }
-    @media screen and (max-width: 760px) {
-      font-size: $text-3xl;
-    }
+
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
-      padding-top: 24px;
-      padding-bottom: 24px;
-      font-weight: 1000;
+      font-weight: bold;
+      padding-bottom: 16px;
     }
   }
 
@@ -290,8 +281,6 @@
     font-weight: 1000;
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
-      padding-top: 24px;
-      padding-bottom: 24px;
     }
   }
   .textBlue {
@@ -299,11 +288,11 @@
     border-bottom: 3px solid $link;
   }
   .jackPhoto {
-    @media screen and (max-width: 1220px) {
+    @media screen and (max-width: $mobile) {
       display: flex;
       justify-content: center;
       margin-left: 0;
-      padding-top: 24px;
+      padding-top: 16px;
     }
   }
   .activitiesContainer {
@@ -318,16 +307,8 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
-
-      .text3xl {
-        @media screen and (max-width: 1220px) {
-          text-align: center;
-        }
-      }
-      .textDetail {
-        @media screen and (max-width: 1220px) {
-          text-align: center;
-        }
+      @media screen and (max-width: $mobile) {
+        gap: 16px;
       }
     }
   }
@@ -345,9 +326,18 @@
     padding: 40px 0;
     gap: 36px;
     @media screen and (max-width: $mobile) {
-      padding-top: 24px;
-      padding-bottom: 0px;
-      gap: 16px;
+      padding: 16px 0;
+      gap: 8px;
+    }
+  }
+  .memberTextDetail {
+    font-size: $text-2xl;
+    font-weight: 1000;
+    text-align: center;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      font-weight: 500;
+      text-align: start;
     }
   }
   .membersName {
@@ -359,19 +349,16 @@
       padding-top: 8px;
     }
   }
-  .textDetailCenter {
-    font-size: $text-2xl;
-    font-weight: 1000;
-    text-align: center;
-    @media screen and (max-width: $mobile) {
-      font-size: $text-xl;
-      font-weight: 500;
-    }
-  }
   .productsContainer {
     display: flex;
     align-items: center;
     gap: 64px;
+
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
 
     .PClink {
       display: flex;
@@ -386,22 +373,13 @@
       @media screen and (max-width: 1450px) {
         display: flex;
         justify-content: center;
-        padding-top: 24px;
-      }
-    }
-    .textDetail {
-      @media screen and (max-width: 1450px) {
-        text-align: center;
       }
     }
   }
   .production {
-    width: auto;
     width: 100%;
-    @media screen and (max-width: 1450px) {
-      padding-top: 24px;
-      padding-left: 0;
-    }
+    display: flex;
+    justify-content: center;
   }
 
   .text3xlCenter {
@@ -411,6 +389,7 @@
     padding: 40px 0 32px 0;
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
+      padding: 16px 0;
     }
   }
   .articles {
@@ -422,6 +401,15 @@
       display: none;
     }
   }
+  .textDetailCenter {
+    font-size: $text-2xl;
+    font-weight: 1000;
+    text-align: center;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      font-weight: 500;
+    }
+  }
   .article {
     display: none;
     @media screen and (max-width: 880px) {
@@ -431,54 +419,49 @@
   }
   .articleLink {
     padding-top: 40px;
+    @media screen and (max-width: $mobile) {
+      padding-top: 16px;
+    }
   }
 
   .calendarContainer {
     display: flex;
     align-items: center;
     gap: 40px;
-    @media screen and (max-width: 1355px) {
-      display: contents;
+    @media screen and (max-width: $mobile) {
+      display: block;
     }
     .PClink {
       display: flex;
       justify-content: center;
       padding-top: 40px;
-      @media screen and (max-width: 1355px) {
+      @media screen and (max-width: $mobile) {
         display: none;
       }
     }
     .mobileLink {
       display: none;
-      @media screen and (max-width: 1355px) {
+      @media screen and (max-width: $mobile) {
         display: flex;
         justify-content: center;
-        padding-top: 24px;
+        padding-top: 16px;
       }
     }
   }
   .calendarText {
     font-size: $text-2xl;
-    @media screen and (max-width: 1355px) {
-      text-align: center;
-      padding-top: 24px;
-    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       text-align: center;
-      padding-top: 24px;
     }
   }
   .calendarTextDetail {
     font-size: $text-2xl;
-    padding-top: 32px;
-    @media screen and (max-width: 1355px) {
-      padding-bottom: 32px;
-      text-align: center;
-    }
+    padding: 32px 0;
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       text-align: center;
+      padding: 16px 0;
     }
   }
   .calendarText3xl {
@@ -509,7 +492,8 @@
   .calendarList {
     display: none;
     @media (max-width: $mobile) {
-      display: contents;
+      display: block;
+      width: 100%;
     }
   }
 }
