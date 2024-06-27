@@ -38,7 +38,6 @@ export const getStaticProps = async () => {
         app_href: product.properties.AppStore.url || null,
         google_href: product.properties.GooglePlayStore.url || null,
       } as ProductionProps;
-      console.log(res);
 
       // 画像処理
       if (product.properties.Image.files && product.properties.Image.files.length > 0) {

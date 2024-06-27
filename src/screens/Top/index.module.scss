@@ -24,7 +24,7 @@
     margin-inline: auto; //左揃えで中央配置
     padding-top: 170px;
     padding-left: 150px;
-    @media screen and (max-width: $pc) and (min-width: $mobile) {
+    @media screen and (max-width: $pc) {
       padding-top: 100px;
       padding-left: 80px;
     }
@@ -40,11 +40,19 @@
     display: flex;
     align-items: center;
     margin-bottom: 70px;
-    @media screen and (max-width: $pc) {
-      font-size: $text-6xl;
+    @media screen and (min-width: 1450px) {
+      font-size: $text-9xl;
       margin-bottom: 40px;
     }
-    @media screen and (min-width: 1029px) and (max-width: 1435px) {
+    @media screen and (max-width: 1450px) {
+      font-size: $text-8xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 1130px) {
+      font-size: $text-7xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 770px) {
       font-size: $text-5xl;
       margin-bottom: 40px;
     }
@@ -70,8 +78,11 @@
 
   .textGray {
     color: #c8c6c6;
-    @media screen and (max-width: $pc) and (min-width: $mobile) {
+    @media screen and (max-width: $pc) {
       font-size: $text-6xl;
+    }
+    @media screen and (max-width: 770px) {
+      font-size: $text-5xl;
     }
     @media screen and (max-width: $mobile) {
       font-size: $text-3xl;
@@ -81,7 +92,12 @@
     position: absolute;
     right: 0;
     top: -150px;
-    @media screen and (max-width: $pc) and (min-width: $mobile) {
+    @media screen and (max-width: $pc) {
+      width: 80px;
+      height: 80px;
+      top: -80px;
+    }
+    @media screen and (max-width: 1130px) {
       width: 80px;
       height: 80px;
       top: -80px;
@@ -95,7 +111,11 @@
   .dennkyuuIcon {
     position: absolute;
     transform: translate(-100%, -100%);
-    @media screen and (max-width: $pc) and (min-width: $mobile) {
+    @media screen and (max-width: $pc) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: 1130px) {
       width: 80px;
       height: 80px;
     }
@@ -108,7 +128,11 @@
     position: absolute;
     transform: translate(100%, -90%);
     right: 0;
-    @media screen and (max-width: $pc) and (min-width: $mobile) {
+    @media screen and (max-width: $pc) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: 1130px) {
       width: 80px;
       height: 80px;
     }
@@ -126,9 +150,25 @@
     position: absolute;
     right: 0;
     transform: translate(500%, -50%);
-    @media screen and (max-width: $pc) and (min-width: $mobile) {
+    @media screen and (max-width: $pc) {
       font-size: $text-6xl;
       transform: translate(350%, -50%);
+    }
+    @media screen and (max-width: 1450px) {
+      font-size: $text-6xl;
+      transform: translate(600%, -50%);
+    }
+    @media screen and (max-width: 1140px) {
+      font-size: $text-6xl;
+      transform: translate(500%, -50%);
+    }
+    @media screen and (max-width: 970px) {
+      font-size: $text-6xl;
+      transform: translate(400%, -50%);
+    }
+    @media screen and (max-width: 770px) {
+      font-size: $text-5xl;
+      transform: translate(400%, -50%);
     }
     @media screen and (max-width: $mobile) {
       font-size: $text-3xl;
@@ -165,8 +205,7 @@
   }
 
   .dekirukotoContainer {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding: 32px 64px;
     @media screen and (max-width: $mobile) {
       padding: 0px;
     }
@@ -175,7 +214,15 @@
   .textDot {
     font-family: "DotGothic16";
     font-size: $text-6xl;
-    padding-top: 64px;
+    @media screen and (max-width: 1160px) {
+      font-size: $text-5xl;
+    }
+    @media screen and (max-width: 960px) {
+      font-size: $text-4xl;
+    }
+    @media screen and (max-width: 760px) {
+      font-size: $text-3xl;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
       padding-top: 24px;
@@ -187,6 +234,10 @@
   .textDetail {
     font-size: $text-2xl;
     font-weight: 1000;
+    padding-top: 16px;
+    @media screen and (max-width: 960px) {
+      font-size: $text-xl;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       font-weight: 500;
@@ -194,7 +245,11 @@
   }
 
   .dekirukotoPhoto {
-    margin-left: 64px;
+    @media screen and (max-width: 960px) {
+      width: 300px;
+      height: 300px;
+      margin: auto;
+    }
     @media screen and (max-width: $mobile) {
       width: 200px;
       height: 200px;
@@ -204,16 +259,14 @@
   .dekirukoto {
     display: flex;
     align-items: center;
-    gap: 64px;
-    @media screen and (max-width: $mobile) {
+    gap: 32px;
+    @media screen and (max-width: 960px) {
       display: contents;
     }
   }
   .text3xl {
     font-size: $text-3xl;
     font-weight: 1000;
-    padding-top: 32px;
-    padding-bottom: 32px;
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
       padding-top: 24px;
@@ -226,48 +279,50 @@
   }
   .jackPhoto {
     margin-left: 40px;
-    @media screen and (max-width: $mobile) {
-      margin: auto;
+    @media screen and (max-width: 1220px) {
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
       padding-top: 24px;
     }
   }
   .activitiesContainer {
     display: flex;
-    padding: 64px 64px 40px;
+    padding: 32px 64px;
+    @media screen and (max-width: 1220px) {
+      display: block;
+      margin: auto;
+    }
+    .text3xl {
+      @media screen and (max-width: 1220px) {
+        text-align: center;
+      }
+    }
+    .textDetail {
+      @media screen and (max-width: 1220px) {
+        text-align: center;
+      }
+    }
+  }
+  .activitiesLink {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
     @media screen and (max-width: $mobile) {
-      display: contents;
+      padding-top: 24px;
     }
   }
   .link {
     display: flex;
     justify-content: center;
     padding-top: 32px;
-    padding-bottom: 64px;
     @media screen and (max-width: $mobile) {
       padding-top: 24px;
-      padding-bottom: 24px;
     }
   }
-  .PClink {
-    display: flex;
-    justify-content: center;
-    padding-top: 32px;
-    padding-bottom: 64px;
-    @media screen and (max-width: $mobile) {
-      display: none;
-    }
-  }
-  .mobileLink {
-    display: none;
-    @media screen and (max-width: $mobile) {
-      display: flex;
-      justify-content: center;
-      padding-top: 24px;
-      padding-bottom: 24px;
-    }
-  }
+
   .membersContainer {
-    padding: 64px;
+    padding: 32px 64px;
     @media screen and (max-width: $mobile) {
       padding: 0px;
       padding-top: 24px;
@@ -276,8 +331,7 @@
   .membersList {
     display: flex;
     justify-content: center;
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding: 32px 0;
     @media screen and (max-width: $mobile) {
       padding-top: 24px;
       padding-bottom: 0px;
@@ -286,55 +340,80 @@
   .membersName {
     font-size: $text-3xl;
     text-align: center;
-    @media screen and (max-width: $mobile) {
-      font-size: $text-sm;
+    @media screen and (max-width: 1120px) {
+      font-size: $text-xl;
     }
   }
   .member {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 0 18px;
     @media screen and (max-width: $mobile) {
-      padding-left: 14px;
-      padding-right: 14px;
+      padding: 0 14px;
     }
   }
   .textDetailCenter {
     font-size: $text-2xl;
     font-weight: 1000;
     text-align: center;
+    padding-top: 24px;
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
       font-weight: 500;
     }
   }
   .productsContainer {
-    padding: 64px;
+    padding: 32px 64px;
     display: flex;
-    @media screen and (max-width: $mobile) {
-      padding: 0;
-      padding-top: 24px;
+    @media screen and (max-width: 1450px) {
       display: block;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 775px) {
+      padding: 24px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .PClink {
+      display: flex;
+      justify-content: center;
+      padding-top: 32px;
+      @media screen and (max-width: 1450px) {
+        display: none;
+      }
+    }
+    .mobileLink {
+      display: none;
+      @media screen and (max-width: 1450px) {
+        display: flex;
+        justify-content: center;
+        padding-top: 24px;
+      }
+    }
+    .textDetail {
+      @media screen and (max-width: 1450px) {
+        text-align: center;
+      }
     }
   }
   .production {
-    width: 50px;
-    margin-left: 64px;
-    @media screen and (max-width: $mobile) {
-      //   width: calc(100% - 500px);
-      //   width: 50vw;
-      // width: 100px;
-      //   flex-basis: 200px; /* 初期の幅は300px */
-      //   flex-grow: 1; /* 残りのスペースを均等に分ける */
-      margin-left: 0px;
-      margin-top: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-left: 64px;
+    @media screen and (max-width: 1450px) {
+      padding-top: 24px;
+      padding-left: 0;
     }
   }
 
   .blogContainer {
-    padding: 64px;
+    padding: 32px 64px;
+    @media screen and (max-width: 1540px) {
+      display: contents;
+      padding: 24px 64px;
+    }
     @media screen and (max-width: $mobile) {
-      padding: 0;
-      padding-top: 24px;
+      padding: 24px;
     }
   }
   .text3xlCenter {
@@ -342,7 +421,6 @@
     font-size: $text-3xl;
     font-weight: 1000;
     padding-top: 32px;
-    padding-bottom: 32px;
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
     }
@@ -352,25 +430,46 @@
     width: 730px;
     margin: auto;
     gap: 24px;
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 880px) {
       display: none;
     }
   }
   .article {
     display: none;
-    @media screen and (max-width: $mobile) {
-      display: block;
+    @media screen and (max-width: 880px) {
+      display: flex;
+      justify-content: center;
     }
   }
   .calendarContainer {
-    padding: 64px;
+    padding: 32px 64px;
     display: flex;
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: 1355px) {
       display: contents;
+    }
+    .PClink {
+      display: flex;
+      justify-content: center;
+      padding-top: 32px;
+      @media screen and (max-width: 1355px) {
+        display: none;
+      }
+    }
+    .mobileLink {
+      display: none;
+      @media screen and (max-width: 1355px) {
+        display: flex;
+        justify-content: center;
+        padding-top: 24px;
+      }
     }
   }
   .calendarText {
     font-size: $text-2xl;
+    @media screen and (max-width: 1355px) {
+      text-align: center;
+      padding-top: 24px;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       text-align: center;
@@ -380,7 +479,10 @@
   .calendarTextDetail {
     font-size: $text-2xl;
     padding-top: 32px;
-    padding-bottom: 40px;
+    @media screen and (max-width: 1355px) {
+      padding-bottom: 32px;
+      text-align: center;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       text-align: center;
@@ -414,7 +516,7 @@
   .calendarList {
     display: none;
     @media (max-width: $mobile) {
-      display: block;
+      display: contents;
     }
   }
 }

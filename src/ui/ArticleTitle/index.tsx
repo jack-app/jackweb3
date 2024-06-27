@@ -5,8 +5,8 @@ import { Writer } from "../Writer";
 
 export type Props = {
   title: string;
-  writerName: string;
-  writerImage: string;
+  writerName: string | null;
+  writerImage: string | null;
   tags: TagType[];
   date: string;
 };

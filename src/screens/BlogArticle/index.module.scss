@@ -29,6 +29,15 @@
   }
 }
 
+.suggestedArticleListContainer {
+  margin: 40px auto 0 auto;
+  width: fit-content;
+
+  @media (max-width: $mobile) {
+    margin: 24px auto 0 auto;
+  }
+}
+
 .gotopage {
   color: $link;
   font-size: $text-base;

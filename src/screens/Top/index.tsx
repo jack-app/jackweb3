@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { SlArrowRight } from "react-icons/sl";
+import { FORM_URL } from "@/constants";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Calendar } from "@/ui/Calendar";
 import { IconLink } from "@/ui/IconLink";
@@ -88,11 +89,7 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
               <br />
               jackで開催されるイベントについて知りたい方はこちらをチェック！
               <br />
-              <Link
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
                 <span className={styles.textBlue}>見学申し込み</span>
               </Link>
               も受付中！
@@ -102,7 +99,7 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
             <Image src="/jack_photo.png" alt="" width={560} height={336} />
           </div>
         </div>
-        <div className={styles.link}>
+        <div className={styles.activitiesLink}>
           <IconLink href="/activities" text="詳しくはこちら" icon={SlArrowRight} size="l" />
         </div>
       </div>
@@ -144,9 +141,9 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
           </div>
           {/* Notionからランダムに取得したプロダクト */}
 
-          {/* <div className={styles.production}>
+          <div className={styles.production}>
             <ProductDetailItem product={product} />
-          </div> */}
+          </div>
           <div className={styles.mobileLink}>
             <IconLink href="/products" text="プロダクト一覧" icon={SlArrowRight} size="l" />
           </div>
@@ -176,12 +173,11 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="見学応募" subTitle="calendar" />
+        <TopHeading2 title="見学申し込み" subTitle="calendar" />
         <div className={styles.calendarContainer}>
           <div>
             <p className={styles.calendarText}>
               jackに興味をもってくれた、そこの
-              <br />
               <span className={styles.calendarText3xl}>あなた</span>！<br />
               ぜひ一度、<span className={styles.textOrange}>見学</span>してみませんか？
             </p>
@@ -190,8 +186,8 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
             </p>
             <div className={styles.PClink}>
               <IconLink
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-                text="見学応募はこちら"
+                href={FORM_URL}
+                text="見学申し込みはこちら"
                 icon={SlArrowRight}
                 size="l"
                 openInNewTab={true}
@@ -207,8 +203,8 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
           </div>
           <div className={styles.mobileLink}>
             <IconLink
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfOj8Twb_KlxPEr2whaQu2POouv_uFSJ27qUTc5cMWKEzxETw/viewform"
-              text="見学応募はこちら"
+              href={FORM_URL}
+              text="見学申し込みはこちら"
               icon={SlArrowRight}
               size="l"
               openInNewTab={true}
