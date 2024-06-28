@@ -59,7 +59,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               <div className={styles.pcButton}>
                 <IconLink
                   href={FORM_URL}
-                  text="見学申し込みはこちら"
+                  text="見学申し込み"
                   icon={MdNavigateNext}
                   size="l"
                   openInNewTab
@@ -76,7 +76,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
           <div className={styles.mobileButton}>
             <IconLink
               href={FORM_URL}
-              text="見学申し込みはこちら"
+              text="見学申し込み"
               icon={MdNavigateNext}
               size="s"
               openInNewTab

@@ -96,11 +96,11 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               </p>
             </div>
             <div className={styles.jackPhoto}>
-              <Image src="/jack_photo.png" alt="" width={560} height={336} />
+              <Image src="/jack_集合.jpg" alt="" width={560} height={336} />
             </div>
           </div>
           <div className={styles.activitiesLink}>
-            <IconLink href="/activities" text="詳しくはこちら" icon={SlArrowRight} size="l" />
+            <IconLink href="/activities" text="詳しく見る" icon={SlArrowRight} size="l" />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               </div>
             ))}
           </div>
-          <IconLink href="/members" text="詳しくはこちら" icon={SlArrowRight} size="l" />
+          <IconLink href="/members" text="詳しく見る" icon={SlArrowRight} size="l" />
         </div>
       </div>
       <div className={styles.topContainer}>
@@ -189,7 +189,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               <div className={styles.PClink}>
                 <IconLink
                   href={FORM_URL}
-                  text="見学申し込みはこちら"
+                  text="見学申し込み"
                   icon={SlArrowRight}
                   size="l"
                   openInNewTab={true}
@@ -206,7 +206,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             <div className={styles.mobileLink}>
               <IconLink
                 href={FORM_URL}
-                text="見学申し込みはこちら"
+                text="見学申し込み"
                 icon={SlArrowRight}
                 size="l"
                 openInNewTab={true}
