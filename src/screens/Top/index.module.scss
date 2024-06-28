@@ -14,6 +14,9 @@
 
 .wrapper {
   width: 100%;
+  @media screen and (min-width: $pc) {
+    padding-bottom: 32px;
+  }
 
   .catchcopyWrapper {
     background: linear-gradient(to bottom, $white 75%, $background);
@@ -228,6 +231,11 @@
     font-size: $text-6xl;
     width: 100%;
 
+    @media screen and (max-width: $pc) {
+      font-size: $text-4xl;
+      font-weight: bold;
+    }
+
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
       font-weight: bold;
@@ -240,7 +248,7 @@
     font-size: $text-2xl;
     font-weight: 1000;
     width: 100%;
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: $pc) {
       font-size: $text-xl;
     }
     @media screen and (max-width: $mobile) {
@@ -257,12 +265,12 @@
     width: 100%;
     max-width: 400px;
     height: 400px;
-    @media screen and (max-width: 960px) {
-      width: 300px;
+    @media screen and (max-width: $pc) {
+      max-width: 300px;
       height: 300px;
     }
     @media screen and (max-width: $mobile) {
-      width: 200px;
+      max-width: 200px;
       height: 200px;
     }
   }
@@ -272,7 +280,7 @@
     align-items: center;
     gap: 64px;
     width: 100%;
-    @media screen and (max-width: 960px) {
+    @media screen and (max-width: $mobile) {
       display: contents;
     }
   }
@@ -288,10 +296,13 @@
     border-bottom: 3px solid $link;
   }
   .jackPhoto {
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $pc) {
       display: flex;
       justify-content: center;
       margin-left: 0;
+      padding-top: 24px;
+    }
+    @media screen and (max-width: $mobile) {
       padding-top: 16px;
     }
   }
@@ -307,6 +318,9 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      @media screen and (max-width: $pc) {
+        gap: 24px;
+      }
       @media screen and (max-width: $mobile) {
         gap: 16px;
       }
@@ -316,7 +330,7 @@
     display: flex;
     justify-content: center;
     padding-top: 40px;
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $pc) {
       padding-top: 24px;
     }
   }
@@ -354,8 +368,12 @@
     align-items: center;
     gap: 64px;
 
-    @media screen and (max-width: $mobile) {
+    @media screen and (max-width: $pc) {
       flex-direction: column;
+      gap: 32px;
+    }
+
+    @media screen and (max-width: $mobile) {
       justify-content: center;
       gap: 16px;
     }
@@ -364,13 +382,13 @@
       display: flex;
       justify-content: center;
       padding-top: 40px;
-      @media screen and (max-width: 1450px) {
+      @media screen and (max-width: $pc) {
         display: none;
       }
     }
     .mobileLink {
       display: none;
-      @media screen and (max-width: 1450px) {
+      @media screen and (max-width: $pc) {
         display: flex;
         justify-content: center;
       }
@@ -380,6 +398,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    @media screen and (min-width: $pc) {
+      min-width: 540px;
+    }
   }
 
   .text3xlCenter {
@@ -387,6 +408,10 @@
     font-size: $text-3xl;
     font-weight: 1000;
     padding: 40px 0 32px 0;
+    @media screen and (max-width: $pc) {
+      font-size: $text-2xl;
+      padding: 24px 0;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-xl;
       padding: 16px 0;
@@ -405,6 +430,9 @@
     font-size: $text-2xl;
     font-weight: 1000;
     text-align: center;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       font-weight: 500;
@@ -419,6 +447,9 @@
   }
   .articleLink {
     padding-top: 40px;
+    @media screen and (max-width: $pc) {
+      padding-top: 24px;
+    }
     @media screen and (max-width: $mobile) {
       padding-top: 16px;
     }
@@ -428,6 +459,10 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    @media screen and (max-width: $pc) {
+      gap: 24px;
+      flex-direction: column;
+    }
     @media screen and (max-width: $mobile) {
       display: block;
     }
@@ -435,6 +470,9 @@
       display: flex;
       justify-content: center;
       padding-top: 40px;
+      @media screen and (max-width: $pc) {
+        padding-top: 24px;
+      }
       @media screen and (max-width: $mobile) {
         display: none;
       }
@@ -450,6 +488,9 @@
   }
   .calendarText {
     font-size: $text-2xl;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       text-align: center;
@@ -458,6 +499,10 @@
   .calendarTextDetail {
     font-size: $text-2xl;
     padding: 32px 0;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+      padding: 24px 0 0 0;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       text-align: center;
