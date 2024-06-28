@@ -3,7 +3,7 @@ export type PieChartDataType = {
   value: number;
 };
 
-export const totalMembers = 137;
+export const totalMembers = 130;
 
 export const universityData: PieChartDataType[] = [
   { name: "名古屋大学", value: 123 },
