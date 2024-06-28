@@ -1,95 +1,88 @@
-@use '@/styles/variables' as
-
-*;.wrapper {
+@use "@/styles/variables" as *;
+.wrapper {
   background-color: transparent;
   margin: 0;
   height: auto;
   width: 100%;
-  display: flex;  
-  @media screen and (max-width: $pc){
+  display: flex;
+  @media screen and (max-width: $pc) {
     flex-flow: column;
     align-items: center;
-  
   }
 
-  .card_photo{
+  .card_photo {
     width: 270px;
     margin: 0;
     padding: 0;
     position: relative;
-    flex: none; 
+    flex: none;
   }
 
-  .photo{
-   object-fit: cover;
-   width:244px;
-   height:244px;
-   margin: 0;
-   padding: 0;
-   position: absolute;
-   z-index: 0;
-   @media screen and (max-width: $pc){
-    position: relative;
-  }
+  .photo {
+    object-fit: cover;
+    width: 244px;
+    height: 244px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 0;
+    @media screen and (max-width: $pc) {
+      position: relative;
+    }
   }
 
-  .square{
+  .square {
     margin: auto;
     width: 244px;
     height: 244px;
-    background : linear-gradient(to bottom, #ffffff00, #C4C4C4);
+    background: linear-gradient(to bottom, #ffffff00, #c4c4c4);
     top: 12px;
     right: 12px;
     position: absolute;
     z-index: -1;
   }
-    
 
-
-  .card{
+  .card {
     margin: 0 0 0 24px;
     flex: auto;
   }
 
-  .card__header{
+  .card__header {
     display: flex;
     align-items: end;
     border-bottom: 2px solid $primary;
     padding: 16px 0;
     position: relative;
     width: 100%;
-    @media screen and (max-width: $pc){
+    gap: 16px;
+    @media screen and (max-width: $pc) {
       flex-flow: column;
       align-items: start;
       padding-top: 24px;
       padding-bottom: 5px;
-    
+      gap: 4px;
     }
   }
-  .name{
+  .name {
     padding: 0;
     font-size: $text-4xl;
-    @media screen and (max-width: $mobile){
+    @media screen and (max-width: $mobile) {
       font-size: $text-xl;
     }
   }
 
-  .type{
+  .type {
     color: $primary;
     font-size: $text-lg;
-    @media screen and (max-width: $mobile){
+    @media screen and (max-width: $mobile) {
       font-size: $text-base;
       padding: 0;
-    
     }
-   
   }
-  .text{
+  .text {
     padding: 16px 0;
     font-size: $text-base;
-    line-height : 200%;
+    line-height: 200%;
     width: 100%;
   }
- 
-  
 }
