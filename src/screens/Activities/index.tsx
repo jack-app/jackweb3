@@ -1,5 +1,5 @@
 import React from "react";
-import { MdNavigateNext } from "react-icons/md";
+import { SlArrowRight } from "react-icons/sl";
 import { FORM_URL } from "@/constants";
 import { ActivitiesCarousel } from "@/features/ActivitiesCarousel";
 import { Calendar } from "@/ui/Calendar";
@@ -59,8 +59,8 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               <div className={styles.pcButton}>
                 <IconLink
                   href={FORM_URL}
-                  text="見学申し込みはこちら"
-                  icon={MdNavigateNext}
+                  text="見学申し込み"
+                  icon={SlArrowRight}
                   size="l"
                   openInNewTab
                 />
@@ -76,8 +76,8 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
           <div className={styles.mobileButton}>
             <IconLink
               href={FORM_URL}
-              text="見学申し込みはこちら"
-              icon={MdNavigateNext}
+              text="見学申し込み"
+              icon={SlArrowRight}
               size="s"
               openInNewTab
             />

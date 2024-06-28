@@ -1,1 +1,548 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
+@font-face {
+  font-family: "CP Revenge";
+  src: url("/CP_Revenge.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "k-font";
+  src: url("/keifont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrapper {
+  width: 100%;
+  @media screen and (min-width: $pc) {
+    padding-bottom: 32px;
+  }
+
+  .catchcopyWrapper {
+    background: linear-gradient(to bottom, $white 75%, $background);
+    width: 100%;
+  }
+  .catchcopyContainer {
+    max-inline-size: max-content; //左揃えで中央配置
+    margin-inline: auto; //左揃えで中央配置
+    padding-top: 170px;
+    padding-left: 150px;
+    @media screen and (max-width: $pc) {
+      padding-top: 100px;
+      padding-left: 80px;
+    }
+    @media screen and (max-width: $mobile) {
+      padding-top: 70px;
+      padding-left: 50px;
+    }
+  }
+  .line {
+    font-size: $text-9xl;
+    font-family: "CP Revenge";
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+    @media screen and (min-width: 1450px) {
+      font-size: $text-9xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 1450px) {
+      font-size: $text-8xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 1130px) {
+      font-size: $text-7xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: 770px) {
+      font-size: $text-5xl;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-4xl;
+      margin-bottom: 30px;
+    }
+  }
+  .catchcopy1 {
+    color: #ffce8e;
+    position: relative;
+  }
+
+  .catchcopy2 {
+    color: #ffb84e;
+    position: relative;
+  }
+
+  .catchcopy3 {
+    color: #ff9900;
+    position: relative;
+  }
+
+  .textGray {
+    color: #c8c6c6;
+    @media screen and (max-width: $pc) {
+      font-size: $text-6xl;
+    }
+    @media screen and (max-width: 770px) {
+      font-size: $text-5xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-3xl;
+    }
+  }
+  .commentIcon {
+    position: absolute;
+    right: 0;
+    top: -150px;
+    @media screen and (max-width: $pc) {
+      width: 80px;
+      height: 80px;
+      top: -80px;
+    }
+    @media screen and (max-width: 1130px) {
+      width: 80px;
+      height: 80px;
+      top: -80px;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 50px;
+      height: 50px;
+      top: -50px;
+    }
+  }
+  .dennkyuuIcon {
+    position: absolute;
+    transform: translate(-100%, -100%);
+    @media screen and (max-width: $pc) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: 1130px) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .PCicon {
+    position: absolute;
+    transform: translate(100%, -90%);
+    right: 0;
+    @media screen and (max-width: $pc) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: 1130px) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 50px;
+      height: 50px;
+      transform: translate(120%, -90%);
+    }
+  }
+
+  .jack {
+    font-size: $text-8xl;
+    font-family: "k-font";
+    color: #ff9900;
+    position: absolute;
+    right: 0;
+    transform: translate(500%, -50%);
+    @media screen and (max-width: $pc) {
+      font-size: $text-6xl;
+      transform: translate(350%, -50%);
+    }
+    @media screen and (max-width: 1450px) {
+      font-size: $text-6xl;
+      transform: translate(600%, -50%);
+    }
+    @media screen and (max-width: 1140px) {
+      font-size: $text-6xl;
+      transform: translate(500%, -50%);
+    }
+    @media screen and (max-width: 970px) {
+      font-size: $text-6xl;
+      transform: translate(400%, -50%);
+    }
+    @media screen and (max-width: 770px) {
+      font-size: $text-5xl;
+      transform: translate(400%, -50%);
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-3xl;
+      transform: translate(400%, -50%);
+    }
+  }
+
+  .mark {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+  @media screen and (max-width: $pc) {
+    .mark img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    .mark img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .topContainer {
+    width: 100%;
+    max-width: calc(1280px + 160px);
+    padding: 32px 80px;
+    margin: auto;
+    @media screen and (max-width: $pc) {
+      padding: 20px 32px;
+      max-width: none;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: 16px 24px;
+      max-width: none;
+    }
+  }
+
+  .topContainerInner {
+    padding: 64px 64px 0 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: $pc) {
+      padding: 32px 0;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: 24px 0;
+    }
+  }
+
+  .textDot {
+    font-family: "DotGothic16";
+    font-size: $text-6xl;
+    width: 100%;
+
+    @media screen and (max-width: $pc) {
+      font-size: $text-4xl;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: $mobile) {
+      font-size: $text-xl;
+      font-weight: bold;
+      padding-bottom: 16px;
+    }
+  }
+
+  .textDetail {
+    display: block;
+    font-size: $text-2xl;
+    font-weight: 1000;
+    width: 100%;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      font-weight: 500;
+    }
+  }
+
+  .productsDetail {
+    width: 100%;
+  }
+
+  .dekirukotoPhoto {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    @media screen and (max-width: $pc) {
+      max-width: 300px;
+      height: 300px;
+    }
+    @media screen and (max-width: $mobile) {
+      max-width: 200px;
+      height: 200px;
+      padding-top: 12px;
+    }
+  }
+
+  .dekirukoto {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    width: 100%;
+    @media screen and (max-width: $mobile) {
+      display: contents;
+    }
+  }
+  .text3xl {
+    font-size: $text-3xl;
+    font-weight: 1000;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-xl;
+    }
+  }
+  .textBlue {
+    color: $link;
+    border-bottom: 3px solid $link;
+  }
+  .jackPhoto {
+    @media screen and (max-width: $pc) {
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+      padding-top: 24px;
+    }
+    @media screen and (max-width: $mobile) {
+      padding-top: 16px;
+    }
+  }
+  .activitiesContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @media screen and (max-width: 1220px) {
+      display: block;
+      margin: auto;
+    }
+    .activitiesTexts {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      @media screen and (max-width: $pc) {
+        gap: 24px;
+      }
+      @media screen and (max-width: $mobile) {
+        gap: 16px;
+      }
+    }
+  }
+  .activitiesLink {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    @media screen and (max-width: $pc) {
+      padding-top: 24px;
+    }
+  }
+  .membersList {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    gap: 36px;
+    @media screen and (max-width: $mobile) {
+      padding: 16px 0;
+      gap: 8px;
+    }
+  }
+  .memberTextDetail {
+    font-size: $text-2xl;
+    font-weight: 1000;
+    text-align: center;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      font-weight: 500;
+      text-align: start;
+    }
+  }
+  .membersName {
+    font-size: $text-3xl;
+    text-align: center;
+    padding-top: 16px;
+    @media screen and (max-width: 1120px) {
+      font-size: $text-xl;
+      padding-top: 8px;
+    }
+  }
+  .productsContainer {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+
+    @media screen and (max-width: $pc) {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .PClink {
+      display: flex;
+      justify-content: center;
+      padding-top: 40px;
+      @media screen and (max-width: $pc) {
+        display: none;
+      }
+    }
+    .mobileLink {
+      display: none;
+      @media screen and (max-width: $pc) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  .production {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @media screen and (min-width: $pc) {
+      min-width: 540px;
+    }
+  }
+
+  .text3xlCenter {
+    text-align: center;
+    font-size: $text-3xl;
+    font-weight: 1000;
+    padding: 40px 0 32px 0;
+    @media screen and (max-width: $pc) {
+      font-size: $text-2xl;
+      padding: 24px 0;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-xl;
+      padding: 16px 0;
+    }
+  }
+  .articles {
+    display: flex;
+    width: 730px;
+    margin: auto;
+    gap: 24px;
+    @media screen and (max-width: 880px) {
+      display: none;
+    }
+  }
+  .textDetailCenter {
+    font-size: $text-2xl;
+    font-weight: 1000;
+    text-align: center;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      font-weight: 500;
+    }
+  }
+  .article {
+    display: none;
+    @media screen and (max-width: 880px) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .articleLink {
+    padding-top: 40px;
+    @media screen and (max-width: $pc) {
+      padding-top: 24px;
+    }
+    @media screen and (max-width: $mobile) {
+      padding-top: 16px;
+    }
+  }
+
+  .calendarContainer {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @media screen and (max-width: $pc) {
+      gap: 24px;
+      flex-direction: column;
+    }
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+    .PClink {
+      display: flex;
+      justify-content: center;
+      padding-top: 40px;
+      @media screen and (max-width: $pc) {
+        padding-top: 24px;
+      }
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
+    .mobileLink {
+      display: none;
+      @media screen and (max-width: $mobile) {
+        display: flex;
+        justify-content: center;
+        padding-top: 16px;
+      }
+    }
+  }
+  .calendarText {
+    font-size: $text-2xl;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      text-align: center;
+    }
+  }
+  .calendarTextDetail {
+    font-size: $text-2xl;
+    padding: 32px 0;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+      padding: 24px 0 0 0;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      text-align: center;
+      padding: 16px 0;
+    }
+  }
+  .calendarText3xl {
+    font-size: $text-3xl;
+    font-weight: 1000;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+    }
+  }
+  .textOrange {
+    font-size: $text-3xl;
+    font-weight: 1000;
+    color: $primary;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+    }
+  }
+
+  .calendar {
+    @media (min-width: $pc) {
+      width: 100%;
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  .calendarList {
+    display: none;
+    @media (max-width: $mobile) {
+      display: block;
+      width: 100%;
+    }
+  }
+}
