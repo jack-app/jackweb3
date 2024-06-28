@@ -15,11 +15,10 @@ import { memberStories } from "../Members/data";
 
 type Props = {
   articles: ArticleItemProps[];
-  article: ArticleItemProps;
   product: ProductionProps;
 };
 
-export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
+export const TopScreen: React.FC<Props> = ({ articles, product }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.catchcopyWrapper}>
@@ -108,7 +107,7 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
       <div className={styles.topContainer}>
         <TopHeading2 title="jackメンバー" subTitle="jack-members" />
         <div className={styles.topContainerInner}>
-          <p className={styles.textDetailCenter}>
+          <p className={styles.memberTextDetail}>
             大学、学部、男女問わず様々なメンバーが在籍しています！
             <br />
             メンバーのインタビューも要チェック！
@@ -167,7 +166,7 @@ export const TopScreen: React.FC<Props> = ({ articles, article, product }) => {
             ))}
           </div>
           <div className={styles.article}>
-            <ArticleItem key={article.id} {...article} />
+            <ArticleItem key={articles[0].id} {...articles[0]} />
           </div>
           <div className={styles.articleLink}>
             <IconLink href="/blog" text="記事一覧" icon={SlArrowRight} size="l" />

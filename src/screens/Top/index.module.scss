@@ -348,6 +348,9 @@
     font-size: $text-2xl;
     font-weight: 1000;
     text-align: center;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
     @media screen and (max-width: $mobile) {
       font-size: $text-lg;
       font-weight: 500;
