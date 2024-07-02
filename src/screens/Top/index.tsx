@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { HiArrowLongDown } from "react-icons/hi2";
 import { SlArrowRight } from "react-icons/sl";
 import { FORM_URL } from "@/constants";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
@@ -60,8 +61,9 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             </span>
           </div>
         </div>
-        <div className={styles.mark}>
-          <Image src={"/mark .png"} alt="" width={80} height={80} />
+        <div className={styles.scrollIcon}>
+          <HiArrowLongDown />
+          <span className={styles.scrollText}>Scroll</span>
         </div>
       </div>
       <div className={styles.topContainer}>
