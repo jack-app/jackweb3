@@ -20,12 +20,11 @@
   gap: 8px;
   align-items: center;
   font-size: $text-base;
-  margin-left: 0;
   width: 100%;
   max-width: calc(848px + 260px + 16px);
   margin-bottom: 32px;
-  @media (max-width: 1150px) {
-    margin-left: 2rem;
+  @media (max-width: $pc) {
+    padding-left: 2rem;
   }
 }
 
@@ -47,4 +46,6 @@
 .article {
   display: flex;
   align-items: flex-start;
+  width: 100%;
+  justify-content: center;
 }

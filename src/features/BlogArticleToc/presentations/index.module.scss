@@ -11,7 +11,7 @@
   padding-right: 16px;
   width: 260px;
   -ms-overflow-style: none;
-  @media (max-width: $mobile) {
+  @media (max-width: $pc) {
     display: none;
   }
 }
