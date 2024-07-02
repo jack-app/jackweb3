@@ -73,7 +73,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           <div className={styles.dekirukoto}>
             <p className={styles.textDetail}>
               jackは名古屋のの学生によるアプリ開発団体です。
-              jackでは開発はもちろん、デザインやチーム開発のマネジメント、イベントの企画・運営などができます。
+              jackでは開発はもちろん、デザインやチーム開発のマネジメント、イベントの企画・運営などができます！
             </p>
             <div className={styles.dekirukotoPhoto}>
               <Image src={"/Top_jackdedekirukoto.png"} alt="" width={400} height={400} />
