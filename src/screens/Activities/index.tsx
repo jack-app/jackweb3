@@ -53,7 +53,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
                 <br />
                 ぜひ一度、<span className={styles.taiken}>見学</span>してみませんか？
                 <br />
-                カレンダーに「対面活動」とある日のうち、都合がよい日程で遊びに来てください！
+                カレンダーに「対面活動」とある日のうち、都合がよい日程で見学申し込みをしてください！
                 <br />
               </p>
               <div className={styles.pcButton}>

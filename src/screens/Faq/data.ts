@@ -11,7 +11,7 @@ export const aboutJoining = [
   },
   {
     question: "jackに入るのに何か条件はありますか？",
-    answer: "入会にあたって、必要な条件は一切ありません！",
+    answer: "学生であれば、入会にあたって必要な条件は一切ありません！",
   },
   {
     question: "名古屋大学以外の学生でもjackに入れますか？",
@@ -20,7 +20,7 @@ export const aboutJoining = [
   },
   {
     question: "兼サー、兼部は可能ですか？",
-    answer: "サー、兼部OKです！ 実際に兼サークルしているメンバーもいます。",
+    answer: "兼サー、兼部OKです！ 実際に兼サーしているメンバーもいます。",
   },
 ];
 
@@ -46,7 +46,7 @@ export const aboutActivity = [
   },
   {
     question: "年会費はいつ払いますか？",
-    answer: "毎年年末に行われるjackFesというイベントで集めます！",
+    answer: "毎年10月に回収します。",
   },
   {
     question: "作ってほしいアプリがあるのですが...",

@@ -70,7 +70,8 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           <p className={styles.textDot}>やりたいこと、きっとみつかる。</p>
           <div className={styles.dekirukoto}>
             <p className={styles.textDetail}>
-              jackでできることは多種多様。開発はもちろん、デザインやチーム開発のマネジメント、イベントの企画・運営まで。
+              jackは名古屋のの学生によるアプリ開発団体です。
+              jackでは開発はもちろん、デザインやチーム開発のマネジメント、イベントの企画・運営などができます。
             </p>
             <div className={styles.dekirukotoPhoto}>
               <Image src={"/Top_jackdedekirukoto.png"} alt="" width={400} height={400} />
@@ -184,7 +185,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 ぜひ一度、<span className={styles.textOrange}>見学</span>してみませんか？
               </p>
               <p className={styles.calendarTextDetail}>
-                カレンダーに「対面活動」とある日のうち、都合がよい日程で遊びに来てください！
+                カレンダーに「対面活動」とある日のうち、都合がよい日程で見学申し込みをしてください！
               </p>
               <div className={styles.PClink}>
                 <IconLink
