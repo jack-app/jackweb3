@@ -72,7 +72,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           <p className={styles.textDot}>やりたいこと、きっとみつかる。</p>
           <div className={styles.dekirukoto}>
             <p className={styles.textDetail}>
-              jackは名古屋のの学生によるアプリ開発団体です。
+              jackは名古屋の学生によるアプリ開発団体です。
               jackでは開発はもちろん、デザインやチーム開発のマネジメント、イベントの企画・運営などができます！
             </p>
             <div className={styles.dekirukotoPhoto}>
