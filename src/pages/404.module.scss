@@ -4,9 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 58px - 221px); // 58px: header height, 221px: footer height
+  min-height: calc(100vh - 58px - 221px); // 58px: header height, 221px: footer height
   @media screen and (max-width: $mobile) {
-    height: calc(100vh - 58px - 278px); // 58px: header height, 278px: footer height
+    min-height: calc(100vh - 58px - 278px); // 58px: header height, 278px: footer height
   }
 }
 
