@@ -76,7 +76,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               jackでは開発はもちろん、デザインやチーム開発のマネジメント、イベントの企画・運営などができます！
             </p>
             <div className={styles.dekirukotoPhoto}>
-              <Image src={"/Top_jackdedekirukoto.png"} alt="" width={400} height={400} />
+              <Image src={"/dekirukoto.png"} alt="" width={400} height={400} />
             </div>
           </div>
         </div>
