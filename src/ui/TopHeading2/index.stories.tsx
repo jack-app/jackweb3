@@ -10,12 +10,12 @@ const meta: Meta<T> = {
     layout: "fullscreen",
   },
   tags: ["autodocs"],
-  argTypes: { title: { control: "text" }, subTitle: { control: "text" } },
+  argTypes: { title: { control: "text" } },
 };
 
 export default meta;
 type Story = StoryObj<T>;
 
 export const Default: Story = {
-  args: { title: "Title", subTitle: "subTitle" },
+  args: { title: "Title" },
 };
