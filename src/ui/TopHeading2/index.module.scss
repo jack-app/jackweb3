@@ -11,17 +11,6 @@
   border-top: 3px solid $primary;
   position: relative;
 
-  .subtitile__start {
-    padding: 0;
-    margin: 0;
-    font-size: $text-base;
-    color: $black;
-    font-weight: 100;
-    position: absolute;
-    left: 1rem;
-    bottom: 0.5rem;
-  }
-
   .title {
     font-size: $text-5xl;
     color: $primary;
@@ -29,17 +18,6 @@
     display: inline;
     align-items: center;
     justify-content: center;
-  }
-
-  .subtitile__end {
-    padding: 0;
-    margin: 0;
-    font-size: $text-base;
-    color: $black;
-    font-weight: 100;
-    position: absolute;
-    right: 1rem;
-    bottom: 0.5rem;
   }
 
   @media screen and (max-width: $pc) {
@@ -53,19 +31,9 @@
     font-size: $text-2xl;
     padding: 12px 0;
 
-    .subtitile__start {
-      font-size: $text-xs;
-      bottom: 0;
-    }
-
     .title {
       font-size: $text-2xl;
       padding: 0.25rem;
-    }
-
-    .subtitile__end {
-      font-size: $text-xs;
-      bottom: 0;
     }
   }
 }
