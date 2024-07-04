@@ -67,7 +67,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="jackでできること" subTitle="iroriodekiruyo" />
+        <TopHeading2 title="jackでできること" />
         <div className={styles.topContainerInner}>
           <p className={styles.textDot}>やりたいこと、きっとみつかる。</p>
           <div className={styles.dekirukoto}>
@@ -82,7 +82,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="活動内容" subTitle="jack-activities" />
+        <TopHeading2 title="活動内容" />
         <div className={styles.topContainerInner}>
           <div className={styles.activitiesContainer}>
             <div className={styles.activitiesTexts}>
@@ -108,7 +108,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="jackメンバー" subTitle="jack-members" />
+        <TopHeading2 title="jackメンバー" />
         <div className={styles.topContainerInner}>
           <p className={styles.memberTextDetail}>
             大学、学部、男女問わず様々なメンバーが在籍しています！
@@ -127,7 +127,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="jackのプロダクト" subTitle="jack-products" />
+        <TopHeading2 title="jackのプロダクト" />
         <div className={styles.topContainerInner}>
           <div className={styles.productsContainer}>
             <div className={styles.productsDetail}>
@@ -154,7 +154,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="jack-blog" subTitle="jack-blog" />
+        <TopHeading2 title="jack-blog" />
         <div className={styles.topContainerInner}>
           <p className={styles.textDetailCenter}>
             jackメンバーによるブログ。
@@ -177,7 +177,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       <div className={styles.topContainer}>
-        <TopHeading2 title="見学申し込み" subTitle="calendar" />
+        <TopHeading2 title="見学申し込み" />
         <div className={styles.topContainerInner}>
           <div className={styles.calendarContainer}>
             <div>
