@@ -1,0 +1,16 @@
+# ワークフロー名
+name: Production_Build
+on:
+  schedule:
+    # 定期実行する時間
+    - cron: '0 */6 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_HOOK_URL: ${{secrets.DEPLOY_HOOK_URL}}
+    steps:
+      - name: Run script
+        run: |
+          curl -X POST $DEPLOY_HOOK_URL
