@@ -53,15 +53,6 @@ export const Footer: React.FC<Props> = (props) => {
               </Link>
             </li>
             <li>
-              <Link
-                href="https://twitter.com/jackapp_tmy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image src="/X_icon.png" alt="x" width={40} height={39} />
-              </Link>
-            </li>
-            <li>
               <Link href="mailto:jack.app.tmy@gmail.com" target="_blank" rel="noopener noreferrer">
                 <Image src="/mail_icon.png" alt="mail" width={40} height={32} />
               </Link>
