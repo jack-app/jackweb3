@@ -24,6 +24,8 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
         )
           return false;
 
+        if (!article.properties.Name.title[0]) return false; // タイトルがない記事は除外
+
         const isPublished = article.properties.Publish.checkbox === true;
         const hasTag = article.properties.tag.multi_select.some((tag: any) => {
           return tag.name === tagParam;
