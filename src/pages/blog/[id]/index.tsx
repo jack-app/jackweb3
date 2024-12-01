@@ -40,10 +40,8 @@ export default function Article({
 }
 
 export const getStaticPaths = async () => {
-  const databaseId = process.env.NOTION_BLOG_DATABASE_ID;
-  const articles = await getDatabase(databaseId);
+  const articles = await getArticles();
 
-  // TODO:filterかけないと無駄に多くのページが生成される
   const paths = articles.map((article) => ({
     params: { id: article.id },
   }));
