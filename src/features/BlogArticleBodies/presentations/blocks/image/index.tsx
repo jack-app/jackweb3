@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Image as ImageBlock } from "@/types/block";
 
 type Props = {
@@ -20,7 +19,8 @@ export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
         // eslint-disable-next-line @next/next/no-img-element
         <img src={src} alt={caption} width={500} height={500} />
       ) : (
-        <Image src={src} alt={caption} width={500} height={500} />
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={caption} width={500} height={500} />
       )}
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
