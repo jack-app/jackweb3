@@ -4,6 +4,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+html {
+  scroll-padding-top: 64px;
+}
+
 body {
   background-color: $background;
   line-height: normal;
@@ -29,15 +33,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-:root {
-  --fc-button-bg-color: transparent;
-  --fc-button-border-color: transparent;
-  --fc-button-hover-bg-color: transparent;
-  --fc-button-hover-border-color: transparent;
-  --fc-button-active-bg-color: transparent;
-  --fc-button-active-border-color: transparent;
 }
 
 :root {
