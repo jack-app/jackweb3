@@ -71,13 +71,24 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
 
     if (type === "column_list") {
       if (!block.children) return block;
-      const childBlocks = await Promise.all(
-        block.children.map(async (column) => await filterBlocks(column)),
+
+      const columnList = await Promise.all(
+        block.children.map(async (column) => {
+          if (!column.children) return column;
+          const childBlocks = await Promise.all(
+            column.children.map(async (child) => await filterBlocks(child)),
+          );
+
+          return {
+            ...column,
+            children: childBlocks,
+          };
+        }),
       );
 
       filteredBlock = {
         ...block,
-        children: childBlocks,
+        children: columnList,
       };
     }
 
