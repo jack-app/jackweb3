@@ -17,9 +17,9 @@ export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
   return (
     <figure className="mx-auto">
       {image.type === "external" ? (
-        <Image src={src} alt={caption} width={500} height={500} />
+        <img src={src} alt={caption} width={500} height={500} />
       ) : (
-        <Image src={src} alt={caption} width={500} height={500} />
+        <img src={src} alt={caption} width={500} height={500} />
       )}
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
