@@ -1,5 +1,5 @@
 import { BlogArticleScreen } from "@/screens/BlogArticle";
-import { Block } from "@/types/block";
+import { Block, Column } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
 import createImage from "@/utils/createImage";
@@ -63,34 +63,54 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       : page.created_time.slice(0, 10),
   } as PageInfo;
   // 画像生成ではNode.jsの機能を使うため、サーバー上で処理されるgetStaticProps内で行う
-  const filteredBlocks = await Promise.all(
-    blocks.map(async (block) => {
-      const { type, id } = block;
 
-      let filteredBlock = block;
+  const filterBlocks = async (block: Block) => {
+    const { type, id } = block;
 
-      if (type === "image") {
-        const image = block[type];
-        if (!image) return block;
+    let filteredBlock = block;
 
-        if (image.type === "file" && image.file) {
-          const url = await createImage(pageId, id, image.file.url);
-          filteredBlock = {
-            ...block,
-            image: {
-              ...image,
-              file: {
-                ...image.file,
-                url,
-              },
+    if (type === "column_list") {
+      if (!block.children) return block;
+      const childBlocks = await Promise.all(
+        block.children.map(async (column) => {
+          const childBlocks = await Promise.all(
+            column.children
+              ? column.children.map(async (childBlock) => filterBlocks(childBlock))
+              : [],
+          );
+          return childBlocks;
+        }),
+      );
+
+      filteredBlock = {
+        ...block,
+        children: childBlocks.flat(),
+      };
+    }
+
+    if (type === "image") {
+      const image = block[type];
+      if (!image) return block;
+
+      if (image.type === "file" && image.file) {
+        const url = await createImage(pageId, id, image.file.url);
+        filteredBlock = {
+          ...block,
+          image: {
+            ...image,
+            file: {
+              ...image.file,
+              url,
             },
-          };
-        }
+          },
+        };
       }
+    }
 
-      return filteredBlock;
-    }),
-  );
+    return filteredBlock;
+  };
+
+  const filteredBlocks = await Promise.all(blocks.map((block) => filterBlocks(block)));
 
   //description作成
   const paragraphs = filteredBlocks.filter((block) => block.type === "paragraph");
