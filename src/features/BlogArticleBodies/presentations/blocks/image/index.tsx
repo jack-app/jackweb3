@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Image as ImageBlock } from "@/types/block";
 
 type Props = {

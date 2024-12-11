@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./index.module.scss";
@@ -15,13 +14,7 @@ export type Props = {
 export const ArticleItem: React.FC<Props> = ({ id, image, date, title, tags }) => {
   return (
     <article className={styles.wrapper}>
-      <Image
-        src={image ? image : ""}
-        alt={title}
-        width={360}
-        height={189}
-        className={styles.image}
-      />
+      <img src={image ? image : ""} alt={title} width={360} height={189} className={styles.image} />
       <div className={styles.descriptionWrapper}>
         <span className={styles.date}>{date}</span>
         <h3 className={styles.title}>
