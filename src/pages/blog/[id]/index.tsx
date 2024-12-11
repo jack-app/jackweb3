@@ -62,8 +62,8 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       ? page.properties.Publish_Date.date.start
       : page.created_time.slice(0, 10),
   } as PageInfo;
-  // 画像生成ではNode.jsの機能を使うため、サーバー上で処理されるgetStaticProps内で行う
 
+  // 画像生成ではNode.jsの機能を使うため、サーバー上で処理されるgetStaticProps内で行う
   const filterBlocks = async (block: Block) => {
     const { type, id } = block;
 
@@ -72,19 +72,12 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
     if (type === "column_list") {
       if (!block.children) return block;
       const childBlocks = await Promise.all(
-        block.children.map(async (column) => {
-          const childBlocks = await Promise.all(
-            column.children
-              ? column.children.map(async (childBlock) => filterBlocks(childBlock))
-              : [],
-          );
-          return childBlocks;
-        }),
+        block.children.map(async (column) => await filterBlocks(column)),
       );
 
       filteredBlock = {
         ...block,
-        children: childBlocks.flat(),
+        children: childBlocks,
       };
     }
 
