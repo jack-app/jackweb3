@@ -48,7 +48,7 @@ export const Footer: React.FC<Props> = (props) => {
           お問い合わせ
           <ul className={styles.contactlist}>
             <li>
-              <Link href="https://line.me/ti/p/@jnm6180c" target="_blank" rel="noopener noreferrer">
+              <Link href="https://lin.ee/es5kIQR" target="_blank" rel="noopener noreferrer">
                 <Image src="/LINE_icon.png" alt="line" width={40} height={40} />
               </Link>
             </li>
