@@ -83,7 +83,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       {/* 新歓情報 */}
-      <div className={styles.topContainer}>
+      <div id="welcome-week-section" className={styles.topContainer}>
         <TopHeading2 title="新歓情報" />
         <div className={styles.topContainerInner}>
           <div className={styles.welcomeWeekStartContainer}>
@@ -190,7 +190,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             </div>
           </div>
 
-          <div className={styles.welcomeWeekTextDateContainer}>
+          <div id="join-jack" className={styles.welcomeWeekTextDateContainer}>
             <span className={styles.welcomeWeekText3xl}>jackに入りたい！</span>
             <div className={styles.welcomeWeekSubContainer}>
               確定フォームにご記入のうえ送信いただくと、確定会への参加が可能となります。
