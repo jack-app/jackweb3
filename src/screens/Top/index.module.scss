@@ -576,4 +576,136 @@
       width: 100%;
     }
   }
+
+  .welcomeWeekStartContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @media screen and (max-width: 950px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+    }
+  }
+
+  .welcomeWeekDescripton {
+    width: 80%;
+    @media screen and (max-width: 950px) {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .welcomeWeekVideoContainer {
+    width: 100%;
+  }
+
+  .welcomeWeekVideo {
+    @media (min-width: $pc) {
+      width: 560px;
+      height: 315px;
+    }
+    @media screen and (max-width: 1200px) {
+      width: 400px;
+      height: 225px;
+    }
+    @media screen and (max-width: $pc) {
+      width: 480px;
+      height: 270px;
+    }
+    @media screen and (max-width: 950px) {
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 515px) {
+      width: 300px;
+      height: 169px;
+    }
+  }
+
+  .welcomeWeekDateContainer {
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  .welcomeWeekTextDateContainer {
+    width: 100%;
+  }
+
+  .welcomeWeekSubContainer {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    font-size: $text-2xl;
+    text-align: left;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+  }
+
+  .welcomeWeekDateDetailContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @media screen and (max-width: 1025px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+    }
+  }
+
+  .welcomeWeekDay {
+    width: 100%;
+    padding-left: 5rem;
+    @media screen and (max-width: 1100px) {
+      padding-left: 0;
+    }
+  }
+
+  .welcomeWeekDayDetail {
+    width: 100%;
+  }
+
+  .welcomeWeekText {
+    font-size: $text-2xl;
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+      text-align: center;
+    }
+  }
+
+  .welcomeWeekTextDetail {
+    font-size: $text-2xl;
+    padding: 0 0 32px 0;
+    @media screen and (max-width: 1075px) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+    }
+  }
+
+  .welcomeWeekText3xl {
+    font-size: $text-3xl;
+    font-weight: 1000;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+    }
+  }
+
+  .welcomeWeekJoin {
+    margin-top: 1rem;
+  }
 }
