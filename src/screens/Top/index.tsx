@@ -307,7 +307,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           </div>
         </div>
       </div>
-      <div className={styles.topContainer}>
+      {/* <div className={styles.topContainer}>
         <TopHeading2 title="見学申し込み" />
         <div className={styles.topContainerInner}>
           <div className={styles.calendarContainer}>
@@ -330,7 +330,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 />
               </div>
             </div>
-            {/* カレンダー */}
+            カレンダー
             <div className={styles.calendar}>
               <Calendar />
             </div>
@@ -348,7 +348,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
