@@ -92,9 +92,9 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 新入生の皆さん
                 <br />
                 ご入学おめでとうございます！ <br /> 大学から新しいことを始めたい <br />
-                プログラミングに興味がある <br /> 今流行りのAIに触れたい！ <br />
+                プログラミングに興味がある <br /> 今流行りのAIに触れたい! <br />
                 そんな
-                <span className={styles.welcomeWeekText3xl}>みなさん</span>！<br />
+                <span className={styles.welcomeWeekText3xl}>みなさん</span>!<br />
                 jackの<span className={styles.textOrange}>新歓</span>に足を運んでみませんか？
               </p>
             </div>
@@ -120,17 +120,17 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               <div className={styles.welcomeWeekDateDetailContainer}>
                 <div className={styles.welcomeWeekDay}>
                   <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}> 4/11(金) 17:00-19:30</span>
+                    <span className={styles.textDetail}> 4/11&#40;金&#41; 17:00-19:30</span>
                     場所未定
                   </p>
 
                   <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}> 4/16(金) 17:00-19:30</span>
+                    <span className={styles.textDetail}> 4/16&#40;水&#41; 17:00-19:30</span>
                     場所未定
                   </p>
 
                   <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}> 4/19(土) 10:00-15:45</span>
+                    <span className={styles.textDetail}> 4/19&#40;土&#41; 10:00-15:45</span>
                     <Link
                       href="https://www.nskk.org/chubu/nyc/"
                       target="_blank"
@@ -184,7 +184,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 <Link href="https://lin.ee/es5kIQR" target="_blank" rel="noopener noreferrer">
                   <span className={styles.textBlue}>公式LINE </span>
                 </Link>
-                からお願いします(Xの DMでは対応致しかねます)
+                からお願いします &#40;Xの DMでは対応致しかねます&#41;
               </li>
               <br />
             </div>
