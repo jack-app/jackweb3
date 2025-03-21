@@ -114,7 +114,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           <div className={styles.welcomeWeekDateContainer}>
             <span className={styles.welcomeWeekText3xl}>新歓日程</span>
             <div className={styles.welcomeWeekSubContainer}>
-              【対面新歓・入退室自由・予約不必要】
+              【対面新歓・入退室自由・予約不要】
               <br />
               下記の時間帯であればお気軽にお立ち寄りください！
               <div className={styles.welcomeWeekDateDetailContainer}>
@@ -130,7 +130,10 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                   </p>
 
                   <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}> 4/19&#40;土&#41; 10:00-15:45</span>
+                    <span className={styles.textDetail}>
+                      {" "}
+                      4/19&#40;土&#41; 10:15-12:30 13:30-15:45
+                    </span>
                     <Link
                       href="https://www.nskk.org/chubu/nyc/"
                       target="_blank"
@@ -198,6 +201,9 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               確定会に参加された時点で正式な入会となりますので、ご注意ください。
               確定会の詳細については、確定フォーム内に記載しております。
               なお、新入生以外の在学生の方もご回答いただけます。
+              <br />
+              <br />
+              確定フォームは4月から受付開始です。
               <div className={styles.welcomeWeekJoin}>
                 <IconLink
                   href={JOIN_URL}

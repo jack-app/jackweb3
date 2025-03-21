@@ -16,7 +16,7 @@ export const Footer: React.FC<Props> = (props) => {
           width={124}
           height={93}
         />
-        <span>&copy;jack 2024</span>
+        <span>&copy;jack 2025</span>
       </div>
       <div className={styles.info}>
         <div className={styles.link}>
