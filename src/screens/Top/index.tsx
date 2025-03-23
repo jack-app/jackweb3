@@ -145,7 +145,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 </div>
                 <div className={styles.welcomeWeekDayDetail}>
                   <p className={styles.welcomeWeekTextDetail}>
-                    全日程product展示を行います。
+                    全日程プロダクト展示を行います。
                     <br />
                     <Link href="/products" rel="noopener noreferrer">
                       <span className={styles.textBlue}>プロダクト一覧 </span>
@@ -223,7 +223,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         <div className={styles.topContainerInner}>
           <div className={styles.activitiesContainer}>
             <div className={styles.activitiesTexts}>
-              <p className={styles.text3xl}>隔週水曜、金曜で対面活動。</p>
+              <p className={styles.text3xl}>隔週水曜、金曜で週一回の対面活動。</p>
               <p className={styles.textDetail}>
                 オンラインでの活動もあり。
                 <br />
