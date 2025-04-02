@@ -369,10 +369,10 @@
   .membersList {
     display: flex;
     justify-content: center;
-    padding: 40px 0;
+    padding: 16px 0 70px;
     gap: 36px;
     @media screen and (max-width: $mobile) {
-      padding: 16px 0;
+      padding: 16px 0 60px;
       gap: 8px;
     }
   }
@@ -389,6 +389,23 @@
       text-align: start;
     }
   }
+
+  .membersImage {
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    @media screen and (max-width: $mobile) {
+      max-width: 100px;
+      height: 100px;
+    }
+  }
+
+  .memberImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
   .membersName {
     font-size: $text-3xl;
     text-align: center;
