@@ -254,8 +254,14 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           </p>
           <div className={styles.membersList}>
             {memberStories.map((member) => (
-              <div key={member.name}>
-                <Image src={member.image} alt={member.name} width={200} height={200} />
+              <div key={member.name} className={styles.membersImage}>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={200}
+                  height={200}
+                  className={styles.memberImage}
+                />
                 <p className={styles.membersName}>{member.name}</p>
               </div>
             ))}
