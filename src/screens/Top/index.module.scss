@@ -369,10 +369,10 @@
   .membersList {
     display: flex;
     justify-content: center;
-    padding: 100px 0;
+    padding: 16px 0 70px;
     gap: 36px;
     @media screen and (max-width: $mobile) {
-      padding: 60px 0;
+      padding: 16px 0 60px;
       gap: 8px;
     }
   }
@@ -394,6 +394,10 @@
     width: 100%;
     max-width: 200px;
     height: 200px;
+    @media screen and (max-width: $mobile) {
+      max-width: 100px;
+      height: 100px;
+    }
   }
 
   .memberImage {
