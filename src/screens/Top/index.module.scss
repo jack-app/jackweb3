@@ -1,7 +1,9 @@
 @use "@/styles/variables" as *;
 @font-face {
   font-family: "CP Revenge";
-  src: url("/CP_Revenge.ttf") format("truetype");
+  src:
+    url("../fonts/CP_Revenge_Subset.woff2") format("woff2"),
+    url("../fonts/CP_Revenge_Subset.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -40,7 +42,6 @@
   .line {
     font-size: $text-9xl;
     font-family: "CP Revenge";
-
     display: flex;
     align-items: center;
     margin-bottom: 70px;
