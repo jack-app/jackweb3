@@ -2,14 +2,8 @@
 @font-face {
   font-family: "CP Revenge";
   src:
-    url("../fonts/CP_Revenge_Subset.woff2") format("woff2"),
-    url("../fonts/CP_Revenge_Subset.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "k-font";
-  src: url("/keifont.ttf") format("truetype");
+    url("../../fonts/CP_Revenge_Subset.woff2") format("woff2"),
+    url("../../fonts/CP_Revenge_Subset.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -150,7 +144,8 @@
 
   .jack {
     font-size: $text-8xl;
-    font-family: "k-font";
+    font-family: "Hiragino Kaku Gothic Pro", "Noto Sans JP";
+    font-weight: 800;
     color: #ff9900;
     position: absolute;
     right: 0;
