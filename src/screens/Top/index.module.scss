@@ -1,13 +1,9 @@
 @use "@/styles/variables" as *;
 @font-face {
   font-family: "CP Revenge";
-  src: url("/CP_Revenge.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "k-font";
-  src: url("/keifont.ttf") format("truetype");
+  src:
+    url("../../fonts/CP_Revenge_Subset.woff2") format("woff2"),
+    url("../../fonts/CP_Revenge_Subset.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -40,7 +36,6 @@
   .line {
     font-size: $text-9xl;
     font-family: "CP Revenge";
-
     display: flex;
     align-items: center;
     margin-bottom: 70px;
@@ -149,7 +144,8 @@
 
   .jack {
     font-size: $text-8xl;
-    font-family: "k-font";
+    font-family: "Noto Sans JP";
+    font-weight: 800;
     color: #ff9900;
     position: absolute;
     right: 0;
