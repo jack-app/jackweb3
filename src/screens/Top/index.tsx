@@ -92,9 +92,11 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 新入生の皆さん
                 <br />
                 ご入学おめでとうございます！ <br /> 大学から新しいことを始めたい <br />
-                プログラミングに興味がある <br /> 今流行りのAIに触れたい! <br />
+                プログラミングに興味がある <br /> 今流行りのAIに触れたい！
+                <br />
                 そんな
-                <span className={styles.welcomeWeekText3xl}>みなさん</span>!<br />
+                <span className={styles.welcomeWeekText3xl}>みなさん！</span>
+                <br />
                 jackの<span className={styles.textOrange}>新歓</span>に足を運んでみませんか？
               </p>
             </div>
