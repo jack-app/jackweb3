@@ -1,5 +1,5 @@
 import React from "react";
-import { SlArrowRight } from "react-icons/sl";
+import { FaAngleRight } from "react-icons/fa6";
 import { FORM_URL } from "@/constants";
 import { ActivitiesCarousel } from "@/features/ActivitiesCarousel";
 import { Calendar } from "@/ui/Calendar";
@@ -60,7 +60,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
                 <IconLink
                   href={FORM_URL}
                   text="見学申し込み"
-                  icon={SlArrowRight}
+                  icon={FaAngleRight}
                   size="l"
                   openInNewTab
                 />
@@ -77,7 +77,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
             <IconLink
               href={FORM_URL}
               text="見学申し込み"
-              icon={SlArrowRight}
+              icon={FaAngleRight}
               size="s"
               openInNewTab
             />

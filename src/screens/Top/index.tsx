@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FaAngleRight } from "react-icons/fa6";
 import { HiArrowLongDown } from "react-icons/hi2";
-import { SlArrowRight } from "react-icons/sl";
 import { FORM_URL } from "@/constants";
 import { JOIN_URL } from "@/constants";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
@@ -92,9 +92,11 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 新入生の皆さん
                 <br />
                 ご入学おめでとうございます！ <br /> 大学から新しいことを始めたい <br />
-                プログラミングに興味がある <br /> 今流行りのAIに触れたい! <br />
+                プログラミングに興味がある <br /> 今流行りのAIに触れたい！
+                <br />
                 そんな
-                <span className={styles.welcomeWeekText3xl}>みなさん</span>!<br />
+                <span className={styles.welcomeWeekText3xl}>みなさん！</span>
+                <br />
                 jackの<span className={styles.textOrange}>新歓</span>に足を運んでみませんか？
               </p>
             </div>
@@ -205,7 +207,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 <IconLink
                   href={JOIN_URL}
                   text="確定フォーム"
-                  icon={SlArrowRight}
+                  icon={FaAngleRight}
                   size="l"
                   openInNewTab={true}
                 />
@@ -237,7 +239,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             </div>
           </div>
           <div className={styles.activitiesLink}>
-            <IconLink href="/activities" text="詳しく見る" icon={SlArrowRight} size="l" />
+            <IconLink href="/activities" text="詳しく見る" icon={FaAngleRight} size="l" />
           </div>
         </div>
       </div>
@@ -263,7 +265,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               </div>
             ))}
           </div>
-          <IconLink href="/members" text="詳しく見る" icon={SlArrowRight} size="l" />
+          <IconLink href="/members" text="詳しく見る" icon={FaAngleRight} size="l" />
         </div>
       </div>
       <div className={styles.topContainer}>
@@ -279,7 +281,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 さぁ、キミならどんなものを創る？
               </p>
               <div className={styles.PClink}>
-                <IconLink href="/products" text="プロダクト一覧" icon={SlArrowRight} size="l" />
+                <IconLink href="/products" text="プロダクト一覧" icon={FaAngleRight} size="l" />
               </div>
             </div>
             {/* Notionからランダムに取得したプロダクト */}
@@ -288,7 +290,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               <ProductDetailItem product={product} />
             </div>
             <div className={styles.mobileLink}>
-              <IconLink href="/products" text="プロダクト一覧" icon={SlArrowRight} size="l" />
+              <IconLink href="/products" text="プロダクト一覧" icon={FaAngleRight} size="l" />
             </div>
           </div>
         </div>
@@ -312,7 +314,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             <ArticleItem key={articles[0].id} {...articles[0]} />
           </div>
           <div className={styles.articleLink}>
-            <IconLink href="/blog" text="記事一覧" icon={SlArrowRight} size="l" />
+            <IconLink href="/blog" text="記事一覧" icon={FaAngleRight} size="l" />
           </div>
         </div>
       </div>
@@ -333,7 +335,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 <IconLink
                   href={FORM_URL}
                   text="見学申し込み"
-                  icon={SlArrowRight}
+                  icon={ FaAngleRight}
                   size="l"
                   openInNewTab={true}
                 />
@@ -350,7 +352,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               <IconLink
                 href={FORM_URL}
                 text="見学申し込み"
-                icon={SlArrowRight}
+                icon={ FaAngleRight}
                 size="l"
                 openInNewTab={true}
               />
