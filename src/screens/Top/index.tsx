@@ -122,13 +122,13 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               <div className={styles.welcomeWeekDateDetailContainer}>
                 <div className={styles.welcomeWeekDay}>
                   <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}> 4/11&#40;金&#41; 17:00-19:30</span>
-                    場所未定
+                    <span className={styles.textDetail}> 4/11&#40;金&#41; 18:30-19:30</span>
+                    名古屋大学 全学教育棟本館 C33（3階）
                   </p>
 
                   <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}> 4/16&#40;水&#41; 17:00-19:30</span>
-                    場所未定
+                    <span className={styles.textDetail}> 4/16&#40;水&#41; 15:30-19:30</span>
+                    名古屋大学 全学教育棟本館 C34（3階）
                   </p>
 
                   <p className={styles.welcomeWeekTextDetail}>
@@ -155,9 +155,8 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                     のあのプロダクトも展示されるかも？！
                     <br />
                     <br />
-                    11日と16日は日時が変更になる可能性があります。確定次第サイトの更新、Xでの通知をいたしますのでお待ちください。
-                    {/* 11日と16日の場所は普段の対面活動の場所です。
-                    普段のjackの様子もご覧いただけますので ぜひお気軽に来てください〜 */}
+                    11日と16日の場所は普段の対面活動の場所です。
+                    普段のjackの様子もご覧いただけますので ぜひお気軽にお越しください！
                   </p>
                 </div>
               </div>
@@ -204,8 +203,6 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
               確定会の詳細については、確定フォーム内に記載しております。
               なお、新入生以外の在学生の方もご回答いただけます。
               <br />
-              <br />
-              確定フォームは4月から受付開始です。
               <div className={styles.welcomeWeekJoin}>
                 <IconLink
                   href={JOIN_URL}
@@ -231,10 +228,10 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 <br />
                 jackで開催されるイベントについて知りたい方はこちらをチェック！
                 <br />
-                <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
+                {/* <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
                   <span className={styles.textBlue}>見学申し込み</span>
                 </Link>
-                も受付中！
+                も受付中！ */}
               </p>
             </div>
             <div className={styles.jackPhoto}>
