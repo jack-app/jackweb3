@@ -45,11 +45,8 @@ export const Header: React.FC<Props> = () => {
             ブログ
           </Link>
         </nav>
-        {/* <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
+        <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
           見学申し込み
-        </Link> */}
-        <Link href="/#join-jack" rel="noopener noreferrer" className={styles.contact}>
-          入会申し込み
         </Link>
         {!showNav && (
           <button className={styles.menuButton} onClick={toggleNav}>
