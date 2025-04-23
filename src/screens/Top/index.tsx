@@ -206,7 +206,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 />
               </div>
             </div>
-            カレンダー
+
             <div className={styles.calendar}>
               <Calendar />
             </div>
