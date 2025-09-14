@@ -5,11 +5,18 @@ import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { FORM_URL } from "@/constants";
 import styles from "./index.module.scss";
-import { NavLinks } from "./NavLink";
 
 type Props = {};
 
 export const Header: React.FC<Props> = () => {
+  const NAV_ITEMS: { href: string; label: string }[] = [
+    { href: "/activities", label: "活動内容" },
+    { href: "/members", label: "メンバー" },
+    { href: "/products", label: "プロダクト" },
+    { href: "/blog", label: "ブログ" },
+    { href: "/achievements", label: "活動実績" },
+    { href: "/faq", label: "FAQ" },
+  ];
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
@@ -27,7 +34,16 @@ export const Header: React.FC<Props> = () => {
       </Link>
       <div className={styles.right}>
         <nav className={styles.nav}>
-          <NavLinks onClick={closeMenu} className={styles.hamburgerNavName} />
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+              className={styles.hamburgerNavName}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
         <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
           見学申し込み
@@ -47,7 +63,16 @@ export const Header: React.FC<Props> = () => {
         <button className={styles.black} onClick={closeMenu}></button>
         <div className={styles.menubar}>
           <nav className={styles.hamburgerNav}>
-            <NavLinks onClick={closeMenu} className={styles.hamburgerNavName} />
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className={styles.hamburgerNavName}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>
