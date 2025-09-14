@@ -26,23 +26,23 @@ export const Header: React.FC<Props> = () => {
       </Link>
       <div className={styles.right}>
         <nav className={styles.nav}>
-          <Link href="/products" onClick={closeMenu} className={styles.hamburgerNavName}>
-            プロダクト
+          <Link href="/activities" onClick={closeMenu} className={styles.hamburgerNavName}>
+            活動内容
           </Link>
           <Link href="/members" onClick={closeMenu} className={styles.hamburgerNavName}>
             メンバー
           </Link>
-          <Link href="/activities" onClick={closeMenu} className={styles.hamburgerNavName}>
-            活動内容
+          <Link href="/products" onClick={closeMenu} className={styles.hamburgerNavName}>
+            プロダクト
+          </Link>
+          <Link href="/blog" onClick={closeMenu} className={styles.hamburgerNavName}>
+            ブログ
           </Link>
           <Link href="/achievements" onClick={closeMenu} className={styles.hamburgerNavName}>
             活動実績
           </Link>
           <Link href="/faq" onClick={closeMenu} className={styles.hamburgerNavName}>
             FAQ
-          </Link>
-          <Link href="/blog" onClick={closeMenu} className={styles.hamburgerNavName}>
-            ブログ
           </Link>
         </nav>
         <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
