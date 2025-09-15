@@ -9,6 +9,14 @@ import styles from "./index.module.scss";
 type Props = {};
 
 export const Header: React.FC<Props> = () => {
+  const NAV_ITEMS: { href: string; label: string }[] = [
+    { href: "/activities", label: "活動内容" },
+    { href: "/members", label: "メンバー" },
+    { href: "/products", label: "プロダクト" },
+    { href: "/blog", label: "ブログ" },
+    { href: "/achievements", label: "活動実績" },
+    { href: "/faq", label: "FAQ" },
+  ];
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = () => {
@@ -26,24 +34,16 @@ export const Header: React.FC<Props> = () => {
       </Link>
       <div className={styles.right}>
         <nav className={styles.nav}>
-          <Link href="/products" onClick={closeMenu} className={styles.hamburgerNavName}>
-            プロダクト
-          </Link>
-          <Link href="/members" onClick={closeMenu} className={styles.hamburgerNavName}>
-            メンバー
-          </Link>
-          <Link href="/activities" onClick={closeMenu} className={styles.hamburgerNavName}>
-            活動内容
-          </Link>
-          <Link href="/achievements" onClick={closeMenu} className={styles.hamburgerNavName}>
-            活動実績
-          </Link>
-          <Link href="/faq" onClick={closeMenu} className={styles.hamburgerNavName}>
-            FAQ
-          </Link>
-          <Link href="/blog" onClick={closeMenu} className={styles.hamburgerNavName}>
-            ブログ
-          </Link>
+          {NAV_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+              className={styles.hamburgerNavName}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
         <Link href={FORM_URL} target="_blank" rel="noopener noreferrer" className={styles.contact}>
           見学申し込み
@@ -63,24 +63,16 @@ export const Header: React.FC<Props> = () => {
         <button className={styles.black} onClick={closeMenu}></button>
         <div className={styles.menubar}>
           <nav className={styles.hamburgerNav}>
-            <Link href="/products" onClick={closeMenu} className={styles.hamburgerNavName}>
-              プロダクト
-            </Link>
-            <Link href="/members" onClick={closeMenu} className={styles.hamburgerNavName}>
-              メンバー
-            </Link>
-            <Link href="/activities" onClick={closeMenu} className={styles.hamburgerNavName}>
-              活動内容
-            </Link>
-            <Link href="/achievements" onClick={closeMenu} className={styles.hamburgerNavName}>
-              活動実績
-            </Link>
-            <Link href="/faq" onClick={closeMenu} className={styles.hamburgerNavName}>
-              FAQ
-            </Link>
-            <Link href="/blog" onClick={closeMenu} className={styles.hamburgerNavName}>
-              ブログ
-            </Link>
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={closeMenu}
+                className={styles.hamburgerNavName}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         </div>
       </div>
