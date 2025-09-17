@@ -3,22 +3,22 @@ export type PieChartDataType = {
   value: number;
 };
 
-export const totalMembers = 130;
+export const totalMembers = 149;
 
 export const universityData: PieChartDataType[] = [
-  { name: "名古屋大学", value: 123 },
-  { name: "他大学", value: 14 },
+  { name: "名古屋大学", value: 133 },
+  { name: "他大学", value: 15 },
 ];
 
 export const sexData: PieChartDataType[] = [
-  { name: "男性", value: 108 },
-  { name: "女性", value: 27 },
+  { name: "男性", value: 115 },
+  { name: "女性", value: 32 },
 ];
 
 export const facultyData: PieChartDataType[] = [
-  { name: "情報学部", value: 81 },
-  { name: "工学部", value: 27 },
-  { name: "その他", value: 27 },
+  { name: "情報学部", value: 67 },
+  { name: "工学部", value: 33 },
+  { name: "その他", value: 41 },
 ];
 
 export const memberStories = [
@@ -51,11 +51,11 @@ export const Members = [
   {
     title: "大学",
     graph: universityData,
-    detail: "他大学：椙山女学園大、名城大、名古屋市立大、南山大、慶應義塾大、etc...",
+    detail: "他大学：名城大、名古屋市立大、名古屋工業大、南山大、etc...",
   },
   {
     title: "学部",
     graph: facultyData,
-    detail: "その他：理学部、経済学部、法学部、文学部、教育学部、etc...",
+    detail: "その他：理学部、医学部、経済学部、法学部、文学部、教育学部、etc...",
   },
 ];
