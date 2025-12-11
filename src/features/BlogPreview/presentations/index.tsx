@@ -5,6 +5,7 @@ import { BlogArticleBodies } from "@/features/BlogArticleBodies";
 import { BlogArticleToc } from "@/features/BlogArticleToc";
 import { Block } from "@/types/block";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
+import { BlockCounter } from "@/ui/BlockCounter";
 import styles from "./index.module.scss";
 import BlogPreviewBodySkelton from "../presentations/Skelton";
 
@@ -75,10 +76,17 @@ export const BlogPreviewPresentation: React.FC<Props> = ({
         ) : !notionId || !blocks || !pageInfo ? (
           <></>
         ) : (
-          <div className={styles.article}>
-            <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
-            <BlogArticleToc blocks={blocks} />
-          </div>
+          <>
+            {blocks && blocks.length > 0 && (
+              <div className={styles.blockCounterWrapper}>
+                <BlockCounter currentCount={blocks.length} maxCount={100} />
+              </div>
+            )}
+            <div className={styles.article}>
+              <BlogArticleBodies id={notionPageId} blocks={blocks} pageInfo={pageInfo} />
+              <BlogArticleToc blocks={blocks} />
+            </div>
+          </>
         )}
         {blocks && pageInfo && (
           <button className={styles.reloadButton} onClick={showPreview}>

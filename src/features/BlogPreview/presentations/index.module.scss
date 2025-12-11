@@ -60,6 +60,14 @@
     }
   }
 
+  .blockCounterWrapper {
+    margin-bottom: 24px;
+
+    @media (max-width: $mobile) {
+      margin-bottom: 16px;
+    }
+  }
+
   .article {
     display: flex;
     align-items: flex-start;

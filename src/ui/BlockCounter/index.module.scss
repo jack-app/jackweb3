@@ -1,0 +1,28 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: inline-block;
+}
+
+.count {
+  font-size: $text-sm;
+  font-weight: 500;
+  color: #666;
+  padding: 4px 12px;
+  border-radius: $rounded;
+  background-color: $primary-background;
+
+  @media (max-width: $mobile) {
+    font-size: $text-xs;
+  }
+
+  &.warning {
+    color: #ff9800;
+    background-color: #fff3e0;
+  }
+
+  &.error {
+    color: #f44336;
+    background-color: #ffebee;
+  }
+}
