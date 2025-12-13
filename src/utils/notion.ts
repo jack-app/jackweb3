@@ -5,11 +5,21 @@ const notionClient = new Client({
 });
 
 export const getDatabase = async (databaseId: string) => {
-  const response = await notionClient.databases.query({
-    database_id: databaseId,
-  });
+  let results: any[] = [];
+  let cursor: string | undefined = undefined;
 
-  return response.results;
+  do {
+    const response = await notionClient.databases.query({
+      database_id: databaseId,
+      page_size: 100,
+      start_cursor: cursor,
+    });
+
+    results.push(...response.results);
+    cursor = response.has_more ? response.next_cursor ?? undefined : undefined;
+  } while (cursor);
+
+  return results;
 };
 
 export const getPage = async (pageId: string) => {
