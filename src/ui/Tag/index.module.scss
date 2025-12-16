@@ -4,10 +4,12 @@
   color : $white;
   font-size: $text-xs;
   border-radius: $rounded;
-  padding: 2px 4px;  
+  padding: 2px 4px;
   width: fit-content;
   display: block;
-  
+  position: relative;
+  z-index: 1;
+
   &:hover {
       opacity: 0.8;
   }
