@@ -44,7 +44,10 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
           id: article.id,
           image: null,
           title: article.properties.Name.title[0].plain_text,
-          tags: article.properties.tag.multi_select,
+          tags: article.properties.tag.multi_select.map((tag: any) => ({
+            ...tag,
+            isLink: true,
+          })),
           date: article.properties.Publish_Date.date
             ? article.properties.Publish_Date.date.start
             : article.created_time.slice(0, 10),
