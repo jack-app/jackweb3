@@ -120,23 +120,22 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
 
           <div className={styles.welcomeWeekDateContainer}>
             <div>
-              <p className={styles.welcomeWeekTextDetail}>
+              <p className={styles.textDetail}>
                 新歓ではプロダクト展示を行います。
                 <br />
                 気軽にあそびにきてください！ (予約不要 / 入退室自由)
               </p>
             </div>
-            <div className={styles.welcomeWeekDateDetailContainer}>
-              <span className={styles.welcomeWeekText3xl}>日時</span>
-              <p className={styles.textDetail}>4/18 (土) 14:00 - 16:00</p>
+            <div className={styles.welcomeWeekDatePlaceDetailContainer}>
+              <div className={styles.welcomeWeekDateDetailContainer}>
+                <span className={styles.textDetail}>日時</span>
+                <p className={styles.welcomeWeekText3xl}>4/18 (土) 14:00 - 16:00</p>
+              </div>
+              <div className={styles.welcomeWeekDateDetailContainer}>
+                <span className={styles.textDetail}>場所</span>
+                <p className={styles.welcomeWeekText3xl}>名古屋大学図書館</p>
+              </div>
             </div>
-            <div className={styles.welcomeWeekDateDetailContainer}>
-              <span className={styles.welcomeWeekText3xl}>場所</span>
-              <p className={styles.textDetail}>名古屋大学図書館</p>
-            </div>
-            {/* <Link href="https://www.nskk.org/chubu/nyc/" target="_blank" rel="noopener noreferrer">
-              <span className={styles.textBlue}>こちら</span>
-            </Link> */}
 
             {/* <div className={styles.welcomeWeekSubContainer}>
               <p className={styles.textDetail}>4/18 (土) 14:00 - 16:00</p>

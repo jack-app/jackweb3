@@ -609,7 +609,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 0px;
+      gap: 24px;
     }
   }
 
@@ -652,13 +652,22 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 48px;
   }
 
   .welcomeWeekDateDetailContainer {
     display: flex;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .welcomeWeekDatePlaceDetailContainer {
+    display: flex;
+    gap: 72px;
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
 
   .welcomeWeekDay {
