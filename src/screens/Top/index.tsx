@@ -238,11 +238,11 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 オンラインでの活動もあり。
                 <br />
                 jackで開催されるイベントについて知りたい方はこちらをチェック！
-                <br />
+                {/* <br />
                 <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
                   <span className={styles.textBlue}>見学申し込み</span>
                 </Link>
-                も受付中！
+                も受付中！ */}
               </p>
             </div>
             <div className={styles.jackPhoto}>
@@ -329,7 +329,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           </div>
         </div>
       </div>
-      <div className={styles.topContainer}>
+      {/* <div className={styles.topContainer}>
         <TopHeading2 title="見学申し込み" />
         <div className={styles.topContainerInner}>
           <div className={styles.calendarContainer}>
@@ -370,7 +370,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
