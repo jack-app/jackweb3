@@ -590,16 +590,26 @@
     }
   }
 
+  .textPink {
+    font-size: $text-3xl;
+    font-weight: 1000;
+    color: #ff7070;
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+    }
+  }
+
   .welcomeWeekStartContainer {
     display: flex;
     align-items: center;
     gap: 30px;
+    padding: 3rem 0;
     @media screen and (max-width: 950px) {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 0px;
+      gap: 24px;
     }
   }
 
@@ -639,37 +649,24 @@
   }
 
   .welcomeWeekDateContainer {
-    margin-top: 3rem;
     width: 100%;
-  }
-
-  .welcomeWeekTextDateContainer {
-    width: 100%;
-  }
-
-  .welcomeWeekSubContainer {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 1rem;
-    font-size: $text-2xl;
-    text-align: left;
-    @media screen and (max-width: $pc) {
-      font-size: $text-xl;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
   }
 
   .welcomeWeekDateDetailContainer {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     display: flex;
-    align-items: center;
-    gap: 30px;
-    @media screen and (max-width: 1025px) {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .welcomeWeekDatePlaceDetailContainer {
+    display: flex;
+    gap: 72px;
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      gap: 24px;
     }
   }
 
@@ -698,7 +695,24 @@
 
   .welcomeWeekTextDetail {
     font-size: $text-2xl;
-    padding: 0 0 32px 0;
+    @media screen and (max-width: 1075px) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $pc) {
+      font-size: $text-xl;
+    }
+    @media screen and (max-width: $mobile) {
+      font-size: $text-lg;
+    }
+  }
+
+  .welcomeWeekMonologueTextContainer {
+    padding: 0 0 16px 0;
+  }
+
+  .welcomeWeekMonologueText {
+    font-size: $text-2xl;
+    padding: 0 0 10px 0;
     @media screen and (max-width: 1075px) {
       font-size: $text-xl;
     }

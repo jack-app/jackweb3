@@ -40,7 +40,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
             <Timeline />
           </div>
         </div>
-        <div className={styles.schedule}>
+        {/* <div className={styles.schedule}>
           <div className={styles.Heading2}>
             <Heading2 text="Schedule" />
           </div>
@@ -82,7 +82,7 @@ export const ActivitiesScreen: React.FC<Props> = (props) => {
               openInNewTab
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
