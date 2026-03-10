@@ -20,6 +20,9 @@ export const BlogScreen: React.FC<Props> = ({ articles, headingText }) => {
             <ArticleItem key={article.id} {...article} />
           ))}
         </div>
+        <div>
+          <img src="/Pagination-pc.png" alt="pagination" style={{ display: "block", margin: "0 auto" }} />
+        </div>
       </div>
     </main>
   );
