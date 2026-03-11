@@ -1,0 +1,17 @@
+@use "@/styles/variables" as *;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  align-items: flex-start;
+}
+
+@media (max-width: $mobile) {
+  .row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
