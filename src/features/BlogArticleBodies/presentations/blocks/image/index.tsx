@@ -27,7 +27,7 @@ export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
           sizes="(max-width: 1023px) 100vw, 800px"
         />
       </div>
-      {caption && <figcaption>{caption}</figcaption>}
+      {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
     </figure>
   );
 };
