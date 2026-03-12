@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Image as ImageBlock } from "@/types/block";
+import styles from "./index.module.scss";
 
 type Props = {
   image?: ImageBlock;
@@ -15,15 +16,17 @@ export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
 
   const caption = image.caption ? image.caption[0]?.plain_text : "";
   return (
-    <figure className="mx-auto m-8 w-full  max-w-[800px]">
-      <Image
-        src={src}
-        alt={caption}
-        width={1200}
-        height={1200}
-        sizes="(max-width: 1023px) 100vw, 800px"
-        style={{ width: "100%", height: "auto" }}
-      />
+    <figure className={styles.figure}>
+      <div className={styles.imageWrapper}>
+        <Image
+          className={styles.image}
+          src={src}
+          alt={caption}
+          width={1200}
+          height={1200}
+          sizes="(max-width: 1023px) 100vw, 800px"
+        />
+      </div>
       {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
