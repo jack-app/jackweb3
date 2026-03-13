@@ -12,7 +12,12 @@ const createImage = async function (id: string, name: string, url: string) {
 
   // 既にファイルが存在すれば再取得しない
   if (fs.existsSync(cover)) {
-    return `/${id}/${name}.webp`;
+    const metadata = await sharp(cover).rotate().metadata();
+    return {
+      url: `/${id}/${name}.webp`,
+      width: metadata.width,
+      height: metadata.height,
+    };
   }
 
   if (!fs.existsSync(path)) {
@@ -23,6 +28,9 @@ const createImage = async function (id: string, name: string, url: string) {
   const binary = await src.arrayBuffer();
   const buffer = Buffer.from(binary);
 
+  // sharpでメタデータを取得
+  const metadata = await sharp(buffer).rotate().metadata();
+
   //Sharpによる画像処理
   await sharp(buffer)
     .rotate()
@@ -30,8 +38,11 @@ const createImage = async function (id: string, name: string, url: string) {
     .webp({ quality: 80 })
     .toFile(cover);
 
-  const result = `/${id}/${name}.webp`;
-  return result;
+  return {
+    url: `/${id}/${name}.webp`,
+    width: metadata.width,
+    height: metadata.height,
+  };
 };
 
 export default createImage;
