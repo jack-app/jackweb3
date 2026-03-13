@@ -28,11 +28,8 @@ const createImage = async function (id: string, name: string, url: string) {
   const binary = await src.arrayBuffer();
   const buffer = Buffer.from(binary);
 
-  // sharpでメタデータを取得
-  const metadata = await sharp(buffer).rotate().metadata();
-
   //Sharpによる画像処理
-  await sharp(buffer)
+  const output = await sharp(buffer)
     .rotate()
     .resize(1200, null, { withoutEnlargement: true, fit: "inside" })
     .webp({ quality: 80 })
@@ -40,8 +37,8 @@ const createImage = async function (id: string, name: string, url: string) {
 
   return {
     url: `/${id}/${name}.webp`,
-    width: metadata.width,
-    height: metadata.height,
+    width: output.width,
+    height: output.height,
   };
 };
 
