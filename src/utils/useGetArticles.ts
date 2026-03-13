@@ -57,7 +57,7 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
           res.image = `/${article.id}/ogp.png`;
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
-          res.image = await createImage(article.id, "cover", article.cover.file.url);
+          res.image = (await createImage(article.id, "cover", article.cover.file.url)).url;
         } else if (article.cover.type === "external") {
           res.image = article.cover.external.url;
         }

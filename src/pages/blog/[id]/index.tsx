@@ -97,14 +97,16 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       if (!image) return block;
 
       if (image.type === "file" && image.file) {
-        const url = await createImage(pageId, id, image.file.url);
+        const imageData = await createImage(pageId, id, image.file.url);
         filteredBlock = {
           ...block,
           image: {
             ...image,
+            width: imageData.width,
+            height: imageData.height,
             file: {
               ...image.file,
-              url,
+              url: imageData.url,
             },
           },
         };
