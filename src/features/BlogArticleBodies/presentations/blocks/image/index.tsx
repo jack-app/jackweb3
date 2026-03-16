@@ -20,7 +20,10 @@ export const ImagePresentation: React.FC<Props> = ({ image, id, pageId }) => {
   const caption = image.caption ? image.caption[0]?.plain_text : "";
   return (
     <figure className={styles.figure}>
-      <div className={styles.imageWrapper} style={{ aspectRatio: `${width} / ${height}` }}>
+      <div
+        className={styles.imageWrapper}
+        style={{ aspectRatio: width && height ? `${width} / ${height}` : "16 / 9" }}
+      >
         <Image
           className={styles.image}
           src={src}
