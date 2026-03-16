@@ -1,6 +1,6 @@
 import { renderBlock } from "@/features/BlogArticleBodies/hooks/renderBlock";
 import { ColumnList, Block } from "@/types/block";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 type Props = {
   columnList?: ColumnList;

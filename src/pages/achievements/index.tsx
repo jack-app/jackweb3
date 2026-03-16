@@ -33,13 +33,17 @@ export const getStaticProps = async () => {
       if (achievement.properties.Image.files && achievement.properties.Image.files.length > 0) {
         if (achievement.properties.Image.files[0].file?.url) {
           if (!achievement.cover) {
-            res.image = await createImage(
-              achievement.id,
-              "cover",
-              achievement.properties.Image.files[0].file.url,
-            );
+            res.image = (
+              await createImage(
+                achievement.id,
+                "cover",
+                achievement.properties.Image.files[0].file.url,
+              )
+            ).url;
           } else if (achievement.cover.type === "file") {
-            res.image = await createImage(achievement.id, "cover", achievement.cover.file.url);
+            res.image = (
+              await createImage(achievement.id, "cover", achievement.cover.file.url)
+            ).url;
           } else if (achievement.cover.type === "external") {
             res.image = achievement.cover.external.url;
           }

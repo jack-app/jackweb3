@@ -53,13 +53,11 @@ export const getStaticProps = async () => {
         if (product.properties.Image.files && product.properties.Image.files.length > 0) {
           if (product.properties.Image.files[0].file?.url) {
             if (!product.cover) {
-              res.image = await createImage(
-                product.id,
-                "cover",
-                product.properties.Image.files[0].file.url,
-              );
+              res.image = (
+                await createImage(product.id, "cover", product.properties.Image.files[0].file.url)
+              ).url;
             } else if (product.cover.type === "file") {
-              res.image = await createImage(product.id, "cover", product.cover.file.url);
+              res.image = (await createImage(product.id, "cover", product.cover.file.url)).url;
             } else if (product.cover.type === "external") {
               res.image = product.cover.external.url;
             }
@@ -120,7 +118,7 @@ export const getStaticProps = async () => {
           );
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
-          res.image = await createImage(article.id, "cover", article.cover.file.url);
+          res.image = (await createImage(article.id, "cover", article.cover.file.url)).url;
         } else if (article.cover.type === "external") {
           res.image = article.cover.external.url;
         }
