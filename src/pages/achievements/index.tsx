@@ -1,6 +1,6 @@
 import { AchievementsScreen } from "@/screens/Achievements";
 import { Props as AchievementItemProps } from "@/ui/AchievementItem";
-import createImage from "@/utils/createImage";
+import cacheRemoteImage from "@/utils/cacheRemoteImage";
 import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 
@@ -34,7 +34,7 @@ export const getStaticProps = async () => {
         if (achievement.properties.Image.files[0].file?.url) {
           if (!achievement.cover) {
             res.image = (
-              await createImage(
+              await cacheRemoteImage(
                 achievement.id,
                 "cover",
                 achievement.properties.Image.files[0].file.url,
@@ -42,7 +42,7 @@ export const getStaticProps = async () => {
             ).url;
           } else if (achievement.cover.type === "file") {
             res.image = (
-              await createImage(achievement.id, "cover", achievement.cover.file.url)
+              await cacheRemoteImage(achievement.id, "cover", achievement.cover.file.url)
             ).url;
           } else if (achievement.cover.type === "external") {
             res.image = achievement.cover.external.url;

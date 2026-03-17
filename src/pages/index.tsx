@@ -1,7 +1,7 @@
 import { TopScreen } from "@/screens/Top";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
-import createImage from "@/utils/createImage";
+import cacheRemoteImage from "@/utils/cacheRemoteImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
@@ -54,10 +54,14 @@ export const getStaticProps = async () => {
           if (product.properties.Image.files[0].file?.url) {
             if (!product.cover) {
               res.image = (
-                await createImage(product.id, "cover", product.properties.Image.files[0].file.url)
+                await cacheRemoteImage(
+                  product.id,
+                  "cover",
+                  product.properties.Image.files[0].file.url,
+                )
               ).url;
             } else if (product.cover.type === "file") {
-              res.image = (await createImage(product.id, "cover", product.cover.file.url)).url;
+              res.image = (await cacheRemoteImage(product.id, "cover", product.cover.file.url)).url;
             } else if (product.cover.type === "external") {
               res.image = product.cover.external.url;
             }
@@ -118,7 +122,7 @@ export const getStaticProps = async () => {
           );
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
-          res.image = (await createImage(article.id, "cover", article.cover.file.url)).url;
+          res.image = (await cacheRemoteImage(article.id, "cover", article.cover.file.url)).url;
         } else if (article.cover.type === "external") {
           res.image = article.cover.external.url;
         }

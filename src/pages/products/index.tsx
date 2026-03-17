@@ -1,6 +1,6 @@
 import { ProductsScreen } from "@/screens/Products";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
-import createImage from "@/utils/createImage";
+import cacheRemoteImage from "@/utils/cacheRemoteImage";
 import { Meta } from "@/utils/meta";
 import { getDatabase } from "@/utils/notion";
 
@@ -44,10 +44,14 @@ export const getStaticProps = async () => {
         if (product.properties.Image.files[0].file?.url) {
           if (!product.cover) {
             res.image = (
-              await createImage(product.id, "cover", product.properties.Image.files[0].file.url)
+              await cacheRemoteImage(
+                product.id,
+                "cover",
+                product.properties.Image.files[0].file.url,
+              )
             ).url;
           } else if (product.cover.type === "file") {
-            res.image = (await createImage(product.id, "cover", product.cover.file.url)).url;
+            res.image = (await cacheRemoteImage(product.id, "cover", product.cover.file.url)).url;
           } else if (product.cover.type === "external") {
             res.image = product.cover.external.url;
           }

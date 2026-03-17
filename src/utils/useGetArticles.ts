@@ -1,7 +1,7 @@
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
-import createImage from "@/utils/createImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { getDatabase } from "@/utils/notion";
+import cacheRemoteImage from "./cacheRemoteImage";
 
 /*
 公開中の全ての記事を取得する関数
@@ -57,7 +57,7 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
           res.image = `/${article.id}/ogp.png`;
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
-          res.image = (await createImage(article.id, "cover", article.cover.file.url)).url;
+          res.image = (await cacheRemoteImage(article.id, "cover", article.cover.file.url)).url;
         } else if (article.cover.type === "external") {
           res.image = article.cover.external.url;
         }
