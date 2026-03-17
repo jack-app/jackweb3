@@ -135,6 +135,5 @@ export const getStaticProps = async () => {
       product: filteredProduct,
       articles: filteredArticles,
     },
-    revalidate: 10,
   };
 };
