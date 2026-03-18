@@ -93,7 +93,7 @@ export const AchievementItem: React.FC<Props> = ({
         <Image
           className={styles.image}
           src={image.url}
-          alt=""
+          alt={text}
           fill
           sizes="(max-width: 768px) 100vw, 300px"
         />
