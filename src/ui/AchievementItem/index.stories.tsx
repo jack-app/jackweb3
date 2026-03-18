@@ -11,7 +11,7 @@ const meta: Meta<T> = {
   },
   tags: ["autodocs"],
   argTypes: {
-    image: { control: "text" },
+    image: { control: "object" },
     date: { control: "text" },
     text: { control: "text" },
     article_href: { control: "text" },
@@ -27,6 +27,7 @@ type Story = StoryObj<T>;
 
 export const Default: Story = {
   args: {
+    id: "achievement-1",
     image: {
       url: "https://placehold.jp/200x200.png",
       width: 200,
