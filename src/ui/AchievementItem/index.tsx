@@ -11,7 +11,7 @@ export type Props = {
   id: string;
   date: string;
   text: string;
-  image: string;
+  image: { url: string; width: number | undefined; height: number | undefined };
   article_href?: string;
   web_href?: string;
   app_href?: string;
@@ -84,7 +84,20 @@ export const AchievementItem: React.FC<Props> = ({
           </div>
         </div>
       </div>
-      <Image className={styles.image} src={image} alt="" width={200} height={200} />
+      <div
+        className={styles.imageWrapper}
+        style={{
+          aspectRatio: image.width && image.height ? `${image.width} / ${image.height}` : "16 / 9",
+        }}
+      >
+        <Image
+          className={styles.image}
+          src={image.url}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 100vw, 300px"
+        />
+      </div>
     </div>
   );
 };
