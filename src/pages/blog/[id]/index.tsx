@@ -2,7 +2,7 @@ import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block, Column } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
-import createImage from "@/utils/createImage";
+import cacheRemoteImage from "@/utils/cacheRemoteImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { Meta } from "@/utils/meta";
 import { getBlocks, getDatabase, getPage } from "@/utils/notion";
@@ -97,7 +97,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       if (!image) return block;
 
       if (image.type === "file" && image.file) {
-        const imageData = await createImage(pageId, id, image.file.url);
+        const imageData = await cacheRemoteImage(pageId, id, image.file.url);
         filteredBlock = {
           ...block,
           image: {

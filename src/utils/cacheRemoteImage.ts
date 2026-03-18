@@ -1,7 +1,7 @@
 import fs from "fs";
 import sharp from "sharp";
 
-const createImage = async function (id: string, name: string, url: string) {
+const cacheRemoteImage = async function (id: string, name: string, url: string) {
   // Notionの画像は期限付きのURLなので、そのまま表示すると期限切れで表示できなくなる
   // 期限付きの画像をコピーしてpublicディレクトリに保存する
   // 参考: https://github.com/0si43/shetommy.com/pull/36/files
@@ -42,4 +42,4 @@ const createImage = async function (id: string, name: string, url: string) {
   };
 };
 
-export default createImage;
+export default cacheRemoteImage;
