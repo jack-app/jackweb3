@@ -51,10 +51,10 @@
   @media (max-width: $pc) {
     display: none;
   }
+}
 
-  .image {
-    object-fit: contain;
-  }
+.image {
+  object-fit: contain;
 }
 
 .tag {
