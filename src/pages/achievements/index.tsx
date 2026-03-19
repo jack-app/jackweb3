@@ -51,7 +51,7 @@ export const getStaticProps = async () => {
             res.image.width = imageData.width;
             res.image.height = imageData.height;
           } else if (achievement.cover.type === "external") {
-            res.image = achievement.cover.external.url;
+            res.image.url = achievement.cover.external.url;
           }
         }
       }
