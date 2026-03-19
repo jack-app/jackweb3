@@ -85,7 +85,7 @@ export const AchievementItem: React.FC<Props> = ({
       <div
         className={styles.imageWrapper}
         style={{
-          aspectRatio: image.width && image.height ? `${image.width} / ${image.height}` : "16 / 9",
+          aspectRatio: image.width && image.height ? `${image.width} / ${image.height}` : "1 / 1",
         }}
       >
         <Image
