@@ -2,6 +2,7 @@ import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block, Column } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
+import { cacheRemoteAvatar } from "@/utils/cacheRemoteAvatar";
 import cacheRemoteImage from "@/utils/cacheRemoteImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { Meta } from "@/utils/meta";
@@ -53,10 +54,13 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const pageId = params.id as string;
   const blocks = (await getBlocks(pageId)) as Block[];
   const page = (await getPage(pageId)) as any;
+  const writerId = page.properties.Writer.created_by.id;
+  const rawAvatarUrl = page.properties.Writer.created_by.avatar_url;
+  const optimizedAvatarUrl = rawAvatarUrl ? await cacheRemoteAvatar(writerId, rawAvatarUrl) : null;
   const pageInfo = {
     title: page.properties.Name.title[0].plain_text,
     writerName: page.properties.Writer.created_by.name || null,
-    writerImage: page.properties.Writer.created_by.avatar_url || null,
+    writerImage: optimizedAvatarUrl,
     tags: page.properties.tag.multi_select,
     date: page.properties.Publish_Date.date
       ? page.properties.Publish_Date.date.start
