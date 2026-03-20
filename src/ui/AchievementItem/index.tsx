@@ -11,7 +11,7 @@ export type Props = {
   id: string;
   date: string;
   text: string;
-  image: string;
+  image: { url: string; width: number | undefined; height: number | undefined };
   article_href?: string;
   web_href?: string;
   app_href?: string;
@@ -36,55 +36,66 @@ export const AchievementItem: React.FC<Props> = ({
         <div className={styles.date}>{date}</div>
         <div className={styles.text}>{text}</div>
         <div className={styles.tag}>
-          <div className={styles.tag}>
-            {article_href && (
-              <div>
-                <IconLink
-                  href={article_href}
-                  text="See Article"
-                  icon={FaExternalLinkAlt}
-                  size="s"
-                  openInNewTab
-                />
-              </div>
-            )}
-            {web_href && (
-              <div>
-                <IconLink
-                  href={web_href}
-                  text="webサイト"
-                  icon={FaExternalLinkAlt}
-                  size="s"
-                  openInNewTab
-                />
-              </div>
-            )}
-            {app_href && (
-              <div>
-                <IconLink href={app_href} text="App Store" icon={FaApple} size="s" openInNewTab />
-              </div>
-            )}
-            {google_href && (
-              <div>
-                <IconLink
-                  href={google_href}
-                  text="Google Play"
-                  icon={FaGooglePlay}
-                  size="s"
-                  openInNewTab
-                />
-              </div>
-            )}
+          {article_href && (
+            <div>
+              <IconLink
+                href={article_href}
+                text="See Article"
+                icon={FaExternalLinkAlt}
+                size="s"
+                openInNewTab
+              />
+            </div>
+          )}
+          {web_href && (
+            <div>
+              <IconLink
+                href={web_href}
+                text="webサイト"
+                icon={FaExternalLinkAlt}
+                size="s"
+                openInNewTab
+              />
+            </div>
+          )}
+          {app_href && (
+            <div>
+              <IconLink href={app_href} text="App Store" icon={FaApple} size="s" openInNewTab />
+            </div>
+          )}
+          {google_href && (
+            <div>
+              <IconLink
+                href={google_href}
+                text="Google Play"
+                icon={FaGooglePlay}
+                size="s"
+                openInNewTab
+              />
+            </div>
+          )}
 
-            {git_href && (
-              <div>
-                <IconLink href={git_href} text="GitHub" icon={FaGithub} size="s" openInNewTab />
-              </div>
-            )}
-          </div>
+          {git_href && (
+            <div>
+              <IconLink href={git_href} text="GitHub" icon={FaGithub} size="s" openInNewTab />
+            </div>
+          )}
         </div>
       </div>
-      <Image className={styles.image} src={image} alt="" width={200} height={200} />
+      <div
+        className={styles.imageWrapper}
+        style={{
+          aspectRatio: image.width && image.height ? `${image.width} / ${image.height}` : "1 / 1",
+        }}
+      >
+        <Image
+          className={styles.image}
+          src={image.url}
+          alt={text}
+          fill
+          sizes="(max-width: 768px) 100vw, 300px"
+        />
+      </div>
     </div>
   );
 };
