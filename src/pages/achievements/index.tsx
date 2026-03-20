@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
         id: achievement.id,
         image: { url: "", width: undefined, height: undefined },
         date: achievement.properties.Date.date.start,
-        text: achievement.properties.Name.title[0]?.plain_text || null,
+        text: achievement.properties.Name.title.map((t: any) => t.plain_text).join("") || null,
         article_href: achievement.properties.Article.url || null,
         web_href: achievement.properties.WebLink.url || null,
         app_href: achievement.properties.AppStore.url || null,
