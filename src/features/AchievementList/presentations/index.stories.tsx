@@ -9,7 +9,7 @@ type Achievement = {
   id: string;
   date: string;
   text: string;
-  image: { url: string; width: number | undefined; height: number | undefined };
+  image: { url: string; width?: number; height?: number };
   article_href?: string;
   web_href?: string;
   app_href?: string;
