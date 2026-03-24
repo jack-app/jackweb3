@@ -9,12 +9,12 @@ type Achievement = {
   id: string;
   date: string;
   text: string;
-  image: string;
-  article_href: string;
-  web_href: string;
-  app_href: string;
-  google_href: string;
-  git_href: string;
+  image: { url: string; width?: number; height?: number };
+  article_href?: string;
+  web_href?: string;
+  app_href?: string;
+  google_href?: string;
+  git_href?: string;
 };
 
 const sampleAchievements: Record<string, Achievement[]> = {
@@ -23,10 +23,14 @@ const sampleAchievements: Record<string, Achievement[]> = {
       id: "2024",
       date: "2024-06-02",
       text: "test1",
-      image: "https://placehold.jp/200x200.png",
+      image: {
+        url: "https://placehold.jp/200x200.png",
+        width: 200,
+        height: 200,
+      },
       article_href: "https://ejje.weblio.jp/content/test",
       web_href: "https://www.youtube.com/",
-      app_href: " https://www.youtube.com/",
+      app_href: "https://www.youtube.com/",
       google_href: "https://www.youtube.com/",
       git_href: "https://github.com/jack-app/jackweb3/issues/45",
     },
@@ -34,7 +38,11 @@ const sampleAchievements: Record<string, Achievement[]> = {
       id: "2024",
       date: "2024-05-20",
       text: "testtesttesttesttesttesttesttest4",
-      image: "",
+      image: {
+        url: "https://placehold.jp/200x200.png",
+        width: 200,
+        height: 200,
+      },
       article_href: "",
       web_href: "",
       app_href: "",
@@ -47,10 +55,14 @@ const sampleAchievements: Record<string, Achievement[]> = {
       id: "2023",
       date: "2023-05-15",
       text: "test2",
-      image: "https://placehold.jp/200x200.png",
+      image: {
+        url: "https://placehold.jp/200x200.png",
+        width: 200,
+        height: 200,
+      },
       article_href: "https://ejje.weblio.jp/content/test",
       web_href: "",
-      app_href: " ",
+      app_href: "",
       google_href: "",
       git_href: "",
     },
@@ -60,10 +72,14 @@ const sampleAchievements: Record<string, Achievement[]> = {
       id: "2022",
       date: "2022-05-14",
       text: "test3",
-      image: "",
+      image: {
+        url: "https://placehold.jp/200x200.png",
+        width: 200,
+        height: 200,
+      },
       article_href: "",
       web_href: "",
-      app_href: " ",
+      app_href: "",
       google_href: "https://www.youtube.com/",
       git_href: "https://github.com/jack-app/jackweb3/issues/45",
     },
@@ -78,8 +94,8 @@ const meta: Meta<T> = {
   },
   tags: ["autodocs"],
   argTypes: {
-    sortedYear: { control: sampleYears },
-    groupedAchievement: { control: sampleAchievements },
+    sortedYear: { control: "object" },
+    groupedAchievement: { control: "object" },
   },
 };
 

@@ -19,9 +19,9 @@ export const getStaticProps = async () => {
     achievementDb.map(async (achievement: any) => {
       const res = {
         id: achievement.id,
-        image: "",
+        image: { url: "", width: undefined, height: undefined },
         date: achievement.properties.Date.date.start,
-        text: achievement.properties.Name.title[0]?.plain_text || null,
+        text: achievement.properties.Name.title.map((t: any) => t.plain_text).join("") || null,
         article_href: achievement.properties.Article.url || null,
         web_href: achievement.properties.WebLink.url || null,
         app_href: achievement.properties.AppStore.url || null,
@@ -33,19 +33,25 @@ export const getStaticProps = async () => {
       if (achievement.properties.Image.files && achievement.properties.Image.files.length > 0) {
         if (achievement.properties.Image.files[0].file?.url) {
           if (!achievement.cover) {
-            res.image = (
-              await cacheRemoteImage(
-                achievement.id,
-                "cover",
-                achievement.properties.Image.files[0].file.url,
-              )
-            ).url;
+            const imageData = await cacheRemoteImage(
+              achievement.id,
+              "cover",
+              achievement.properties.Image.files[0].file.url,
+            );
+            res.image.url = imageData.url;
+            res.image.width = imageData.width;
+            res.image.height = imageData.height;
           } else if (achievement.cover.type === "file") {
-            res.image = (
-              await cacheRemoteImage(achievement.id, "cover", achievement.cover.file.url)
-            ).url;
+            const imageData = await cacheRemoteImage(
+              achievement.id,
+              "cover",
+              achievement.cover.file.url,
+            );
+            res.image.url = imageData.url;
+            res.image.width = imageData.width;
+            res.image.height = imageData.height;
           } else if (achievement.cover.type === "external") {
-            res.image = achievement.cover.external.url;
+            res.image.url = achievement.cover.external.url;
           }
         }
       }
