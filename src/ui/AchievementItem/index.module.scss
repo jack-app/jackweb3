@@ -1,72 +1,70 @@
-@use '@/styles/variables' as *;
+@use "@/styles/variables" as *;
 
-.wrapper{
-    width: 100%;
-    display: flex;
-    background-color: #FFF4E3;
-    padding: 32px;
-    border-radius: $rounded-lg;
-    @media(max-width: $mobile){
-        padding: 16px;
-    }
+.wrapper {
+  width: 100%;
+  display: flex;
+  background-color: $primary-background;
+  padding: 32px;
+  border-radius: $rounded-lg;
+  gap: 2rem;
+  @media (max-width: $mobile) {
+    padding: 16px;
+  }
 }
 
-.context{
-    justify-content: space-between;
-    flex-flow: column ;
-    display: flex;
+.context {
+  justify-content: space-between;
+  flex-flow: column;
+  display: flex;
 }
-.date{
-    background-color: $white;
-    border-radius: $rounded-full;
-    text-align: center;
-    padding: 8px 16px;
-    width: 128px;
-    height: 40px;
-    @media (max-width: $mobile){
-        font-size: $text-sm;
-        height: 36px;
-        width: fit-content;
-    }
-}
-
-.text{
-    font-size: $text-3xl;
-    font-weight: 600;
-    @media(max-width: $pc){
-        font-size: $text-xl;
-        margin-top: 10px;
-    }
-    @media (max-width: $mobile){
-        font-size: $text-base;
-    }
+.date {
+  background-color: $white;
+  border-radius: $rounded-full;
+  text-align: center;
+  padding: 8px 16px;
+  width: 128px;
+  height: 40px;
+  @media (max-width: $mobile) {
+    font-size: $text-sm;
+    height: 36px;
+    width: fit-content;
+  }
 }
 
-.image{
-    width: 200px;
-    height: 200px;
-    object-fit: fill;
-    text-align: right;
-    justify-content: flex-end;
-    object-fit: cover;
-    margin-left: auto;
-    padding: 0;
-    @media (max-width: $pc){
-        display: none;
-    }
+.text {
+  font-size: $text-3xl;
+  font-weight: 600;
+  @media (max-width: $pc) {
+    font-size: $text-xl;
+    margin-top: 10px;
+  }
+  @media (max-width: $mobile) {
+    font-size: $text-base;
+  }
 }
 
-.tag{
-    width:100%;
-    display:flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 0;
-    @media (max-width: $pc){
-        margin-top: 10px;
-    }
+.imageWrapper {
+  position: relative;
+  width: 200px;
+  min-height: 200px;
+  margin-left: auto;
+  @media (max-width: $pc) {
+    display: none;
+  }
 }
 
-.tag > div{
-    gap: 8px;
+.image {
+  object-fit: contain;
+}
+
+.tag {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+  @media (max-width: $pc) {
+    margin-top: 10px;
+  }
 }

@@ -1,0 +1,15 @@
+@use "@/styles/variables" as *;
+
+.column {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (max-width: $mobile) {
+  .column {
+    width: 100%;
+  }
+}
