@@ -37,3 +37,89 @@
     margin: 32px auto;
   }
 }
+.pagenationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+}
+.pagenationCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  box-shadow: 1px 1px 4px gray;
+
+  &.active {
+    background-color: #FB8700;
+  }
+  &:not(.active) {
+    background-color: #FFF4E3;
+  }
+}
+
+
+
+.paginationButtonsWrapper {
+	//上下左右に中央寄せ
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+	//要素間の隙間(gap)を24pxに
+  gap: 24px;
+	//margin topとmarginbottomを64pxに
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.disabled {
+  //「<」「>」は，disabledのときは色を薄く表示(#948D79)
+  color: #948D79;
+}
+
+.circle {
+	//背景色は$primary-background
+  background-color: $primary-background;
+	//丸く
+  border-radius: 50%;
+	//widthとheightは50px
+  width: 50px;
+  height: 50px;
+	//テキストを中央寄せ
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleSelected {
+  //背景色は$primary
+  background-color: $primary;
+	//丸く
+  border-radius: 50%;
+	//widthとheightは50px
+  width: 50px;
+  height: 50px;
+	//テキストを中央寄せ
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numberText {
+  //フォントサイズは$text-2xl
+  font-size: $text-2xl;
+  //色は$primary
+  color : $primary;
+}
+
+.numberTextSelected {
+	//フォントサイズは$text-2xl
+  font-size: $text-2xl;
+  //色は$white
+  color : $white;
+}

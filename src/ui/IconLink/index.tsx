@@ -6,7 +6,7 @@ import styles from "./index.module.scss";
 type Props = {
   href: string;
   text: string;
-  icon: IconType;
+  icon?: IconType;
   size: "s" | "l";
   openInNewTab?: boolean;
 };
@@ -30,7 +30,7 @@ export const IconLink: React.FC<Props> = ({
   return (
     <Link href={href} className={btnClassName} {...targetProps}>
       <span className={styles.text}>{text}</span>
-      <Icon className={styles.icon} width={24} height={24} />
+        {Icon && <Icon className={styles.icon} width={24} height={24} />}
     </Link>
   );
 };
