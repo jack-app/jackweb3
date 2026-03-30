@@ -3,7 +3,8 @@ name: Production_Build
 on:
   schedule:
     # 定期実行する時間
-    - cron: '0 */6 * * *'
+    # 日本時間では 03:00 / 09:00 / 15:00 / 21:00 ごろに実行
+    - cron: "0 */6 * * *"
 
 jobs:
   build:
