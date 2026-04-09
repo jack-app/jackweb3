@@ -33,6 +33,7 @@ export const MembersScreen: React.FC = () => {
               text={prop.text}
               type={prop.type}
               image={prop.image}
+              job={prop.job}
             />
           ))}
         </div>
