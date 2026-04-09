@@ -262,7 +262,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             メンバーのインタビューも要チェック！
           </p>
           <div className={styles.membersList}>
-            {memberStories.map((member) => (
+            {memberStories.slice(0, 3).map((member) => (
               <div key={member.name} className={styles.membersImage}>
                 <Image
                   src={member.image}
