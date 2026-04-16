@@ -37,7 +37,7 @@ export const getStaticProps = async () => {
           : null;
         const res = {
           id: product.id,
-          image: "",
+          image: { url: "", width: null, height: null },
           title: product.properties.Name.title[0]?.plain_text || null,
           text: product.properties.Description.rich_text[0]?.plain_text || null,
           description: arrayDescription || null,
@@ -53,7 +53,7 @@ export const getStaticProps = async () => {
         if (product.properties.Image.files && product.properties.Image.files.length > 0) {
           if (product.properties.Image.files[0].file?.url) {
             if (!product.cover) {
-              res.image = (
+              res.image.url = (
                 await cacheRemoteImage(
                   product.id,
                   "cover",
@@ -61,14 +61,16 @@ export const getStaticProps = async () => {
                 )
               ).url;
             } else if (product.cover.type === "file") {
-              res.image = (await cacheRemoteImage(product.id, "cover", product.cover.file.url)).url;
+              res.image.url = (
+                await cacheRemoteImage(product.id, "cover", product.cover.file.url)
+              ).url;
             } else if (product.cover.type === "external") {
               res.image = product.cover.external.url;
             }
           }
         } else {
           // デフォルト画像の処理
-          res.image = "/orang.jpg";
+          res.image.url = "/primary.png";
         }
 
         return res;

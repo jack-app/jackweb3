@@ -11,7 +11,7 @@ import { IconLink } from "../IconLink";
 
 export type Props = {
   id?: string;
-  image: string;
+  image: { url: string; width: number | null; height: number | null };
   title: string;
   text?: RichText[];
   tags?: string[];
@@ -38,7 +38,25 @@ export const Production: React.FC<Props> = ({
 }) => {
   return (
     <div className={styles.wrapper}>
-      <Image className={styles.item_img} src={image || ""} alt="" width={352} height={200} />
+      <div
+        className={styles.item_image_wrapper}
+        style={{
+          aspectRatio:
+            image.width && image.height ? `${image.width} / ${image.height}` : "352 / 200",
+        }}
+      >
+        {/* 背景のぼかし画像 */}
+        <div className={styles.bg_blur_container}>
+          <Image className={styles.bg_blur} src={image.url} alt="" fill />
+        </div>
+        <Image
+          className={styles.item_img}
+          src={image.url}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 100vw, 352px"
+        />
+      </div>
       <div className={styles.item_context}>
         <div className={styles.context}>
           <div className={styles.title}>{title}</div>

@@ -16,7 +16,7 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
 
   return (
     <>
-      <Color key={product.id} src={product.image} format="rgbArray">
+      <Color key={product.id} src={product.image.url} format="rgbArray">
         {({ data }) => {
           if (Array.isArray(data)) {
             return (
@@ -30,7 +30,7 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                     <div className={styles.square}></div>
                     <Image
                       className={styles.product_image}
-                      src={product.image}
+                      src={product.image.url}
                       alt=""
                       width={100}
                       height={100}
