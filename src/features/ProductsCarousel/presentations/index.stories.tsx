@@ -7,7 +7,7 @@ type T = typeof ProductsCarouselPresentation;
 const sampleProducts: ProductionDetailProps[] = [
   {
     id: "1",
-    image: "/test_picture.png",
+    image: { url: "/test_picture.png", width: 100, height: 100 },
     title: "TITLE",
     description: [
       {

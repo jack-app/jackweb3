@@ -8,18 +8,37 @@
   align-items: center;
   border-radius: $rounded-lg;
   box-shadow: $shadow-sm;
+  overflow: hidden;
 }
 
 .item_context {
   padding: 16px 24px;
 }
 
-.item_img {
+.item_image_wrapper {
+  position: relative;
   width: 352px;
   height: 200px;
+  overflow: hidden;
+}
+
+.bg_blur_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.1);
+}
+
+.bg_blur {
   object-fit: cover;
-  border-top-left-radius: $rounded-lg;
-  border-top-right-radius: $rounded-lg;
+  filter: blur(40px) brightness(1.1);
+  opacity: 0.6;
+}
+
+.item_img {
+  object-fit: contain;
 }
 
 .title {

@@ -5,7 +5,7 @@ import React from "react";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import { Text } from "@/utils/renderText/renderText";
 import styles from "./index.module.scss";
-import { color_change } from "./logics";
+import { color_change, getContrastColor } from "./logics";
 
 type Props = {
   product: ProductionProps;
@@ -16,34 +16,56 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
 
   return (
     <>
-      <Color key={product.id} src={product.image} format="rgbArray">
+      <Color key={product.id} src={product.image.url} format="rgbArray">
         {({ data }) => {
           if (Array.isArray(data)) {
+            const bgColor = color_change(data);
+            const textColor = getContrastColor(data[0], data[1], data[2]);
+
             return (
-              <div className={`${styles.wrapper}`} style={{ backgroundColor: color_change(data) }}>
-                <div
-                  className={styles.head_line}
-                  style={{ backgroundColor: color_change(data) }}
-                ></div>
+              <div
+                className={`${styles.wrapper}`}
+                style={
+                  {
+                    "--dynamic-bg": bgColor,
+                    "--dynamic-text": textColor,
+                  } as React.CSSProperties
+                }
+              >
+                <div className={styles.head_line}></div>
                 <div className={styles.context}>
                   <div className={styles.context_left}>
-                    <div className={styles.square}></div>
-                    <Image
-                      className={styles.product_image}
-                      src={product.image}
-                      alt=""
-                      width={100}
-                      height={100}
-                    />
+                    <div className={styles.context_left_image}>
+                      <div className={styles.square}></div>
+                      <div
+                        className={styles.image_wrapper}
+                        style={{
+                          aspectRatio:
+                            product.image.width && product.image.height
+                              ? `${product.image.width} / ${product.image.height}`
+                              : "1 / 1",
+                        }}
+                      >
+                        <Image
+                          className={styles.product_image}
+                          src={product.image.url}
+                          alt={product.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 300px"
+                        />
+                      </div>
+                    </div>
 
-                    <div className={styles.title}>{product.title}</div>
+                    <div className={styles.context_left_text}>
+                      <div className={styles.title}>{product.title}</div>
 
-                    <div className={styles.sub_description}>
-                      {Array.isArray(product.description) && (
-                        <div className={styles.sub_description}>
-                          <Text richText={product.description} />
-                        </div>
-                      )}
+                      <div className={styles.sub_description}>
+                        {Array.isArray(product.description) && (
+                          <div className={styles.sub_description}>
+                            <Text richText={product.description} />
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div className={styles.line}></div>
