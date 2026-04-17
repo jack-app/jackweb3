@@ -313,7 +313,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             <br />
             開発秘話やためになる情報がいっぱい。
           </p>
-          <p className={styles.text3xlCenter}>最新記事</p>
+          <p className={styles.text3xlCenter}>ピックアップ記事</p>
           {/* Notionからランダムに取得したblog */}
           <div className={styles.articles}>
             {articles.map((article) => (
