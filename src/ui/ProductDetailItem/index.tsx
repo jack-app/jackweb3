@@ -27,23 +27,37 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                 ></div>
                 <div className={styles.context}>
                   <div className={styles.context_left}>
-                    <div className={styles.square}></div>
-                    <Image
-                      className={styles.product_image}
-                      src={product.image.url}
-                      alt=""
-                      width={100}
-                      height={100}
-                    />
+                    <div className={styles.context_left_image}>
+                      <div className={styles.square}></div>
+                      <div
+                        className={styles.image_wrapper}
+                        style={{
+                          aspectRatio:
+                            product.image.width && product.image.height
+                              ? `${product.image.width} / ${product.image.height}`
+                              : "1 / 1",
+                        }}
+                      >
+                        <Image
+                          className={styles.product_image}
+                          src={product.image.url}
+                          alt={product.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 300px"
+                        />
+                      </div>
+                    </div>
 
-                    <div className={styles.title}>{product.title}</div>
+                    <div className={styles.context_left_text}>
+                      <div className={styles.title}>{product.title}</div>
 
-                    <div className={styles.sub_description}>
-                      {Array.isArray(product.description) && (
-                        <div className={styles.sub_description}>
-                          <Text richText={product.description} />
-                        </div>
-                      )}
+                      <div className={styles.sub_description}>
+                        {Array.isArray(product.description) && (
+                          <div className={styles.sub_description}>
+                            <Text richText={product.description} />
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div className={styles.line}></div>

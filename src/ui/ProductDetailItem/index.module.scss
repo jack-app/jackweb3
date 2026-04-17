@@ -33,70 +33,75 @@
 .context_left {
   position: relative;
   width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width: $mobile) {
+    flex-direction: row;
+    justify-content: center;
     width: 340px;
     height: 190px;
+    gap: 2rem;
+  }
+}
+
+.context_left_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  @media (max-width: $mobile) {
+    padding: 0;
   }
 }
 
 .square {
   width: 120px;
   height: 120px;
-  margin: 30px 0 0 33px;
   position: absolute;
   background: rgba($color: #f1f1f1, $alpha: 0.2);
   z-index: 1;
-  @media (max-width: $mobile) {
-    width: 135px;
-  }
+  margin: auto;
+}
+
+.image_wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
 }
 
 .product_image {
-  margin: 2.5rem 2.7rem;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  z-index: 100;
-  @media (max-width: $mobile) {
-    width: 115px;
-  }
+  object-fit: contain;
 }
 
 .title {
   font-size: large;
   color: #ffffff;
-  position: absolute;
-  right: 20px;
-  bottom: 110px;
+  position: relative;
   width: 180px;
   text-align: end;
   font-family: "Abel", sans-serif;
   font-size: $text-xl;
   @media (max-width: $mobile) {
-    right: 10px;
-    bottom: 0px;
-    top: 40px;
-    height: 50px;
-    text-align: center;
+    text-align: start;
+    width: 140px;
   }
 }
 
 .sub_description {
   font-size: $rounded-xl;
   text-align: end;
-  margin: -10px 0 0px 40px;
-  padding: 0;
-  width: 120px;
+  padding-top: 3px;
+  width: 180px;
   height: auto;
   color: #f1f1f1;
   word-break: break-all;
   overflow-wrap: break-word;
   @media (max-width: $mobile) {
     text-align: left;
-    position: absolute;
-    right: 15px;
-    bottom: 0;
-    top: 50px;
+    width: 140px;
   }
 }
 
