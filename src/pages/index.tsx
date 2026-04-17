@@ -38,7 +38,7 @@ export const getStaticProps = async () => {
         const res = {
           id: product.id,
           image: { url: "", width: null, height: null },
-          title: product.properties.Name.title[0]?.plain_text || null,
+          title: product.properties.Name.title.map((t: any) => t.plain_text).join("") || null,
           text: product.properties.Description.rich_text[0]?.plain_text || null,
           description: arrayDescription || null,
           detail: arrayDetail || null,
