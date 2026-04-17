@@ -97,8 +97,9 @@
   width: 180px;
   height: auto;
   color: #f1f1f1;
-  word-break: break-all;
-  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
   @media (max-width: $mobile) {
     text-align: left;
     width: 140px;
@@ -121,9 +122,18 @@
 .context_right {
   display: flex;
   margin: 10px auto;
-  width: 300px;
-  height: fit-content;
   line-height: 145%;
+  width: 300px;
+  height: 255px;
+  overflow-y: auto;
+  // スクロールバーのデザイン
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+  }
   @media (max-width: $mobile) {
     position: relative;
     margin: 0;
@@ -155,10 +165,11 @@
 }
 
 .main_description {
-  width: 200px;
+  width: 240px;
   color: #f1f1f1;
-  word-break: break-all;
-  overflow-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: anywhere;
 }
 
 .link_context {
