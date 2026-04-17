@@ -7,7 +7,7 @@ type T = typeof ProductDetailItem;
 const sampleProducts: ProductionDetailProps[] = [
   {
     id: "1",
-    image: { url: "/test_picture.png", width: null, height: null },
+    image: { url: "/test_picture.png", width: 100, height: 100 },
     title: "TITLE",
     description: [
       {

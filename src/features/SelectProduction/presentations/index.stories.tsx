@@ -6,7 +6,7 @@ import { SelectProductionPresentation } from "./";
 // プロダクトのサンプルデータ
 const sampleProducts: ProductionProps[] = [
   {
-    image: "https://via.placeholder.com/150",
+    image: { url: "https://placehold.jp/352x200.png", width: 352, height: 200 },
     title: "Product 1",
     text: [
       {
@@ -29,7 +29,7 @@ const sampleProducts: ProductionProps[] = [
     google_href: undefined,
   },
   {
-    image: "https://via.placeholder.com/150",
+    image: { url: "https://placehold.jp/352x200.png", width: 352, height: 200 },
     title: "Product 2",
     text: [
       {
@@ -52,7 +52,7 @@ const sampleProducts: ProductionProps[] = [
     google_href: "https://play.google.com/store/apps/details?id=com.example.product2",
   },
   {
-    image: "https://via.placeholder.com/150",
+    image: { url: "https://placehold.jp/352x200.png", width: 352, height: 200 },
     title: "Product 3",
     text: [
       {
