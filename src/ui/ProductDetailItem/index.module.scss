@@ -5,7 +5,8 @@
 .wrapper {
   width: 530px;
   height: 310px;
-  background-color: var(--product-background-color);
+  background-color: var(--dynamic-bg);
+  color: var(--dynamic-text);
   z-index: 0;
   font-family: "Abel", "Zen Kaku Gothic New", sans-serif;
   margin: 0;
@@ -16,8 +17,9 @@
 }
 
 .head_line {
-  border-bottom: 1px solid #fff;
-  background-color: black;
+  border-bottom: 1px solid;
+  background-color: var(--dynamic-bg);
+  color: var(--dynamic-text);
   text-decoration: underline;
   margin: 0;
   height: 25px;
@@ -78,7 +80,7 @@
 
 .title {
   font-size: large;
-  color: #ffffff;
+  color: var(--dynamic-text);
   position: relative;
   width: 180px;
   text-align: end;
@@ -96,7 +98,7 @@
   padding-top: 3px;
   width: 180px;
   height: auto;
-  color: #f1f1f1;
+  color: var(--dynamic-text);
   word-break: normal;
   line-break: strict;
   overflow-wrap: anywhere;
@@ -107,13 +109,14 @@
 }
 
 .line {
-  border-left: 1px solid #fff;
+  border-left: 1px solid;
+  color: var(--dynamic-text);
   margin: 10px 0;
   padding: 0;
   height: 245px;
   @media (max-width: $mobile) {
     border-left: none;
-    border-top: 1px solid #fff;
+    border-top: 1px solid;
     margin: 0 10px;
     height: 3px;
   }
@@ -147,7 +150,7 @@
   margin: 0 8px;
   width: 18px;
   text-align: end;
-  color: #f1f1f1;
+  color: var(--dynamic-text);
   line-height: 145%;
 }
 
@@ -161,12 +164,12 @@
 }
 
 .release {
-  color: #f1f1f1;
+  color: var(--dynamic-text);
 }
 
 .main_description {
   width: 240px;
-  color: #f1f1f1;
+  color: var(--dynamic-text);
   word-break: normal;
   line-break: strict;
   overflow-wrap: anywhere;
@@ -176,12 +179,12 @@
   margin-top: auto;
 }
 .link {
-  color: #f1f1f1;
+  color: var(--dynamic-text);
   text-decoration: underline;
   width: fit-content;
 }
 
 .git {
-  color: #f1f1f1;
+  color: var(--dynamic-text);
   display: flex;
 }

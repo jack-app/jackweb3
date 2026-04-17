@@ -5,7 +5,7 @@ import React from "react";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import { Text } from "@/utils/renderText/renderText";
 import styles from "./index.module.scss";
-import { color_change } from "./logics";
+import { color_change, getContrastColor } from "./logics";
 
 type Props = {
   product: ProductionProps;
@@ -19,12 +19,20 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
       <Color key={product.id} src={product.image.url} format="rgbArray">
         {({ data }) => {
           if (Array.isArray(data)) {
+            const bgColor = color_change(data);
+            const textColor = getContrastColor(data[0], data[1], data[2]);
+
             return (
-              <div className={`${styles.wrapper}`} style={{ backgroundColor: color_change(data) }}>
-                <div
-                  className={styles.head_line}
-                  style={{ backgroundColor: color_change(data) }}
-                ></div>
+              <div
+                className={`${styles.wrapper}`}
+                style={
+                  {
+                    "--dynamic-bg": bgColor,
+                    "--dynamic-text": textColor,
+                  } as React.CSSProperties
+                }
+              >
+                <div className={styles.head_line}></div>
                 <div className={styles.context}>
                   <div className={styles.context_left}>
                     <div className={styles.context_left_image}>
