@@ -102,12 +102,17 @@
   width: 180px;
   height: auto;
   color: var(--dynamic-text);
-  word-break: normal;
-  line-break: strict;
-  overflow-wrap: anywhere;
+  //はみだしたら「...」で省略
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
   @media (max-width: $mobile) {
     text-align: left;
     width: 140px;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
   }
 }
 
