@@ -53,19 +53,21 @@ export const getStaticProps = async () => {
         if (product.properties.Image.files && product.properties.Image.files.length > 0) {
           if (product.properties.Image.files[0].file?.url) {
             if (!product.cover) {
-              res.image.url = (
-                await cacheRemoteImage(
-                  product.id,
-                  "cover",
-                  product.properties.Image.files[0].file.url,
-                )
-              ).url;
+              const imageData = await cacheRemoteImage(
+                product.id,
+                "cover",
+                product.properties.Image.files[0].file.url,
+              );
+              res.image.url = imageData.url;
+              res.image.width = imageData.width ?? null;
+              res.image.height = imageData.height ?? null;
             } else if (product.cover.type === "file") {
-              res.image.url = (
-                await cacheRemoteImage(product.id, "cover", product.cover.file.url)
-              ).url;
+              const imageData = await cacheRemoteImage(product.id, "cover", product.cover.file.url);
+              res.image.url = imageData.url;
+              res.image.width = imageData.width ?? null;
+              res.image.height = imageData.height ?? null;
             } else if (product.cover.type === "external") {
-              res.image = product.cover.external.url;
+              res.image.url = product.cover.external.url;
             }
           }
         } else {
