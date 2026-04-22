@@ -43,5 +43,5 @@ export function color_change(data: any) {
 export function getContrastColor(r: number, g: number, b: number) {
   // WCAGで定義されている輝度計算式
   const yiq = (r * 299 + g * 587 + b * 114) / 1000;
-  return yiq >= 128 ? "#000000" : "#ffffff";
+  return yiq >= 160 ? "#000000" : "#ffffff";
 }
