@@ -84,7 +84,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
         </div>
       </div>
       {/* 新歓情報 */}
-      <div id="welcome-week-section" className={styles.topContainer}>
+      {/* <div id="welcome-week-section" className={styles.topContainer}>
         <TopHeading2 title="新歓情報" />
         <div className={styles.topContainerInner}>
           <p className={styles.textDetailCenter}>新入生のみなさん、ご入学おめでとうございます！</p>
@@ -136,96 +136,9 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 <p className={styles.welcomeWeekText3xl}>名古屋大学図書館</p>
               </div>
             </div>
-
-            {/* <div className={styles.welcomeWeekSubContainer}>
-              <p className={styles.textDetail}>4/18 (土) 14:00 - 16:00</p>
-
-              <div className={styles.welcomeWeekDateDetailContainer}>
-                <div className={styles.welcomeWeekDay}>
-                  <p className={styles.welcomeWeekTextDetail}>
-                    <span className={styles.textDetail}>
-                      {" "}
-                      4/19&#40;土&#41; 10:15-12:30 13:30-15:45
-                    </span>
-                    <Link
-                      href="https://www.nskk.org/chubu/nyc/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className={styles.textBlue}>名古屋学生青年センター</span>
-                    </Link>
-                  </p>
-                </div>
-                <div className={styles.welcomeWeekDayDetail}>
-                  <p className={styles.welcomeWeekTextDetail}>
-                    <Link href="/products" rel="noopener noreferrer">
-                      <span className={styles.textBlue}>プロダクト一覧 </span>
-                    </Link>
-                    のあのプロダクトも展示されるかも？！
-                    <br />
-                    <br />
-                    11日と16日は日時が変更になる可能性があります。確定次第サイトの更新、Xでの通知をいたしますのでお待ちください。
-                  </p>
-                </div> 
-              </div>
-            </div> */}
           </div>
-          {/* <div className={styles.welcomeWeekTextDateContainer}>
-            <span className={styles.welcomeWeekText3xl}>jackについてもっと知りたい！</span>
-            <div className={styles.welcomeWeekSubContainer}>
-              <li>
-                FAQページは
-                <Link href="/faq" rel="noopener noreferrer">
-                  <span className={styles.textBlue}>こちら</span>
-                </Link>
-              </li>
-              <br />
-              <li>
-                <Link
-                  href="https://twitter.com/jack20200001101"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className={styles.textBlue}>Xのマシュマロ</span>
-                </Link>
-                で質問対応しています！お気軽にどうぞ！
-              </li>
-              <br />
-              <li>
-                個別で連絡を取りたい方は
-                <Link href="https://lin.ee/es5kIQR" target="_blank" rel="noopener noreferrer">
-                  <span className={styles.textBlue}>公式LINE </span>
-                </Link>
-                からお願いします &#40;Xの DMでは対応致しかねます&#41;
-              </li>
-              <br />
-            </div>
-          </div>
-
-          <div id="join-jack" className={styles.welcomeWeekTextDateContainer}>
-            <span className={styles.welcomeWeekText3xl}>jackに入りたい！</span>
-            <div className={styles.welcomeWeekSubContainer}>
-              確定フォームにご記入のうえ送信いただくと、確定会への参加が可能となります。
-              4月23日（水）に対面での確定会を実施いたしますのでご参加ください。
-              確定会に参加された時点で正式な入会となりますので、ご注意ください。
-              確定会の詳細については、確定フォーム内に記載しております。
-              なお、新入生以外の在学生の方もご回答いただけます。
-              <br />
-              <br />
-              確定フォームは4月から受付開始です。
-              <div className={styles.welcomeWeekJoin}>
-                <IconLink
-                  href={JOIN_URL}
-                  text="確定フォーム"
-                  icon={SlArrowRight}
-                  size="l"
-                  openInNewTab={true}
-                />
-              </div>
-            </div>
-          </div> */}
         </div>
-      </div>
+      </div> */}
       {/* 新歓情報終わり */}
       <div className={styles.topContainer}>
         <TopHeading2 title="活動内容" />
@@ -237,11 +150,11 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
                 オンラインでの活動もあり。
                 <br />
                 jackで開催されるイベントについて知りたい方はこちらをチェック！
-                {/* <br />
+                <br />
                 <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
                   <span className={styles.textBlue}>見学申し込み</span>
                 </Link>
-                も受付中！ */}
+                も受付中！
               </p>
             </div>
             <div className={styles.jackPhoto}>
@@ -328,7 +241,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
           </div>
         </div>
       </div>
-      {/* <div className={styles.topContainer}>
+      <div className={styles.topContainer}>
         <TopHeading2 title="見学申し込み" />
         <div className={styles.topContainerInner}>
           <div className={styles.calendarContainer}>
@@ -369,7 +282,7 @@ export const TopScreen: React.FC<Props> = ({ articles, product }) => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
