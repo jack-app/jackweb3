@@ -158,6 +158,8 @@
   text-align: end;
   color: var(--dynamic-text);
   line-height: 145%;
+  display: flex;
+  flex-direction: column;
 }
 
 .context_text_right {

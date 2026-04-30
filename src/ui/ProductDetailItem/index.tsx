@@ -70,7 +70,11 @@ export const ProductDetailItem: React.FC<Props> = ({ product }) => {
                   </div>
                   <div className={styles.line}></div>
                   <div className={styles.context_right}>
-                    <div className={styles.decoration_number}>1 2 3 4 5 6 7 8 9 10 11</div>
+                    <div className={styles.decoration_number}>
+                      {[...Array(11)].map((_, i) => (
+                        <div key={i}>{i + 1}</div>
+                      ))}
+                    </div>
                     <div className={styles.context_text_right}>
                       <div className={styles.detail}>
                         {Array.isArray(product.release_date) && (
