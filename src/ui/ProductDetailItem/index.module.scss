@@ -83,7 +83,7 @@
   color: var(--dynamic-text);
   position: relative;
   width: 180px;
-  text-align: end;
+  text-align: start;
   font-family: "Abel", "Zen Kaku Gothic New", sans-serif;
   font-size: $text-xl;
   @media (max-width: $mobile) {
@@ -95,7 +95,7 @@
 .sub_description {
   font-family: "Abel", "Zen Kaku Gothic New", sans-serif;
   font-size: $rounded-xl;
-  text-align: end;
+  text-align: start;
   padding-top: 3px;
   width: 180px;
   height: auto;
