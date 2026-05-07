@@ -51,7 +51,7 @@ const createOGPImage = async function (
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "8px",
-          gap: "16px",
+          gap: "24px",
           backgroundColor: "#FFFCF2",
           color: "#484335",
           width: "90%",
@@ -60,7 +60,7 @@ const createOGPImage = async function (
         }}
       >
         <div style={{ display: "flex", fontSize: "48px", fontWeight: 700 }}>{title}</div>
-        <div style={{ display: "flex", fontSize: "32px" }}>@{writerName}</div>
+        <div style={{ display: "flex", fontSize: "40px", fontWeight: 400 }}>@{writerName}</div>
       </div>
     </div>,
     {
