@@ -1,39 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { PiPencilCircle } from "react-icons/pi";
 import styles from "./index.module.scss";
 
 type Props = {
   writerName: string;
-  writerImage: string;
   isLink?: boolean;
 };
 
-export const Writer: React.FC<Props> = ({ writerName, writerImage, isLink = false }) => {
+export const Writer: React.FC<Props> = ({ writerName, isLink = false }) => {
   return isLink ? (
     <Link href={`/blog/writer/${writerName}`}>
       <div className={styles.link}>
-        <Image
-          className={styles.image}
-          src={writerImage}
-          alt={writerName}
-          width={24}
-          height={24}
-          unoptimized
-        />
+        <PiPencilCircle className={styles.image} />
         <span className={styles.name}>{writerName}</span>
       </div>
     </Link>
   ) : (
     <div className={styles.writer}>
-      <Image
-        className={styles.image}
-        src={writerImage}
-        alt={writerName}
-        width={24}
-        height={24}
-        unoptimized
-      />
+      <PiPencilCircle className={styles.image} />
       <span className={styles.name}>{writerName}</span>
     </div>
   );
