@@ -4,7 +4,12 @@ import sharp from "sharp";
 
 // ogp画像を動的に生成。
 // Next.jsのデフォルトでサポートされているが、edgeランタイムで使用するとエラーになるため、satoriを使用。
-const createOGPImage = async function (id: string, title: string, writerName: string) {
+const createOGPImage = async function (
+  id: string,
+  title: string,
+  writerName: string,
+  lastEditTime: string,
+) {
   const regularFont = fs.readFileSync("public/ZenKakuGothicNew-Regular.ttf");
   const boldFont = fs.readFileSync("public/ZenKakuGothicNew-Bold.ttf");
 
@@ -16,7 +21,16 @@ const createOGPImage = async function (id: string, title: string, writerName: st
     fs.mkdirSync(path);
   }
 
-  if (fs.existsSync(cover)) return result;
+  if (fs.existsSync(cover)) {
+    const stats = fs.statSync(cover);
+    const fileUpdateTime = new Date(stats.mtime).getTime();
+    const notionUpdateTime = new Date(lastEditTime).getTime();
+
+    // ファイルの更新時間よりも、Notionの更新時間の方が新しい場合のみ、以降の生成処理に進む
+    if (fileUpdateTime > notionUpdateTime) {
+      return result;
+    }
+  }
 
   const svg = await satori(
     <div
@@ -66,7 +80,7 @@ const createOGPImage = async function (id: string, title: string, writerName: st
           style: "normal",
         },
       ],
-    }
+    },
   );
 
   // ogp画像ではsvgが使えないため、pngに変換する。

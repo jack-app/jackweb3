@@ -39,10 +39,15 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
         return isPublished;
       })
       .map(async (article: any) => {
+        const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+        const createdBy = article.properties.Created_By?.formula?.string;
+        const writerName = customName || createdBy || "Unknown";
+        const title = article.properties.Name.title[0].plain_text;
+
         let res = {
           id: article.id,
           image: null,
-          title: article.properties.Name.title[0].plain_text,
+          title: title,
           tags: article.properties.tag.multi_select.map((tag: any) => ({
             ...tag,
             isLink: true,
@@ -52,8 +57,10 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
             : article.created_time.slice(0, 10),
         } as ArticleItemProps;
 
+        await createOGPImage(article.id, title, writerName, article.last_edited_time);
+
         if (!article.cover) {
-          res.image = `/${article.id}/ogp.png`;
+          res.image = `/${article.id}/ogp.png?v=${new Date(article.last_edited_time).getTime()}`;
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
           res.image = (await cacheRemoteImage(article.id, "cover", article.cover.file.url)).url;

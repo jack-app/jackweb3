@@ -25,7 +25,7 @@ export default function Article({
     <>
       <Meta
         title={pageInfo.title}
-        ogImage={`/${id}/ogp.png`}
+        ogImage={`/${id}/ogp.png?v=${new Date().getTime()}`}
         pageType="article"
         description={description}
       />
@@ -147,7 +147,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
 
   const title = page.properties.Name.title[0].plain_text;
   const writerName = customName ? customName : createdBy || null;
-  await createOGPImage(pageId, title, writerName);
+  await createOGPImage(pageId, title, writerName, page.last_edited_time);
 
   return {
     props: {

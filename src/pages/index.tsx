@@ -123,6 +123,7 @@ export const getStaticProps = async () => {
             article.id,
             article.properties.Name.title[0].plain_text,
             article.properties.Writer.created_by.name,
+            article.last_edited_time,
           );
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
