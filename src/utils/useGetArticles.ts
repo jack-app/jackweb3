@@ -30,11 +30,10 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
         const hasTag = article.properties.tag.multi_select.some((tag: any) => {
           return tag.name === tagParam;
         });
-        const hasWriter = writerParam
-          ? article.properties.Writer &&
-            article.properties.Writer.created_by &&
-            article.properties.Writer.created_by.name === writerParam
-          : true;
+        const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+        const createdBy = article.properties.Created_By?.formula?.string;
+        const currentWriterName = customName || createdBy;
+        const hasWriter = writerParam ? currentWriterName === writerParam : true;
         if (tagParam) return isPublished && hasTag;
         if (writerParam) return isPublished && hasWriter;
         return isPublished;
