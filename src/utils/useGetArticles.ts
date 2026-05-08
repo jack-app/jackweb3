@@ -30,20 +30,24 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
         const hasTag = article.properties.tag.multi_select.some((tag: any) => {
           return tag.name === tagParam;
         });
-        const hasWriter = writerParam
-          ? article.properties.Writer &&
-            article.properties.Writer.created_by &&
-            article.properties.Writer.created_by.name === writerParam
-          : true;
+        const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+        const createdBy = article.properties.Created_By?.formula?.string;
+        const currentWriterName = customName || createdBy;
+        const hasWriter = writerParam ? currentWriterName === writerParam : true;
         if (tagParam) return isPublished && hasTag;
         if (writerParam) return isPublished && hasWriter;
         return isPublished;
       })
       .map(async (article: any) => {
+        const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+        const createdBy = article.properties.Created_By?.formula?.string;
+        const writerName = customName || createdBy || "Unknown";
+        const title = article.properties.Name.title[0].plain_text;
+
         let res = {
           id: article.id,
           image: null,
-          title: article.properties.Name.title[0].plain_text,
+          title: title,
           tags: article.properties.tag.multi_select.map((tag: any) => ({
             ...tag,
             isLink: true,
@@ -53,8 +57,10 @@ export const getArticles: UseGetArticles = async (tagParam?: string, writerParam
             : article.created_time.slice(0, 10),
         } as ArticleItemProps;
 
+        await createOGPImage(article.id, title, writerName, article.last_edited_time);
+
         if (!article.cover) {
-          res.image = `/${article.id}/ogp.png`;
+          res.image = `/${article.id}/ogp.png?v=${new Date(article.last_edited_time).getTime()}`;
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する
           res.image = (await cacheRemoteImage(article.id, "cover", article.cover.file.url)).url;

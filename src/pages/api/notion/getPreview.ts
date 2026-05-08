@@ -23,10 +23,11 @@ export default async function getPage(
 ) {
   try {
     const page = (await notionGetPage(req.body.pageId)) as any;
+    const createdBy = page.properties.Created_By?.formula?.string;
+    const customName = page.properties.Custom_Name?.rich_text?.[0]?.plain_text;
     const pageInfo = {
       title: page.properties.Name.title[0].plain_text,
-      writerName: page.properties.Writer.created_by.name || null,
-      writerImage: page.properties.Writer.created_by.avatar_url || null,
+      writerName: customName || createdBy || null,
       tags: page.properties.tag.multi_select,
       date: page.properties.Publish_Date.date
         ? page.properties.Publish_Date.date.start

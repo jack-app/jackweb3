@@ -2,7 +2,6 @@ import { BlogArticleScreen } from "@/screens/BlogArticle";
 import { Block, Column } from "@/types/block";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Props as PageInfo } from "@/ui/ArticleTitle";
-import { cacheRemoteAvatar } from "@/utils/cacheRemoteAvatar";
 import cacheRemoteImage from "@/utils/cacheRemoteImage";
 import createOGPImage from "@/utils/createOGPImage";
 import { Meta } from "@/utils/meta";
@@ -15,18 +14,20 @@ export default function Article({
   pageInfo,
   suggestArticles,
   description,
+  lastEditedTime,
 }: {
   id: string;
   blocks: Block[];
   pageInfo: PageInfo;
   suggestArticles: ArticleItemProps[];
   description: string;
+  lastEditedTime: string;
 }) {
   return (
     <>
       <Meta
         title={pageInfo.title}
-        ogImage={`/${id}/ogp.png`}
+        ogImage={`/${id}/ogp.png?v=${new Date(lastEditedTime).getTime()}`}
         pageType="article"
         description={description}
       />
@@ -54,13 +55,11 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const pageId = params.id as string;
   const blocks = (await getBlocks(pageId)) as Block[];
   const page = (await getPage(pageId)) as any;
-  const writerId = page.properties.Writer.created_by.id;
-  const rawAvatarUrl = page.properties.Writer.created_by.avatar_url;
-  const optimizedAvatarUrl = rawAvatarUrl ? await cacheRemoteAvatar(writerId, rawAvatarUrl) : null;
+  const createdBy = page.properties.Created_By?.formula?.string;
+  const customName = page.properties.Custom_Name?.rich_text?.[0]?.plain_text;
   const pageInfo = {
     title: page.properties.Name.title[0].plain_text,
-    writerName: page.properties.Writer.created_by.name || null,
-    writerImage: optimizedAvatarUrl,
+    writerName: customName || createdBy || null,
     tags: page.properties.tag.multi_select,
     date: page.properties.Publish_Date.date
       ? page.properties.Publish_Date.date.start
@@ -149,8 +148,8 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const suggestArticles = await getSuggestArticles();
 
   const title = page.properties.Name.title[0].plain_text;
-  const writerName = page.properties.Writer.created_by.name || null;
-  await createOGPImage(pageId, title, writerName);
+  const writerName = customName || createdBy || null;
+  await createOGPImage(pageId, title, writerName, page.last_edited_time);
 
   return {
     props: {
@@ -159,6 +158,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       suggestArticles: suggestArticles,
       pageInfo: pageInfo,
       description: description,
+      lastEditedTime: page.last_edited_time,
     },
   };
 };

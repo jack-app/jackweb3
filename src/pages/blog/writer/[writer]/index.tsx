@@ -27,12 +27,11 @@ export async function getStaticPaths() {
 
   const writers = new Set<string>();
   articleDb.forEach((article: any) => {
-    if (
-      article.properties.Writer &&
-      article.properties.Writer.created_by &&
-      article.properties.Writer.created_by.name
-    ) {
-      writers.add(article.properties.Writer.created_by.name);
+    const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+    const createdBy = article.properties.Created_By?.formula?.string;
+    const writerName = customName || createdBy;
+    if (writerName) {
+      writers.add(writerName);
     }
   });
   const paths = Array.from(writers).map((writer) => ({
