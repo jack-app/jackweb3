@@ -119,10 +119,13 @@ export const getStaticProps = async () => {
         } as ArticleItemProps;
 
         if (!article.cover) {
+          const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+          const createdBy = article.properties.Created_By?.formula?.string;
+          const writerName = customName || createdBy || "Unknown";
           res.image = await createOGPImage(
             article.id,
             article.properties.Name.title[0].plain_text,
-            article.properties.Writer.created_by.name,
+            writerName,
             article.last_edited_time,
           );
         } else if (article.cover.type === "file") {

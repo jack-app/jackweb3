@@ -14,18 +14,20 @@ export default function Article({
   pageInfo,
   suggestArticles,
   description,
+  lastEditedTime,
 }: {
   id: string;
   blocks: Block[];
   pageInfo: PageInfo;
   suggestArticles: ArticleItemProps[];
   description: string;
+  lastEditedTime: string;
 }) {
   return (
     <>
       <Meta
         title={pageInfo.title}
-        ogImage={`/${id}/ogp.png?v=${new Date().getTime()}`}
+        ogImage={`/${id}/ogp.png?v=${new Date(lastEditedTime).getTime()}`}
         pageType="article"
         description={description}
       />
@@ -57,7 +59,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const customName = page.properties.Custom_Name?.rich_text?.[0]?.plain_text;
   const pageInfo = {
     title: page.properties.Name.title[0].plain_text,
-    writerName: customName ? customName : createdBy || null,
+    writerName: customName || createdBy || null,
     tags: page.properties.tag.multi_select,
     date: page.properties.Publish_Date.date
       ? page.properties.Publish_Date.date.start
@@ -146,7 +148,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
   const suggestArticles = await getSuggestArticles();
 
   const title = page.properties.Name.title[0].plain_text;
-  const writerName = customName ? customName : createdBy || null;
+  const writerName = customName || createdBy || null;
   await createOGPImage(pageId, title, writerName, page.last_edited_time);
 
   return {
@@ -156,6 +158,7 @@ export const getStaticProps = async ({ params }: { params: { id: string } }) => 
       suggestArticles: suggestArticles,
       pageInfo: pageInfo,
       description: description,
+      lastEditedTime: page.last_edited_time,
     },
   };
 };

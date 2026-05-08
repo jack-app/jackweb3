@@ -27,7 +27,7 @@ export default async function getPage(
     const customName = page.properties.Custom_Name?.rich_text?.[0]?.plain_text;
     const pageInfo = {
       title: page.properties.Name.title[0].plain_text,
-      writerName: customName ? customName : createdBy || null,
+      writerName: customName || createdBy || null,
       tags: page.properties.tag.multi_select,
       date: page.properties.Publish_Date.date
         ? page.properties.Publish_Date.date.start
