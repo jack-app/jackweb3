@@ -2,6 +2,10 @@ import { Client } from "@notionhq/client";
 
 const notionClient = new Client({
   auth: process.env.NOTION_TOKEN,
+  // タイムアウトを60秒に設定
+  // 大量の静的ページ（SSG）ビルド時に、Notion APIのレートリミット（429エラー）や
+  // 応答遅延によるビルド失敗を防ぐため、SDK内蔵の自動リトライ機能を有効化しています。
+  timeoutMs: 60_000,
 });
 
 export const getDatabase = async (databaseId: string) => {
