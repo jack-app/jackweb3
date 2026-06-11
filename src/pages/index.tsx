@@ -1,3 +1,4 @@
+import { ISR_REVALIDATE_SECONDS } from "@/constants";
 import { TopScreen } from "@/screens/Top";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
@@ -147,5 +148,6 @@ export const getStaticProps = async () => {
       product: filteredProduct,
       articles: filteredArticles,
     },
+    revalidate: ISR_REVALIDATE_SECONDS,
   };
 };

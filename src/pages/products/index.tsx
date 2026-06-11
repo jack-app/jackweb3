@@ -1,3 +1,4 @@
+import { ISR_REVALIDATE_SECONDS } from "@/constants";
 import { ProductsScreen } from "@/screens/Products";
 import { ProductionDetailProps as ProductionProps } from "@/ui/Production";
 import cacheRemoteImage from "@/utils/cacheRemoteImage";
@@ -73,5 +74,6 @@ export const getStaticProps = async () => {
     props: {
       products,
     },
+    revalidate: ISR_REVALIDATE_SECONDS,
   };
 };

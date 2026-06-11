@@ -1,3 +1,4 @@
+import { ISR_REVALIDATE_SECONDS } from "@/constants";
 import { BlogScreen } from "@/screens/Blog";
 import { Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Meta } from "@/utils/meta";
@@ -19,5 +20,6 @@ export async function getStaticProps() {
     props: {
       articles,
     },
+    revalidate: ISR_REVALIDATE_SECONDS,
   };
 }
