@@ -1,3 +1,4 @@
+import { ISR_REVALIDATE_SECONDS } from "@/constants";
 import { AchievementsScreen } from "@/screens/Achievements";
 import { Props as AchievementItemProps } from "@/ui/AchievementItem";
 import cacheRemoteImage from "@/utils/cacheRemoteImage";
@@ -62,5 +63,6 @@ export const getStaticProps = async () => {
     props: {
       achievements,
     },
+    revalidate: ISR_REVALIDATE_SECONDS,
   };
 };
