@@ -65,7 +65,6 @@ export const Default: Story = {
     pageInfo: {
       title: "記事タイトル",
       writerName: "Writer Name",
-      writerImage: "Writer Image",
       tags: [
         { id: "tag id", name: "tagname", color: "blue" },
         { id: "tag id2", name: "tagname2", color: "orange" },

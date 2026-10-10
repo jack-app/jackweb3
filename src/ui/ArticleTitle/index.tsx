@@ -6,17 +6,14 @@ import { Writer } from "../Writer";
 export type Props = {
   title: string;
   writerName: string | null;
-  writerImage: string | null;
   tags: TagType[];
   date: string;
 };
 
-export const ArticleTitle: React.FC<Props> = ({ title, writerName, writerImage, tags, date }) => {
+export const ArticleTitle: React.FC<Props> = ({ title, writerName, tags, date }) => {
   return (
     <div>
-      {writerImage && writerName && (
-        <Writer writerName={writerName} writerImage={writerImage} isLink />
-      )}
+      {writerName && <Writer writerName={writerName} isLink />}
       <h1 className={styles.title}>{title}</h1>
       <div className={styles.tagContainer}>
         {tags.map((tag) => (

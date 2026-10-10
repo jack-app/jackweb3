@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </div>
       <div className="dummy-header"></div>
       <Component {...pageProps} />
-      <FloatingBanner />
+      {/* <FloatingBanner /> */}
       <Footer />
     </div>
   );

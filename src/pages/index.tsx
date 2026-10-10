@@ -37,8 +37,8 @@ export const getStaticProps = async () => {
           : null;
         const res = {
           id: product.id,
-          image: "",
-          title: product.properties.Name.title[0]?.plain_text || null,
+          image: { url: "", width: null, height: null },
+          title: product.properties.Name.title.map((t: any) => t.plain_text).join("") || null,
           text: product.properties.Description.rich_text[0]?.plain_text || null,
           description: arrayDescription || null,
           detail: arrayDetail || null,
@@ -53,22 +53,26 @@ export const getStaticProps = async () => {
         if (product.properties.Image.files && product.properties.Image.files.length > 0) {
           if (product.properties.Image.files[0].file?.url) {
             if (!product.cover) {
-              res.image = (
-                await cacheRemoteImage(
-                  product.id,
-                  "cover",
-                  product.properties.Image.files[0].file.url,
-                )
-              ).url;
+              const imageData = await cacheRemoteImage(
+                product.id,
+                "cover",
+                product.properties.Image.files[0].file.url,
+              );
+              res.image.url = imageData.url;
+              res.image.width = imageData.width ?? null;
+              res.image.height = imageData.height ?? null;
             } else if (product.cover.type === "file") {
-              res.image = (await cacheRemoteImage(product.id, "cover", product.cover.file.url)).url;
+              const imageData = await cacheRemoteImage(product.id, "cover", product.cover.file.url);
+              res.image.url = imageData.url;
+              res.image.width = imageData.width ?? null;
+              res.image.height = imageData.height ?? null;
             } else if (product.cover.type === "external") {
-              res.image = product.cover.external.url;
+              res.image.url = product.cover.external.url;
             }
           }
         } else {
           // デフォルト画像の処理
-          res.image = "/orang.jpg";
+          res.image.url = "/primary.png";
         }
 
         return res;
@@ -115,10 +119,14 @@ export const getStaticProps = async () => {
         } as ArticleItemProps;
 
         if (!article.cover) {
+          const customName = article.properties.Custom_Name?.rich_text?.[0]?.plain_text;
+          const createdBy = article.properties.Created_By?.formula?.string;
+          const writerName = customName || createdBy || "Unknown";
           res.image = await createOGPImage(
             article.id,
             article.properties.Name.title[0].plain_text,
-            article.properties.Writer.created_by.name,
+            writerName,
+            article.last_edited_time,
           );
         } else if (article.cover.type === "file") {
           // カバー画像のtypeがfileの場合、有効期限があるのでbufferに変換する

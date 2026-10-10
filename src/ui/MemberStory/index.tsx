@@ -7,9 +7,10 @@ type Props = {
   name: string;
   text: string;
   type: string;
+  job?: string;
 };
 
-export const MemberStory: React.FC<Props> = ({ name, text, type, image }) => {
+export const MemberStory: React.FC<Props> = ({ name, text, type, image, job }) => {
   return (
     <>
       <div className={styles.wrapper}>
@@ -19,18 +20,19 @@ export const MemberStory: React.FC<Props> = ({ name, text, type, image }) => {
             src={image}
             width={244}
             height={244}
-            alt="メンバーのアイコン"
+            alt={`${name}のプロフィール画像`}
           />
           <div className={styles.square}></div>
         </div>
 
         <div className={styles.card}>
-          <div className={styles.card__header}>
-            {" "}
-            <div className={styles.name}>{name}</div>
-            <div className={styles.type}>{type}</div>
+          <div className={styles.card_header_wrapper}>
+            {job && <span className={styles.job}>{job}</span>}
+            <div className={styles.card_header}>
+              <div className={styles.name}>{name}</div>
+              <div className={styles.type}>{type}</div>
+            </div>
           </div>
-
           <div className={styles.text}>{text}</div>
         </div>
       </div>
