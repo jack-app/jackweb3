@@ -35,8 +35,8 @@ export const PaginationButton = ({
 
   return (
     <div className={styles.paginationButtonsWrapper}>
-	    
-	    {/* 「前へ」のボタンを配置 */}
+
+      {/* 「前へ」のボタンを配置 */}
       <button
         className={prevButtonDisable ? styles.disabled : ""}
         onClick={onPrev}
@@ -44,22 +44,25 @@ export const PaginationButton = ({
       >
         <SlArrowLeft />
       </button>
-      
-      {/* 「丸に数字」のボタンを配置 (例:1) map()使いたい*/}
-      
+
+      {/* 「丸に数字」のボタンを配置 (例:1),mapで並べる*/}
+      {pages.map((page) => (
         <button
-          key={1}
-          className={selectedIndex === 1 ? styles.circleSelected : styles.circle}
-          onClick={() => onPageChange(1)}
+          key={page}
+          className={selectedIndex === page ? styles.circleSelected : styles.circle}
+          onClick={() => onPageChange(page)}
         >
           <p
-            className={selectedIndex === 1 ? styles.numberTextSelected : styles.numberText}
+            className={
+              selectedIndex === page ? styles.numberTextSelected : styles.numberText
+            }
           >
-            1
+            {page}
           </p>
         </button>
-        
-     
+      ))}
+
+
       {/* 「次へ」のボタンを配置 */}
       <button
         className={nextButtonDisable ? styles.disabled : ""}
@@ -73,35 +76,31 @@ export const PaginationButton = ({
 };
 
 
-// let pageIndex = 1; // 現在のページインデックス
-
-// const PagenationButton: React.FC<{ text: string; index: number; active: boolean; icon?: IconType }> = ({ text, index, active, icon: Icon }) => {
-//   return (
-//     <button className={`${styles.pagenationCircle} ${active ? styles.active : "h3"}`}>
-//       <span className={styles.text}>{text}</span>
-//       {Icon && <Icon className={styles.icon} width={24} height={24} />}
-//     </button>
-//   );
-// }
-
-
 export const BlogScreen: React.FC<Props> = ({ articles, headingText }) => {
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const ARTICLES_PER_PAGE = 30;
+  const totalPages = Math.ceil(articles.length / ARTICLES_PER_PAGE);
+
   return (
     <main>
       <Heading1 enTitle="Blog" jaTitle="ブログ" />
       <div className={styles.wrapper}>
         <Heading2 text={headingText} />
         <div className={styles.articlesWrapper}>
-          {articles.map((article) => (
+          {articles.slice((selectedIndex - 1) * ARTICLES_PER_PAGE, selectedIndex * ARTICLES_PER_PAGE).map((article) => (
             <ArticleItem key={article.id} {...article} />
           ))}
         </div>
         <div>
-            {/* ここにページネーションのコンポーネントを追加 */}
-            {/* もしかしたらそれぞれを配置するコンポーネントがいるかもね */}
-            <div className={styles.pagenationWrapper}>
-              <PaginationButton selectedIndex={1} totalPages={5} onPrev={() => {}} onNext={() => {}} onPageChange={() => {}} />
-            </div>
+          <div className={styles.pagenationWrapper}>
+            <PaginationButton
+              selectedIndex={selectedIndex}
+              totalPages={totalPages}
+              onPrev={() => setSelectedIndex((prev) => Math.max(1, prev - 1))}
+              onNext={() => setSelectedIndex((prev) => Math.min(totalPages, prev + 1))}
+              onPageChange={(page) => setSelectedIndex(page)}
+            />
+          </div>
         </div>
       </div>
     </main>
