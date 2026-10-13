@@ -1,19 +1,16 @@
 import React from "react";
+import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 import { ArticleItem, Props as ArticleItemProps } from "@/ui/ArticleItem";
 import { Heading1 } from "@/ui/Heading1";
 import { Heading2 } from "@/ui/Heading2";
 import styles from "./index.module.scss";
-import { IconLink } from "@/ui/IconLink";
-//import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-import { IconType } from "react-icons";
-import { text } from "stream/consumers";
+
 
 type Props = {
   articles: ArticleItemProps[];
   headingText: string;
 };
 
-import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 
 export const PaginationButton = ({
   selectedIndex,
