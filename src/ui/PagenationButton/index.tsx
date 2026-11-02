@@ -1,8 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { SlArrowRight, SlArrowLeft } from "react-icons/sl";
 import styles from "./index.module.scss";
-
 
 export const PaginationButton = ({
   selectedIndex,
@@ -17,65 +15,35 @@ export const PaginationButton = ({
   onNext: () => void;
   onPageChange: (index: number) => void;
 }) => {
-
-  const Pages = (selectedIndex: number, totalPages: number) => {
-    const [width, setWidth] = useState(window.innerWidth);
-    useEffect(() => {
-      const handleResize = () => {
-        setWidth(window.innerWidth);
-      };
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
-
-    const isTabPC = width > 768;
-
-    if (isTabPC) {
-      if (totalPages <= 8) {
-        return Array.from({ length: totalPages }, (_, i) => i + 1);
+  const Pages = (selectedIndex: number, totalPages: number): (number | "...")[] => {
+    if (totalPages >= 6) {
+      if (selectedIndex < 3) {
+        return [1, 2, 3, "...", totalPages];
       }
-    } else {
-      if (totalPages <= 6) {
-        return Array.from({ length: totalPages }, (_, i) => i + 1);
+
+      if (selectedIndex == 3) {
+        return [1, 2, 3, 4, "...", totalPages];
       }
+
+      if (selectedIndex == totalPages - 2) {
+        return [1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
+      }
+
+      if (selectedIndex > totalPages - 2) {
+        return [1, "...", totalPages - 2, totalPages - 1, totalPages];
+      }
+
+      return [1, "...", selectedIndex - 1, selectedIndex, selectedIndex + 1, "...", totalPages];
     }
 
-
-    const startPage = Math.max(2, selectedIndex - 1);
-    const endPage = Math.min(totalPages - 1, selectedIndex + 1);
-
-    const pages: (number | "...")[] = [];
-
-    pages.push(1);
-
-    if (startPage > 2) {
-      pages.push("...");
-    }
-
-    for (let p = startPage; p <= endPage; p++) {
-      pages.push(p);
-    }
-
-    if (endPage < totalPages - 1) {
-      pages.push("...");
-    }
-
-    pages.push(totalPages);
-
-    return pages;
+    return Array.from({ length: totalPages }, (_, index) => index + 1);
   };
-
 
   const prevButtonDisable = selectedIndex === 1;
   const nextButtonDisable = selectedIndex === totalPages;
 
   return (
     <div className={styles.paginationButtonsWrapper}>
-
       {/* 「前へ」のボタンを配置 */}
       <button
         className={`${styles.prevAndNextButton} ${prevButtonDisable ? styles.disabled : ""}`}
@@ -97,18 +65,12 @@ export const PaginationButton = ({
             className={selectedIndex === page ? styles.circleSelected : styles.circle}
             onClick={() => onPageChange(page)}
           >
-            <p
-              className={
-                selectedIndex === page ? styles.numberTextSelected : styles.numberText
-              }
-            >
+            <p className={selectedIndex === page ? styles.numberTextSelected : styles.numberText}>
               {page}
             </p>
           </button>
-        )
+        ),
       )}
-
-
 
       {/* 「次へ」のボタンを配置 */}
       <button
