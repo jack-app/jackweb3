@@ -37,14 +37,14 @@
     "tocbot": "^4.28.2"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^1.2.23",
+    "@chromatic-com/storybook": "^5.6.0",
     "@storybook/addon-essentials": "^8.0.2",
     "@storybook/addon-interactions": "^8.0.2",
-    "@storybook/addon-links": "^8.0.2",
-    "@storybook/addon-onboarding": "^8.0.2",
+    "@storybook/addon-links": "^10.6.5",
+    "@storybook/addon-onboarding": "^10.6.5",
     "@storybook/blocks": "^8.0.2",
-    "@storybook/nextjs": "^8.0.2",
-    "@storybook/react": "^8.0.2",
+    "@storybook/nextjs": "^10.6.5",
+    "@storybook/react": "^10.6.5",
     "@storybook/test": "^8.0.2",
     "@types/node": "^24",
     "@types/react": "^18",
@@ -56,10 +56,10 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-storybook": "^10.6.5",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
-    "storybook": "^8.0.2",
+    "storybook": "^10.6.5",
     "typescript": "^5"
   },
   "engines": {
