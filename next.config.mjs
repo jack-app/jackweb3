@@ -5,13 +5,31 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: [
-      "www.notion.so",
-      "developer.apple.com",
-      "placehold.jp",
-      "s3-us-west-2.amazonaws.com",
-      "lh3.googleusercontent.com",
-      "prod-files-secure.s3.us-west-2.amazonaws.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.notion.so",
+      },
+      {
+        protocol: "https",
+        hostname: "developer.apple.com",
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.jp",
+      },
+      {
+        protocol: "https",
+        hostname: "s3-us-west-2.amazonaws.com",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "prod-files-secure.s3.us-west-2.amazonaws.com",
+      },
     ],
   },
 };
